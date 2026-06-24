@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Sewa Nepal | Premium Digital Hub</title>
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -15,7 +16,6 @@
             --text-dark: #1e293b;
             --text-muted: #64748b;
             --border-color: #e2e8f0;
-            --premium-gradient: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
         }
 
         * {
@@ -32,7 +32,6 @@
             line-height: 1.6;
         }
 
-        /* AdSense Leaderboard Placement */
         .adsense-top {
             max-width: 1200px;
             margin: 15px auto 0;
@@ -45,114 +44,62 @@
             font-weight: bold;
             border-radius: 6px;
         }
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1922041060809267"
-     crossorigin="anonymous"></script>
-        /* Advanced Premium Navigation Header & Branding Engine */
+
         header {
             background-color: var(--primary-navy);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-            border-bottom: 2px solid rgba(0, 180, 216, 0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         .nav-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 12px 20px;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        /* Ultra-Premium Brand Core Logo Graphic Style */
-        .brand-master-logo {
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 10px;
             text-decoration: none;
-            user-select: none;
         }
 
-        .logo-graphic-shield {
-            position: relative;
-            width: 46px;
-            height: 46px;
-            background: var(--premium-gradient);
-            border-radius: 12px;
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, var(--accent-teal), #4facfe);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.3);
-            overflow: hidden;
-        }
-
-        .logo-graphic-shield::before {
-            content: '';
-            position: absolute;
-            top: -50%; left: -50%; width: 200%; height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
-            transform: rotate(45deg);
-            animation: shine 3.5s infinite linear;
-        }
-
-        @keyframes shine {
-            0% { transform: translate(-30%, -30%) rotate(45deg); }
-            100% { transform: translate(30%, 30%) rotate(45deg); }
-        }
-
-        .logo-graphic-shield svg {
-            width: 26px;
-            height: 26px;
-            fill: #ffffff;
-            filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.15));
-        }
-
-        .brand-typography-block {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .brand-main-title {
-            color: #ffffff;
-            font-size: 22px;
+            color: #fff;
             font-weight: 800;
-            letter-spacing: -0.5px;
-            line-height: 1;
-            text-transform: uppercase;
+            font-size: 18px;
         }
 
-        .brand-main-title span {
-            color: var(--accent-teal);
-            font-weight: 900;
+        .logo-text {
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: 800;
+            line-height: 1.1;
         }
 
-        .brand-sub-tag {
-            color: #94a3b8;
+        .logo-text span {
+            display: block;
             font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-top: 4px;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .brand-sub-tag::after {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 6px;
-            background: var(--accent-gold);
-            border-radius: 50%;
+            color: var(--accent-teal);
+            letter-spacing: 1.5px;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 24px;
+            gap: 22px;
             align-items: center;
         }
 
@@ -160,50 +107,33 @@
             color: #cbd5e1;
             text-decoration: none;
             font-size: 14px;
-            font-weight: 600;
-            transition: 0.25s ease;
-            padding: 6px 0;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            bottom: 0; left: 0; width: 0; height: 2px;
-            background: var(--accent-teal);
-            transition: 0.25s ease;
+            font-weight: 500;
+            transition: 0.3s;
         }
 
         nav ul li a:hover {
-            color: #ffffff;
-        }
-
-        nav ul li a:hover::after {
-            width: 100%;
+            color: var(--accent-teal);
         }
 
         .cta-nav-btn {
             background: var(--accent-teal);
             color: var(--primary-navy);
-            padding: 10px 22px;
-            border-radius: 8px;
+            padding: 9px 20px;
+            border-radius: 6px;
             font-weight: 700;
             text-decoration: none;
-            font-size: 13.5px;
-            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 4px 12px rgba(0, 180, 216, 0.2);
+            font-size: 13px;
+            transition: 0.3s;
         }
 
         .cta-nav-btn:hover {
             background: #ffffff;
             color: var(--primary-navy);
-            transform: translateY(-1px);
         }
 
-        /* Hero Frame Layout */
         .hero-section {
             background: linear-gradient(to right, rgba(13,27,46,0.95), rgba(13,27,46,0.75)), url('https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1200&q=80') center/cover;
-            padding: 110px 20px;
+            padding: 100px 20px;
             text-align: left;
         }
 
@@ -214,7 +144,7 @@
         }
 
         .hero-content {
-            max-width: 650px;
+            max-width: 600px;
             color: #ffffff;
         }
 
@@ -223,15 +153,13 @@
             color: var(--accent-teal);
             letter-spacing: 2px;
             margin-bottom: 8px;
-            font-weight: 700;
         }
 
         .hero-content h1 {
-            font-size: 48px;
+            font-size: 46px;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 20px;
-            letter-spacing: -1px;
         }
 
         .hero-content h1 span {
@@ -239,18 +167,18 @@
         }
 
         .hero-content p {
-            color: #cbd5e1;
-            font-size: 16.5px;
+            color: #94a3b8;
+            font-size: 16px;
             margin-bottom: 30px;
         }
 
         .hero-action-btn {
             background: var(--accent-gold);
             color: #000000;
-            padding: 14px 32px;
+            padding: 14px 30px;
             text-decoration: none;
             font-weight: 700;
-            border-radius: 8px;
+            border-radius: 6px;
             display: inline-block;
             transition: 0.3s;
             box-shadow: 0 4px 15px rgba(255,153,0,0.3);
@@ -261,7 +189,6 @@
             transform: translateY(-2px);
         }
 
-        /* Main Grid Wrapper */
         .main-wrapper {
             max-width: 1200px;
             margin: 45px auto;
@@ -288,7 +215,6 @@
             background: var(--accent-teal);
         }
 
-        /* Soft Elevation Product Cards */
         .card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -365,7 +291,6 @@
             background: var(--accent-teal);
         }
 
-        /* Split Section Layout */
         .split-container {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
@@ -387,7 +312,6 @@
             margin-bottom: 15px;
         }
 
-        /* Repair Grid Dashboard */
         .repair-dashboard {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -432,12 +356,11 @@
             box-shadow: 0 4px 12px rgba(37,211,102,0.2);
         }
 
-        /* In-Feed Banner Area */
         .adsense-mid-row {
             max-width: 1200px;
             margin: 20px auto 40px;
             padding: 15px;
-            background: rgba(255, 153, 0, 0.04);
+            background: rgba(255,153,0,0.02);
             border: 1px dashed var(--accent-gold);
             text-align: center;
             color: var(--accent-gold);
@@ -446,12 +369,10 @@
             border-radius: 8px;
         }
 
-        /* Gaming Feed Combo Grid */
         .gaming-feed-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
             gap: 30px;
-            margin-bottom: 50px;
         }
 
         .news-strip {
@@ -496,7 +417,6 @@
             gap: 5px;
         }
 
-        /* Vertical Square Banner Slot */
         .adsense-sidebar-widget {
             background: rgba(13,27,46,0.02);
             border: 1px dashed var(--accent-gold);
@@ -509,83 +429,6 @@
             height: fit-content;
         }
 
-        /* Complete Contact Us Layout */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .contact-info-card {
-            background: var(--primary-navy);
-            color: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
-
-        .contact-method {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .contact-method i {
-            font-size: 24px;
-            color: var(--accent-teal);
-            width: 40px;
-        }
-
-        .contact-method div h4 {
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        .contact-method div p {
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .map-box {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            height: 320px;
-        }
-
-        /* AdSense Modal / Privacy Popups */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 2000;
-            justify-content: center; align-items: center;
-            padding: 20px;
-        }
-
-        .modal-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 600px;
-            width: 100%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 15px; right: 15px;
-            font-size: 22px; cursor: pointer; color: #666;
-        }
-
-        /* Footer System */
         footer {
             background-color: #0b1321;
             color: #94a3b8;
@@ -593,26 +436,25 @@
             text-align: center;
             font-size: 13px;
             border-top: 4px solid var(--accent-teal);
+            margin-top: 60px;
         }
 
         .footer-nav-links {
             margin-bottom: 15px;
         }
 
-        .footer-nav-links a, .footer-nav-links span {
+        .footer-nav-links a {
             color: #cbd5e1;
             text-decoration: none;
             margin: 0 10px;
-            cursor: pointer;
         }
 
-        .footer-nav-links a:hover, .footer-nav-links span:hover {
+        .footer-nav-links a:hover {
             color: var(--accent-teal);
         }
 
-        /* Responsive Breakpoints */
         @media (max-width: 900px) {
-            .split-container, .gaming-feed-layout, .contact-grid {
+            .split-container, .gaming-feed-layout {
                 grid-template-columns: 1fr;
             }
             .repair-dashboard {
@@ -620,12 +462,6 @@
             }
             .nav-wrapper {
                 flex-direction: column;
-                gap: 18px;
-                text-align: center;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
                 gap: 15px;
             }
             .hero-content h1 {
@@ -636,32 +472,50 @@
 </head>
 <body>
 
+    <!-- ==========================================
+      TAPAILO MAIN DATABASE (Sajiloko lagi yahan bat ferna milxa)
+    ============================================ -->
     <script>
         const CORE_CONFIG_MATRIX = {
             whatsapp_contact_phone: "9779800000000", 
-            email_address: "info@ranjitshrestha1.com.np", 
-            office_location: "New Road, Kathmandu, Nepal", 
-            google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
-            vlog_alert_notification: "Connecting to Nepal Taxi Vlog Gaming safe download network servers..."
+            google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true"
         };
+
+        // YAHAN NAYA POST THAPNUHOS (Sabai bhanda mathi bhayeko post paila dekhinchha)
+        const POSTS_DATABASE = [
+            {
+                title: "Bus Simulator India - Steering Response Metrics",
+                description: "Calculated configurations guidelines to trace steering latency profiles layout parameters setup matching.",
+                image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=200&q=80",
+                link: "https://youtube.com" // YouTube video ya driving link yahan halnus
+            },
+            {
+                title: "Bus Simulator Indonesia: Free Nepali Map Mods!",
+                description: "Complete structural step configurations parameters on local mapping routes skin installations processes files safely.",
+                image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=200&q=80",
+                link: "https://youtube.com"
+            }
+            // Naya post thapna yo tala ko 6 line jastai thapdai jana saknuhos:
+            // {
+            //     title: "Post ko Title Halnus",
+            //     description: "Sano bibran yahan lekhnus",
+            //     image: "Naya Photo ko URL Link",
+            //     link: "Link Halnus"
+            // }
+        ];
     </script>
 
+    <!-- AdSense Slot 1 -->
     <div class="adsense-top">
         <i class="fa-solid fa-rectangle-ad"></i> GOOGLE ADSENSE RESPONSIVE TOP BANNER CODE CONTAINER
     </div>
 
+    <!-- Navigation Header -->
     <header>
         <div class="nav-wrapper">
-            <a href="#" class="brand-master-logo">
-                <div class="logo-graphic-shield">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                    </svg>
-                </div>
-                <div class="brand-typography-block">
-                    <div class="brand-main-title">Smart<span>Sewa</span></div>
-                    <div class="brand-sub-tag">Nepal Hub</div>
-                </div>
+            <a href="#" class="logo-section">
+                <div class="logo-icon">S</div>
+                <div class="logo-text">Smart<span>SEWA NEPAL</span></div>
             </a>
             <nav>
                 <ul>
@@ -669,13 +523,13 @@
                     <li><a href="#insurance">Insurance</a></li>
                     <li><a href="#repair">Repair Hub</a></li>
                     <li><a href="#blog">Gaming Vlog</a></li>
-                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </nav>
             <a href="#insurance" class="cta-nav-btn">Book Services</a>
         </div>
     </header>
 
+    <!-- Hero Frame -->
     <div class="hero-section">
         <div class="hero-inner">
             <div class="hero-content">
@@ -687,8 +541,10 @@
         </div>
     </div>
 
+    <!-- Main Content Grid -->
     <div class="main-wrapper">
 
+        <!-- 1. Accessories Section -->
         <h2 id="accessories" class="block-title">Accessories Portal</h2>
         <div class="card-grid">
             <div class="photo-style-card">
@@ -726,10 +582,12 @@
             </div>
         </div>
 
+        <!-- AdSense Slot 2 -->
         <div class="adsense-mid-row">
             <i class="fa-solid fa-rectangle-ad"></i> GOOGLE ADSENSE IN-FEED AUTOMATIC RESPONSIVE DISPLAY AD BLOCK
         </div>
 
+        <!-- 2. Dual Column Layout -->
         <div class="split-container">
             <div id="insurance" class="interactive-panel">
                 <h2>Citizen Life Insurance Booking</h2>
@@ -756,27 +614,14 @@
             </div>
         </div>
 
+        <!-- 3. Dynamic JavaScript Blog Feed Section -->
         <h2 id="blog" class="block-title">Nepal Taxi Vlog & Gaming Blog</h2>
         <div class="gaming-feed-layout">
-            <div>
-                <div class="news-strip">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=200&q=80" alt="Simulation Image">
-                    <div class="news-details">
-                        <h4>Bus Simulator Indonesia: Free Nepali Map Mods!</h4>
-                        <p>Complete structural step configurations parameters on local mapping routes skin installations processes files safely.</p>
-                        <button class="read-article-btn" onclick="alert(CORE_CONFIG_MATRIX.vlog_alert_notification)"><i class="fa-solid fa-chevron-right"></i> Read Guide Log</button>
-                    </div>
-                </div>
-                <div class="news-strip">
-                    <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=200&q=80" alt="Simulation Setup">
-                    <div class="news-details">
-                        <h4>Bus Simulator India - Steering Response Metrics Analyses</h4>
-                        <p>Calculated configurations guidelines to trace steering latency profiles layout parameters setup matching.</p>
-                        <button class="read-article-btn" onclick="alert(CORE_CONFIG_MATRIX.vlog_alert_notification)"><i class="fa-solid fa-chevron-right"></i> Read Guide Log</button>
-                    </div>
-                </div>
+            <div id="dynamic-posts-container">
+                <!-- Javascript le posts haru yahan automatic load garcha -->
             </div>
 
+            <!-- AdSense Slot 3 -->
             <div class="adsense-sidebar-widget">
                 <i class="fa-solid fa-rectangle-ad" style="font-size: 32px; color: var(--accent-gold); margin-bottom: 12px;"></i>
                 <h4 style="color: var(--primary-navy); font-size: 14px; margin-bottom: 6px; font-weight: 700;">NATIVE SIDEBAR AD</h4>
@@ -784,65 +629,38 @@
             </div>
         </div>
 
-        <h2 id="contact" class="block-title">Contact Our Hub</h2>
-        <div class="contact-grid">
-            <div class="contact-info-card">
-                <h3>Get In Touch</h3>
-                <p style="color: #cbd5e1; font-size: 14px;">Any issues regarding device configuration logs or premium setups support? Contact us directly.</p>
-                
-                <div class="contact-method">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <h4>Our Location</h4>
-                        <p><script>document.write(CORE_CONFIG_MATRIX.office_location)</script></p>
-                    </div>
-                </div>
-                <div class="contact-method">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <h4>Call / WhatsApp</h4>
-                        <p><script>document.write("+" + CORE_CONFIG_MATRIX.whatsapp_contact_phone)</script></p>
-                    </div>
-                </div>
-                <div class="contact-method">
-                    <i class="fa-solid fa-envelope"></i>
-                    <div>
-                        <h4>Official Email</h4>
-                        <p><script>document.write(CORE_CONFIG_MATRIX.email_address)</script></p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="map-box">
-                <iframe src="https://maps.google.com/maps?q=Kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-
     </div>
 
-    <div id="policyModal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal" onclick="closePopup()">×</span>
-            <h3 style="margin-bottom: 15px; color: var(--primary-navy);">Privacy Policy</h3>
-            <p style="font-size: 13.5px; color: #555;">Smart Sewa Nepal operates under standard data defense matrix logs. We do not store or compile user personal credentials collected from external Google API forms sheets. Advertisement tracking is handled entirely via Google approved programmatic cookies networks parameters systems.</p>
-        </div>
-    </div>
-
+    <!-- Footer -->
     <footer>
         <div class="footer-nav-links">
             <a href="#accessories">Accessories</a> | 
             <a href="#insurance">Insurance</a> | 
             <a href="#repair">Repair Hub</a> | 
-            <a href="#blog">Gaming Blog</a> |
-            <span onclick="openPopup()">Privacy Policy & Terms</span>
+            <a href="#blog">Gaming Blog</a>
         </div>
-        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+        <p>&copy; 2026 Smart Sewa Nepal. All Rights Reserved. System running on secure cloud instances layer.</p>
         <p style="font-size: 11px; color: #475569; margin-top: 5px;">Primary routing configurations mapped via ranjitshrestha1.com.np system records.</p>
     </footer>
 
+    <!-- JavaScript Loader Engine Logic -->
     <script>
-        function openPopup() { document.getElementById('policyModal').style.display = 'flex'; }
-        function closePopup() { document.getElementById('policyModal').style.display = 'none'; }
+        const container = document.getElementById('dynamic-posts-container');
+        POSTS_DATABASE.forEach(post => {
+            const postHTML = `
+                <div class="news-strip">
+                    <img src="${post.image}" alt="Simulation Image">
+                    <div class="news-details">
+                        <h4>${post.title}</h4>
+                        <p>${post.description}</p>
+                        <button class="read-article-btn" onclick="window.open('${post.link}', '_blank')">
+                            <i class="fa-solid fa-chevron-right"></i> Watch / Read Guide
+                        </button>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += postHTML;
+        });
     </script>
 
 </body>
