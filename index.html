@@ -146,10 +146,9 @@
             text-decoration: none;
             font-weight: bold;
             font-size: 15px;
-            box-shadow: 0 4px 6px rgba(255,0,0,0.2);
         }
 
-        /* ब्लग पोस्ट र लाइक/कमेन्ट सिस्टम को CSS */
+        /* ★ ब्लग पोस्ट र लाइक/कमेन्ट सिस्टम को CSS */
         .blog-interaction-bar {
             display: flex;
             gap: 15px;
@@ -176,7 +175,7 @@
             color: #ef4444;
         }
         .comment-section-block {
-            display: none;
+            display: none; /* सुरुमा लुकेको हुने, Comment थिच्दा खुल्ने */
             margin-top: 12px;
             background: #f8fafc;
             padding: 15px;
@@ -230,25 +229,27 @@
 </head>
 <body>
 
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
+
     <script>
         const CORE_CONFIG_MATRIX = {
             whatsapp_contact_phone: "9815824328", 
             email_address: "ranjitshrestha300@gmail.com", 
             office_location: "Dolakha, Nepal", 
             google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
-            
-            // लिंकहरू सिधै यहाँ सेट गरिएको छ
-            youtube_channel_url: "https://www.youtube.com/@NepalTaxiVlogGaming", 
-            facebook_profile_url: "https://www.facebook.com/ranjit.shrestha.35"
+            youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA", 
+            facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/" 
         };
 
+        /* ★ पुराना ब्लग पोस्टहरूको डाटाबेस (ID सहित) */
         const POSTS_DATABASE = [
             {
                 id: 1,
                 title: "Bus Simulator Indonesia: Free Nepali Map Mods v3.0!",
                 description: "Get the latest Nepali highway traffic, local bumps, and green scenery map mod. Complete structural step configurations parameters on local mapping routes safely.",
                 image_src: "images/bus_indonesia.jpg", 
-                watch_url: CORE_CONFIG_MATRIX.youtube_channel_url, 
+                watch_url: "https://youtube.com/@yourchannel", 
                 download_url: "https://mediafire.com/your-download-link", 
                 date: "June 2026",
                 likes: 24,
@@ -261,7 +262,7 @@
                 title: "Bus Simulator India - Steering Response Metrics Analyses",
                 description: "Calculated configurations guidelines to trace steering latency profiles layout parameters setup matching.",
                 image_src: "images/bus_india.jpg", 
-                watch_url: CORE_CONFIG_MATRIX.youtube_channel_url,
+                watch_url: "https://youtube.com/@yourchannel",
                 download_url: "https://mediafire.com/your-download-link-2",
                 date: "May 2026",
                 likes: 12,
@@ -386,24 +387,35 @@
 
         <h2 id="media-hub" class="block-title">Nepal Taxi Vlog & Gaming Hub</h2>
         <div class="media-hub-grid">
-            <div class="media-card" style="text-align: center;">
-                <h3 style="color: var(--primary-navy); margin-bottom: 15px; text-align: left;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube Channel</h3>
+            <div class="media-card">
+                <h3 style="color: var(--primary-navy); margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
                 <div class="youtube-video-container">
-                    <iframe src="https://www.youtube.com/embed?listType=search&list=NepalTaxiVlogGaming" allowfullscreen></iframe>
+                    <script>
+                        document.write(`<iframe src="https://www.youtube.com/embed/videoseries?list=${CORE_CONFIG_MATRIX.youtube_playlist_id}" allowfullscreen></iframe>`);
+                    </script>
                 </div>
-                <a href="#" id="yt-sub-link" target="_blank" class="btn-youtube-sub">
-                    <i class="fa-brands fa-youtube"></i> Visit YouTube Channel
+                <a href="#" class="btn-youtube-sub" id="yt-sub-link" target="_blank">
+                    <i class="fa-brands fa-youtube"></i> Subscribe Our Channel
                 </a>
             </div>
 
-            <div class="media-card" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 250px;">
-                <h3 style="color: var(--primary-navy); margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Profile</h3>
-                <div style="text-align:center; padding: 10px; width:100%;">
-                    <i class="fa-brands fa-facebook" style="font-size: 60px; color: #1877f2; margin-bottom: 15px;"></i>
-                    <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:20px; line-height: 1.5;">Connect with Ranjit Shrestha directly on Facebook for support.</p>
-                    <a href="#" id="fb-direct-link" target="_blank" style="background:#1877f2; color:#fff; padding:12px 24px; border-radius:6px; font-weight:bold; text-decoration:none; display:inline-block; font-size:14px; box-shadow: 0 4px 6px rgba(24,119,242,0.2);">
-                        <i class="fa-solid fa-user-plus"></i> View Facebook Profile
-                    </a>
+            <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="color: var(--primary-navy); margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
+                <div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
+                    <script>
+                        document.write(`
+                            <div class="fb-page" 
+                                data-href="${CORE_CONFIG_MATRIX.facebook_page_url}" 
+                                data-tabs="timeline" 
+                                data-width="340" 
+                                data-height="310" 
+                                data-small-header="false" 
+                                data-adapt-container-width="true" 
+                                data-hide-cover="false" 
+                                data-show-facepile="true">
+                            </div>
+                        `);
+                    </script>
                 </div>
             </div>
         </div>
@@ -462,6 +474,7 @@
     </footer>
 
     <script>
+        // ★ Like र Comment ह्यान्डल गर्ने जावास्क्रिप्ट इन्जिन
         const feedHook = document.getElementById('dynamic-posts-hook');
         
         function renderPosts() {
@@ -516,6 +529,7 @@
             });
         }
 
+        // लाइक बटन थिच्दा संख्या थप्ने/घटाउने फङ्सन
         function toggleLike(postId, button) {
             const post = POSTS_DATABASE.find(p => p.id === postId);
             const countSpan = button.querySelector('.like-count');
@@ -529,11 +543,13 @@
             countSpan.innerText = post.likes;
         }
 
+        // कमेन्ट बक्स खोल्ने/बन्द गर्ने फङ्सन
         function toggleCommentBox(postId) {
             const box = document.getElementById(`comment-box-${postId}`);
             box.style.display = box.style.display === 'block' ? 'none' : 'block';
         }
 
+        // नयाँ कमेन्ट बुझाउने र स्क्रिनमा देखाउने फङ्सन
         function submitComment(postId) {
             const nameInput = document.getElementById(`comment-name-${postId}`);
             const textInput = document.getElementById(`comment-text-${postId}`);
@@ -549,17 +565,20 @@
                 text: textInput.value.trim()
             });
 
+            // इनपुट सफा गर्ने र ब्लग फेरि रेंडर गर्ने
             nameInput.value = "";
             textInput.value = "";
             renderPosts();
-            document.getElementById(`comment-box-${postId}`).style.display = 'block';
+            document.getElementById(`comment-box-${postId}`).style.display = 'block'; // बक्स खुला नै राख्ने
         }
 
+        // सुरुमा ब्लग पोस्ट लोड गर्ने
         renderPosts();
 
-        // डकुमेन्ट लोड हुँदा लिंकहरू सुचारु गर्ने
-        document.getElementById('yt-sub-link').href = CORE_CONFIG_MATRIX.youtube_channel_url;
-        document.getElementById('fb-direct-link').href = CORE_CONFIG_MATRIX.facebook_profile_url;
+        // YouTube Subscribe Dynamic Link Setup
+        const channelCleanId = CORE_CONFIG_MATRIX.youtube_playlist_id.replace("UU", "UC");
+        document.getElementById('yt-sub-link').href = `https://www.youtube.com/channel/${channelCleanId}?sub_confirmation=1`;
     </script>
+
 </body>
 </html>
