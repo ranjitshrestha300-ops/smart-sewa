@@ -175,7 +175,7 @@
             color: #ef4444;
         }
         .comment-section-block {
-            display: none; /* सुरुमा लुकेको हुने, Comment थिच्दा खुल्ने */
+            display: none;
             margin-top: 12px;
             background: #f8fafc;
             padding: 15px;
@@ -238,18 +238,21 @@
             email_address: "ranjitshrestha300@gmail.com", 
             office_location: "Dolakha, Nepal", 
             google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
-            youtube_playlist_id: "https://www.youtube.com/@NepalTaxiVlogGaming", 
+            
+            // ★ यहाँ युट्युबको फिड मिलाउन च्यानलको ह्यान्डल मात्र राख्नुहोस्
+            youtube_handle: "@NepalTaxiVlogGaming", 
+            
+            // ★ फेसबुक विजेटको लागि सधैँ "Page" चाहिन्छ। प्रोफाइललाई विजेटले सपोर्ट नगर्ने हुनाले मैले यसलाई सुरक्षित रूपमा लोड हुने बनाएको छु।
             facebook_page_url: "https://www.facebook.com/ranjit.shrestha.35" 
         };
 
-        /* ★ पुराना ब्लग पोस्टहरूको डाटाबेस (ID सहित) */
         const POSTS_DATABASE = [
             {
                 id: 1,
                 title: "Bus Simulator Indonesia: Free Nepali Map Mods v3.0!",
                 description: "Get the latest Nepali highway traffic, local bumps, and green scenery map mod. Complete structural step configurations parameters on local mapping routes safely.",
                 image_src: "images/bus_indonesia.jpg", 
-                watch_url: "https://youtube.com/@NepalTaxiVlogGaming", 
+                watch_url: "https://youtube.com/" + CORE_CONFIG_MATRIX.youtube_handle, 
                 download_url: "https://mediafire.com/your-download-link", 
                 date: "June 2026",
                 likes: 24,
@@ -262,7 +265,7 @@
                 title: "Bus Simulator India - Steering Response Metrics Analyses",
                 description: "Calculated configurations guidelines to trace steering latency profiles layout parameters setup matching.",
                 image_src: "images/bus_india.jpg", 
-                watch_url: "https://youtube.com/@NepalTaxiVlogGaming",
+                watch_url: "https://youtube.com/" + CORE_CONFIG_MATRIX.youtube_handle,
                 download_url: "https://mediafire.com/your-download-link-2",
                 date: "May 2026",
                 likes: 12,
@@ -388,35 +391,22 @@
         <h2 id="media-hub" class="block-title">Nepal Taxi Vlog & Gaming Hub</h2>
         <div class="media-hub-grid">
             <div class="media-card">
-                <h3 style="color: var(--primary-navy); margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
+                <h3 style="color: var(--primary-navy); margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Channels Feed</h3>
                 <div class="youtube-video-container">
                     <script>
-                        document.write(`<iframe src="https://www.youtube.com/embed/videoseries?list=${CORE_CONFIG_MATRIX.youtube_playlist_id}" allowfullscreen></iframe>`);
+                        // च्यानलको नामबाट सिधै सर्च वा एम्बेड लिस्ट देखाउने सुरक्षित तरिका
+                        document.write(`<iframe src="https://www.youtube.com/embed?listType=search&list=${encodeURIComponent(CORE_CONFIG_MATRIX.youtube_handle)}" allowfullscreen></iframe>`);
                     </script>
                 </div>
                 <a href="#" class="btn-youtube-sub" id="yt-sub-link" target="_blank">
-                    <i class="fa-brands fa-youtube"></i> Subscribe Our Channel
+                    <i class="fa-brands fa-youtube"></i> Visit YouTube Channel
                 </a>
             </div>
 
             <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
                 <h3 style="color: var(--primary-navy); margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
-                <div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
-                    <script>
-                        document.write(`
-                            <div class="fb-page" 
-                                data-href="${CORE_CONFIG_MATRIX.facebook_page_url}" 
-                                data-tabs="timeline" 
-                                data-width="340" 
-                                data-height="310" 
-                                data-small-header="false" 
-                                data-adapt-container-width="true" 
-                                data-hide-cover="false" 
-                                data-show-facepile="true">
-                            </div>
-                        `);
-                    </script>
-                </div>
+                <div style="width: 100%; overflow: hidden; display: flex; justify-content: center;" id="fb-container-hook">
+                    </div>
             </div>
         </div>
 
@@ -474,7 +464,6 @@
     </footer>
 
     <script>
-        // ★ Like र Comment ह्यान्डल गर्ने जावास्क्रिप्ट इन्जिन
         const feedHook = document.getElementById('dynamic-posts-hook');
         
         function renderPosts() {
@@ -529,7 +518,6 @@
             });
         }
 
-        // लाइक बटन थिच्दा संख्या थप्ने/घटाउने फङ्सन
         function toggleLike(postId, button) {
             const post = POSTS_DATABASE.find(p => p.id === postId);
             const countSpan = button.querySelector('.like-count');
@@ -543,13 +531,11 @@
             countSpan.innerText = post.likes;
         }
 
-        // कमेन्ट बक्स खोल्ने/बन्द गर्ने फङ्सन
         function toggleCommentBox(postId) {
             const box = document.getElementById(`comment-box-${postId}`);
             box.style.display = box.style.display === 'block' ? 'none' : 'block';
         }
 
-        // नयाँ कमेन्ट बुझाउने र स्क्रिनमा देखाउने फङ्सन
         function submitComment(postId) {
             const nameInput = document.getElementById(`comment-name-${postId}`);
             const textInput = document.getElementById(`comment-text-${postId}`);
@@ -565,20 +551,43 @@
                 text: textInput.value.trim()
             });
 
-            // इनपुट सफा गर्ने र ब्लग फेरि रेंडर गर्ने
             nameInput.value = "";
             textInput.value = "";
             renderPosts();
-            document.getElementById(`comment-box-${postId}`).style.display = 'block'; // बक्स खुला नै राख्ने
+            document.getElementById(`comment-box-${postId}`).style.display = 'block';
         }
 
-        // सुरुमा ब्लग पोस्ट लोड गर्ने
         renderPosts();
 
-        // YouTube Subscribe Dynamic Link Setup
-        const channelCleanId = CORE_CONFIG_MATRIX.youtube_playlist_id.replace("UU", "UC");
-        document.getElementById('yt-sub-link').href = `https://www.youtube.com/channel/${channelCleanId}?sub_confirmation=1`;
-    </script>
+        // YouTube dynamic URL setup
+        document.getElementById('yt-sub-link').href = `https://www.youtube.com/${CORE_CONFIG_MATRIX.youtube_handle}`;
 
+        // Facebook Engine: प्रोफाइल लिङ्क भएकोले यसलाई बटन प्लस ब्याकअप लिङ्कमा सुरक्षित रूपान्तरण गरिएको छ
+        const fbContainer = document.getElementById('fb-container-hook');
+        if(CORE_CONFIG_MATRIX.facebook_page_url.includes('profile.php') || CORE_CONFIG_MATRIX.facebook_page_url.includes('ranjit.shrestha.')) {
+            fbContainer.innerHTML = `
+                <div style="text-align:center; padding: 20px 10px;">
+                    <i class="fa-brands fa-facebook" style="font-size: 48px; color: #1877f2; margin-bottom: 15px;"></i>
+                    <p style="font-size:13px; color:var(--text-muted); margin-bottom:15px;">Facebook Widget only supports Pages. Connect with the owner directly on Facebook profile:</p>
+                    <a href="${CORE_CONFIG_MATRIX.facebook_page_url}" target="_blank" style="background:#1877f2; color:#fff; padding:10px 20px; border-radius:6px; font-weight:bold; text-decoration:none; display:inline-block; font-size:14px;">
+                        <i class="fa-solid fa-user-plus"></i> View Facebook Profile
+                    </a>
+                </div>
+            `;
+        } else {
+            fbContainer.innerHTML = `
+                <div class="fb-page" 
+                    data-href="${CORE_CONFIG_MATRIX.facebook_page_url}" 
+                    data-tabs="timeline" 
+                    data-width="340" 
+                    data-height="310" 
+                    data-small-header="false" 
+                    data-adapt-container-width="true" 
+                    data-hide-cover="false" 
+                    data-show-facepile="true">
+                </div>
+            `;
+        }
+    </script>
 </body>
 </html>
