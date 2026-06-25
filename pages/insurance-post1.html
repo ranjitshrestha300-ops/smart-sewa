@@ -51,26 +51,8 @@
             border-bottom: 1px solid #f1f5f9;
             padding-bottom: 15px;
         }
-        .share-label {
-            font-size: 13px;
-            font-weight: bold;
-            color: #64748b;
-            text-transform: uppercase;
-        }
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #fff;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: opacity 0.2s;
-            cursor: pointer;
-            border: none;
-        }
+        .share-label { font-size: 13px; font-weight: bold; color: #64748b; text-transform: uppercase; }
+        .share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: #fff; border-radius: 6px; text-decoration: none; transition: opacity 0.2s; cursor: pointer; border: none; }
         .share-btn:hover { opacity: 0.9; }
         .share-fb { background: #1877f2; }
         .share-wa { background: #25d366; }
@@ -96,7 +78,7 @@
                     <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
                     <li><a href="insurance-post1.html">Insurance</a></li>
                     <li><a href="repair-hub.html">Repair Hub</a></li>
-                    <li><a href="gallery.html" style="color: #f59e0b; font-weight: bold;">Photo Gallery</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
                 </ul>
             </nav>
             <a href="../index.html" class="cta-nav-btn">Back to Home</a>
@@ -166,13 +148,11 @@
             const url = encodeURIComponent(window.location.href);
             window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
         }
-
         function shareOnWhatsApp() {
             const url = encodeURIComponent(window.location.href);
             const text = encodeURIComponent("Smart Sewa Nepal मा सिटिजन लाइफ इन्स्योरेन्सको यो उपयोगी पोस्ट हेर्नुहोस्: ");
             window.open(`https://api.whatsapp.com/send?text=${text}${url}`, '_blank');
         }
-
         function copyPageLink() {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 alert("Link copied to clipboard! You can now paste and share it anywhere.");
