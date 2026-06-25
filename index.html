@@ -26,8 +26,11 @@
         .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
         @media (max-width: 768px) { .media-hub-grid { grid-template-columns: 1fr; } }
         
-        /* Disqus Block Wrapper */
-        .home-comment-wrapper { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-top: 40px; }
+        /* प्रिमियम सानो बटन स्टाइल (कमेन्टका लागि) */
+        .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
+        .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+        .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
+        #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
     </style>
 </head>
 <body>
@@ -59,14 +62,14 @@
             </a>
             <nav>
                 <ul>
-                    <li><a href="accessories.html">Accessories</a></li>
-                    <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-                    <li><a href="insurance-post1.html">Insurance</a></li>
-                    <li><a href="repair-hub.html">Repair Hub</a></li>
-                    <li><a href="gallery.html" style="color: #f59e0b; font-weight: bold;">Photo Gallery</a></li>
+                    <li><a href="pages/accessories.html">Accessories</a></li>
+                    <li><a href="pages/vlog-gaming.html">Vlog & Gaming</a></li>
+                    <li><a href="pages/insurance-post1.html">Insurance</a></li>
+                    <li><a href="pages/repair-hub.html">Repair Hub</a></li>
+                    <li><a href="pages/gallery.html" style="color: #f59e0b; font-weight: bold;">Photo Gallery</a></li>
                 </ul>
             </nav>
-            <a href="insurance-post1.html" class="cta-nav-btn">Book Services</a>
+            <a href="pages/insurance-post1.html" class="cta-nav-btn">Book Services</a>
         </div>
     </header>
 
@@ -76,7 +79,7 @@
                 <h2>WELCOME TO</h2>
                 <h1>SMART <span>SEWA NEPAL</span></h1>
                 <p>Your Integrated Premium Digital Solution for tracking elite accessories, software systems locks removal logs, and online insurance matrix booking slots.</p>
-                <a href="insurance-post1.html" class="hero-action-btn">Book Your Services Now</a>
+                <a href="pages/insurance-post1.html" class="hero-action-btn">Book Your Services Now</a>
             </div>
         </div>
     </div>
@@ -162,34 +165,52 @@
             </div>
         </div>
 
-        <div class="home-comment-wrapper">
-            <h3 style="color: #0f172a; margin-bottom: 20px;"><i class="fa-solid fa-comments" style="color: #f59e0b;"></i> मुख्य सार्वजनिक छलफल तथा भ्युअर कमेन्टहरू</h3>
-            <div id="disqus_thread"></div>
-            <script>
-                var disqus_config = function () {
-                    this.page.url = window.location.href;  
-                    this.page.identifier = 'smart_sewa_home'; 
-                };
-                (function() { 
-                    var d = document, s = d.createElement('script');
-                    s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
+        <div class="premium-discussion-box">
+            <h4 style="color: #64748b; font-size: 13px; margin-bottom: 8px; font-weight: 500;">HAVE QUESTIONS OR FEEDBACK?</h4>
+            <button class="btn-toggle-discussion" onclick="toggleDisqusBox()">
+                <i class="fa-solid fa-comments"></i> View Public Discussion & Reviews
+            </button>
+            
+            <div id="disqus-toggle-container">
+                <div id="disqus_thread"></div>
+            </div>
         </div>
 
     </div>
 
     <footer>
         <div class="footer-nav-links">
-            <a href="accessories.html">Accessories</a> | 
-            <a href="vlog-gaming.html">Vlog & Gaming</a> | 
-            <a href="insurance-post1.html">Insurance</a> |
-            <a href="gallery.html">Photo Gallery</a>
+            <a href="pages/accessories.html">Accessories</a> | 
+            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="pages/insurance-post1.html">Insurance</a> |
+            <a href="pages/gallery.html">Photo Gallery</a>
         </div>
         <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // डिस्क्स बक्स खोल्ने र बन्द गर्ने लाइटवेट स्क्रिप्ट
+        function toggleDisqusBox() {
+            var container = document.getElementById('disqus-toggle-container');
+            if (container.style.display === 'block') {
+                container.style.display = 'none';
+            } else {
+                container.style.display = 'block';
+                // बक्स खोल्दा मात्र डिस्क्स लोड गराउने (पेज स्पिड फास्ट हुन्छ)
+                if (!window.disqus_loaded) {
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = 'smart_sewa_home'; 
+                    };
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    window.disqus_loaded = true;
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
