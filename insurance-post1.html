@@ -38,79 +38,29 @@
         .post-description { font-size: 15px; line-height: 1.7; color: #334155; margin-bottom: 30px; }
         .form-heading { border-top: 2px dashed #e2e8f0; padding-top: 25px; margin-top: 25px; color: #0f172a; }
 
-        /* Like & Comment Bar CSS */
-        .blog-interaction-bar {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 15px;
-        }
-        .interaction-btn {
-            background: none;
-            border: none;
-            color: #64748b;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s;
-        }
-        .interaction-btn:hover, .interaction-btn.active { color: #3b82f6; }
-        .interaction-btn.like-btn.active { color: #ef4444; }
-        
-        .comment-section-block {
-            display: none;
-            margin-top: 15px;
-            background: #f8fafc;
-            padding: 20px;
+        /* FB Comment Box Container */
+        .fb-comment-container {
+            margin-top: 30px;
+            background: #ffffff;
+            padding: 15px;
             border-radius: 8px;
             border: 1px solid #e2e8f0;
         }
-        .comment-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        .fb-comment-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #0f172a;
             margin-bottom: 15px;
-        }
-        .comment-input-group input, .comment-input-group textarea {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            font-size: 13.5px;
-            box-sizing: border-box;
-        }
-        .btn-post-comment {
-            background: #0f172a;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            align-self: flex-end;
-        }
-        .comments-display-list {
-            max-height: 200px;
-            overflow-y: auto;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .single-comment-item {
-            background: #fff;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border-left: 3px solid #f59e0b;
-            font-size: 13px;
+            align-items: center;
+            gap: 8px;
         }
     </style>
 </head>
 <body>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
 
     <header>
         <div class="nav-wrapper">
@@ -148,25 +98,26 @@
                     <p>Smart Sewa Nepal मार्फत अब तपाईंले घरमै बसीबसी सिटिजन लाइफ इन्स्योरेन्सका विभिन्न योजनाहरू बुझ्न र अनलाइन बुकिङ गर्न सक्नुहुन्छ। ढिला नगरी आफ्नो र आफ्नो परिवारको भविष्य सुरक्षित गर्नुहोस्।</p>
                 </div>
 
-                <div class="blog-interaction-bar">
-                    <button class="interaction-btn like-btn" onclick="handleLike(this)">
-                        <i class="fa-solid fa-thumbs-up"></i> Like (<span id="insurance-like-count">45</span>)
-                    </button>
-                    <button class="interaction-btn" onclick="toggleCommentSection()">
-                        <i class="fa-solid fa-comment"></i> Comment (<span id="insurance-comment-count">1</span>)
-                    </button>
-                </div>
-
-                <div id="insurance-comment-box" class="comment-section-block">
-                    <div class="comment-input-group">
-                        <input type="text" id="user-name" placeholder="Your Name" required>
-                        <textarea id="user-comment" rows="2" placeholder="Write a comment..." required></textarea>
-                        <button class="btn-post-comment" onclick="postNewComment()">Post Comment</button>
+                <div class="fb-comment-container">
+                    <div class="fb-comment-title">
+                        <i class="fa-solid fa-comments" style="color: #1877f2;"></i> भ्युअर प्रतिक्रिया तथा कमेन्टहरू
                     </div>
-                    <div class="comments-display-list" id="insurance-comments-list">
-                        <div class="single-comment-item">
-                            <strong>Ram Shrestha:</strong> मैले पनि यहीँबाट फर्म भरेको, एकदमै सजिलो सेवा रहेछ।
-                        </div>
+                    
+                    <div class="fb-like" 
+                        data-href="https://ranjitshrestha1.com.np/insurance-post1.html" 
+                        data-width="" 
+                        data-layout="standard" 
+                        data-action="like" 
+                        data-size="small" 
+                        data-share="true">
+                    </div>
+                    
+                    <div style="margin-top: 15px;"></div>
+
+                    <div class="fb-comments" 
+                        data-href="https://ranjitshrestha1.com.np/insurance-post1.html" 
+                        data-width="100%" 
+                        data-numposts="5">
                     </div>
                 </div>
 
@@ -184,56 +135,6 @@
         </div>
         <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        let currentLikes = 45;
-
-        function handleLike(button) {
-            const countSpan = document.getElementById('insurance-like-count');
-            if (button.classList.contains('active')) {
-                currentLikes--;
-                button.classList.remove('active');
-            } else {
-                currentLikes++;
-                button.classList.add('active');
-            }
-            countSpan.innerText = currentLikes;
-        }
-
-        function toggleCommentSection() {
-            const box = document.getElementById('insurance-comment-box');
-            box.style.display = box.style.display === 'block' ? 'none' : 'block';
-        }
-
-        function postNewComment() {
-            const nameInput = document.getElementById('user-name');
-            const commentInput = document.getElementById('user-comment');
-            const commentsList = document.getElementById('insurance-comments-list');
-            const totalCommentsSpan = document.getElementById('insurance-comment-count');
-
-            if (!nameInput.value.trim() || !commentInput.value.trim()) {
-                alert("Please fill in both Name and Comment fields.");
-                return;
-            }
-
-            // नयाँ कमेन्ट थप्ने
-            const newCommentHTML = `
-                <div class="single-comment-item">
-                    <strong>${nameInput.value.trim()}:</strong> ${commentInput.value.trim()}
-                </div>
-            `;
-            
-            commentsList.innerHTML = newCommentHTML + commentsList.innerHTML;
-
-            // संख्या बढाउने
-            let currentCount = parseInt(totalCommentsSpan.innerText);
-            totalCommentsSpan.innerText = currentCount + 1;
-
-            // इनपुट सफा गर्ने
-            nameInput.value = "";
-            commentInput.value = "";
-        }
-    </script>
 
 </body>
 </html>
