@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>नयाँ पोस्टको शीर्षक - Smart Sewa Nepal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .single-post-container { max-width: 800px; margin: 40px auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0f172a; font-weight: 600; margin-bottom: 20px; font-size: 14px; }
+        .back-btn:hover { color: #f59e0b; }
+        .post-main-img { width: 100%; max-height: 450px; object-fit: contain; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; }
+        .post-content h1 { color: #0f172a; font-size: 24px; margin-bottom: 15px; line-height: 1.4; }
+        .post-meta { font-size: 13px; color: #64748b; margin-bottom: 20px; font-weight: bold; }
+        .post-description { font-size: 15.5px; line-height: 1.8; color: #334155; margin-bottom: 30px; white-space: pre-line; background: #fff; padding: 15px; border-left: 4px solid #f59e0b; border-radius: 4px; }
+        .gallery-comment-wrapper { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-top: 30px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-wrapper">
+            <a href="../index.html" class="brand-master-logo">
+                <div class="logo-graphic-shield">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                </div>
+                <div class="brand-typography-block">
+                    <div class="brand-main-title">Smart<span>Sewa</span></div>
+                    <div class="brand-sub-tag">Nepal Hub</div>
+                </div>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
+                    <li><a href="insurance-post1.html">Insurance</a></li>
+                    <li><a href="repair-hub.html">Repair Hub</a></li>
+                    <li><a href="gallery.html" style="color: #f59e0b; font-weight: bold;">Photo Gallery</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html" class="cta-nav-btn">Back to Home</a>
+        </div>
+    </header>
+
+    <div class="main-wrapper" style="min-height: 75vh;">
+        <div class="single-post-container">
+            <a href="../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            
+            <img src="../images/फोटोको_नाम.png" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" class="post-main-img" alt="Post Banner">
+            
+            <div class="post-content">
+                <div class="post-meta">Published: June 2026 | Category: Service</div>
+                
+                <h1>यहाँ नयाँ पोस्टको मुख्य आकर्षक हेडलाइन लेख्नुहोस्</h1>
+                
+                <div class="post-description">
+यहाँ तपाईंको नयाँ फेसबुक पोस्ट, सन्देश वा जानकारी राख्नुहोस्।
+ह्यासट्यागहरू पनि यहीँ राख्न सकिन्छ।
+                </div>
+
+                <div class="gallery-comment-wrapper">
+                    <h3 style="color: #0f172a; margin-bottom: 20px;"><i class="fa-solid fa-comments" style="color: #f59e0b;"></i> प्रतिक्रिया वा जिज्ञासा राख्नुहोस्</h3>
+                    <div id="disqus_thread"></div>
+                    <script>
+                        var disqus_config = function () {
+                            this.page.url = window.location.href;  
+                            // ⚠️ कपी गर्दा यो 'unique_post_id_xyz' लाई मात्र फेरेर अर्को नाम (जस्तै: post_2, post_3) राख्नुहोला
+                            this.page.identifier = 'unique_post_id_xyz'; 
+                        };
+                        (function() { 
+                            var d = document, s = d.createElement('script');
+                            s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                        })();
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-nav-links">
+            <a href="accessories.html">Accessories</a> | 
+            <a href="vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="insurance-post1.html">Insurance</a> |
+            <a href="gallery.html">Photo Gallery</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
