@@ -4,230 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Sewa Nepal | Premium Digital Hub & Media Center</title>
-
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1922041060809267" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* प्रिमियम Vertical Ticker CSS */
-        .premium-vertical-ticker {
-            background: var(--primary-navy, #0f172a);
-            border-bottom: 2px solid var(--accent-gold, #f59e0b);
-            padding: 12px 20px;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            height: 45px;
-            box-sizing: border-box;
-        }
-        .ticker-badge {
-            background: var(--accent-gold, #f59e0b);
-            color: #000;
-            padding: 4px 12px;
-            font-size: 12px;
-            font-weight: 800;
-            border-radius: 4px;
-            text-transform: uppercase;
-            margin-right: 15px;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            white-space: nowrap;
-        }
-        .ticker-viewport {
-            position: relative;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
-        }
-        .ticker-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            position: absolute;
-            width: 100%;
-            animation: verticalTicker 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-        }
-        .ticker-list li {
-            height: 21px;
-            line-height: 21px;
-            color: #e2e8f0;
-            font-size: 13.5px;
-            font-weight: 500;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-        .ticker-list li i {
-            color: var(--accent-gold, #f59e0b);
-            margin-right: 8px;
-        }
-        @keyframes verticalTicker {
-            0%, 25% { transform: translateY(0); opacity: 1; }
-            30%, 55% { transform: translateY(-21px); opacity: 1; }
-            60%, 85% { transform: translateY(-42px); opacity: 1; }
-            90%, 100% { transform: translateY(0); opacity: 1; }
-        }
-
-        /* प्रडक्ट एक्सन बटनहरू */
-        .product-action-box {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 15px;
-            width: 100%;
-        }
-        .btn-direct-buy {
-            background: #22c55e !important;
-            color: #ffffff !important;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-        .btn-inquiry {
-            background: #0284c7 !important;
-            color: #ffffff !important;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 13px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        /* सोशल मिडिया हब (YouTube + Facebook Grid) CSS */
-        .media-hub-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 25px;
-            margin-bottom: 30px;
-        }
-        .media-card {
-            background: #ffffff;
-            border: 1px solid var(--border-color, #e2e8f0);
-            border-radius: 8px;
-            padding: 20px;
-        }
-        .youtube-video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 6px;
-            background: #000;
-            margin-bottom: 15px;
-        }
-        .youtube-video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-        .btn-youtube-sub {
-            background: #ff0000;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-        }
-
-        /* ★ ब्लग पोस्ट र लाइक/कमेन्ट सिस्टम को CSS */
-        .blog-interaction-bar {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 10px;
-        }
-        .interaction-btn {
-            background: none;
-            border: none;
-            color: var(--text-muted, #64748b);
-            font-size: 13px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.2s;
-        }
-        .interaction-btn:hover, .interaction-btn.active {
-            color: #3b82f6;
-        }
-        .interaction-btn.like-btn.active {
-            color: #ef4444;
-        }
-        .comment-section-block {
-            display: none; /* सुरुमा लुकेको हुने, Comment थिच्दा खुल्ने */
-            margin-top: 12px;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-        }
-        .comment-input-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-bottom: 12px;
-        }
-        .comment-input-group input, .comment-input-group textarea {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            font-size: 13px;
-            box-sizing: border-box;
-        }
-        .btn-post-comment {
-            background: var(--primary-navy, #0f172a);
-            color: #fff;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-size: 12px;
-            font-weight: 600;
-            cursor: pointer;
-            align-self: flex-end;
-        }
-        .comments-display-list {
-            max-height: 150px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .single-comment-item {
-            background: #fff;
-            padding: 8px 12px;
-            border-radius: 4px;
-            border-left: 3px solid var(--accent-gold, #f59e0b);
-            font-size: 12.5px;
-        }
-
-        @media (max-width: 768px) {
-            .media-hub-grid { grid-template-columns: 1fr; }
-        }
+        /* Ticker, Buttons, and Layout Styles */
+        .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
+        .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+        .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
+        .ticker-list { margin: 0; padding: 0; list-style: none; position: absolute; width: 100%; animation: verticalTicker 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+        .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ticker-list li i { color: #f59e0b; margin-right: 8px; }
+        @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
+        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
+        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
+        .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
+        .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+        @media (max-width: 768px) { .media-hub-grid { grid-template-columns: 1fr; } }
+        
+        /* Disqus Block Wrapper */
+        .home-comment-wrapper { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-top: 40px; }
     </style>
 </head>
 <body>
@@ -244,62 +44,13 @@
             youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA", 
             facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/" 
         };
-
-        /* ★ पुराना ब्लग पोस्टहरूको डाटाबेस (ID सहित) */
-        /* ★ ब्लग पोस्टहरूको डाटाबेस (Citizen Life Insurance सहित) */
-        const POSTS_DATABASE = [
-            {
-                id: 1,
-                title: "Citizen Life Insurance - सुरक्षित भविष्यको लागि सही छनौट!",
-                description: "Smart Sewa Nepal मार्फत अब तपाईंले घरमै बसीबसी सिटिजन लाइफ इन्स्योरेन्सका विभिन्न योजनाहरू (बालभविष्य, जीवन बीमा, र पेन्सन योजना) बुझ्न र अनलाइन बुकिङ गर्न सक्नुहुन्छ। ढिला नगरी आफ्नो र आफ्नो परिवारको भविष्य सुरक्षित गर्नुहोस्।",
-                image_src: "images/citizen_life.jpg", // तपाईंको फोल्डरमा भएको फोटो वा अनलाइन लिङ्क
-                watch_url: "https://youtube.com/@yourchannel", // यसको बारेमा भिडियो छ भने लिङ्क राख्नुस्
-                download_url: CORE_CONFIG_MATRIX.google_form_embedded_link, // सिधै गुगल फर्म खुल्छ
-                is_insurance: true, // इन्स्योरेन्स चिन्नको लागि
-                date: "June 2026",
-                likes: 45,
-                comments: [
-                    { name: "Ram Shrestha", text: "मैले पनि यहीँबाट फर्म भरेको, एकदमै सजिलो सेवा रहेछ।" }
-                ]
-            },
-            {
-                id: 2,
-                title: "Bus Simulator Indonesia: Free Nepali Map Mods v3.0!",
-                description: "Get the latest Nepali highway traffic, local bumps, and green scenery map mod. Complete structural step configurations parameters on local mapping routes safely.",
-                image_src: "images/bus_indonesia.jpg", 
-                watch_url: "https://youtube.com/@yourchannel", 
-                download_url: "https://mediafire.com/your-download-link", 
-                is_insurance: false,
-                date: "June 2026",
-                likes: 24,
-                comments: []
-            },
-            {
-                id: 3,
-                title: "Bus Simulator India - Steering Response Metrics Analyses",
-                description: "Calculated configurations guidelines to trace steering latency profiles layout parameters setup matching.",
-                image_src: "images/bus_india.jpg", 
-                watch_url: "https://youtube.com/@yourchannel",
-                download_url: "https://mediafire.com/your-download-link-2",
-                is_insurance: false,
-                date: "May 2026",
-                likes: 12,
-                comments: []
-            }
-        ];
     </script>
-
-    <div class="adsense-top">
-        <i class="fa-solid fa-rectangle-ad"></i> GOOGLE ADSENSE RESPONSIVE TOP BANNER CODE CONTAINER
-    </div>
 
     <header>
         <div class="nav-wrapper">
-            <a href="#" class="brand-master-logo">
+            <a href="index.html" class="brand-master-logo">
                 <div class="logo-graphic-shield">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
                 </div>
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -307,14 +58,15 @@
                 </div>
             </a>
             <nav>
-    <ul>
-        <li><a href="accessories.html">Accessories</a></li>
-        <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-        <li><a href="insurance-post1.html">Insurance</a></li>
-        <li><a href="repair-hub.html">Repair Hub</a></li>
-    </ul>
-</nav>
-            <a href="#insurance" class="cta-nav-btn">Book Services</a>
+                <ul>
+                    <li><a href="accessories.html">Accessories</a></li>
+                    <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
+                    <li><a href="insurance-post1.html">Insurance</a></li>
+                    <li><a href="repair-hub.html">Repair Hub</a></li>
+                    <li><a href="gallery.html" style="color: #f59e0b; font-weight: bold;">Photo Gallery</a></li>
+                </ul>
+            </nav>
+            <a href="insurance-post1.html" class="cta-nav-btn">Book Services</a>
         </div>
     </header>
 
@@ -324,7 +76,7 @@
                 <h2>WELCOME TO</h2>
                 <h1>SMART <span>SEWA NEPAL</span></h1>
                 <p>Your Integrated Premium Digital Solution for tracking elite accessories, software systems locks removal logs, and online insurance matrix booking slots.</p>
-                <a href="#insurance" class="hero-action-btn">Book Your Services Now</a>
+                <a href="insurance-post1.html" class="hero-action-btn">Book Your Services Now</a>
             </div>
         </div>
     </div>
@@ -341,7 +93,6 @@
     </div>
 
     <div class="main-wrapper">
-
         <h2 id="accessories" class="block-title">Accessories Portal</h2>
         <div class="card-grid" style="margin-bottom: 40px;">
             <div class="photo-style-card">
@@ -353,16 +104,10 @@
                 <div>
                     <div class="price-tag">Rs. 2,499</div>
                     <div class="product-action-box">
-                        <a href="#" class="btn-direct-buy" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=I%20want%20to%20Direct%20Buy%3A%20Wired%20%26%20Wireless%20Earbuds%20(Rs.%202499)'" target="_blank">
-                            <i class="fa-solid fa-cart-shopping"></i> Direct Buy
-                        </a>
-                        <a href="#" class="btn-inquiry" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=Hello%20Smart%20Sewa%2C%20I%20want%20to%20inquire%20about%3A%20Wired%20%26%20Wireless%20Earbuds'" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry
-                        </a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
-
             <div class="photo-style-card">
                 <div>
                     <div class="vector-container"><i class="fa-solid fa-bolt"></i></div>
@@ -372,31 +117,7 @@
                 <div>
                     <div class="price-tag">Rs. 3,199</div>
                     <div class="product-action-box">
-                        <a href="#" class="btn-direct-buy" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=I%20want%20to%20Direct%20Buy%3A%20Power%20Banks%20%26%20Cables%20(Rs.%203199)'" target="_blank">
-                            <i class="fa-solid fa-cart-shopping"></i> Direct Buy
-                        </a>
-                        <a href="#" class="btn-inquiry" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=Hello%20Smart%20Sewa%2C%20I%20want%20to%20inquire%20about%3A%20Power%20Banks%20%26%20Cables'" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="photo-style-card">
-                <div>
-                    <div class="vector-container"><i class="fa-solid fa-shield-cat"></i></div>
-                    <h3>Heavy Duty Phone Case</h3>
-                    <p>Impact shock defense armors customized with accurate structural fits edges.</p>
-                </div>
-                <div>
-                    <div class="price-tag">Rs. 750</div>
-                    <div class="product-action-box">
-                        <a href="#" class="btn-direct-buy" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=I%20want%20to%20Direct%20Buy%3A%20Heavy%20Duty%20Phone%20Case%20(Rs.%20750)'" target="_blank">
-                            <i class="fa-solid fa-cart-shopping"></i> Direct Buy
-                        </a>
-                        <a href="#" class="btn-inquiry" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=Hello%20Smart%20Sewa%2C%20I%20want%20to%20inquire%20about%3A%20Heavy%20Duty%20Phone%20Case'" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry
-                        </a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20PowerBank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -405,211 +126,70 @@
         <h2 id="media-hub" class="block-title">Nepal Taxi Vlog & Gaming Hub</h2>
         <div class="media-hub-grid">
             <div class="media-card">
-                <h3 style="color: var(--primary-navy); margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
+                <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
                 <div class="youtube-video-container">
-                    <script>
-                        document.write(`<iframe src="https://www.youtube.com/embed/videoseries?list=${CORE_CONFIG_MATRIX.youtube_playlist_id}" allowfullscreen></iframe>`);
-                    </script>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                 </div>
-                <a href="#" class="btn-youtube-sub" id="yt-sub-link" target="_blank">
-                    <i class="fa-brands fa-youtube"></i> Subscribe Our Channel
-                </a>
+                <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA?sub_confirmation=1" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
-
             <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
-                <h3 style="color: var(--primary-navy); margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
+                <h3 style="color: #0f172a; margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
                 <div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
-                    <script>
-                        document.write(`
-                            <div class="fb-page" 
-                                data-href="${CORE_CONFIG_MATRIX.facebook_page_url}" 
-                                data-tabs="timeline" 
-                                data-width="340" 
-                                data-height="310" 
-                                data-small-header="false" 
-                                data-adapt-container-width="true" 
-                                data-hide-cover="false" 
-                                data-show-facepile="true">
-                            </div>
-                        `);
-                    </script>
+                    <div class="fb-page" data-href="https://www.facebook.com/share/1F2nALbbdv/" data-tabs="timeline" data-width="340" data-height="310" data-small-header="false" data-adapt-container-width="true"></div>
                 </div>
             </div>
-        </div>
-
-        <h2 id="blog-posts" class="block-title">Recent Gaming Blog & Downloads</h2>
-        <div class="gaming-feed-layout" style="margin-bottom: 40px;">
-            <div id="dynamic-posts-hook" style="display: flex; flex-direction: column; gap: 20px; width: 100%;"></div>
-
-            <div class="adsense-sidebar-widget">
-                <i class="fa-solid fa-rectangle-ad" style="font-size: 32px; color: var(--accent-gold); margin-bottom: 12px;"></i>
-                <h4 style="color: var(--primary-navy); font-size: 14px; margin-bottom: 6px; font-weight: 700;">NATIVE AD</h4>
-                <p style="font-size: 11px; color: var(--text-muted); line-height: 1.4;">Your dynamic rectangle auto-responsive monetization banner codes container.</p>
-            </div>
-        </div>
-
-        <div class="adsense-mid-row">
-            <i class="fa-solid fa-rectangle-ad"></i> GOOGLE ADSENSE IN-FEED AUTOMATIC RESPONSIVE DISPLAY AD BLOCK
         </div>
 
         <div class="split-container">
-            <div id="insurance" class="interactive-panel">
-                <h2>Citizen Life Insurance Booking</h2>
-                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 15px;">Fill up the secure embedded data script fields layout below.</p>
-                <script>
-                    document.write(`<iframe src="${CORE_CONFIG_MATRIX.google_form_embedded_link}" width="100%" height="330" frameborder="0" marginheight="0" marginwidth="0" style="border:1px solid var(--border-color); border-radius:8px; background:#fff;">Loading...</iframe>`);
-                </script>
+            <div id="repair" class="interactive-panel">
+                <h2>Repair & Unlock Hub</h2>
+                <p style="font-size: 13.5px; color: #64748b;">Remote flashing algorithms and structural locks removals panels.</p>
+                <div class="repair-dashboard" style="margin-top: 15px;">
+                    <div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
+                    <div class="repair-node"><i class="fa-brands fa-android"></i>Mi Account</div>
+                    <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
+                    <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
+                </div>
+                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
             </div>
 
-            <div id="repair" class="interactive-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <h2>Repair & Unlock Hub</h2>
-                    <p style="font-size: 13.5px; color: var(--text-muted);">Remote flashing algorithms logs adjustments or structural locks removals parameters panels.</p>
-                    <div class="repair-dashboard">
-                        <div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
-                        <div class="repair-node"><i class="fa-brands fa-android"></i>Mi Account</div>
-                        <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
-                        <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
-                        <div class="repair-node"><i class="fa-solid fa-screwdriver-wrench"></i>Hardware</div>
-                        <div class="repair-node"><i class="fa-solid fa-display"></i>Screen Fix</div>
-                    </div>
-                </div>
-                <a href="#" class="whatsapp-action-btn" onclick="this.href='https://wa.me/'+CORE_CONFIG_MATRIX.whatsapp_contact_phone+'?text=Need%20Smart%20Sewa%20Repair%20Support'" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
-             <div class="interactive-panel" style="margin-top: 20px; background: #fff; padding: 25px; border-radius: 8px; border: 1px solid var(--border-color, #e2e8f0);">
-    <h2><i class="fa-solid fa-keyboard" style="color: var(--accent-gold, #f59e0b);"></i> Professional Online Typing Service</h2>
-    <p style="font-size: 13.5px; color: var(--text-muted, #64748b); margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ, डकुमेन्टेशन र अनलाइन फर्महरू सहजै भर्नुहोस्।</p>
-    
-    <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Service%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Online%20Typing%20Service%20and%20send%20my%20documents." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
-        <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
-    </a>
-</div>
-            
+            <div class="interactive-panel">
+                <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
+                <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
+                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Typing%20Service." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
+                    <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
+                </a>
             </div>
-            
+        </div>
+
+        <div class="home-comment-wrapper">
+            <h3 style="color: #0f172a; margin-bottom: 20px;"><i class="fa-solid fa-comments" style="color: #f59e0b;"></i> मुख्य सार्वजनिक छलफल तथा भ्युअर कमेन्टहरू</h3>
+            <div id="disqus_thread"></div>
+            <script>
+                var disqus_config = function () {
+                    this.page.url = window.location.href;  
+                    this.page.identifier = 'smart_sewa_home'; 
+                };
+                (function() { 
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
         </div>
 
     </div>
 
     <footer>
         <div class="footer-nav-links">
-            <a href="#accessories">Accessories</a> | 
-            <a href="#media-hub">Vlog & Gaming</a> | 
-            <a href="#blog-posts">Gaming Mods</a> | 
-            <a href="#insurance">Insurance</a>
+            <a href="accessories.html">Accessories</a> | 
+            <a href="vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="insurance-post1.html">Insurance</a> |
+            <a href="gallery.html">Photo Gallery</a>
         </div>
         <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        // ★ Like र Comment ह्यान्डल गर्ने जावास्क्रिप्ट इन्जिन
-        const feedHook = document.getElementById('dynamic-posts-hook');
-        
-        function renderPosts() {
-            feedHook.innerHTML = "";
-            POSTS_DATABASE.forEach(post => {
-                let commentItemsHTML = post.comments.map(c => `
-                    <div class="single-comment-item">
-                        <strong>${c.name}:</strong> ${c.text}
-                    </div>
-                `).join('');
-
-                feedHook.innerHTML += `
-                    <div class="news-strip" style="display: flex; flex-direction: column;">
-                        <div style="display: flex; gap: 15px; width: 100%;">
-                            <img src="${post.image_src}" alt="Gaming Preview" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=200&q=80'" style="width: 120px; height: 90px; object-fit: cover; border-radius: 4px;">
-                            <div class="news-details" style="flex: 1;">
-                                <span style="color: var(--accent-gold); font-size: 11px; font-weight: bold;">${post.date}</span>
-                                <h4 style="margin: 2px 0 5px 0;">${post.title}</h4>
-                                <p style="font-size: 13px; line-height: 1.4; color: var(--text-muted);">${post.description}</p>
-                                <div style="display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;">
-                                    <button class="read-article-btn" onclick="window.open('${post.watch_url}', '_blank')">
-                                        <i class="fa-solid fa-chevron-right"></i> Watch Vlog / Guide
-                                    </button>
-
-
-
-                                   <button class="read-article-btn" style="background: rgba(34, 197, 94, 0.1); color: #22c55e;" onclick="window.open('${post.download_url}', '_blank')">
-    <i class="fa-solid ${post.is_insurance ? 'fa-file-invoice' : 'fa-circle-arrow-down'}"></i> 
-    ${post.is_insurance ? 'Book Insurance Online' : 'Direct Download'}
-</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="blog-interaction-bar">
-                            <button class="interaction-btn like-btn" onclick="toggleLike(${post.id}, this)">
-                                <i class="fa-solid fa-thumbs-up"></i> Like (<span class="like-count">${post.likes}</span>)
-                            </button>
-                            <button class="interaction-btn" onclick="toggleCommentBox(${post.id})">
-                                <i class="fa-solid fa-comment"></i> Comment (${post.comments.length})
-                            </button>
-                        </div>
-
-                        <div id="comment-box-${post.id}" class="comment-section-block">
-                            <div class="comment-input-group">
-                                <input type="text" id="comment-name-${post.id}" placeholder="Your Name" required>
-                                <textarea id="comment-text-${post.id}" rows="2" placeholder="Write a comment..." required></textarea>
-                                <button class="btn-post-comment" onclick="submitComment(${post.id})">Post Comment</button>
-                            </div>
-                            <div class="comments-display-list" id="comment-list-${post.id}">
-                                ${commentItemsHTML || '<p style="font-size:12px; color:#94a3b8; margin:0;">No comments yet. Be the first!</p>'}
-                            </div>
-                        </div>
-                    </div>
-                `;
-            });
-        }
-
-        // लाइक बटन थिच्दा संख्या थप्ने/घटाउने फङ्सन
-        function toggleLike(postId, button) {
-            const post = POSTS_DATABASE.find(p => p.id === postId);
-            const countSpan = button.querySelector('.like-count');
-            if (button.classList.contains('active')) {
-                post.likes--;
-                button.classList.remove('active');
-            } else {
-                post.likes++;
-                button.classList.add('active');
-            }
-            countSpan.innerText = post.likes;
-        }
-
-        // कमेन्ट बक्स खोल्ने/बन्द गर्ने फङ्सन
-        function toggleCommentBox(postId) {
-            const box = document.getElementById(`comment-box-${postId}`);
-            box.style.display = box.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // नयाँ कमेन्ट बुझाउने र स्क्रिनमा देखाउने फङ्सन
-        function submitComment(postId) {
-            const nameInput = document.getElementById(`comment-name-${postId}`);
-            const textInput = document.getElementById(`comment-text-${postId}`);
-            
-            if (!nameInput.value.trim() || !textInput.value.trim()) {
-                alert("Please fill in both Name and Comment fields.");
-                return;
-            }
-
-            const post = POSTS_DATABASE.find(p => p.id === postId);
-            post.comments.push({
-                name: nameInput.value.trim(),
-                text: textInput.value.trim()
-            });
-
-            // इनपुट सफा गर्ने र ब्लग फेरि रेंडर गर्ने
-            nameInput.value = "";
-            textInput.value = "";
-            renderPosts();
-            document.getElementById(`comment-box-${postId}`).style.display = 'block'; // बक्स खुला नै राख्ने
-        }
-
-        // सुरुमा ब्लग पोस्ट लोड गर्ने
-        renderPosts();
-
-        // YouTube Subscribe Dynamic Link Setup
-        const channelCleanId = CORE_CONFIG_MATRIX.youtube_playlist_id.replace("UU", "UC");
-        document.getElementById('yt-sub-link').href = `https://www.youtube.com/channel/${channelCleanId}?sub_confirmation=1`;
-    </script>
 
 </body>
 </html>
