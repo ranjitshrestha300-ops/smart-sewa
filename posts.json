@@ -1,9 +1,16 @@
 [
   {
+    "title": "पहाडको खतरनाक बाटोमा Truck Driving: Bus Simulator Indonesia मा नेपाली गेमिङको छुट्टै मजा!",
+    "category": "Vlog & Gaming",
+    "date": "June 2026",
+    "image": "images/khatraroad.jpg",
+    "link": "pages/vloggamingpost/truck-driving-post.html"
+  },
+  {
     "title": "सिटिजन लाइफ इन्स्योरेन्सका उत्कृष्ट बिमा योजनाहरू: कसरी छान्ने सही पोलिसी?",
-    "image": "images/citizen life.png",
-    "link": "pages/citizen-yojana.html",
     "category": "Insurance",
-    "date": "June 2026"
+    "date": "June 2026",
+    "image": "images/citizen life.png",
+    "link": "pages/citizen-yojana.html"
   }
 ]
