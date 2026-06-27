@@ -3,630 +3,259 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Sewa Nepal | Premium Tech Store & Digital Solutions</title>
-    <meta name="description" content="Nepal's premium digital solution hub. Buy genuine mobile accessories, book Citizen Life Insurance, unlock IMEI/FRP, and download custom Nepali gaming mods.">
-    
-    <!-- Premium Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- INSERT YOUR GOOGLE ADSENSE CODE DIRECTLY BELOW THIS LINE ONCE APPROVED -->
-    <!-- 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> 
-    -->
-
+    <title>Smart Sewa Nepal | Premium Digital Hub & Media Center</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1922041060809267" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-base: #f8fafc;       /* Ultra-clean light gray/white */
-            --bg-surface: #ffffff;    /* Pure White for Panels & Cards */
-            --border-line: #e2e8f0;   /* Subtle clean border */
-            --primary: #1e40af;       /* Corporate Tech Royal Blue */
-            --primary-hover: #1e3a8a;
-            --accent-gold: #b45309;   /* Premium Amber for Pricing/Ratings */
-            --text-pure: #0f172a;     /* Dark Slate for Maximum Readability */
-            --text-muted: #475569;    /* Clean Muted Gray for descriptions */
-            --success: #16a34a;       /* Professional WhatsApp Green */
-        }
-
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif; 
-            scroll-behavior: smooth;
-        }
-
-        body { 
-            background-color: var(--bg-base); 
-            color: var(--text-pure); 
-            line-height: 1.7; 
-            overflow-x: hidden;
-        }
-
-        /* Clean Glassmorphic White Header */
-        header {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-line);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px 24px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .brand-logo {
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            color: var(--text-pure);
-            text-decoration: none;
-        }
-
-        .brand-logo span {
-            color: var(--primary);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 12px;
-        }
-
-        nav ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.25s ease;
-            padding: 8px 16px;
-            border-radius: 8px;
-        }
-
-        nav ul li a:hover, nav ul li a.active {
-            color: var(--primary);
-            background: #eff6ff; /* Soft Blue Tint */
-        }
-
-        /* Clean & Bright Hero Banner */
-        .hero-banner {
-            background: linear-gradient(135deg, #f0fdf4 0%, #eff6ff 100%);
-            padding: 100px 24px 70px 24px;
-            text-align: center;
-            border-bottom: 1px solid var(--border-line);
-        }
-
-        .hero-banner .badge {
-            background: #dbeafe;
-            color: var(--primary);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            display: inline-block;
-            margin-bottom: 20px;
-            border: 1px solid #bfdbfe;
-        }
-
-        .hero-banner h1 {
-            font-size: 44px;
-            font-weight: 800;
-            letter-spacing: -1.2px;
-            margin-bottom: 18px;
-            color: #0f172a;
-            line-height: 1.2;
-        }
-
-        .hero-banner p {
-            font-size: 18px;
-            color: var(--text-muted);
-            max-width: 680px;
-            margin: 0 auto 36px auto;
-        }
-
-        .hero-actions {
-            display: flex;
-            justify-content: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        /* Modern Corporate Buttons */
-        .action-btn {
-            padding: 14px 32px;
-            font-weight: 600;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            font-size: 15px;
-            cursor: pointer;
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .btn-blue {
-            background: var(--primary);
-            color: white;
-            box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
-        }
-
-        .btn-blue:hover {
-            background: var(--primary-hover);
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background: var(--bg-surface);
-            color: var(--text-pure);
-            border: 1px solid var(--border-line);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-        }
-
-        .btn-outline:hover {
-            background: var(--bg-base);
-            transform: translateY(-2px);
-        }
-
-        /* Layout Structure Container */
-        .main-wrapper {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 24px;
-        }
-
-        .section-headline {
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .section-headline h2 {
-            font-size: 30px;
-            font-weight: 800;
-            letter-spacing: -0.75px;
-            margin-bottom: 12px;
-            color: #0f172a;
-        }
-
-        .section-headline p {
-            color: var(--text-muted);
-            font-size: 16px;
-        }
-
-        /* Premium Blended AdSense Canvas */
-        .adsense-wrapper {
-            background: #ffffff;
-            border: 1px dashed #cbd5e1;
-            border-radius: 12px;
-            padding: 24px;
-            text-align: center;
-            color: var(--text-muted);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin: 40px auto;
-            max-width: 728px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-        }
-
-        /* Clean Grid Layout */
-        .showcase-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .product-card {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-line);
-            border-radius: 14px;
-            padding: 30px;
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.01);
-        }
-
-        .product-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(30, 64, 175, 0.3);
-            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        .product-card h3 {
-            font-size: 21px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.3px;
-            color: #0f172a;
-        }
-
-        .product-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 24px;
-        }
-
-        .product-meta-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: auto;
-            border-top: 1px solid var(--border-line);
-            padding-top: 20px;
-        }
-
-        .product-price {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--accent-gold);
-        }
-
-        .whatsapp-order-btn {
-            background: var(--success);
-            color: white;
-            padding: 10px 18px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: background 0.2s ease;
-        }
-
-        .whatsapp-order-btn:hover { background: #15803d; }
-
-        /* Dashboard Dual Layout */
-        .dashboard-split {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 32px;
-            margin-bottom: 60px;
-        }
-
-        .service-panel {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-line);
-            padding: 40px;
-            border-radius: 14px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-        }
-
-        .service-panel h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #0f172a;
-        }
-
-        .service-panel p {
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            font-size: 15.5px;
-        }
-
-        .status-pill {
-            background: #e6f4ea;
-            color: #137333;
-            padding: 6px 14px;
-            border-radius: 6px;
-            font-size: 13px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        /* Editorial Article Engine (Clean Newspaper Layout) */
-        .magazine-layout {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .article-block {
-            background: var(--bg-surface);
-            border: 1px solid var(--border-line);
-            border-radius: 14px;
-            padding: 40px;
-            margin-bottom: 35px;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-        }
-
-        .article-block .timestamp {
-            font-size: 13px;
-            color: var(--primary);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 14px;
-        }
-
-        .article-block h2 {
-            font-size: 26px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            margin-bottom: 18px;
-            color: #0f172a;
-        }
-
-        .article-block h4 {
-            font-size: 18px;
-            margin-top: 28px;
-            margin-bottom: 12px;
-            color: var(--accent-gold);
-            font-weight: 700;
-        }
-
-        .article-block p {
-            margin-bottom: 16px;
-            color: #334155;
-            font-size: 16px;
-            text-align: justify;
-        }
-
-        .article-block ol, .article-block ul {
-            margin-left: 24px;
-            margin-bottom: 24px;
-            color: #334155;
-        }
-
-        .article-block li { margin-bottom: 10px; font-size: 15.5px; }
-
-        /* Dynamic Pages Engine */
-        .spa-route { display: none; }
-        .spa-active { display: block; }
-
-        /* Corporate Minimalist Footer */
-        footer {
-            background: #ffffff;
-            border-top: 1px solid var(--border-line);
-            padding: 60px 24px;
-            text-align: center;
-            margin-top: 80px;
-        }
-
-        .footer-navigation {
-            margin-bottom: 24px;
-        }
-
-        .footer-navigation a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            margin: 0 14px;
-            transition: color 0.2s ease;
-            font-weight: 600;
-        }
-
-        .footer-navigation a:hover { color: var(--primary); }
-
-        footer p {
-            font-size: 14px;
-            color: var(--text-muted);
-        }
-
-        /* Mobile Viewports Adjustments */
-        @media (max-width: 900px) {
-            .dashboard-split { grid-template-columns: 1fr; }
-            .nav-container { flex-direction: column; gap: 16px; }
-            .hero-banner h1 { font-size: 32px; }
-            .article-block { padding: 25px; }
-        }
+        /* Ticker, Buttons, and Layout Styles */
+        .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
+        .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+        .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
+        .ticker-list { margin: 0; padding: 0; list-style: none; position: absolute; width: 100%; animation: verticalTicker 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+        .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ticker-list li i { color: #f59e0b; margin-right: 8px; }
+        @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
+        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
+        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
+        .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
+        .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+        @media (max-width: 768px) { .media-hub-grid { grid-template-columns: 1fr; } }
+        
+        /* प्रिमियम सानो बटन स्टाइल (कमेन्टका लागि) */
+        .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
+        .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+        .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
+        #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
     </style>
 </head>
 <body>
 
-    <!-- LIGHT COOPERATIVE NAVIGATION -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
+
+    <script>
+        const CORE_CONFIG_MATRIX = {
+            whatsapp_contact_phone: "9815824328", 
+            email_address: "ranjitshrestha300@gmail.com", 
+            office_location: "Dolakha, Nepal", 
+            google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
+            youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA", 
+            facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/" 
+        };
+    </script>
+
     <header>
-        <div class="nav-container">
-            <a href="#" onclick="switchView('home')" class="brand-logo">Smart Sewa <span>Nepal</span></a>
-            <nav>
+        <div class="nav-wrapper">
+            <a href="index.html" class="brand-master-logo">
+                <div class="logo-graphic-shield">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                </div>
+                <div class="brand-typography-block">
+                    <div class="brand-main-title">Smart<span>Sewa</span></div>
+                    <div class="brand-sub-tag">Nepal Hub</div>
+                </div>
+            </a>
+           <nav>
                 <ul>
-                    <li><a href="#" onclick="switchView('home')" id="vbtn-home" class="active">Home</a></li>
-                    <li><a href="#" onclick="switchView('blog')" id="vbtn-blog">Gaming Blog</a></li>
-                    <li><a href="#" onclick="switchView('about')" id="vbtn-about">About Us</a></li>
-                    <li><a href="#" onclick="switchView('privacy')" id="vbtn-privacy">Privacy Policy</a></li>
+                    <li><a href="pages/accessories.html">Accessories</a></li>
+                    <li><a href="pages/vlog-gaming.html">Vlog & Gaming</a></li>
+                    <li><a href="pages/citizen-yojana.html" style="color: #f59e0b; font-weight: bold;">Insurance Plans</a></li>
+                    <li><a href="pages/repair-hub.html">Repair Hub</a></li>
+                    <li><a href="pages/gallery.html">Photo Gallery</a></li>
                 </ul>
             </nav>
+            <a href="pages/insurance-post1.html" class="cta-nav-btn">Book Services</a>
         </div>
     </header>
 
-    <!-- VIEW 1: DYNAMIC HOME PAGE -->
-    <main id="route-home" class="spa-route spa-active">
-        <section class="hero-banner">
-            <span class="badge">OFFICIAL SERVICE CHANNELS</span>
-            <h1>Premium Technology Store & Unlocking Platform</h1>
-            <p>Your premium digital solution hub. Order genuine mobile accessories, process official life insurance workflows, and manage expert system repair lines safely.</p>
-            <div class="hero-actions">
-                <button onclick="switchView('blog')" class="action-btn btn-blue">Read Game Guides</button>
-                <a href="#storefront" class="action-btn btn-outline">Browse Products</a>
+    <div class="hero-section">
+        <div class="hero-inner">
+            <div class="hero-content">
+                <h2>WELCOME TO</h2>
+                <h1>SMART <span>SEWA NEPAL</span></h1>
+                <p>Your Integrated Premium Digital Solution for tracking elite accessories, software systems locks removal logs, and online insurance matrix booking slots.</p>
+                <a href="pages/insurance-post1.html" class="hero-action-btn">Book Your Services Now</a>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <div class="main-wrapper">
-            <!-- Perfectly Integrated Responsive Header Banner -->
-            <div class="adsense-wrapper">✦ Google AdSense Responsive Light Header Banner ✦</div>
+    <div class="premium-vertical-ticker">
+        <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
+        <div class="ticker-viewport">
+            <ul class="ticker-list">
+                <li><i class="fa-solid fa-circle-check"></i> Premium Mobile accessories and high-speed chargers back in stock. Buy directly!</li>
+                <li><i class="fa-solid fa-keyboard"></i> Professional Online Typing & Documentation service started. Instant booking available!</li>
+                <li><i class="fa-solid fa-unlock-keyhole"></i> Remote iCloud & Android Unlocking matrices active with instant setup.</li>
+            </ul>
+        </div>
+    </div>
 
-            <div id="storefront" class="section-headline">
-                <h2>Mobile Accessories Architecture</h2>
-                <p>Authentic, premium hardware components sourced carefully with distribution warranties.</p>
-            </div>
-
-            <!-- Clean Product Showcase -->
-            <div class="showcase-grid">
-                <div class="product-card">
-                    <div>
-                        <h3>Premium Wireless Earbuds</h3>
-                        <p>High-fidelity structural acoustic drivers, custom environmental sound isolation, and active low-latency transmission built for elite gaming configurations.</p>
-                    </div>
-                    <div class="product-meta-row">
-                        <div class="product-price">Rs. 2,499</div>
-                        <a href="https://wa.me/9779800000000?text=I%20want%20to%20buy%20Wireless%20Earbuds" target="_blank" class="whatsapp-order-btn">Order via WhatsApp</a>
-                    </div>
+    <div class="main-wrapper">
+        <h2 id="accessories" class="block-title">Accessories Portal</h2>
+        <div class="card-grid" style="margin-bottom: 40px;">
+            <div class="photo-style-card">
+                <div>
+                    <div class="vector-container"><i class="fa-solid fa-headphones"></i></div>
+                    <h3>Wired & Wireless Earbuds</h3>
+                    <p>High-fidelity output drivers integrated with clear active noise isolate systems.</p>
                 </div>
-
-                <div class="product-card">
-                    <div>
-                        <h3>Fast Charging Power Bank</h3>
-                        <p>20,000mAh structural shell density, packing 22.5W hyper-output distribution matrices. Engineered with overcurrent safety hardware controls.</p>
-                    </div>
-                    <div class="product-meta-row">
-                        <div class="product-price">Rs. 3,199</div>
-                        <a href="https://wa.me/9779800000000?text=I%20want%20to%20buy%20Power%20Bank" target="_blank" class="whatsapp-order-btn">Order via WhatsApp</a>
-                    </div>
-                </div>
-
-                <div class="product-card">
-                    <div>
-                        <h3>Heavy Duty Armor Case</h3>
-                        <p>Advanced dual-layer impact absorption cover. Specifically reinforced corner matrices designed flawlessly for premium iOS and Android handsets.</p>
-                    </div>
-                    <div class="product-meta-row">
-                        <div class="product-price">Rs. 750</div>
-                        <a href="https://wa.me/9779800000000?text=I%20want%20to%20buy%20Phone%20Case" target="_blank" class="whatsapp-order-btn">Order via WhatsApp</a>
+                <div>
+                    <div class="price-tag">Rs. 2,499</div>
+                    <div class="product-action-box">
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Services Dashboard Matrix -->
-            <div class="dashboard-split">
-                <div class="service-panel">
-                    <span class="status-pill">Authorized Digital Entry</span>
-                    <h3>Citizen Life Insurance Booking Portal</h3>
-                    <p>Aba gharai basera aafno Bima policy complete security ka sath online register garnuhos. Fill out the formal verification dataset down below, and our authorized regulatory compliance agents will process your claim documents securely.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?usp=publish-editor" target="_blank" class="action-btn btn-blue">Open Legal Policy Form &rarr;</a>
+            <div class="photo-style-card">
+                <div>
+                    <div class="vector-container"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Power Banks & Cables</h3>
+                    <p>Heavy duty internal storage safe matrix featuring 22.5W fast current output.</p>
                 </div>
-
-                <div class="service-panel" style="border-top: 4px solid var(--primary);">
-                    <span class="status-pill" style="background:#fef3c7; color:#92400e;">IMEI Safe Services</span>
-                    <h3>IMEI Software Unlocking & Repair</h3>
-                    <p>Professional, non-invasive system unlocking. Providing safe Mi Account solutions, verified iCloud configuration setups, structural FRP bypass, and premium glass digitizer hardware restorations.</p>
-                    <a href="https://wa.me/9779800000000?text=Hello%20Smart%20Sewa,%20I%20need%20to%20unlock/repair%20my%20phone" target="_blank" class="action-btn btn-outline" style="background:#16a34a; color:white; border:none; width:100%; justify-content:center;">Chat Live on WhatsApp</a>
+                <div>
+                    <div class="price-tag">Rs. 3,199</div>
+                    <div class="product-action-box">
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20PowerBank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- VIEW 2: CONTENT JOURNAL (FOR GOOGLE ADSENSE CONTEXT LOOPS) -->
-    <main id="route-blog" class="spa-route">
-        <div class="main-wrapper">
-            <div class="section-headline">
-                <h2>Nepal Taxi Vlog & Technical Gaming Portal</h2>
-                <p>High-quality, long-form technical manuals and optimization guidelines curated for enthusiasts.</p>
+        <h2 id="media-hub" class="block-title">Nepal Taxi Vlog & Gaming Hub</h2>
+        <div class="media-hub-grid">
+            <div class="media-card">
+                <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
+                <div class="youtube-video-container">
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
+                </div>
+                <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA?sub_confirmation=1" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
-
-            <div class="magazine-layout">
-                <article class="article-block">
-                    <div class="timestamp">Simulation Mechanics &bull; June 2026</div>
-                    <h2>Bus Simulator Indonesia: Detailed Manual to Download & Configure Custom Nepali Route Mods</h2>
-                    <p>Bus Simulator Indonesia (BUSSID) remains a top-tier simulated entertainment asset in Nepal, largely due to its architectural compatibility with user-compiled mod files. This capability enables enthusiasts to port custom terrain parameters, local highway textures, and realistic public coach assets directly into the software engine loops.</p>
-                    
-                    <h4>Step-by-Step System File Integration:</h4>
-                    <ol>
-                        <li>Acquire verified, cryptographically safe <code>.bussidmod</code> or liveries from accredited repository creators like the Nepal Taxi Vlog Gaming community.</li>
-                        <li>Initialize your smartphone's native filesystem application and navigate to your core internal disk space.</li>
-                        <li>Isolate the retrieved configuration parameters and transfer them strictly into the following path: <code>Internal Storage > BUSSID > Mods</code>.</li>
-                        <li>Reboot the simulator, enter the Garage dashboard index, and deploy your newly added asset properties.</li>
-                    </ol>
-                    <p>Adhering strictly to these directory steps guarantees proper frame parsing and avoids application memory crashes during gameplay routines.</p>
-                </article>
-
-                <!-- Clean Integrated Contextual Ad Block -->
-                <div class="adsense-wrapper">✦ Google AdSense In-Article Native Light Ad Unit ✦</div>
-
-                <article class="article-block">
-                    <div class="timestamp">Mobile Hardware Fine-Tuning &bull; June 2026</div>
-                    <h2>Bus Simulator India: Frame Rate Stabilization & Thermal Management Optimizations</h2>
-                    <p>Modern subcontinental simulator designs are packed with complex graphical assets that demand rigorous performance metrics. Running these intense rendering pipelines on mid-range system chipsets can lead to severe hardware heating issues and noticeable thermal frame-throttling over time.</p>
-                    
-                    <h4>Recommended Optimization Setup:</h4>
-                    <ul>
-                        <li><strong>Texture Processing Engine:</strong> Set allocation limits to "Medium" to minimize volatile video RAM saturation on 4GB to 6GB architecture baselines.</li>
-                        <li><strong>Dynamic Shadow Mapping:</strong> Turn completely off or restrict to minimal limits to stop unnecessary processor geometric overheads.</li>
-                        <li><strong>AI Vehicle Generation Scaling:</strong> Limit vehicle density parameters to mid-points to lower complex threading loads on your system CPU.</li>
-                    </ul>
-                    <p>Balancing your configuration this way keeps frame metrics steady, extends battery life, and ensures smooth input response times.</p>
-                </article>
-            </div>
-        </div>
-    </main>
-
-    <!-- VIEW 3: CORPORATE STATEMENT -->
-    <main id="route-about" class="spa-route">
-        <div class="main-wrapper">
-            <div class="magazine-layout">
-                <div class="article-block">
-                    <h2>About Smart Sewa Nepal</h2>
-                    <br>
-                    <p>Smart Sewa Nepal is an integrated corporate technology platform built to provide consumers across Nepal with high-grade utility infrastructure, smartphone logistics, and clear, informative hardware documentation.</p>
-                    <p>We sync product distribution networks with necessary public workflows, helping users directly connect with financial safety features like the Citizen Life Insurance registry frameworks. Backed by creative distribution partnerships seen on the Nepal Taxi Vlog Gaming networks, our technical publishing wing works to improve mobile simulation knowledge everywhere.</p>
-                    <br>
-                    <p><strong>Corporate Communications Portal:</strong> technical-support@ranjitshrestha1.com.np</p>
+            
+            <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
+                <h3 style="color: #0f172a; margin-bottom: 12px; width: 100%; text-align: left;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
+                <div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
+                    <div class="fb-page" 
+                        data-href="https://www.facebook.com/394102317633122" 
+                        data-tabs="timeline" 
+                        data-width="500" 
+                        data-height="500" 
+                        data-small-header="false" 
+                        data-adapt-container-width="true">
+                    </div>
                 </div>
             </div>
         </div>
-    </main>
 
-    <!-- VIEW 4: LEGAL POLICY DECLARATION (STRICT COMPLIANCE REQUIREMENT) -->
-    <main id="route-privacy" class="spa-route">
-        <div class="main-wrapper">
-            <div class="magazine-layout">
-                <div class="article-block">
-                    <h2>Privacy Policy for Smart Sewa Nepal</h2>
-                    <div class="timestamp" style="margin-top: 10px;">Operational Status: Updated June 2026</div>
-                    <p>At Smart Sewa Nepal, monitored via ranjitshrestha1.com.np, maintaining high standards for user data protection is a primary operational goal. This privacy document details how data is managed across our online platform networks.</p>
-                    
-                    <h4>Log File Tracking Processes</h4>
-                    <p>Smart Sewa Nepal follows standard procedural rules using server log trackers. These systems record access metrics when visitor traffic communicates with our web host. The data gathered includes internet protocol (IP) records, browser model designations, Internet Service Provider (ISP) logs, and timeline patterns to systematically analyze site navigation trends.</p>
-                    
-                    <h4>Google Advertising Metrics & The DART Framework</h4>
-                    <p>Google operates on our system framework as an external advertising service provider. It uses specialized persistent cookies, known as DART systems, to serve tailored advertisements to our site visitors based on their browsing behavior across the internet. Visitors can choose to opt out of DART tracking tracking loops at any time by visiting the official Google Ad and Content Network Privacy Policy pages.</p>
-                    
-                    <h4>External Platform Interfaces</h4>
-                    <p>Our systems contain redirection buttons linking to third-party interfaces (such as WhatsApp Business APIs and Google Form modules). We do not have control over outer security structures; we strongly recommend reading external privacy conditions directly to ensure your personal data remains completely secure.</p>
+        <div class="split-container">
+            <div id="repair" class="interactive-panel">
+                <h2>Repair & Unlock Hub</h2>
+                <p style="font-size: 13.5px; color: #64748b;">Remote flashing algorithms and structural locks removals panels.</p>
+                <div class="repair-dashboard" style="margin-top: 15px;">
+                    <div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
+                    <div class="repair-node"><i class="fa-brands fa-android"></i>Mi Account</div>
+                    <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
+                    <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
                 </div>
+                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
+            </div>
+
+            <div class="interactive-panel">
+                <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
+                <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
+                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Typing%20Service." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
+                    <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
+                </a>
             </div>
         </div>
-    </main>
 
-    <!-- CORPORATE WHITE FOOTER -->
+        <div class="premium-discussion-box">
+            <h4 style="color: #64748b; font-size: 13px; margin-bottom: 8px; font-weight: 500;">HAVE QUESTIONS OR FEEDBACK?</h4>
+            <button class="btn-toggle-discussion" onclick="toggleDisqusBox()">
+                <i class="fa-solid fa-comments"></i> View Public Discussion & Reviews
+            </button>
+            
+            <div id="disqus-toggle-container">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+
+    </div>
+
+  <div class="main-wrapper" style="max-width: 1200px; margin: 0 auto; padding: 20px;">
+        <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
+        <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+            </div>
+    </div>
+
+    <script>
+        // JSON फाइलबाट स्वचालित रूपमा नयाँ पोस्टहरू तान्ने ब्याकइन्ड कोड
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const grid = document.getElementById('dynamic-posts-grid');
+                if(grid) {
+                    grid.innerHTML = '';
+                    posts.forEach(post => {
+                        const card = document.createElement('div');
+                        card.className = 'media-card';
+                        card.style.display = 'flex';
+                        card.style.flexDirection = 'column';
+                        card.style.justifyContent = 'space-between';
+                        
+                        card.innerHTML = `
+                            <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
+                            <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
+                            <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
+                            <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+            })
+            .catch(err => console.error('Error loading posts:', err));
+    </script>
+
     <footer>
-        <div class="footer-navigation">
-            <a href="#" onclick="switchView('home')">Home</a> | 
-            <a href="#" onclick="switchView('blog')">Gaming Blog</a> | 
-            <a href="#" onclick="switchView('about')">About Us</a> | 
-            <a href="#" onclick="switchView('privacy')">Privacy Policy</a>
+        <div class="footer-nav-links">
+            <a href="pages/accessories.html">Accessories</a> | 
+            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="pages/citizen-yojana.html">Insurance Plans</a> | 
+            <a href="pages/repair-hub.html">Repair Hub</a> | 
+            <a href="pages/gallery.html">Photo Gallery</a> |
+            <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+            <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
         </div>
-        <p>&copy; 2026 Smart Sewa Nepal. Hosted securely via GitHub Pages & Cloudflare Enterprise.</p>
-        <p style="font-size: 12px; margin-top: 8px; color: #64748b;">Domain Endpoint Routing: ranjitshrestha1.com.np</p>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
     </footer>
 
-    <!-- LIGHTWEIGHT CORE SINGLE PAGE ROUTING ENGINE -->
     <script>
-        function switchView(targetViewId) {
-            const views = document.querySelectorAll('.spa-route');
-            views.forEach(view => view.classList.remove('spa-active'));
-            
-            const navAnchors = document.querySelectorAll('nav ul li a');
-            navAnchors.forEach(anchor => anchor.classList.remove('active'));
-            
-            document.getElementById('route-' + targetViewId).classList.add('spa-active');
-            document.getElementById('vbtn-' + targetViewId).classList.add('active');
-            
-            window.scrollTo({top: 0, behavior: 'smooth'});
+        // डिस्क्स बक्स खोल्ने र बन्द गर्ने लाइटवेट स्क्रिप्ट
+        function toggleDisqusBox() {
+            var container = document.getElementById('disqus-toggle-container');
+            if (container.style.display === 'block') {
+                container.style.display = 'none';
+            } else {
+                container.style.display = 'block';
+                // बक्स खोल्दा मात्र डिस्क्स लोड गराउने (पेज स्पिड फास्ट हुन्छ)
+                if (!window.disqus_loaded) {
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = 'smart_sewa_home'; 
+                    };
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                    window.disqus_loaded = true;
+                }
+            }
         }
     </script>
+
 </body>
 </html>
