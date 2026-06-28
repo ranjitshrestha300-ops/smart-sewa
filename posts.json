@@ -1,5 +1,13 @@
 [
   {
+    "id": "health_insurance_post_2026",
+    "title": "नेपालमा स्वास्थ्य बिमा कसरी गर्ने? जान्नुहोस् सम्पूर्ण प्रक्रिया",
+    "date": "June 2026",
+    "category": "Insurance",
+    "image": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80",
+    "link": "pages/insurancepost/health-insurance.html"
+  },
+  {
     "title": "पहाडको खतरनाक बाटोमा Truck Driving: Bus Simulator Indonesia मा नेपाली गेमिङको छुट्टै मजा!",
     "category": "Vlog & Gaming",
     "date": "June 2026",
@@ -12,14 +20,5 @@
     "date": "June 2026",
     "image": "images/citizen life.png",
     "link": "pages/insurancepost/citizen-yojana.html"
-  },
-  {
-  "title": "नेपालमा स्वास्थ्य बिमा कसरी गर्ने? जान्नुहोस् सम्पूर्ण प्रक्रिया",
- "category": "Insurance",
-   "date": "June 2026",
-  "meta_description": "नेपाल सरकारको राष्ट्रिय स्वास्थ्य बिमा योजना, लाग्ने शुल्क, आवश्यक कागजात र अनलाइन प्रक्रियाबारे विस्तृत जानकारी।",
-  "main_image": "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=800&q=80",
-  "tags": ["HealthInsurance", "SmartSewaNepal", "HealthInsuranceBoard", "NepalGovt"],
-  "link": "pages/insurancepost/health-insurance.html"
- },
+  }
 ]
