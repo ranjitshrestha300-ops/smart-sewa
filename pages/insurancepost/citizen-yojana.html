@@ -3,14 +3,14 @@
 <head>
     <!-- फेसबुक सेयरिङका लागि विशेष ओपिजी कोड -->
     <meta property="og:title" content="सिटिजन लाइफ इन्स्योरेन्सका उत्कृष्ट बिमा योजनाहरू - Smart Sewa">
-    <meta property="og:description" content="सिटिजन लाइफका लोकप्रिय बिमा योजनाहरू र घातक रोग उपचार विशेष सुविधाहरूबारे विस्तृत जानकारी।">
+    <meta property="og:description" content="सिटिजन लाइफका लोकप्रिय बिमा योजनाहरू र घातक रोग उपचार विशेष सुविधहरूबारे विस्तृत जानकारी।">
     <meta property="og:image" content="https://ranjitshrestha1.com.np/images/citizen%20life.png">
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Citizen Life Insurance Schemes in Nepal - Smart Sewa</title>
 
-    <!-- Favicon Configuration (सच्च्याइएको पाथ: ../../) -->
+    <!-- Favicon Configuration -->
     <link rel="apple-touch-icon" sizes="57x57" href="../../icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../../icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../../icons/apple-icon-72x72.png">
@@ -24,34 +24,52 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../../icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="144x144" href="../../icons/android-icon-144x144.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../../icons/android-icon-96x96.png">
-    
+    <link rel="icon" type="image/png" sizes="72x72" href="../../icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../../icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="../../icons/android-icon-36x36.png">
+
+    <link rel="icon" type="image/png" sizes="32x32" href="../../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../icons/favicon-16x16.png">
+
+    <link rel="manifest" href="../../icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../../icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- स्टाइलसिटको मुख्य पाथ सच्च्याइएको छ -->
     <link rel="stylesheet" href="../../style.css">
     
+    <!-- 🎨 यो थपिएको विशेष CSS ले अब पेजलाई १००% राम्रो र ठूलो बनाउनेछ -->
     <style>
-        .single-post-container { max-width: 800px; margin: 40px auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 30px; }
-        .back-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #0f172a; font-weight: 600; margin-bottom: 20px; font-size: 14px; }
+        body { background-color: #f8fafc; font-family: sans-serif; margin: 0; padding: 0; }
+        .single-post-container { max-width: 850px; margin: 40px auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 40px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.05); }
+        .back-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #475569; font-weight: 600; margin-bottom: 25px; font-size: 15px; transition: color 0.2s; }
         .back-btn:hover { color: #f59e0b; }
-        .post-main-img { width: 100%; max-height: 400px; object-fit: contain; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin-bottom: 20px; }
-        .post-content h1 { color: #0f172a; font-size: 26px; margin-bottom: 15px; line-height: 1.4; }
-        .post-meta { font-size: 13px; color: #64748b; margin-bottom: 15px; font-weight: bold; }
-        .premium-share-box { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
-        .share-label { font-size: 13px; font-weight: bold; color: #64748b; }
-        .share-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; font-size: 13px; font-weight: 600; color: #fff; border-radius: 6px; text-decoration: none; border: none; cursor: pointer; }
+        .post-main-img { width: 100%; max-height: 450px; object-fit: cover; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e2e8f0; }
+        .post-content h1 { color: #0f172a; font-size: 32px; margin-bottom: 20px; line-height: 1.4; font-weight: 800; }
+        .post-meta { font-size: 14px; color: #64748b; margin-bottom: 20px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px; }
+        .premium-share-box { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; border-bottom: 2px solid #f1f5f9; padding-bottom: 20px; flex-wrap: wrap; }
+        .share-label { font-size: 14px; font-weight: bold; color: #475569; }
+        .share-btn { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; font-size: 14px; font-weight: 600; color: #fff; border-radius: 8px; text-decoration: none; border: none; cursor: pointer; transition: transform 0.2s; }
+        .share-btn:hover { transform: translateY(-2px); }
         .share-fb { background: #1877f2; } .share-wa { background: #25d366; } .share-link { background: #64748b; }
-        .blog-body { font-size: 16px; line-height: 1.9; color: #334155; }
-        .blog-body h2 { color: #0f172a; font-size: 20px; margin-top: 30px; margin-bottom: 10px; border-left: 4px solid #f59e0b; padding-left: 10px; }
-        .blog-body p { margin-bottom: 15px; text-align: justify; }
-        .blog-body ul { margin-left: 20px; margin-bottom: 20px; }
-        .cta-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
+        .blog-body { font-size: 17px; line-height: 1.9; color: #334155; }
+        .blog-body h2 { color: #0f172a; font-size: 24px; margin-top: 35px; margin-bottom: 15px; border-left: 5px solid #f59e0b; padding-left: 12px; font-weight: 700; }
+        .blog-body p { margin-bottom: 20px; text-align: justify; }
+        .blog-body strong { color: #0f172a; }
+        .cta-box { background: #fffbeb; border: 1px solid #fde68a; border-radius: 12px; padding: 30px; margin-top: 40px; text-align: center; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02); }
+        .cta-box h3 { color: #78350f; font-size: 20px; margin-top: 0; }
+        .cta-box p { color: #92400e; font-size: 15px; margin-bottom: 20px; }
+        .cta-btn-custom { display: inline-block; background: #f59e0b; color: #fff; padding: 12px 28px; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 16px; transition: background 0.2s; }
+        .cta-btn-custom:hover { background: #d97706; }
     </style>
 </head>
 <body>
 
+    <!-- हेडर सेक्सन -->
     <header>
         <div class="nav-wrapper">
-            <!-- होमपेजको लिङ्क सच्च्याइएको छ -->
             <a href="../../index.html" class="brand-master-logo">
                 <div class="logo-graphic-shield">
                     <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
@@ -63,10 +81,9 @@
             </a>
             <nav>
                 <ul>
-                    <!-- नेभिगेसन मेनुका फाइलहरू pages भित्रै हुनाले एक स्टेप मात्र बाहिर (../) लगिएको छ -->
                     <li><a href="../accessories.html">Accessories</a></li>
                     <li><a href="../vlog-gaming.html">Vlog & Gaming</a></li>
-                    <li><a href="../insurance-post1.html">Insurance plans</a></li>
+                    <li><a href="../insurance-post1.html" style="color: #f59e0b; font-weight: bold;">Insurance plans</a></li>
                     <li><a href="../repair-hub.html">Repair Hub</a></li>
                     <li><a href="../gallery.html">Photo Gallery</a></li>
                 </ul>
@@ -75,16 +92,16 @@
         </div>
     </header>
 
+    <!-- मुख्य विषयवस्तु -->
     <div class="main-wrapper">
         <div class="single-post-container">
-            <a href="../../index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+            <a href="../insurance-post1.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Insurance Hub</a>
             
-            <!-- इमेजको पाथ सच्च्याइएको छ -->
             <img src="../../images/citizen life.png" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" class="post-main-img" alt="Citizen Life Insurance Plans">
             
             <div class="post-content">
-                <div class="post-meta">Published: June 2026 | Category: Insurance Knowledge</div>
-                <h1>सिटिजन LIFE इन्स्योरेन्सका उत्कृष्ट बिमा योजनाहरू: कसरी छान्ने सही पोलिसी?</h1>
+                <div class="post-meta"><i class="fa-solid fa-calendar-days"></i> Published: June 2026 | <i class="fa-solid fa-folder"></i> Category: Insurance Knowledge</div>
+                <h1>सिटिजन लाइफ इन्स्योरेन्सका उत्कृष्ट बिमा योजनाहरू: कसरी छान्ने सही पोलिसी?</h1>
                 
                 <div class="premium-share-box">
                     <span class="share-label"><i class="fa-solid fa-share-nodes"></i> Share:</span>
@@ -108,7 +125,7 @@
                     <p>हरेक मातापिताको मुख्य चाहना आफ्नो बच्चाको उच्च शिक्षा र सुरक्षित भविष्य सुनिश्चित गर्नु हो। सिटिजन बाल भविष्य योजनाले बच्चाको उमेर सानो छँदै देखि बचत गर्ने बानीको विकास गराउँछ। बिमा अवधिभर मातापितालाई केही भवितव्य आइपरेमा पनि बिमा शुल्क मिनाहा हुने र बच्चाको शिक्षाका लागि नियमित रकम उपलब्ध हुने ग्यारेन्टी यस योजनामा समावेश छ।</p>
 
                     <h2>४. घातक रोग उपचार विशेष सुविधा (Critical Illness Cover)</h2>
-                    <p>सिटिजन लाइफ इन्स्योरेन्सको सबैभन्दा ठूलो सबल पक्ष भनेको यसको <strong>२० वटा घातक रोगहरूको उपचार कभर</strong> गर्ने विशेष राइडर सुविधा हो। क्यान्सर, मिर्गौला फेलियर, वा मुटु सम्बन्धी गम्भीर रोग लागेको प्रमाणित भएमा कम्पनीले उपचारका लागि तत्काल सम्झौता बमोजिमको वित्तीय सहायता उपलब्ध गराउँछ, जसले गर्दा स्वास्थ्य संकटच्या समयमा ठूलो आर्थिक राहत मिल्दछ।</p>
+                    <p>सिटिजन लाइफ इन्स्योरेन्सको सबैभन्दा ठूलो सबल पक्ष भनेको यसको <strong>२० वटा घातक रोगहरूको उपचार कभर</strong> गर्ने विशेष राइडर सुविधा हो। क्यान्सर, मिर्गौला फेलियर, वा मुटु सम्बन्धी गम्भीर रोग लागेको प्रमाणित भएमा कम्पनीले उपचारका लागि तत्काल सम्झौता बमोजिमको वित्तीय सहायता उपलब्ध गराउँछ, जसले गर्दा स्वास्थ्य संकटको समयमा ठूलो आर्थिक राहत मिल्दछ।</p>
 
                     <h2>सही बिमा योजना कसरी छान्ने?</h2>
                     <p>बिमा पोलिसी खरिद गर्दा सधैं आफ्नो उमेर, वर्तमान आम्दानी, र भविष्यको लक्ष्यलाई ध्यानमा राख्नुपर्छ। यदि तपाईं बचत र सुरक्षा दुवै सँगै चाहनुहुन्छ भने एण्डोमेन्ट (Endowment) योजनाहरू उपयुक्त हुन्छन्, भने तत्कालै प्रतिफल चाहनेहरूका लागि मनीब्याक योजना उत्तम विकल्प हो।</p>
@@ -117,15 +134,15 @@
                 <div class="cta-box">
                     <h3>📊 तपाईंको लागि कुन योजना सही छ?</h3>
                     <p>हाम्रो अनलाइन विशेषज्ञ टोलीबाट निःशुल्क परामर्श लिन र आफ्नो लागि उपयुक्त बिमा शुल्क (Premium) बुझ्न तलको बटनमा क्लिक गरी फर्म भर्नुहोस्।</p>
-                    <a href="../insurance-post1.html" class="cta-nav-btn" style="display:inline-block; text-decoration:none; margin-top:10px;">बिमा योजना बुकिङ फर्म भर्नुहोस्</a>
+                    <a href="../insurance-post1.html" class="cta-btn-custom">बिमा योजना बुकिङ फर्म भर्नुहोस्</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- फुटर सेक्सन -->
     <footer>
         <div class="footer-nav-links">
-            <!-- फुटर लिङ्कहरू सच्च्याइएको छ (यी फाइलहरू pages भित्रै छन्) -->
             <a href="../accessories.html">Accessories</a> | 
             <a href="../vlog-gaming.html">Vlog & Gaming</a> | 
             <a href="../insurance-post1.html">Insurance Plans</a> | 
