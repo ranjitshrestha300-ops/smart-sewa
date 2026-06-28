@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Insurance Hub - Smart Sewa Nepal</title>
+    <title>Insurance Plans - Smart Sewa</title>
 
     <!-- Favicon Configuration -->
     <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
@@ -15,29 +15,49 @@
     <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
-
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="144x144" href="../icons/android-icon-144x144.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../icons/android-icon-96x96.png">
-    <link rel="icon" type="image/png" sizes="72x72" href="../icons/android-icon-72x72.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="../icons/android-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="36x36" href="../icons/android-icon-36x36.png">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
-
-    <link rel="manifest" href="../icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+    
+    <style>
+        .insurance-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff; text-align: center; padding: 50px 20px; margin-bottom: 40px; border-radius: 0 0 20px 20px;
+        }
+        .insurance-hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+        .insurance-hero p { color: #94a3b8; font-size: 16px; max-width: 600px; margin: 0 auto; }
+
+        /* ग्रिड कन्टेनर जहाँ पोष्टहरू अटोमेटिक थपिन्छन् */
+        .posts-grid-container {
+            max-width: 1200px; margin: 0 auto 60px auto; padding: 0 20px;
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 30px;
+        }
+
+        .insurance-post-card {
+            background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px;
+            overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s; display: flex; flex-direction: column;
+        }
+        .insurance-post-card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .card-img-wrapper { width: 100%; height: 200px; overflow: hidden; background: #f8fafc; position: relative; }
+        .card-img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .insurance-post-card:hover .card-img-wrapper img { transform: scale(1.05); }
+        .category-badge { position: absolute; top: 15px; left: 15px; background: #f59e0b; color: #ffffff; font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+        .card-details { padding: 25px; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-date { font-size: 12px; color: #64748b; margin-bottom: 10px; font-weight: 600; }
+        .card-details h3 { font-size: 20px; color: #0f172a; margin-bottom: 12px; line-height: 1.4; font-weight: 700; }
+        .card-details p { font-size: 14.5px; color: #475569; line-height: 1.6; margin-bottom: 20px; text-align: justify; }
+        .read-more-btn { margin-top: auto; display: inline-flex; align-items: center; gap: 6px; color: #f59e0b; text-decoration: none; font-weight: 700; font-size: 14px; transition: gap 0.2s; }
+        .read-more-btn:hover { gap: 10px; }
+
+        @media (max-width: 480px) { .posts-grid-container { grid-template-columns: 1fr; gap: 20px; } }
+    </style>
 </head>
 <body>
 
-    <!-- हेडर सेक्सन -->
     <header>
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-master-logo">
@@ -53,7 +73,7 @@
                 <ul>
                     <li><a href="accessories.html">Accessories</a></li>
                     <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-                    <li><a href="insurance-post1.html" style="color: #f59e0b; font-weight: bold;">Insurance plans</a></li>
+                    <li><a href="insurance-post1.html" class="active">Insurance plans</a></li>
                     <li><a href="repair-hub.html">Repair Hub</a></li>
                     <li><a href="gallery.html">Photo Gallery</a></li>
                 </ul>
@@ -62,92 +82,64 @@
         </div>
     </header>
 
-    <!-- मुख्य विषयवस्तु (Main Content) -->
-    <div class="main-wrapper" style="min-height: 75vh; padding: 20px 0;">
-        <div class="category-container" style="max-width: 1000px; margin: 0 auto; padding: 0 20px;">
-            
-            <h2 class="block-title"><i class="fa-solid fa-shield-halved" style="color: #f59e0b;"></i> Smart Sewa Insurance Hub</h2>
-            <p style="color: #64748b; font-size: 15px; margin-bottom: 30px; border-bottom: 2px solid #e2e8f0; padding-bottom: 15px;">नेपालका विभिन्न बिमा योजनाहरू, जीवन बिमा र सुरक्षित भविष्य सम्बन्धी सम्पूर्ण जानकारीमूलक ब्लगहरू।</p>
-            
-            <!-- 📰 मुख्य बक्स - जहाँ अब अटोमेटिक ब्लग पोष्टहरू आउनेछन् -->
-            <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> Latest Insurance Updates & Blogs</h2>
-            <div id="insurance-dynamic-list" style="display: flex; flex-direction: column; gap: 25px; min-height: 200px;">
-                <p style="color: #64748b;">बिमा सम्बन्धी पोस्टहरू लोड हुँदैछन्...</p>
-            </div>
+    <section class="insurance-hero">
+        <h1>Our Insurance Plans & Knowledge</h1>
+        <p>तपाईंको आवश्यकता अनुसारका उत्कृष्ट बिमा योजनाहरू र वित्तीय सुरक्षा सम्बन्धी जानकारीमूलक लेखहरू।</p>
+    </section>
 
-        </div>
-    </div>
+    <!-- यहाँ JavaScript ले डेटा अटोमेटिक थप्नेछ -->
+    <div class="posts-grid-container" id="dynamic-posts-container"></div>
 
     <footer>
-    <div class="footer-nav-links">
-        <!-- ध्यान दिनुहोस्: सबैको अगाडि ../ थपिएको छ -->
-        <a href="../pages/accessories.html">Accessories</a> | 
-        <a href="../pages/vlog-gaming.html">Vlog & Gaming</a> | 
-        <a href="../pages/insurance-post1.html">Insurance Plans</a> | 
-        <a href="../pages/repair-hub.html">Repair Hub</a> | 
-        <a href="../pages/gallery.html">Photo Gallery</a> |
-        <a href="../pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-        <a href="../pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-    </div>
-    <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-</footer>
+        <div class="footer-nav-links">
+            <a href="accessories.html">Accessories</a> | <a href="vlog-gaming.html">Vlog & Gaming</a> | <a href="insurance-post1.html">Insurance Plans</a> | <a href="repair-hub.html">Repair Hub</a> | <a href="gallery.html">Photo Gallery</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
 
-    <!-- जाभास्क्रिप्ट - posts.json बाट डाटा तान्नका लागि -->
+    <!-- अटोमेटिक पोष्ट लोड गर्ने मुख्य स्क्रिप्ट -->
     <script>
-        fetch('../posts.json')
-            .then(response => response.json())
-            .then(data => {
-                const listContainer = document.getElementById('insurance-dynamic-list');
-                if (listContainer) {
-                    listContainer.innerHTML = '';
-                    
-                    // केवल 'Insurance' क्याटगोरी भएका पोस्ट फिल्टर गर्ने
-                    const insurancePosts = data.filter(post => post.category === 'Insurance');
-                    
-                    if (insurancePosts.length === 0) {
-                        listContainer.innerHTML = '<p style="color: #64748b; background: #fff; padding: 20px; border-radius: 8px; border: 1px solid #e2e8f0;">अहिले बिमा सम्बन्धी कुनै पोस्ट उपलब्ध छैन।</p>';
-                        return;
-                    }
+        // भविष्यमा नयाँ पोष्ट थप्दा यहाँ तलको `[ ]` भित्र एउटा नयाँ ब्लक थप्नुहोला
+        const insurancePosts = [
+            {
+                category: "Life Insurance",
+                image: "../images/citizen life.png",
+                date: "June 2026",
+                title: "सिटिजन लाइफ इन्स्योरेन्सका उत्कृष्ट बिमा योजनाहरू",
+                description: "सिटिजन लाइफका लोकप्रिय मनीब्याक, जीवन सारथी, र बाल भविष्य जस्ता योजनाहरू तथा २० वटा घातक रोगहरूको उपचार सुविधाहरूबारे विस्तृत जानकारी...",
+                link: "insurancepost/citizen-yojana.html"
+            },
+            {
+                category: "Health Insurance",
+                image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?auto=format&fit=crop&w=500&q=80",
+                date: "May 2026",
+                title: "नेपालमा स्वास्थ्य बिमा कसरी गर्ने?",
+                description: "पारिवारिक स्वास्थ्य सुरक्षाका लागि नेपाल सरकारको स्वास्थ्य बिमा बोर्ड र अन्य प्राइभेट कम्पनीहरूले दिने सुविधाहरू र दाबी प्रक्रियाको पूर्ण गाइड...",
+                link: "#"
+            }
+            // नयाँ पोष्ट थप्न मन लागे यहाँ कमा (,) दिएर थप्न सकिन्छ।
+        ];
 
-                    insurancePosts.forEach(post => {
-                        const strip = document.createElement('div');
-                        strip.className = 'news-strip';
-                        // ठूलो देखाउन प्याडिङ र थप स्टाइलहरू थपिएको छ
-                        strip.style.display = 'flex';
-                        strip.style.gap = '30px';
-                        strip.style.background = '#fff';
-                        strip.style.padding = '35px';
-                        strip.style.borderRadius = '16px';
-                        strip.style.marginBottom = '25px';
-                        strip.style.border = '1px solid #e2e8f0';
-                        strip.style.boxShadow = '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05)';
-                        strip.style.alignItems = 'center';
-                        
-                        // लिङ्क फिक्स गर्ने
-                        const cleanLink = post.link.includes('pages/') ? post.link.split('pages/')[1] : post.link;
+        function loadPosts() {
+            const container = document.getElementById('dynamic-posts-container');
+            container.innerHTML = insurancePosts.map(post => `
+                <article class="insurance-post-card">
+                    <div class="card-img-wrapper">
+                        <span class="category-badge">${post.category}</span>
+                        <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=500&q=80'" alt="${post.title}">
+                    </div>
+                    <div class="card-details">
+                        <div class="card-date"><i class="fa-regular fa-calendar"></i> ${post.date}</div>
+                        <h3>${post.title}</h3>
+                        <p>${post.description}</p>
+                        <a href="${post.link}" class="read-more-btn">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            `).join('');
+        }
 
-                        // इमेज साइज २४०px चौडाई र १५०px उचाई बनाएर पोष्टको फन्ट साइज पनि ठूलो बनाइएको छ
-                        strip.innerHTML = `
-                            <img src="../${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300'" style="width: 240px; height: 150px; object-fit: cover; border-radius: 10px; border: 1px solid #e2e8f0; flex-shrink: 0;">
-                            <div style="display: flex; flex-direction: column; justify-content: center; flex-grow: 1;">
-                                <span style="font-size: 13px; color: #64748b; font-weight: bold; text-transform: uppercase; margin-bottom: 8px; display: inline-flex; align-items: center; gap: 5px;"><i class="fa-solid fa-calendar-day"></i> ${post.date}</span>
-                                <h3 style="color: #0f172a; margin-bottom: 20px; font-size: 22px; font-weight: 800; line-height: 1.4;">${post.title}</h3>
-                                <div>
-                                    <a href="${cleanLink}" style="background: #f59e0b; color: #fff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 15px; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s;">
-                                        <i class="fa-solid fa-book-open"></i> पूरा पोष्ट पढ्नुहोस्
-                                    </a>
-                                </div>
-                            </div>
-                        `;
-                        listContainer.appendChild(strip);
-                    });
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('insurance-dynamic-list').innerHTML = '<p style="color: #ef4444; background: #fff; padding: 20px; border-radius: 8px;">डेटा लोड गर्न समस्या भयो।</p>';
-            });
+        // पेज लोड हुने बित्तिकै पोष्टहरू देखिने बनाउने
+        window.onload = loadPosts;
     </script>
-
 </body>
 </html>
