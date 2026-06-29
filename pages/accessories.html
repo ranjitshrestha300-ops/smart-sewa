@@ -3,75 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessories Store - Smart Sewa Nepal</title>
-
-    <!-- Favicon Configuration -->
-    <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../icons/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../icons/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../icons/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../icons/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../icons/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
-
-    <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="144x144" href="../icons/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/android-icon-96x96.png">
-    <link rel="icon" type="image/png" sizes="72x72" href="../icons/android-icon-72x72.png">
-    <link rel="icon" type="image/png" sizes="48x48" href="../icons/android-icon-48x48.png">
-    <link rel="icon" type="image/png" sizes="36x36" href="../icons/android-icon-36x36.png">
-
-    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
-
-    <link rel="manifest" href="../icons/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- CSS Stylesheets -->
-    <link rel="stylesheet" href="../style.css">
+    <title>Premium Accessories - Smart Sewa Nepal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
+    
     <style>
-        .product-action-box {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 15px;
-            width: 100%;
-        }
-        .btn-direct-buy {
-            background: #22c55e !important;
-            color: #ffffff !important;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 700;
-            font-size: 13px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-        .btn-inquiry {
-            background: #0284c7 !important;
-            color: #ffffff !important;
-            text-align: center;
-            padding: 10px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 13px;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
+        /* 🛍️ दराज स्टाइल ई-कमर्स प्रिमियम डिजाइन */
+        .store-banner { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: white; padding: 40px 20px; text-align: center; border-bottom: 3px solid #f59e0b; margin-bottom: 30px; }
+        .store-banner h1 { font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+        .store-banner h1 span { color: #f59e0b; }
+        
+        .daraz-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; max-width: 1200px; margin: 0 auto; padding: 0 20px 40px 20px; }
+        .daraz-product-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
+        .daraz-product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        
+        .product-img-box { width: 100%; height: 200px; background: #f8fafc; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f5f9; }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .product-title { font-size: 15px; color: #1e293b; font-weight: 600; line-height: 1.4; margin-bottom: 8px; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+        .product-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 15px; }
+        .price-current { font-size: 18px; font-weight: 700; color: #f59e0b; }
+        .price-original { font-size: 13px; color: #94a3b8; text-decoration: line-through; }
+        
+        .btn-add-to-cart { background: #f59e0b; color: #000; border: none; width: 100%; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
+        .btn-add-to-cart:hover { background: #d97706; color: #fff; }
+        
+        .floating-cart-widget { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: #fff; padding: 15px 25px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 15px; z-index: 9999; border: 2px solid #f59e0b; transition: transform 0.2s; }
+        .floating-cart-widget:hover { transform: scale(1.05); }
+        .cart-count-badge { background: #f59e0b; color: #000; font-weight: 900; padding: 2px 8px; border-radius: 20px; font-size: 12px; }
+        
+        .cart-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 10000; align-items: center; justify-content: center; padding: 20px; }
+        .modal-content { background: #fff; padding: 25px; border-radius: 12px; max-width: 500px; width: 100%; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); position: relative; max-height: 85vh; overflow-y: auto; }
+        .close-modal { position: absolute; top: 15px; right: 15px; font-size: 22px; cursor: pointer; color: #64748b; }
+        .cart-item-list { margin: 15px 0; border-top: 1px solid #e2e8f0; padding-top: 15px; display: flex; flex-direction: column; gap: 10px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding-bottom: 8px; border-bottom: 1px dashed #f1f5f9; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 13px; font-weight: 600; color: #334155; margin-bottom: 5px; }
+        .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+        .btn-checkout { background: #22c55e; color: white; border: none; width: 100%; padding: 12px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px; }
+        .btn-checkout:hover { background: #16a34a; }
     </style>
 </head>
 <body>
@@ -80,84 +51,180 @@
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-master-logo">
                 <div class="logo-graphic-shield">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/>
-                    </svg>
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
                 </div>
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
                     <div class="brand-sub-tag">Nepal Hub</div>
                 </div>
             </a>
-           <nav>
-    <ul>
-        <li><a href="accessories.html">Accessories</a></li>
-        <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-        <li><a href="insurance-post1.html">Insurance plans</a></li>
-        <li><a href="repair-hub.html">Repair Hub</a></li>
-        <li><a href="gallery.html">Photo Gallery</a></li>
-    </ul>
-</nav>
-<a href="../index.html" class="cta-nav-btn">Back to Home</a>
+            <nav>
+                <ul>
+                    <li><a href="accessories.html" style="color: #f59e0b; font-weight: bold;">Accessories</a></li>
+                    <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
+                    <li><a href="insurance-post1.html">Insurance Plans</a></li>
+                    <li><a href="repair-hub.html">Repair Hub</a></li>
+                    <li><a href="gallery.html">Photo Gallery</a></li>
+                </ul>
+            </nav>
+            <a href="../index.html" class="cta-nav-btn">Back to Home</a>
         </div>
     </header>
 
-    <div class="main-wrapper" style="margin-top: 40px; min-height: 70vh;">
-        <h2 class="block-title">Premium Accessories Portal</h2>
-        <div class="card-grid" style="margin-bottom: 40px;">
-            <div class="photo-style-card">
-                <div>
-                    <div class="vector-container"><i class="fa-solid fa-headphones"></i></div>
-                    <h3>Wired & Wireless Earbuds</h3>
-                    <p>High-fidelity output drivers integrated with clear active noise isolate systems.</p>
-                </div>
-                <div>
-                    <div class="price-tag">Rs. 2,499</div>
-                    <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank">
-                            <i class="fa-solid fa-cart-shopping"></i> Direct Buy
-                        </a>
-                        <a href="https://wa.me/9815824328?text=Hello%20Smart%20Sewa%2C%20I%20want%20to%20inquire%20about%3A%20Earbuds" class="btn-inquiry" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry
-                        </a>
-                    </div>
-                </div>
+    <div class="store-banner">
+        <h1>Smart<span>Sewa</span> Daraz Mall</h1>
+        <p>Premium Gadgets & Electronics Accessories with Instant WhatsApp Checkout Matrix</p>
+    </div>
+
+    <!-- 🛒 प्रडक्टहरू अोटोमेटिक लोड हुने ठाउँ -->
+    <div class="daraz-grid" id="dynamic-product-container">
+        <p style="text-align: center; color: #64748b; grid-column: 1/-1;">सामानहरू लोड हुँदैछन्...</p>
+    </div>
+
+    <!-- 🛒 गुड्ने दराज झोला -->
+    <div class="floating-cart-widget" onclick="openCartModal()">
+        <i class="fa-solid fa-bag-shopping" style="color: #f59e0b; font-size: 20px;"></i>
+        <div>My Cart: <span id="cart-total-price">Rs. 0</span></div>
+        <span class="cart-count-badge" id="cart-count">0</span>
+    </div>
+
+    <!-- 📋 अर्डर पपअप बक्स -->
+    <div class="cart-modal" id="cartModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeCartModal()">&times;</span>
+            <h3 style="color:#0f172a; font-weight:800; font-size:20px; margin-bottom:10px;"><i class="fa-solid fa-basket-shopping" style="color:#f59e0b;"></i> तपाईंको बक्स (Cart List)</h3>
+            
+            <div class="cart-item-list" id="modal-cart-items"></div>
+            
+            <div style="text-align: right; font-weight: bold; font-size: 16px; margin-bottom: 20px; color:#0f172a;">
+                जम्मा कुल रकम: <span id="modal-total-price" style="color:#f59e0b;">Rs. 0</span>
             </div>
 
-            <div class="photo-style-card">
-                <div>
-                    <div class="vector-container"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Power Banks & Cables</h3>
-                    <p>Heavy duty internal storage safe matrix featuring 22.5W fast current output.</p>
-                </div>
-                <div>
-                    <div class="price-tag">Rs. 3,199</div>
-                    <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Power%20Banks" class="btn-direct-buy" target="_blank">
-                            <i class="fa-solid fa-cart-shopping"></i> Direct Buy
-                        </a>
-                        <a href="https://wa.me/9815824328?text=Hello%20Smart%20Sewa%2C%20I%20want%20to%20inquire%20about%3A%20Power%20Banks" class="btn-inquiry" target="_blank">
-                            <i class="fa-brands fa-whatsapp"></i> WhatsApp Inquiry
-                        </a>
-                    </div>
-                </div>
+            <hr style="border:0; border-top:1px solid #e2e8f0; margin-bottom:15px;">
+            <h4 style="margin-bottom:12px; color:#1e293b;">📋 डेलिभरी विवरण भर्नुहोस्:</h4>
+            
+            <div class="form-group"><label>ग्राहकको पूरा नाम *</label><input type="text" id="cust-name" placeholder="Ranjit Shrestha" required></div>
+            <div class="form-group"><label>फोन नम्बर *</label><input type="tel" id="cust-phone" placeholder="98XXXXXXXX" required></div>
+            <div class="form-group"><label>डेलिभरी ठेगाना *</label><input type="text" id="cust-address" placeholder="Charikot, Dolakha" required></div>
+            <div class="form-group">
+                <label>पेमेन्ट तरिका *</label>
+                <select id="cust-payment">
+                    <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                    <option value="eSewa / Khalti / QR">eSewa / Khalti / QR (Advance)</option>
+                </select>
             </div>
+
+            <button class="btn-checkout" onclick="sendOrderToWhatsApp()"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएपबाट अर्डर गर्नुहोस्</button>
         </div>
     </div>
 
     <footer>
-    <div class="footer-nav-links">
-        <!-- ध्यान दिनुहोस्: सबैको अगाडि ../ थपिएको छ -->
-        <a href="../pages/accessories.html">Accessories</a> | 
-        <a href="../pages/vlog-gaming.html">Vlog & Gaming</a> | 
-        <a href="../pages/insurance-post1.html">Insurance Plans</a> | 
-        <a href="../pages/repair-hub.html">Repair Hub</a> | 
-        <a href="../pages/gallery.html">Photo Gallery</a> |
-        <a href="../pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-        <a href="../pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-    </div>
-    <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-</footer>
+        <div class="footer-nav-links">
+            <a href="accessories.html">Accessories</a> | <a href="vlog-gaming.html">Vlog & Gaming</a> | <a href="insurance-post1.html">Insurance plans</a> | <a href="gallery.html">Photo Gallery</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
 
+    <!-- 🛠️ जाभास्क्रिप्ट: JSON बाट अटोमेटिक सामान तान्ने र कार्ट चलाउने इन्जिन -->
+    <script>
+        let cart = [];
+
+        // 🚀 products.json बाट अटोमेटिक डाटा लोड गर्ने भाग
+        fetch('../products.json')
+            .then(response => response.json())
+            .then(products => {
+                const container = document.getElementById('dynamic-product-container');
+                if(container) {
+                    container.innerHTML = ''; // लोड हुँदैछ भन्ने टेक्स्ट हटाउने
+                    
+                    products.forEach(product => {
+                        const card = document.createElement('div');
+                        card.className = 'daraz-product-card';
+                        
+                        card.innerHTML = `
+                            <div class="product-img-box">
+                                <img src="${product.image}" onerror="this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
+                            </div>
+                            <div class="product-info">
+                                <div>
+                                    <div class="product-title">${product.name}</div>
+                                    <div class="product-price-row">
+                                        <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
+                                        <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
+                                    </div>
+                                </div>
+                                <button class="btn-add-to-cart" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price})">
+                                    <i class="fa-solid fa-cart-plus"></i> Add To Cart
+                                </button>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                }
+            })
+            .catch(err => {
+                console.error('Error loading products:', err);
+                document.getElementById('dynamic-product-container').innerHTML = '<p style="text-align:center; color:red; grid-column:1/-1;">सामानहरू लोड हुन सकेनन्। products.json चेक गर्नुहोस्!</p>';
+            });
+
+        // 🛒 कार्ट म्यानेजमेन्ट फङ्सनहरू
+        function addToCart(name, price) {
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.qty += 1;
+            } else {
+                cart.push({ name: name, price: price, qty: 1 });
+            }
+            updateCartUI();
+            const widget = document.querySelector('.floating-cart-widget');
+            widget.style.transform = 'scale(1.2)';
+            setTimeout(() => widget.style.transform = 'scale(1)', 200);
+        }
+
+        function updateCartUI() {
+            let totalItems = 0, totalPrice = 0;
+            cart.forEach(item => { totalItems += item.qty; totalPrice += (item.price * item.qty); });
+            document.getElementById('cart-count').innerText = totalItems;
+            document.getElementById('cart-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
+        }
+
+        function openCartModal() {
+            if(cart.length === 0) { alert("कृपया अर्डर गर्न पहिले कुनै सामान कार्टमा थप्नुहोस्!"); return; }
+            const listContainer = document.getElementById('modal-cart-items');
+            listContainer.innerHTML = '';
+            let totalPrice = 0;
+            cart.forEach(item => {
+                totalPrice += (item.price * item.qty);
+                const itemRow = document.createElement('div');
+                itemRow.className = 'cart-item';
+                itemRow.innerHTML = `<div><strong>${item.name}</strong> (x${item.qty})</div><div style="color:#f59e0b; font-weight:bold;">Rs. ${(item.price * item.qty).toLocaleString()}</div>`;
+                listContainer.appendChild(itemRow);
+            });
+            document.getElementById('modal-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
+            document.getElementById('cartModal').style.display = 'flex';
+        }
+
+        function closeCartModal() { document.getElementById('cartModal').style.display = 'none'; }
+
+        function sendOrderToWhatsApp() {
+            const name = document.getElementById('cust-name').value.trim();
+            const phone = document.getElementById('cust-phone').value.trim();
+            const address = document.getElementById('cust-address').value.trim();
+            const payment = document.getElementById('cust-payment').value;
+
+            if(!name || !phone || !address) { alert("कृपया सबै बक्सहरू भर्नुहोस्!"); return; }
+
+            let message = `🛒 *NEW ORDER - SMART SEWA NEPAL* \n\n👤 *ग्राहकको विवरण:* \n▪️ *नाम:* ${name}\n▪️ *फोन:* ${phone}\n▪️ *ठेगाना:* ${address}\n▪️ *पेमेन्ट:* ${payment}\n\n📦 *सामानहरू:* \n`;
+            let grandTotal = 0;
+            cart.forEach(item => {
+                message += `• ${item.name} (Qty: ${item.qty}) - Rs. ${(item.price * item.qty).toLocaleString()}\n`;
+                grandTotal += (item.price * item.qty);
+            });
+            message += `\n💰 *जम्मा कुल बिल:* Rs. ${grandTotal.toLocaleString()}`;
+
+            window.open(`https://wa.me/9815824328?text=${encodeURIComponent(message)}`, '_blank');
+            cart = []; updateCartUI(); closeCartModal();
+        }
+    </script>
 </body>
 </html>
