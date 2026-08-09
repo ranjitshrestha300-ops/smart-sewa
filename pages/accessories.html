@@ -158,7 +158,7 @@
 .floating-cart-widget:hover { transform: scale(1.05); }
 .cart-count-badge { background: #f59e0b; color: #000; font-weight: 900; padding: 2px 8px; border-radius: 20px; font-size: 12px; }
 
-/* 🔍 Daraz Modal Overlay & Details Layout */
+/* 🔍 Modal Overlay & Details Layout */
 .cart-modal { 
   display: none; 
   position: fixed; 
@@ -229,7 +229,23 @@
 .daraz-info-side { flex: 1 1 320px; display: flex; flex-direction: column; justify-content: space-between; }
 .daraz-info-side h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.4; }
 
-.spec-list-box { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 15px; }
+/* ⚠️ Daraz Reference Disclaimer Box Style */
+.reference-disclaimer-box {
+  background-color: #f1f5f9;
+  border-left: 4px solid #0284c7;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+.reference-disclaimer-box i { color: #0284c7; font-size: 14px; margin-top: 2px; }
+
+.spec-list-box { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; }
 .spec-list-box h4 { font-size: 14px; color: #0f172a; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; }
 .spec-list-box ul { list-style: none; padding: 0; margin: 0; }
 .spec-list-box li { font-size: 13px; color: #475569; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; }
@@ -305,7 +321,7 @@
 <span class="cart-count-badge" id="cart-count">0</span>
 </div>
 
-<!-- 🔍 ३. Daraz Style Photo, Video & Spec Popup Modal -->
+<!-- 🔍 ३. Photo, Video, Spec & Disclaimer Popup Modal -->
 <div class="cart-modal" id="detailsModal">
 <div class="modal-content">
 <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
@@ -375,7 +391,7 @@ const loadedProducts = [
       "https://img.lazcdn.com/g/p/23cd1cfbb1626f2f9cbb8aaae9a2e684.jpg",
       "https://img.lazcdn.com/g/p/5f8507cba57e4e84b069faaa895dddfa.jpg"
     ],
-    "youtube_id": "dQw4w9WgXcQ", // युट्युब भिडियोको ID (यदि छ भने)
+    "youtube_id": "dQw4w9WgXcQ",
     "features": [
       "12W Stereo Output with High Dynamic Bass",
       "Built-in FM Radio Receiver Functionality",
@@ -452,16 +468,16 @@ function renderProducts() {
     });
 }
 
-// 🔍 २. Daraz Style Detail Modal opening function with Gallery
+// 🔍 २. Photo, Video & Disclaimer देखाउने Detail Modal Function
 function openDetailsModal(index) {
     const product = loadedProducts[index];
     if (!product) return;
     const content = document.getElementById('details-content');
 
-    // फोटोहरू थम्बनेल लिस्ट तयार पार्ने
+    // थम्बनेल तयार पार्ने
     let thumbnailsHTML = '';
     
-    // १. मुख्य फोटोहरू
+    // १. फोटो थम्बनेल
     product.images.forEach((imgUrl, imgIndex) => {
         thumbnailsHTML += `
             <div class="thumb-item ${imgIndex === 0 ? 'active' : ''}" onclick="switchMedia(this, 'img', '${imgUrl}')">
@@ -470,7 +486,7 @@ function openDetailsModal(index) {
         `;
     });
 
-    // २. यदि युट्युब भिडियो छ भने भिडियो थम्बनेल पनि थप्ने
+    // २. युट्युब भिडियो थम्बनेल (यदि उपलब्ध भएमा)
     if(product.youtube_id && product.youtube_id.trim() !== "") {
         thumbnailsHTML += `
             <div class="thumb-item" onclick="switchMedia(this, 'video', '${product.youtube_id}')">
@@ -480,7 +496,7 @@ function openDetailsModal(index) {
         `;
     }
 
-    // विशेषताहरू बुलेट प्वाइन्टमा देखाउने
+    // विशेषताहरूको सुची
     let specListHTML = '';
     if(product.features && product.features.length > 0) {
         specListHTML = product.features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('');
@@ -500,13 +516,21 @@ function openDetailsModal(index) {
                 </div>
             </div>
 
-            <!-- दाहिनेपट्टि Info & Order -->
+            <!-- दाहिनेपट्टि Info & Disclaimer Box -->
             <div class="daraz-info-side">
                 <div>
                     <h2>${product.name}</h2>
                     <div class="product-price-row">
                         <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
                         <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
+                    </div>
+
+                    <!-- ⚠️ Daraz Style Reference Warning Box -->
+                    <div class="reference-disclaimer-box">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <div>
+                            The image provided here is only for reference purpose. Actual product packaging and materials may contain more and different information than what is shown on our app or website. We recommend that you do not rely solely on the information presented here and that you always read labels, warnings, and directions before using or consuming a product.
+                        </div>
                     </div>
 
                     <div class="spec-list-box">
@@ -527,7 +551,7 @@ function openDetailsModal(index) {
     document.getElementById('detailsModal').style.display = 'flex';
 }
 
-// 🖼️ थम्बनेल थिच्दा ठूलो फोटो/भिडियो फेर्ने फङ्सन
+// 🖼️ थम्बनेल स्विच गर्ने फङ्सन
 function switchMedia(element, type, url) {
     document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
     element.classList.add('active');
