@@ -36,7 +36,7 @@
 <link rel="stylesheet" href="../style.css">
 
 <style>
-/* 🛍️ दराज स्टाइल ई-कमर्स प्रिमियम डिजाइन */
+/* 🛍️ दराज प्रिमियम ई-कमर्स स्टाइल */
 .store-banner { 
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); 
   color: white; 
@@ -72,7 +72,6 @@
   box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); 
 }
 
-/* 📸 फोटोमा क्लिक गर्न मिल्ने र Pointer बन्ने स्टाइल */
 .product-img-box { 
   width: 100%; 
   height: 200px; 
@@ -91,10 +90,10 @@
   position: absolute; 
   bottom: 8px; 
   right: 8px; 
-  background: rgba(15, 23, 42, 0.75); 
+  background: rgba(15, 23, 42, 0.85); 
   color: #fff; 
   font-size: 11px; 
-  padding: 3px 8px; 
+  padding: 4px 8px; 
   border-radius: 4px; 
   opacity: 0; 
   transition: opacity 0.2s; 
@@ -103,12 +102,12 @@
 
 .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .product-title { 
-  font-size: 15px; 
+  font-size: 14px; 
   color: #1e293b; 
   font-weight: 600; 
   line-height: 1.4; 
   margin-bottom: 8px; 
-  height: 42px; 
+  height: 40px; 
   overflow: hidden; 
   display: -webkit-box; 
   -webkit-line-clamp: 2; 
@@ -138,6 +137,7 @@
 }
 .btn-add-to-cart:hover { background: #d97706; color: #fff; }
 
+/* 🛒 फ्लोटिङ कार्ट */
 .floating-cart-widget { 
   position: fixed; 
   bottom: 30px; 
@@ -158,6 +158,7 @@
 .floating-cart-widget:hover { transform: scale(1.05); }
 .cart-count-badge { background: #f59e0b; color: #000; font-weight: 900; padding: 2px 8px; border-radius: 20px; font-size: 12px; }
 
+/* 🔍 Daraz Modal Overlay & Details Layout */
 .cart-modal { 
   display: none; 
   position: fixed; 
@@ -165,24 +166,76 @@
   left: 0; 
   width: 100%; 
   height: 100%; 
-  background: rgba(0,0,0,0.6); 
+  background: rgba(0,0,0,0.7); 
   z-index: 10000; 
   align-items: center; 
   justify-content: center; 
-  padding: 20px; 
+  padding: 15px; 
 }
 .modal-content { 
   background: #fff; 
   padding: 25px; 
   border-radius: 12px; 
-  max-width: 500px; 
+  max-width: 800px; 
   width: 100%; 
-  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); 
   position: relative; 
-  max-height: 85vh; 
+  max-height: 90vh; 
   overflow-y: auto; 
 }
-.close-modal { position: absolute; top: 15px; right: 15px; font-size: 22px; cursor: pointer; color: #64748b; }
+.close-modal { position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #64748b; z-index: 10; }
+
+/* 📸 Daraz Style Interactive Gallery & Details Inside Modal */
+.daraz-detail-wrapper { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
+.daraz-gallery-side { flex: 1 1 300px; }
+.main-display-box { 
+  width: 100%; 
+  height: 280px; 
+  background: #f8fafc; 
+  border: 1px solid #e2e8f0; 
+  border-radius: 8px; 
+  overflow: hidden; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+}
+.main-display-box img, .main-display-box iframe { width: 100%; height: 100%; border: 0; object-fit: contain; }
+
+.thumbnail-list { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 5px; }
+.thumb-item { 
+  width: 55px; 
+  height: 55px; 
+  border: 2px solid #e2e8f0; 
+  border-radius: 6px; 
+  cursor: pointer; 
+  overflow: hidden; 
+  flex-shrink: 0; 
+  position: relative; 
+  background: #fff;
+}
+.thumb-item.active { border-color: #f59e0b; }
+.thumb-item img { width: 100%; height: 100%; object-fit: cover; }
+.thumb-video-badge { 
+  position: absolute; 
+  top: 0; left: 0; right: 0; bottom: 0; 
+  background: rgba(0,0,0,0.5); 
+  color: #fff; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 14px; 
+}
+
+.daraz-info-side { flex: 1 1 320px; display: flex; flex-direction: column; justify-content: space-between; }
+.daraz-info-side h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.4; }
+
+.spec-list-box { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 15px; }
+.spec-list-box h4 { font-size: 14px; color: #0f172a; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; }
+.spec-list-box ul { list-style: none; padding: 0; margin: 0; }
+.spec-list-box li { font-size: 13px; color: #475569; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; }
+.spec-list-box li i { color: #22c55e; margin-top: 3px; }
+
+/* 🛒 अर्डर कार्ट मोडल फर्म */
 .cart-item-list { margin: 15px 0; border-top: 1px solid #e2e8f0; padding-top: 15px; display: flex; flex-direction: column; gap: 10px; }
 .cart-item { display: flex; justify-content: space-between; align-items: center; font-size: 14px; padding-bottom: 8px; border-bottom: 1px dashed #f1f5f9; }
 .form-group { margin-bottom: 15px; }
@@ -205,16 +258,11 @@
   margin-top: 15px; 
 }
 .btn-checkout:hover { background: #16a34a; }
-
-/* 🔍 प्रडक्ट विवरण पपअप स्टाइल */
-.detail-modal-body { display: flex; flex-direction: column; gap: 15px; }
-.detail-modal-img { width: 100%; max-height: 300px; object-fit: contain; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0; }
-.detail-description { font-size: 14px; color: #475569; line-height: 1.6; background: #f8fafc; padding: 12px; border-radius: 6px; }
 </style>
 </head>
 <body>
 
-<!-- 🌟 १. तपाईंको मुख्य/लाइभ Header Structure -->
+<!-- 🌟 १. Smart Sewa Nepal Header -->
 <header>
 <div class="nav-wrapper">
 <a href="../index.html" class="brand-master-logo">
@@ -239,44 +287,44 @@
 </div>
 </header>
 
-<!-- 🛍️ २. मुख्य स्टोर ब्यानर -->
+<!-- 🛍️ २. मुख्य ब्यानर -->
 <div class="store-banner">
 <h1>Smart<span>Sewa</span> Daraz Mall</h1>
-<p>Premium Gadgets & Electronics Accessories with Instant WhatsApp Checkout</p>
+<p>Premium Electronics & Gadgets with Live Product Demos & Instant WhatsApp Order</p>
 </div>
 
-<!-- 🛒 प्रडक्टहरू देखिने ग्रिड (Grid Container) -->
+<!-- 🛒 प्रडक्ट ग्रिड -->
 <div class="daraz-grid" id="dynamic-product-container">
 <p style="text-align: center; color: #64748b; grid-column: 1/-1;">सामानहरू लोड हुँदैछन्...</p>
 </div>
 
-<!-- 🛒 फ्लोटिङ कार्ट बक्स (Floating Cart Button) -->
+<!-- 🛒 फ्लोटिङ कार्ट बक्स -->
 <div class="floating-cart-widget" onclick="openCartModal()">
 <i class="fa-solid fa-bag-shopping" style="color: #f59e0b; font-size: 20px;"></i>
-<div>My Cart: <span id="cart-total-price">Rs. 0</span></div>
+<div>Cart: <span id="cart-total-price">Rs. 0</span></div>
 <span class="cart-count-badge" id="cart-count">0</span>
 </div>
 
-<!-- 🔍 प्रडक्ट फुल साइज र विवरण देखाउने मोडल (Popup Modal) -->
+<!-- 🔍 ३. Daraz Style Photo, Video & Spec Popup Modal -->
 <div class="cart-modal" id="detailsModal">
 <div class="modal-content">
 <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
-<div class="detail-modal-body" id="details-content"></div>
+<div id="details-content"></div>
 </div>
 </div>
 
-<!-- 📋 अर्डर पपअप बक्स (Cart & Checkout Modal) -->
+<!-- 📋 ४. WhatsApp Order Checkout Modal -->
 <div class="cart-modal" id="cartModal">
-<div class="modal-content">
+<div class="modal-content" style="max-width: 500px;">
 <span class="close-modal" onclick="closeCartModal()">&times;</span>
 <h3 style="color:#0f172a; font-weight:800; font-size:20px; margin-bottom:10px;">
-  <i class="fa-solid fa-basket-shopping" style="color:#f59e0b;"></i> तपाईंको बक्स (Cart List)
+  <i class="fa-solid fa-basket-shopping" style="color:#f59e0b;"></i> तपाईंको अर्डर कार्ट (Cart List)
 </h3>
 
 <div class="cart-item-list" id="modal-cart-items"></div>
 
 <div style="text-align: right; font-weight: bold; font-size: 16px; margin-bottom: 20px; color:#0f172a;">
-जम्मा कुल रकम: <span id="modal-total-price" style="color:#f59e0b;">Rs. 0</span>
+जम्मा कुल बिल: <span id="modal-total-price" style="color:#f59e0b;">Rs. 0</span>
 </div>
 
 <hr style="border:0; border-top:1px solid #e2e8f0; margin-bottom:15px;">
@@ -293,11 +341,11 @@
 </select>
 </div>
 
-<button class="btn-checkout" onclick="sendOrderToWhatsApp()"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएपबाट अर्डर गर्नुहोस्</button>
+<button class="btn-checkout" onclick="sendOrderToWhatsApp()"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएपबाट अर्डर पठाउनुहोस्</button>
 </div>
 </div>
 
-<!-- 🌟 ३. तपाईंको मुख्य/लाइभ Footer Structure -->
+<!-- 🌟 ५. Smart Sewa Nepal Footer -->
 <footer>
 <div class="footer-nav-links">
 <a href="../pages/accessories.html">Accessories</a> |
@@ -311,44 +359,81 @@
 <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
 </footer>
 
-<!-- ⚙️ ४. जाभास्क्रिप्ट लजिक (JavaScript Logic) -->
+<!-- ⚙️ जाभास्क्रिप्ट लजिक (Logic) -->
 <script>
 let cart = [];
 
-// 📦 प्रडक्टहरूको डाटा (भविष्यमा थप प्रडक्टहरू यहाँ जोड्न सकिन्छ)
+// 📦 मल्टी-फोटो र युट्युब भिडियोसहितको डाटाबेस Structure
 const loadedProducts = [
   {
     "id": 1,
-    "name": "MZ Premium Series M209 Wireless Bluetooth Speaker (5W)",
-    "price": 1500,
-    "original_price": 1899,
-    "image": "../productsimages/M209.png",
-    "description": "• 5W Crystal Clear Sound & Heavy Bass Output\n• Classical Retro Vintage Radio Design\n• Bluetooth 5.0 Connectivity (up to 10m range)\n• Multiple Playback Modes: Bluetooth, USB Drive, TF/MicroSD Card, & AUX\n• Built-in Rechargeable Battery (Type-C Charging Port)\n• Compact & Portable Handle Design for Easy Carrying"
+    "name": "YOROTO YO-437BT Wireless Speaker with FM Tuner (12W Output)",
+    "price": 1349,
+    "original_price": 3000,
+    "images": [
+      "https://img.lazcdn.com/g/p/65c8efbc5b1a6a9b9a65d7ad6a066ea6.jpg",
+      "https://img.lazcdn.com/g/p/23cd1cfbb1626f2f9cbb8aaae9a2e684.jpg",
+      "https://img.lazcdn.com/g/p/5f8507cba57e4e84b069faaa895dddfa.jpg"
+    ],
+    "youtube_id": "dQw4w9WgXcQ", // युट्युब भिडियोको ID (यदि छ भने)
+    "features": [
+      "12W Stereo Output with High Dynamic Bass",
+      "Built-in FM Radio Receiver Functionality",
+      "1500mAh Long-life Battery (Up to 6 Hours Playtime)",
+      "Bluetooth 5.0 Instant Wireless Connectivity",
+      "Multiple Colors: Blue, Pink, Black Vintage Finish"
+    ]
   },
   {
     "id": 2,
+    "name": "MZ Premium Series M209 Wireless Bluetooth Speaker (5W)",
+    "price": 1500,
+    "original_price": 1899,
+    "images": [
+      "../productsimages/M209.png"
+    ],
+    "youtube_id": "",
+    "features": [
+      "5W Crystal Clear Sound & Heavy Bass Output",
+      "Classical Retro Vintage Radio Design",
+      "Bluetooth 5.0 Connectivity (up to 10m range)",
+      "Supports Bluetooth, USB Drive, TF Card, & AUX",
+      "Built-in Rechargeable Battery (Type-C Charging)"
+    ]
+  },
+  {
+    "id": 3,
     "name": "YOROTO YO-373BT Portable Bluetooth Speaker with Strap",
     "price": 1100,
     "original_price": 1399,
-    "image": "../productsimages/Y0-373BT.png",
-    "description": "• Bluetooth 5.0 (Stable & Faster Connection up to 10m Range)\n• Rich & Clear Sound with High-Performance Driver\n• Long Playtime: Up to 6 Hours (1200mAh Battery Capacity)\n• Hands-Free Calling with Built-in Microphone\n• Easy Playback Controls (Volume & Track Buttons)\n• Textured Metallic Grille & Durable Stylish Build\n• Compact, Lightweight (368g) & Integrated Carry Strap"
+    "images": [
+      "../productsimages/Y0-373BT.png"
+    ],
+    "youtube_id": "",
+    "features": [
+      "Rich & Clear Sound with High-Performance Driver",
+      "Long Playtime: Up to 6 Hours (1200mAh Battery)",
+      "Hands-Free Calling with Built-in HD Microphone",
+      "Textured Metallic Grille & Durable Build",
+      "Compact, Lightweight (368g) & Integrated Strap"
+    ]
   }
 ];
 
-// 🚀 ग्रिडमा सामानहरू देखाउने Function
+// 🚀 १. मुख्य ग्रिडमा सामान देखाउने फङ्सन
 function renderProducts() {
     const container = document.getElementById('dynamic-product-container');
     if(!container) return;
-    
     container.innerHTML = '';
 
     loadedProducts.forEach((product, index) => {
+        const coverImage = (product.images && product.images.length > 0) ? product.images[0] : 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80';
         const card = document.createElement('div');
         card.className = 'daraz-product-card';
 
         card.innerHTML = `
             <div class="product-img-box" onclick="openDetailsModal(${index})">
-                <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
+                <img src="${coverImage}" alt="${product.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
             </div>
             <div class="product-info">
                 <div>
@@ -367,43 +452,103 @@ function renderProducts() {
     });
 }
 
-// 🔍 प्रडक्ट विवरण र फोटो देखाउने Popup Function
+// 🔍 २. Daraz Style Detail Modal opening function with Gallery
 function openDetailsModal(index) {
     const product = loadedProducts[index];
     if (!product) return;
     const content = document.getElementById('details-content');
 
+    // फोटोहरू थम्बनेल लिस्ट तयार पार्ने
+    let thumbnailsHTML = '';
+    
+    // १. मुख्य फोटोहरू
+    product.images.forEach((imgUrl, imgIndex) => {
+        thumbnailsHTML += `
+            <div class="thumb-item ${imgIndex === 0 ? 'active' : ''}" onclick="switchMedia(this, 'img', '${imgUrl}')">
+                <img src="${imgUrl}" alt="preview">
+            </div>
+        `;
+    });
+
+    // २. यदि युट्युब भिडियो छ भने भिडियो थम्बनेल पनि थप्ने
+    if(product.youtube_id && product.youtube_id.trim() !== "") {
+        thumbnailsHTML += `
+            <div class="thumb-item" onclick="switchMedia(this, 'video', '${product.youtube_id}')">
+                <img src="https://img.youtube.com/vi/${product.youtube_id}/hqdefault.jpg" alt="video">
+                <div class="thumb-video-badge"><i class="fa-solid fa-play"></i></div>
+            </div>
+        `;
+    }
+
+    // विशेषताहरू बुलेट प्वाइन्टमा देखाउने
+    let specListHTML = '';
+    if(product.features && product.features.length > 0) {
+        specListHTML = product.features.map(feat => `<li><i class="fa-solid fa-circle-check"></i> ${feat}</li>`).join('');
+    }
+
+    const firstImage = product.images[0] || 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80';
+
     content.innerHTML = `
-        <img src="${product.image}" class="detail-modal-img" alt="${product.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
-        <h3 style="color:#0f172a; font-size:18px; font-weight:700; margin:0;">${product.name}</h3>
-        <div class="product-price-row" style="margin:0;">
-            <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
-            <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
+        <div class="daraz-detail-wrapper">
+            <!-- देब्रेपट्टि Gallery Display -->
+            <div class="daraz-gallery-side">
+                <div class="main-display-box" id="main-media-box">
+                    <img src="${firstImage}" alt="${product.name}">
+                </div>
+                <div class="thumbnail-list">
+                    ${thumbnailsHTML}
+                </div>
+            </div>
+
+            <!-- दाहिनेपट्टि Info & Order -->
+            <div class="daraz-info-side">
+                <div>
+                    <h2>${product.name}</h2>
+                    <div class="product-price-row">
+                        <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
+                        <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
+                    </div>
+
+                    <div class="spec-list-box">
+                        <h4>📌 मुख्य विशेषताहरू (Highlights):</h4>
+                        <ul>
+                            ${specListHTML || '<li>विवरण उपलब्ध छैन।</li>'}
+                        </ul>
+                    </div>
+                </div>
+
+                <button class="btn-add-to-cart" style="margin-top:20px; padding: 12px; font-size:15px;" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price}); closeDetailsModal();">
+                    <i class="fa-solid fa-cart-plus"></i> Add To Cart
+                </button>
+            </div>
         </div>
-        <div class="detail-description">
-            <strong>📌 विवरण (Details):</strong><br>
-            <span style="white-space: pre-line;">${product.description || 'विस्तृत विवरण उपलब्ध छैन।'}</span>
-        </div>
-        <button class="btn-add-to-cart" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price}); closeDetailsModal();">
-            <i class="fa-solid fa-cart-plus"></i> Add To Cart
-        </button>
     `;
 
     document.getElementById('detailsModal').style.display = 'flex';
 }
 
-function closeDetailsModal() {
-    document.getElementById('detailsModal').style.display = 'none';
+// 🖼️ थम्बनेल थिच्दा ठूलो फोटो/भिडियो फेर्ने फङ्सन
+function switchMedia(element, type, url) {
+    document.querySelectorAll('.thumb-item').forEach(el => el.classList.remove('active'));
+    element.classList.add('active');
+
+    const displayBox = document.getElementById('main-media-box');
+    if(type === 'img') {
+        displayBox.innerHTML = `<img src="${url}" alt="product image">`;
+    } else if(type === 'video') {
+        displayBox.innerHTML = `
+            <iframe src="https://www.youtube.com/embed/${url}?autoplay=1" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        `;
+    }
 }
 
-// 🛒 कार्ट म्यानेजमेन्ट फङ्सनहरू
+function closeDetailsModal() { document.getElementById('detailsModal').style.display = 'none'; }
+
+// 🛒 कार्ट र अर्डर फङ्सनहरू
 function addToCart(name, price) {
-    const existingItem = cart.find(item => item.name === name);
-    if (existingItem) {
-        existingItem.qty += 1;
-    } else {
-        cart.push({ name: name, price: price, qty: 1 });
-    }
+    const existing = cart.find(item => item.name === name);
+    if (existing) { existing.qty += 1; } 
+    else { cart.push({ name: name, price: price, qty: 1 }); }
     updateCartUI();
     const widget = document.querySelector('.floating-cart-widget');
     widget.style.transform = 'scale(1.2)';
@@ -418,7 +563,7 @@ function updateCartUI() {
 }
 
 function openCartModal() {
-    if(cart.length === 0) { alert("कृपया अर्डर गर्न पहिले कुनै सामान कार्टमा थप्नुहोस्!"); return; }
+    if(cart.length === 0) { alert("कृपया कार्टमा पहिले कुनै सामान थप्नुहोस्!"); return; }
     const listContainer = document.getElementById('modal-cart-items');
     listContainer.innerHTML = '';
     let totalPrice = 0;
@@ -441,9 +586,9 @@ function sendOrderToWhatsApp() {
     const address = document.getElementById('cust-address').value.trim();
     const payment = document.getElementById('cust-payment').value;
 
-    if(!name || !phone || !address) { alert("कृपया सबै बक्सहरू भर्नुहोस्!"); return; }
+    if(!name || !phone || !address) { alert("कृपया डेलिभरीका लागि सबै विवरणहरू भरिदिनुहोस्!"); return; }
 
-    let message = `🛒 *NEW ORDER - SMART SEWA NEPAL* \n\n👤 *ग्राहकको विवरण:* \n▪️ *नाम:* ${name}\n▪️ *फोन:* ${phone}\n▪️ *ठेगाना:* ${address}\n▪️ *पेमेन्ट:* ${payment}\n\n📦 *सामानहरू:* \n`;
+    let message = `🛒 *NEW ORDER - SMART SEWA NEPAL* \n\n👤 *ग्राहक विवरण:* \n▪️ *नाम:* ${name}\n▪️ *फोन:* ${phone}\n▪️ *ठेगाना:* ${address}\n▪️ *पेमेन्ट:* ${payment}\n\n📦 *सामानहरू:* \n`;
     let grandTotal = 0;
     cart.forEach(item => {
         message += `• ${item.name} (Qty: ${item.qty}) - Rs. ${(item.price * item.qty).toLocaleString()}\n`;
@@ -455,7 +600,7 @@ function sendOrderToWhatsApp() {
     cart = []; updateCartUI(); closeCartModal();
 }
 
-// पेज लोड हुनासाथ सामानहरू लोड गर्ने
+// सुरुआतमै प्रडक्टहरू लोड गर्ने
 renderProducts();
 </script>
 </body>
