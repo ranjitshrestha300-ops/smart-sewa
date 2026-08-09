@@ -176,7 +176,7 @@
   background: #fff; 
   padding: 25px; 
   border-radius: 12px; 
-  max-width: 800px; 
+  max-width: 850px; 
   width: 100%; 
   box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); 
   position: relative; 
@@ -186,8 +186,8 @@
 .close-modal { position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #64748b; z-index: 10; }
 
 /* 📸 Daraz Style Interactive Gallery & Details Inside Modal */
-.daraz-detail-wrapper { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 20px; }
-.daraz-gallery-side { flex: 1 1 300px; }
+.daraz-detail-wrapper { display: flex; flex-wrap: wrap; gap: 20px; margin-bottom: 10px; }
+.daraz-gallery-side { flex: 1 1 320px; }
 .main-display-box { 
   width: 100%; 
   height: 280px; 
@@ -201,7 +201,7 @@
 }
 .main-display-box img, .main-display-box iframe { width: 100%; height: 100%; border: 0; object-fit: contain; }
 
-.thumbnail-list { display: flex; gap: 8px; margin-top: 10px; overflow-x: auto; padding-bottom: 5px; }
+.thumbnail-list { display: flex; gap: 8px; margin-top: 10px; margin-bottom: 15px; overflow-x: auto; padding-bottom: 5px; }
 .thumb-item { 
   width: 55px; 
   height: 55px; 
@@ -226,29 +226,29 @@
   font-size: 14px; 
 }
 
-.daraz-info-side { flex: 1 1 320px; display: flex; flex-direction: column; justify-content: space-between; }
-.daraz-info-side h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.4; }
-
-/* ⚠️ Daraz Reference Disclaimer Box Style */
-.reference-disclaimer-box {
+/* ⚠️ फोटोको ठीक मुनि राखिएको Disclaimer Box Style */
+.photo-disclaimer-box {
   background-color: #f1f5f9;
   border-left: 4px solid #0284c7;
-  padding: 10px 12px;
-  border-radius: 4px;
-  font-size: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 11.5px;
   color: #475569;
   line-height: 1.5;
-  margin-bottom: 12px;
   display: flex;
-  gap: 8px;
+  gap: 10px;
   align-items: flex-start;
+  margin-top: 10px;
 }
-.reference-disclaimer-box i { color: #0284c7; font-size: 14px; margin-top: 2px; }
+.photo-disclaimer-box i { color: #0284c7; font-size: 15px; margin-top: 2px; flex-shrink: 0; }
+
+.daraz-info-side { flex: 1 1 320px; display: flex; flex-direction: column; justify-content: space-between; }
+.daraz-info-side h2 { font-size: 18px; font-weight: 700; color: #0f172a; margin-bottom: 10px; line-height: 1.4; }
 
 .spec-list-box { background: #f8fafc; padding: 15px; border-radius: 8px; border: 1px solid #e2e8f0; margin-top: 10px; }
 .spec-list-box h4 { font-size: 14px; color: #0f172a; margin-bottom: 8px; border-bottom: 1px solid #cbd5e1; padding-bottom: 5px; }
 .spec-list-box ul { list-style: none; padding: 0; margin: 0; }
-.spec-list-box li { font-size: 13px; color: #475569; padding: 3px 0; display: flex; align-items: flex-start; gap: 6px; }
+.spec-list-box li { font-size: 13px; color: #475569; padding: 4px 0; display: flex; align-items: flex-start; gap: 6px; }
 .spec-list-box li i { color: #22c55e; margin-top: 3px; }
 
 /* 🛒 अर्डर कार्ट मोडल फर्म */
@@ -379,7 +379,7 @@
 <script>
 let cart = [];
 
-// 📦 मल्टी-फोटो र युट्युब भिडियोसहितको डाटाबेस Structure
+// 📦 प्रडक्ट डाटाबेस
 const loadedProducts = [
   {
     "id": 1,
@@ -468,7 +468,7 @@ function renderProducts() {
     });
 }
 
-// 🔍 २. Photo, Video & Disclaimer देखाउने Detail Modal Function
+// 🔍 २. Photo को मुनि Warning message रहने Detail Modal Function
 function openDetailsModal(index) {
     const product = loadedProducts[index];
     if (!product) return;
@@ -486,7 +486,7 @@ function openDetailsModal(index) {
         `;
     });
 
-    // २. युट्युब भिडियो थम्बनेल (यदि उपलब्ध भएमा)
+    // २. युट्युब भिडियो थम्बनेल
     if(product.youtube_id && product.youtube_id.trim() !== "") {
         thumbnailsHTML += `
             <div class="thumb-item" onclick="switchMedia(this, 'video', '${product.youtube_id}')">
@@ -506,7 +506,7 @@ function openDetailsModal(index) {
 
     content.innerHTML = `
         <div class="daraz-detail-wrapper">
-            <!-- देब्रेपट्टि Gallery Display -->
+            <!-- देब्रेपट्टि Gallery Display + फोटोको मुनि Disclaimer Box -->
             <div class="daraz-gallery-side">
                 <div class="main-display-box" id="main-media-box">
                     <img src="${firstImage}" alt="${product.name}">
@@ -514,23 +514,23 @@ function openDetailsModal(index) {
                 <div class="thumbnail-list">
                     ${thumbnailsHTML}
                 </div>
+
+                <!-- ⚠️ फोटो र थम्बनेलको ठीक मुनि राखिएको Disclaimer Box -->
+                <div class="photo-disclaimer-box">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <div>
+                        The image provided here is only for reference purpose. Actual product packaging and materials may contain more and different information than what is shown on our app or website. We recommend that you do not rely solely on the information presented here and that you always read labels, warnings, and directions before using or consuming a product.
+                    </div>
+                </div>
             </div>
 
-            <!-- दाहिनेपट्टि Info & Disclaimer Box -->
+            <!-- दाहिनेपट्टि Info & Specification Side -->
             <div class="daraz-info-side">
                 <div>
                     <h2>${product.name}</h2>
                     <div class="product-price-row">
                         <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
                         <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
-                    </div>
-
-                    <!-- ⚠️ Daraz Style Reference Warning Box -->
-                    <div class="reference-disclaimer-box">
-                        <i class="fa-solid fa-circle-info"></i>
-                        <div>
-                            The image provided here is only for reference purpose. Actual product packaging and materials may contain more and different information than what is shown on our app or website. We recommend that you do not rely solely on the information presented here and that you always read labels, warnings, and directions before using or consuming a product.
-                        </div>
                     </div>
 
                     <div class="spec-list-box">
