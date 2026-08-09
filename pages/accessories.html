@@ -214,110 +214,108 @@
 </head>
 <body>
 
-<!-- 🌟 १. तपाईंको सक्कली/लाइभ HEADER (विना कुनै परिवर्तन) -->
+<!-- 🌟 १. तपाईंको मुख्य/लाइभ Header Structure -->
 <header>
-  <div class="nav-wrapper">
-    <a href="../index.html" class="brand-master-logo">
-      <div class="logo-graphic-shield">
-        <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,6M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
-      </div>
-      <div class="brand-typography-block">
-        <div class="brand-main-title">Smart<span>Sewa</span></div>
-        <div class="brand-sub-tag">Nepal Hub</div>
-      </div>
-    </a>
-    <nav>
-      <ul>
-        <li><a href="accessories.html" style="color: #f59e0b; font-weight: bold;">Accessories</a></li>
-        <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-        <li><a href="insurance-post1.html">Insurance Plans</a></li>
-        <li><a href="repair-hub.html">Repair Hub</a></li>
-        <li><a href="gallery.html">Photo Gallery</a></li>
-      </ul>
-    </nav>
-    <a href="../index.html" class="cta-nav-btn">Back to Home</a>
-  </div>
+<div class="nav-wrapper">
+<a href="../index.html" class="brand-master-logo">
+<div class="logo-graphic-shield">
+<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,6M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+</div>
+<div class="brand-typography-block">
+<div class="brand-main-title">Smart<span>Sewa</span></div>
+<div class="brand-sub-tag">Nepal Hub</div>
+</div>
+</a>
+<nav>
+<ul>
+<li><a href="accessories.html" style="color: #f59e0b; font-weight: bold;">Accessories</a></li>
+<li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
+<li><a href="insurance-post1.html">Insurance Plans</a></li>
+<li><a href="repair-hub.html">Repair Hub</a></li>
+<li><a href="gallery.html">Photo Gallery</a></li>
+</ul>
+</nav>
+<a href="../index.html" class="cta-nav-btn">Back to Home</a>
+</div>
 </header>
 
-<!-- 🛍️ २. नयाँ ई-कमर्स ब्यानर -->
+<!-- 🛍️ २. मुख्य स्टोर ब्यानर -->
 <div class="store-banner">
-  <h1>Smart<span>Sewa</span> Daraz Mall</h1>
-  <p>Premium Gadgets & Electronics Accessories with Instant WhatsApp Checkout</p>
+<h1>Smart<span>Sewa</span> Daraz Mall</h1>
+<p>Premium Gadgets & Electronics Accessories with Instant WhatsApp Checkout</p>
 </div>
 
-<!-- 📦 सामानहरू अटोमेटिक देखिने ग्रिड -->
+<!-- 🛒 प्रडक्टहरू देखिने ग्रिड (Grid Container) -->
 <div class="daraz-grid" id="dynamic-product-container">
-  <p style="text-align: center; color: #64748b; grid-column: 1/-1;">सामानहरू लोड हुँदैछन्...</p>
+<p style="text-align: center; color: #64748b; grid-column: 1/-1;">सामानहरू लोड हुँदैछन्...</p>
 </div>
 
-<!-- 🛒 फ्लोटिङ कार्ट बटन -->
+<!-- 🛒 फ्लोटिङ कार्ट बक्स (Floating Cart Button) -->
 <div class="floating-cart-widget" onclick="openCartModal()">
-  <i class="fa-solid fa-bag-shopping" style="color: #f59e0b; font-size: 20px;"></i>
-  <div>My Cart: <span id="cart-total-price">Rs. 0</span></div>
-  <span class="cart-count-badge" id="cart-count">0</span>
+<i class="fa-solid fa-bag-shopping" style="color: #f59e0b; font-size: 20px;"></i>
+<div>My Cart: <span id="cart-total-price">Rs. 0</span></div>
+<span class="cart-count-badge" id="cart-count">0</span>
 </div>
 
-<!-- 🔍 प्रडक्ट फुल साइज र विवरण देखाउने मोडल (Popup) -->
+<!-- 🔍 प्रडक्ट फुल साइज र विवरण देखाउने मोडल (Popup Modal) -->
 <div class="cart-modal" id="detailsModal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
-    <div class="detail-modal-body" id="details-content"></div>
-  </div>
+<div class="modal-content">
+<span class="close-modal" onclick="closeDetailsModal()">&times;</span>
+<div class="detail-modal-body" id="details-content"></div>
+</div>
 </div>
 
-<!-- 📋 अर्डर पपअप बक्स (Checkout Modal) -->
+<!-- 📋 अर्डर पपअप बक्स (Cart & Checkout Modal) -->
 <div class="cart-modal" id="cartModal">
-  <div class="modal-content">
-    <span class="close-modal" onclick="closeCartModal()">&times;</span>
-    <h3 style="color:#0f172a; font-weight:800; font-size:20px; margin-bottom:10px;">
-      <i class="fa-solid fa-basket-shopping" style="color:#f59e0b;"></i> तपाईंको बक्स (Cart List)
-    </h3>
+<div class="modal-content">
+<span class="close-modal" onclick="closeCartModal()">&times;</span>
+<h3 style="color:#0f172a; font-weight:800; font-size:20px; margin-bottom:10px;">
+  <i class="fa-solid fa-basket-shopping" style="color:#f59e0b;"></i> तपाईंको बक्स (Cart List)
+</h3>
 
-    <div class="cart-item-list" id="modal-cart-items"></div>
+<div class="cart-item-list" id="modal-cart-items"></div>
 
-    <div style="text-align: right; font-weight: bold; font-size: 16px; margin-bottom: 20px; color:#0f172a;">
-      जम्मा कुल रकम: <span id="modal-total-price" style="color:#f59e0b;">Rs. 0</span>
-    </div>
-
-    <hr style="border:0; border-top:1px solid #e2e8f0; margin-bottom:15px;">
-    <h4 style="margin-bottom:12px; color:#1e293b;">📋 डेलिभरी विवरण भर्नुहोस्:</h4>
-
-    <div class="form-group"><label>ग्राहकको पूरा नाम *</label><input type="text" id="cust-name" placeholder="Ranjit Shrestha" required></div>
-    <div class="form-group"><label>फोन नम्बर *</label><input type="tel" id="cust-phone" placeholder="98XXXXXXXX" required></div>
-    <div class="form-group"><label>डेलिभरी ठेगाना *</label><input type="text" id="cust-address" placeholder="Charikot, Dolakha" required></div>
-    <div class="form-group">
-      <label>पेमेन्ट तरिका *</label>
-      <select id="cust-payment">
-        <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
-        <option value="eSewa / Khalti / QR">eSewa / Khalti / QR (Advance)</option>
-      </select>
-    </div>
-
-    <button class="btn-checkout" onclick="sendOrderToWhatsApp()">
-      <i class="fa-brands fa-whatsapp"></i> व्हाट्सएपबाट अर्डर गर्नुहोस्
-    </button>
-  </div>
+<div style="text-align: right; font-weight: bold; font-size: 16px; margin-bottom: 20px; color:#0f172a;">
+जम्मा कुल रकम: <span id="modal-total-price" style="color:#f59e0b;">Rs. 0</span>
 </div>
 
-<!-- 🌟 ३. तपाईंको सक्कली/लाइभ FOOTER (विना कुनै परिवर्तन) -->
+<hr style="border:0; border-top:1px solid #e2e8f0; margin-bottom:15px;">
+<h4 style="margin-bottom:12px; color:#1e293b;">📋 डेलिभरी विवरण भर्नुहोस्:</h4>
+
+<div class="form-group"><label>ग्राहकको पूरा नाम *</label><input type="text" id="cust-name" placeholder="Ranjit Shrestha" required></div>
+<div class="form-group"><label>फोन नम्बर *</label><input type="tel" id="cust-phone" placeholder="98XXXXXXXX" required></div>
+<div class="form-group"><label>डेलिभरी ठेगाना *</label><input type="text" id="cust-address" placeholder="Charikot, Dolakha" required></div>
+<div class="form-group">
+<label>पेमेन्ट तरिका *</label>
+<select id="cust-payment">
+<option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+<option value="eSewa / Khalti / QR">eSewa / Khalti / QR (Advance)</option>
+</select>
+</div>
+
+<button class="btn-checkout" onclick="sendOrderToWhatsApp()"><i class="fa-brands fa-whatsapp"></i> व्हाट्सएपबाट अर्डर गर्नुहोस्</button>
+</div>
+</div>
+
+<!-- 🌟 ३. तपाईंको मुख्य/लाइभ Footer Structure -->
 <footer>
-  <div class="footer-nav-links">
-    <a href="../pages/accessories.html">Accessories</a> |
-    <a href="../pages/vlog-gaming.html">Vlog & Gaming</a> |
-    <a href="../pages/insurance-post1.html">Insurance Plans</a> |
-    <a href="../pages/repair-hub.html">Repair Hub</a> |
-    <a href="../pages/gallery.html">Photo Gallery</a> |
-    <a href="../pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-    <a href="../pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-  </div>
-  <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+<div class="footer-nav-links">
+<a href="../pages/accessories.html">Accessories</a> |
+<a href="../pages/vlog-gaming.html">Vlog & Gaming</a> |
+<a href="../pages/insurance-post1.html">Insurance Plans</a> |
+<a href="../pages/repair-hub.html">Repair Hub</a> |
+<a href="../pages/gallery.html">Photo Gallery</a> |
+<a href="../pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+<a href="../pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
+</div>
+<p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
 </footer>
 
-<!-- ⚙️ ४. जाभास्क्रिप्ट इन्जिन -->
+<!-- ⚙️ ४. जाभास्क्रिप्ट लजिक (JavaScript Logic) -->
 <script>
 let cart = [];
 
-// 📦 प्रडक्टहरूको लिस्ट (तपाईंको Local Path अनुसार `../productsimages/` लिङ्क गरिएको छ)
+// 📦 प्रडक्टहरूको डाटा (भविष्यमा थप प्रडक्टहरू यहाँ जोड्न सकिन्छ)
 const loadedProducts = [
   {
     "id": 1,
@@ -369,7 +367,7 @@ function renderProducts() {
     });
 }
 
-// 🔍 प्रडक्ट विवरण र ठूलो फोटो देखाउने Popup Function
+// 🔍 प्रडक्ट विवरण र फोटो देखाउने Popup Function
 function openDetailsModal(index) {
     const product = loadedProducts[index];
     if (!product) return;
@@ -457,7 +455,7 @@ function sendOrderToWhatsApp() {
     cart = []; updateCartUI(); closeCartModal();
 }
 
-// पेज लोड भएपछि सामानहरू तुरुन्त देखाउने
+// पेज लोड हुनासाथ सामानहरू लोड गर्ने
 renderProducts();
 </script>
 </body>
