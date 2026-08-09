@@ -182,7 +182,7 @@ let loadedProducts = [];
 let cart = [];
 
 // 🚀 products.json बाट अटोमेटिक डाटा लोड गर्ने भाग
-fetch('products.json')
+fetch('../products.json')
 .then(response => response.json())
 .then(products => {
 loadedProducts = products;
