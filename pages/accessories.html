@@ -32,6 +32,8 @@
 <meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="../style.css">
 
@@ -45,15 +47,11 @@
 .daraz-product-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; position: relative; }
 .daraz-product-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
 
-/* 📸 फोटोमा क्लिक गर्न मिल्ने र Pointer बन्ने स्टाइल */
-.product-img-box { width: 100%; height: 200px; background: #f8fafc; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f5f9; cursor: pointer; position: relative; }
+.product-img-box { width: 100%; height: 200px; background: #f8fafc; overflow: hidden; display: flex; align-items: center; justify-content: center; border-bottom: 1px solid #f1f5f9; }
 .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
-.product-img-box::after { content: "🔍 View Details"; position: absolute; bottom: 8px; right: 8px; background: rgba(15, 23, 42, 0.75); color: #fff; font-size: 11px; padding: 3px 8px; border-radius: 4px; opacity: 0; transition: opacity 0.2s; }
-.product-img-box:hover::after { opacity: 1; }
 
 .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
-.product-title { font-size: 15px; color: #1e293b; font-weight: 600; line-height: 1.4; margin-bottom: 8px; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; cursor: pointer; }
-.product-title:hover { color: #f59e0b; }
+.product-title { font-size: 15px; color: #1e293b; font-weight: 600; line-height: 1.4; margin-bottom: 8px; height: 42px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .product-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 15px; }
 .price-current { font-size: 18px; font-weight: 700; color: #f59e0b; }
 .price-original { font-size: 13px; color: #94a3b8; text-decoration: line-through; }
@@ -61,7 +59,7 @@
 .btn-add-to-cart { background: #f59e0b; color: #000; border: none; width: 100%; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; transition: background 0.2s; }
 .btn-add-to-cart:hover { background: #d97706; color: #fff; }
 
-.floating-cart-widget { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: #fff; padding: 15px 25px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 15px; z-index: 9999; border: 2px solid #f59e0b; transition: transform 0.2s; cursor: pointer; }
+.floating-cart-widget { position: fixed; bottom: 30px; right: 30px; background: #0f172a; color: #fff; padding: 15px 25px; border-radius: 50px; box-shadow: 0 10px 25px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 15px; z-index: 9999; border: 2px solid #f59e0b; transition: transform 0.2s; }
 .floating-cart-widget:hover { transform: scale(1.05); }
 .cart-count-badge { background: #f59e0b; color: #000; font-weight: 900; padding: 2px 8px; border-radius: 20px; font-size: 12px; }
 
@@ -75,11 +73,6 @@
 .form-group input, .form-group select { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
 .btn-checkout { background: #22c55e; color: white; border: none; width: 100%; padding: 12px; border-radius: 6px; font-weight: 700; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 15px; }
 .btn-checkout:hover { background: #16a34a; }
-
-/* 🔍 प्रडक्ट विवरण पपअप स्टाइल */
-.detail-modal-body { display: flex; flex-direction: column; gap: 15px; }
-.detail-modal-img { width: 100%; max-height: 300px; object-fit: contain; border-radius: 8px; background: #f8fafc; border: 1px solid #e2e8f0; }
-.detail-description { font-size: 14px; color: #475569; line-height: 1.6; background: #f8fafc; padding: 12px; border-radius: 6px; }
 </style>
 </head>
 <body>
@@ -88,7 +81,7 @@
 <div class="nav-wrapper">
 <a href="../index.html" class="brand-master-logo">
 <div class="logo-graphic-shield">
-<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,6M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+<svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
 </div>
 <div class="brand-typography-block">
 <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -123,14 +116,6 @@
 <i class="fa-solid fa-bag-shopping" style="color: #f59e0b; font-size: 20px;"></i>
 <div>My Cart: <span id="cart-total-price">Rs. 0</span></div>
 <span class="cart-count-badge" id="cart-count">0</span>
-</div>
-
-<!-- 🔍 प्रडक्ट फुल साइज र विवरण देखाउने मोडल -->
-<div class="cart-modal" id="detailsModal">
-<div class="modal-content">
-<span class="close-modal" onclick="closeDetailsModal()">&times;</span>
-<div class="detail-modal-body" id="details-content"></div>
-</div>
 </div>
 
 <!-- 📋 अर्डर पपअप बक्स -->
@@ -176,157 +161,105 @@
 <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
 </footer>
 
-<!-- 🛠️ जाभास्क्रिप्ट: JSON बाट अटोमेटिक सामान तान्ने, पपअप देखाउने र कार्ट चलाउने इन्जिन -->
+<!-- 🛠️ जाभास्क्रिप्ट: JSON बाट अटोमेटिक सामान तान्ने र कार्ट चलाउने इन्जिन -->
 <script>
-let loadedProducts = [];
 let cart = [];
 
 // 🚀 products.json बाट अटोमेटिक डाटा लोड गर्ने भाग
 fetch('../products.json')
 .then(response => response.json())
 .then(products => {
-  loadedProducts = products;
-  const container = document.getElementById('dynamic-product-container');
-  if(container) {
-    container.innerHTML = ''; // लोड हुँदैछ भन्ने टेक्स्ट हटाउने
+const container = document.getElementById('dynamic-product-container');
+if(container) {
+container.innerHTML = ''; // लोड हुँदैछ भन्ने टेक्स्ट हटाउने
 
-    products.forEach((product, index) => {
-      const card = document.createElement('div');
-      card.className = 'daraz-product-card';
+products.forEach(product => {
+const card = document.createElement('div');
+card.className = 'daraz-product-card';
 
-      // Path मा समस्या नहोस् भन्नको लागि Smart check
-      let imageSrc = product.image.startsWith('http') || product.image.startsWith('../') 
-        ? product.image 
-        : `../${product.image}`;
-
-      card.innerHTML = `
-        <div class="product-img-box" onclick="openDetailsModal(${index})">
-          <img src="${imageSrc}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
-        </div>
-        <div class="product-info">
-          <div>
-            <div class="product-title" onclick="openDetailsModal(${index})">${product.name}</div>
-            <div class="product-price-row">
-              <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
-              <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
-            </div>
-          </div>
-          <button class="btn-add-to-cart" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price})">
-            <i class="fa-solid fa-cart-plus"></i> Add To Cart
-          </button>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }
+card.innerHTML = `
+<div class="product-img-box">
+<img src="../${product.image}" onerror="this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
+</div>
+<div class="product-info">
+<div>
+<div class="product-title">${product.name}</div>
+<div class="product-price-row">
+<span class="price-current">Rs. ${product.price.toLocaleString()}</span>
+<span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
+</div>
+</div>
+<button class="btn-add-to-cart" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price})">
+<i class="fa-solid fa-cart-plus"></i> Add To Cart
+</button>
+</div>
+`;
+container.appendChild(card);
+});
+}
 })
 .catch(err => {
-  console.error('Error loading products:', err);
-  document.getElementById('dynamic-product-container').innerHTML = '<p style="text-align:center; color:red; grid-column:1/-1;">सामानहरू लोड हुन सकेनन्। products.json चेक गर्नुहोस्!</p>';
+console.error('Error loading products:', err);
+document.getElementById('dynamic-product-container').innerHTML = '<p style="text-align:center; color:red; grid-column:1/-1;">सामानहरू लोड हुन सकेनन्। products.json चेक गर्नुहोस्!</p>';
 });
-
-// 🔍 प्रडक्ट विवरण र ठूलो फोटो देखाउने Popup Function
-function openDetailsModal(index) {
-  const product = loadedProducts[index];
-  if (!product) return;
-  let imageSrc = product.image.startsWith('http') || product.image.startsWith('../') 
-    ? product.image 
-    : `../${product.image}`;
-  const content = document.getElementById('details-content');
-
-  content.innerHTML = `
-    <img src="${imageSrc}" class="detail-modal-img" alt="${product.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
-    <h3 style="color:#0f172a; font-size:18px; font-weight:700; margin:0;">${product.name}</h3>
-    <div class="product-price-row" style="margin:0;">
-      <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
-      <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
-    </div>
-    <div class="detail-description">
-      <strong>📌 विवरण (Details):</strong><br>
-      ${product.description || 'विस्तृत विवरण उपलब्ध छैन।'}
-    </div>
-    <button class="btn-add-to-cart" onclick="addToCart('${product.name.replace(/'/g, "\\'")}', ${product.price}); closeDetailsModal();">
-      <i class="fa-solid fa-cart-plus"></i> Add To Cart
-    </button>
-  `;
-
-  document.getElementById('detailsModal').style.display = 'flex';
-}
-
-function closeDetailsModal() {
-  document.getElementById('detailsModal').style.display = 'none';
-}
 
 // 🛒 कार्ट म्यानेजमेन्ट फङ्सनहरू
 function addToCart(name, price) {
-  const existingItem = cart.find(item => item.name === name);
-  if (existingItem) {
-    existingItem.qty += 1;
-  } else {
-    cart.push({ name: name, price: price, qty: 1 });
-  }
-  updateCartUI();
-  const widget = document.querySelector('.floating-cart-widget');
-  widget.style.transform = 'scale(1.2)';
-  setTimeout(() => widget.style.transform = 'scale(1)', 200);
+const existingItem = cart.find(item => item.name === name);
+if (existingItem) {
+existingItem.qty += 1;
+} else {
+cart.push({ name: name, price: price, qty: 1 });
+}
+updateCartUI();
+const widget = document.querySelector('.floating-cart-widget');
+widget.style.transform = 'scale(1.2)';
+setTimeout(() => widget.style.transform = 'scale(1)', 200);
 }
 
 function updateCartUI() {
-  let totalItems = 0, totalPrice = 0;
-  cart.forEach(item => { 
-    totalItems += item.qty; 
-    totalPrice += (item.price * item.qty); 
-  });
-  document.getElementById('cart-count').innerText = totalItems;
-  document.getElementById('cart-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
+let totalItems = 0, totalPrice = 0;
+cart.forEach(item => { totalItems += item.qty; totalPrice += (item.price * item.qty); });
+document.getElementById('cart-count').innerText = totalItems;
+document.getElementById('cart-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
 }
 
 function openCartModal() {
-  if(cart.length === 0) { 
-    alert("कृपया अर्डर गर्न पहिले कुनै सामान कार्टमा थप्नुहोस्!"); 
-    return; 
-  }
-  const listContainer = document.getElementById('modal-cart-items');
-  listContainer.innerHTML = '';
-  let totalPrice = 0;
-  cart.forEach(item => {
-    totalPrice += (item.price * item.qty);
-    const itemRow = document.createElement('div');
-    itemRow.className = 'cart-item';
-    itemRow.innerHTML = `<div><strong>${item.name}</strong> (x${item.qty})</div><div style="color:#f59e0b; font-weight:bold;">Rs. ${(item.price * item.qty).toLocaleString()}</div>`;
-    listContainer.appendChild(itemRow);
-  });
-  document.getElementById('modal-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
-  document.getElementById('cartModal').style.display = 'flex';
+if(cart.length === 0) { alert("कृपया अर्डर गर्न पहिले कुनै सामान कार्टमा थप्नुहोस्!"); return; }
+const listContainer = document.getElementById('modal-cart-items');
+listContainer.innerHTML = '';
+let totalPrice = 0;
+cart.forEach(item => {
+totalPrice += (item.price * item.qty);
+const itemRow = document.createElement('div');
+itemRow.className = 'cart-item';
+itemRow.innerHTML = `<div><strong>${item.name}</strong> (x${item.qty})</div><div style="color:#f59e0b; font-weight:bold;">Rs. ${(item.price * item.qty).toLocaleString()}</div>`;
+listContainer.appendChild(itemRow);
+});
+document.getElementById('modal-total-price').innerText = 'Rs. ' + totalPrice.toLocaleString();
+document.getElementById('cartModal').style.display = 'flex';
 }
 
-function closeCartModal() { 
-  document.getElementById('cartModal').style.display = 'none'; 
-}
+function closeCartModal() { document.getElementById('cartModal').style.display = 'none'; }
 
 function sendOrderToWhatsApp() {
-  const name = document.getElementById('cust-name').value.trim();
-  const phone = document.getElementById('cust-phone').value.trim();
-  const address = document.getElementById('cust-address').value.trim();
-  const payment = document.getElementById('cust-payment').value;
+const name = document.getElementById('cust-name').value.trim();
+const phone = document.getElementById('cust-phone').value.trim();
+const address = document.getElementById('cust-address').value.trim();
+const payment = document.getElementById('cust-payment').value;
 
-  if(!name || !phone || !address) { 
-    alert("कृपया सबै बक्सहरू भर्नुहोस्!"); 
-    return; 
-  }
+if(!name || !phone || !address) { alert("कृपया सबै बक्सहरू भर्नुहोस्!"); return; }
 
-  let message = `🛒 *NEW ORDER - SMART SEWA NEPAL* \n\n👤 *ग्राहकको विवरण:* \n▪️ *नाम:* ${name}\n▪️ *फोन:* ${phone}\n▪️ *ठेगाना:* ${address}\n▪️ *पेमेन्ट:* ${payment}\n\n📦 *सामानहरू:* \n`;
-  let grandTotal = 0;
-  cart.forEach(item => {
-    message += `• ${item.name} (Qty: ${item.qty}) - Rs. ${(item.price * item.qty).toLocaleString()}\n`;
-    grandTotal += (item.price * item.qty);
-  });
-  message += `\n💰 *जम्मा कुल बिल:* Rs. ${grandTotal.toLocaleString()}`;
+let message = `🛒 *NEW ORDER - SMART SEWA NEPAL* \n\n👤 *ग्राहकको विवरण:* \n▪️ *नाम:* ${name}\n▪️ *फोन:* ${phone}\n▪️ *ठेगाना:* ${address}\n▪️ *पेमेन्ट:* ${payment}\n\n📦 *सामानहरू:* \n`;
+let grandTotal = 0;
+cart.forEach(item => {
+message += `• ${item.name} (Qty: ${item.qty}) - Rs. ${(item.price * item.qty).toLocaleString()}\n`;
+grandTotal += (item.price * item.qty);
+});
+message += `\n💰 *जम्मा कुल बिल:* Rs. ${grandTotal.toLocaleString()}`;
 
-  window.open(`https://wa.me/9815824328?text=${encodeURIComponent(message)}`, '_blank');
-  cart = []; 
-  updateCartUI(); 
-  closeCartModal();
+window.open(`https://wa.me/9815824328?text=${encodeURIComponent(message)}`, '_blank');
+cart = []; updateCartUI(); closeCartModal();
 }
 </script>
 </body>
