@@ -37,11 +37,11 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
-        /* 🚀 ENHANCED & ENLARGED HEADER STYLES */
+        /* 🚀 ENHANCED HEADER STYLES WITH COMPACT SEARCH */
         header {
             background: #0f172a;
             border-bottom: 3px solid #f59e0b;
-            padding: 16px 5%; /* Increased padding for prominent size */
+            padding: 12px 5%;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -52,21 +52,28 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 15px;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Prominent Brand Logo */
+        /* Brand Logo Style */
         .brand-master-logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
         }
 
+        .brand-logo-img {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
         .brand-main-title {
-            font-size: 26px; /* Larger title size */
+            font-size: 22px;
             font-weight: 800;
             color: #ffffff;
             line-height: 1.1;
@@ -78,29 +85,29 @@
         }
 
         .brand-sub-tag {
-            font-size: 11px;
+            font-size: 10px;
             color: #94a3b8;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             font-weight: 700;
             text-transform: uppercase;
         }
 
-        /* Modern & Expanded Search Bar */
+        /* Compact & fully visible Search Bar */
         .header-search-container {
             display: flex;
             align-items: center;
             background: #1e293b;
-            border: 2px solid #334155;
-            border-radius: 30px;
-            padding: 4px 8px 4px 18px;
-            flex-grow: 0.6;
-            max-width: 500px;
+            border: 1.5px solid #334155;
+            border-radius: 20px;
+            padding: 2px 4px 2px 14px;
+            width: 260px; /* fixed neat width for high visibility */
+            max-width: 100%;
             transition: all 0.3s ease;
         }
 
         .header-search-container:focus-within {
             border-color: #f59e0b;
-            box-shadow: 0 0 12px rgba(245, 158, 11, 0.4);
+            box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
             background: #0f172a;
         }
 
@@ -110,19 +117,20 @@
             outline: none;
             color: #ffffff;
             width: 100%;
-            font-size: 15px; /* Comfortable larger input text */
-            padding: 8px 0;
+            font-size: 13.5px;
+            padding: 5px 0;
         }
 
         .header-search-container button {
             background: #f59e0b;
             border: none;
             color: #0f172a;
-            width: 38px;
-            height: 38px;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
             border-radius: 50%;
             cursor: pointer;
-            font-size: 15px;
+            font-size: 13px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,11 +143,11 @@
             transform: scale(1.05);
         }
 
-        /* Navigation Links Styling with Enhanced Font & Spacing */
+        /* Navigation Links Styling */
         nav ul {
             display: flex;
             list-style: none;
-            gap: 22px;
+            gap: 18px;
             margin: 0;
             padding: 0;
         }
@@ -147,7 +155,7 @@
         nav ul li a {
             color: #e2e8f0;
             text-decoration: none;
-            font-size: 15px; /* Enlarged navigation font */
+            font-size: 14.5px;
             font-weight: 700;
             transition: color 0.2s;
             white-space: nowrap;
@@ -175,8 +183,8 @@
         .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
 
         @media (max-width: 900px) { 
-            .nav-wrapper { flex-wrap: wrap; justify-content: center; text-align: center; } 
-            .header-search-container { order: 3; max-width: 100%; width: 100%; margin-top: 8px; }
+            .nav-wrapper { flex-wrap: wrap; justify-content: space-between; } 
+            .header-search-container { order: 3; width: 100%; margin-top: 6px; }
             .media-hub-grid { grid-template-columns: 1fr; } 
         }
 
@@ -267,20 +275,21 @@
         };
     </script>
 
-    <!-- 🌟 Enlarged & Prominent Dynamic Header -->
+    <!-- Header Section -->
     <header>
         <div class="nav-wrapper">
-            <!-- Brand Logo -->
+            <!-- Brand Logo Restored with Image & Text -->
             <a href="index.html" class="brand-master-logo">
+                <img src="icons/favicon-96x96.png" alt="Smart Sewa Logo" class="brand-logo-img">
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
                     <div class="brand-sub-tag">NEPAL HUB</div>
                 </div>
             </a>
 
-            <!-- 🔍 Expanded Modern Search Bar -->
+            <!-- Compact & Clear Search Bar -->
             <form id="siteSearchForm" class="header-search-container" onsubmit="handleLiveSearch(event)">
-                <input type="text" id="searchInput" placeholder="Search products, posts, services..." onkeyup="handleLiveSearch(event)" required>
+                <input type="text" id="searchInput" placeholder="Search products, posts..." onkeyup="handleLiveSearch(event)" required>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
@@ -554,7 +563,7 @@
         });
     </script>
 
-    <!-- 🌐 ORIGINAL LIVE WEBSITE FOOTER (RESTORED EXACTLY) -->
+    <!-- Footer -->
     <footer>
         <div class="footer-nav-links">
             <a href="pages/accessories.html">Accessories</a> |
