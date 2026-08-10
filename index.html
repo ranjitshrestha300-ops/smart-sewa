@@ -37,135 +37,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
-        /* 🚀 ENHANCED HEADER STYLES WITH COMPACT SEARCH */
-        header {
-            background: #0f172a;
-            border-bottom: 3px solid #f59e0b;
-            padding: 12px 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-        }
-
-        .nav-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 15px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        /* Brand Logo Style */
-        .brand-master-logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-        }
-
-        .brand-logo-img {
-            width: 42px;
-            height: 42px;
-            object-fit: contain;
-            border-radius: 6px;
-        }
-
-        .brand-main-title {
-            font-size: 22px;
-            font-weight: 800;
-            color: #ffffff;
-            line-height: 1.1;
-            letter-spacing: -0.5px;
-        }
-
-        .brand-main-title span {
-            color: #f59e0b;
-        }
-
-        .brand-sub-tag {
-            font-size: 10px;
-            color: #94a3b8;
-            letter-spacing: 1.2px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-
-        /* Compact & fully visible Search Bar */
-        .header-search-container {
-            display: flex;
-            align-items: center;
-            background: #1e293b;
-            border: 1.5px solid #334155;
-            border-radius: 20px;
-            padding: 2px 4px 2px 14px;
-            width: 260px; /* fixed neat width for high visibility */
-            max-width: 100%;
-            transition: all 0.3s ease;
-        }
-
-        .header-search-container:focus-within {
-            border-color: #f59e0b;
-            box-shadow: 0 0 8px rgba(245, 158, 11, 0.3);
-            background: #0f172a;
-        }
-
-        .header-search-container input {
-            background: transparent;
-            border: none;
-            outline: none;
-            color: #ffffff;
-            width: 100%;
-            font-size: 13.5px;
-            padding: 5px 0;
-        }
-
-        .header-search-container button {
-            background: #f59e0b;
-            border: none;
-            color: #0f172a;
-            width: 30px;
-            height: 30px;
-            min-width: 30px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s ease;
-        }
-
-        .header-search-container button:hover {
-            background: #d97706;
-            color: #ffffff;
-            transform: scale(1.05);
-        }
-
-        /* Navigation Links Styling */
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 18px;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li a {
-            color: #e2e8f0;
-            text-decoration: none;
-            font-size: 14.5px;
-            font-weight: 700;
-            transition: color 0.2s;
-            white-space: nowrap;
-        }
-
-        nav ul li a:hover {
-            color: #f59e0b;
-        }
-
-        /* Ticker & Interactive Layout Styles */
+        /* Ticker, Buttons, and Layout Styles */
         .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
         .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
         .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
@@ -173,27 +45,50 @@
         .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .ticker-list li i { color: #f59e0b; margin-right: 8px; }
         @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
-        
         .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
         .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
         .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
         .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
         .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
         .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
-
-        @media (max-width: 900px) { 
-            .nav-wrapper { flex-wrap: wrap; justify-content: space-between; } 
-            .header-search-container { order: 3; width: 100%; margin-top: 6px; }
-            .media-hub-grid { grid-template-columns: 1fr; } 
-        }
-
+        @media (max-width: 768px) { .media-hub-grid { grid-template-columns: 1fr; } }
+        
         .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
         .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
         .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
-        /* Full Screen Banner Slideshow Styling */
+        /* --- Header search container styling --- */
+        .header-search-container {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin: 0 15px;
+            flex-grow: 0.4;
+        }
+        .header-search-container input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 6px;
+            width: 100%;
+            font-size: 13px;
+        }
+        .header-search-container button {
+            background: transparent;
+            border: none;
+            color: #f59e0b;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* --- Full Frame Slideshow Container styling --- */
         .full-hero-slideshow {
             position: relative;
             width: 100%;
@@ -225,13 +120,13 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
             color: #ffffff;
-            padding: 35px 5%;
+            padding: 30px;
         }
         .slide-content-overlay h2 {
             margin: 0 0 8px 0;
-            font-size: 28px;
+            font-size: 26px;
             color: #ffffff;
         }
         .slide-content-overlay p {
@@ -254,7 +149,10 @@
             z-index: 10;
             transition: 0.3s;
         }
-        .slide-nav-btn:hover { background: #f59e0b; color: #000; }
+        .slide-nav-btn:hover {
+            background: #f59e0b;
+            color: #000;
+        }
         .slide-nav-btn.prev { left: 15px; }
         .slide-nav-btn.next { right: 15px; }
     </style>
@@ -275,45 +173,47 @@
         };
     </script>
 
-    <!-- Header Section -->
     <header>
         <div class="nav-wrapper">
-            <!-- Brand Logo Restored with Image & Text -->
             <a href="index.html" class="brand-master-logo">
-                <img src="icons/favicon-96x96.png" alt="Smart Sewa Logo" class="brand-logo-img">
+                <div class="logo-graphic-shield">
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                </div>
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
-                    <div class="brand-sub-tag">NEPAL HUB</div>
+                    <div class="brand-sub-tag">Nepal Hub</div>
                 </div>
             </a>
 
-            <!-- Compact & Clear Search Bar -->
-            <form id="siteSearchForm" class="header-search-container" onsubmit="handleLiveSearch(event)">
-                <input type="text" id="searchInput" placeholder="Search products, posts..." onkeyup="handleLiveSearch(event)" required>
+            <!-- 🔍 Header Attractive Search Bar -->
+            <form action="/search" method="GET" class="header-search-container">
+                <input type="text" placeholder="Search accessories, services..." name="q" required>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
-            <!-- Navigation Links -->
             <nav>
                 <ul>
                     <li><a href="pages/accessories.html">Accessories</a></li>
                     <li><a href="pages/vlog-gaming.html">Vlog & Gaming</a></li>
-                    <li><a href="pages/insurance-post1.html" style="color: #f59e0b;">Insurance Plans</a></li>
+                    <li><a href="pages/insurance-post1.html" style="color: #f59e0b; font-weight: bold;">Insurance Plans</a></li>
                     <li><a href="pages/repair-hub.html">Repair Hub</a></li>
                     <li><a href="pages/gallery.html">Photo Gallery</a></li>
                 </ul>
             </nav>
+            <a href="pages/insurance-post1.html" class="cta-nav-btn">Book Services</a>
         </div>
     </header>
 
-    <!-- Dynamic Full-Size Banner Slideshow -->
+    <!-- 🖼️ Full Size Photo Product Slideshow Section -->
     <div class="full-hero-slideshow">
-        <div class="slideshow-track" id="dynamicSlideshowTrack"></div>
+        <div class="slideshow-track" id="dynamicSlideshowTrack">
+            <!-- Dynamic Product Slides Load Automatic Via JS -->
+        </div>
         <button class="slide-nav-btn prev" onclick="changeProductSlide(-1)">&#10094;</button>
         <button class="slide-nav-btn next" onclick="changeProductSlide(1)">&#10095;</button>
     </div>
 
-    <!-- Live Ticker Section -->
+    <!-- 🚀 टिकर सेक्सन -->
     <div class="premium-vertical-ticker">
         <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
         <div class="ticker-viewport">
@@ -323,46 +223,43 @@
         </div>
     </div>
 
-    <div class="main-wrapper" style="padding: 20px 5%; max-width: 1200px; margin: 0 auto;">
+    <div class="main-wrapper">
         
-        <!-- Search Results Message Anchor -->
-        <div id="searchResultsNotice" style="display:none; background:#fef3c7; border:1px solid #f59e0b; padding:12px 20px; border-radius:6px; margin-bottom:20px; font-weight:bold; color:#92400e;"></div>
-
-        <!-- Latest Updates Post Section -->
+        <!-- भर्खरका नयाँ पोस्टहरू (LATEST UPDATES) SECTION -->
         <div style="margin-bottom: 40px;">
-            <h2 class="block-title" id="postsHeaderTitle"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
+            <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
             <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-                <!-- JSON/Search Results will auto load here -->
+                <!-- JSON बाट पोस्टहरू स्वचालित रूपमा यहाँ लोड हुनेछन् -->
             </div>
         </div>
         
         <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 40px;">
 
         <h2 id="accessories" class="block-title">Accessories Portal</h2>
-        <div class="card-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:20px; margin-bottom: 40px;">
-            <div class="photo-style-card media-card">
+        <div class="card-grid" style="margin-bottom: 40px;">
+            <div class="photo-style-card">
                 <div>
-                    <div class="vector-container" style="font-size:24px; color:#f59e0b; margin-bottom:10px;"><i class="fa-solid fa-headphones"></i></div>
-                    <h3 style="margin:0 0 10px 0;">Wired & Wireless Earbuds</h3>
-                    <p style="font-size:13px; color:#64748b;">High-fidelity output drivers integrated with clear active noise isolate systems.</p>
+                    <div class="vector-container"><i class="fa-solid fa-headphones"></i></div>
+                    <h3>Wired & Wireless Earbuds</h3>
+                    <p>High-fidelity output drivers integrated with clear active noise isolate systems.</p>
                 </div>
                 <div>
-                    <div class="price-tag" style="font-weight:bold; color:#0f172a; margin:10px 0;">Rs. 2,499</div>
+                    <div class="price-tag">Rs. 2,499</div>
                     <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=Buy%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
-            <div class="photo-style-card media-card">
+            <div class="photo-style-card">
                 <div>
-                    <div class="vector-container" style="font-size:24px; color:#f59e0b; margin-bottom:10px;"><i class="fa-solid fa-bolt"></i></div>
-                    <h3 style="margin:0 0 10px 0;">Power Banks & Cables</h3>
-                    <p style="font-size:13px; color:#64748b;">Heavy duty internal storage safe matrix featuring 22.5W fast current output.</p>
+                    <div class="vector-container"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Power Banks & Cables</h3>
+                    <p>Heavy duty internal storage safe matrix featuring 22.5W fast current output.</p>
                 </div>
                 <div>
-                    <div class="price-tag" style="font-weight:bold; color:#0f172a; margin:10px 0;">Rs. 3,199</div>
+                    <div class="price-tag">Rs. 3,199</div>
                     <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=Buy%20Powerbank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20PowerBank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -393,22 +290,23 @@
             </div>
         </div>
 
-        <div class="split-container" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:20px;">
-            <div id="repair" class="interactive-panel media-card">
+        <div class="split-container">
+            <div id="repair" class="interactive-panel">
                 <h2>Repair & Unlock Hub</h2>
                 <p style="font-size: 13.5px; color: #64748b;">Remote flashing algorithms and structural locks removals panels.</p>
-                <div class="repair-dashboard" style="margin: 15px 0; display:flex; gap:10px; flex-wrap:wrap;">
-                    <span style="background:#e2e8f0; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:bold;"><i class="fa-brands fa-apple"></i> iCloud</span>
-                    <span style="background:#e2e8f0; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:bold;"><i class="fa-brands fa-android"></i> Mi Account</span>
-                    <span style="background:#e2e8f0; padding:6px 12px; border-radius:4px; font-size:12px; font-weight:bold;"><i class="fa-solid fa-key"></i> FRP Lock</span>
+                <div class="repair-dashboard" style="margin-top: 15px;">
+                    <div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
+                    <div class="repair-node"><i class="fa-brands fa-android"></i>Mi Account</div>
+                    <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
+                    <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
                 </div>
-                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="btn-direct-buy" style="background:#0284c7 !important;" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
+                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
             </div>
 
-            <div class="interactive-panel media-card">
+            <div class="interactive-panel">
                 <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
                 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
-                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking" class="btn-direct-buy" style="background: #ea4335 !important;">
+                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Typing%20Service." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
                     <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
                 </a>
             </div>
@@ -427,8 +325,9 @@
 
     </div>
 
-    <!-- Frontend Logic for Search, Slideshow & Data Fetching -->
+    <!-- Automatic Product Slideshow & Posts Loader Script -->
     <script>
+        // १. Slideshow को लागि Products Data Array
         const featuredProducts = [
             {
                 title: "Vlog & Gaming Media Center",
@@ -451,7 +350,6 @@
         ];
 
         let currentSlideIdx = 0;
-        let allPostsData = [];
 
         function renderSlideshow() {
             const track = document.getElementById('dynamicSlideshowTrack');
@@ -472,7 +370,9 @@
                 track.appendChild(slideAnchor);
             });
 
-            setInterval(() => { changeProductSlide(1); }, 4000);
+            setInterval(() => {
+                changeProductSlide(1);
+            }, 4000);
         }
 
         function changeProductSlide(step) {
@@ -482,94 +382,52 @@
             track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
         }
 
-        // Real-Time Search Functionality
-        function handleLiveSearch(event) {
-            if (event) event.preventDefault();
-            const query = document.getElementById('searchInput').value.toLowerCase().trim();
-            const grid = document.getElementById('dynamic-posts-grid');
-            const notice = document.getElementById('searchResultsNotice');
+        document.addEventListener('DOMContentLoaded', renderSlideshow);
 
-            if (!query) {
-                notice.style.display = 'none';
-                renderPostsGrid(allPostsData);
-                return;
-            }
+        // २. JSON फाइलबाट पोस्टहरू र टिकर तान्ने कोड
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const tickerList = document.getElementById('main-page-ticker');
+                if (tickerList && posts.length > 0) {
+                    tickerList.innerHTML = '';
+                    const latestUpdates = [...posts].reverse().slice(0, 3);
+                    latestUpdates.forEach(post => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
+                        tickerList.appendChild(li);
+                    });
+                }
 
-            const filteredPosts = allPostsData.filter(post => 
-                post.title.toLowerCase().includes(query) || 
-                (post.category && post.category.toLowerCase().includes(query))
-            );
-
-            notice.style.display = 'block';
-            notice.innerHTML = `🔍 Search results for: <strong>"${query}"</strong> (${filteredPosts.length} items found)`;
-            
-            renderPostsGrid(filteredPosts);
-
-            // Smooth scroll to results
-            document.getElementById('postsHeaderTitle').scrollIntoView({ behavior: 'smooth' });
-        }
-
-        function renderPostsGrid(posts) {
-            const grid = document.getElementById('dynamic-posts-grid');
-            if(!grid) return;
-            grid.innerHTML = '';
-
-            if (posts.length === 0) {
-                grid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; padding:20px; color:#64748b;">कुनै पनि रिजल्ट भेटिएन। कृपया अन्य शब्द टाइप गरेर खोज्नुहोस्।</p>`;
-                return;
-            }
-
-            posts.forEach(post => {
-                const card = document.createElement('div');
-                card.className = 'media-card';
-                card.style.display = 'flex';
-                card.style.flexDirection = 'column';
-                card.style.justifyContent = 'space-between';
-                
-                card.innerHTML = `
-                    <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
-                    <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category || 'UPDATE'} | ${post.date || ''}</span>
-                    <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
-                    <a href="${post.link}" class="btn-direct-buy" style="background:#0f172a !important; text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            renderSlideshow();
-
-            fetch('posts.json')
-                .then(response => response.json())
-                .then(posts => {
-                    allPostsData = posts;
-
-                    // Load Ticker
-                    const tickerList = document.getElementById('main-page-ticker');
-                    if (tickerList && posts.length > 0) {
-                        tickerList.innerHTML = '';
-                        const latestUpdates = [...posts].reverse().slice(0, 3);
-                        latestUpdates.forEach(post => {
-                            const li = document.createElement('li');
-                            li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
-                            tickerList.appendChild(li);
-                        });
-                    }
-
-                    // Render Posts
-                    renderPostsGrid(allPostsData);
-                })
-                .catch(err => console.error('Error loading posts:', err));
-        });
+                const grid = document.getElementById('dynamic-posts-grid');
+                if(grid) {
+                    grid.innerHTML = '';
+                    posts.forEach(post => {
+                        const card = document.createElement('div');
+                        card.className = 'media-card';
+                        card.style.display = 'flex';
+                        card.style.flexDirection = 'column';
+                        card.style.justifyContent = 'space-between';
+                        
+                        card.innerHTML = `
+                            <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
+                            <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
+                            <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
+                            <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+            })
+            .catch(err => console.error('Error loading posts:', err));
     </script>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-nav-links">
-            <a href="pages/accessories.html">Accessories</a> |
-            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> |
-            <a href="pages/insurance-post1.html">Insurance Plans</a> |
-            <a href="pages/repair-hub.html">Repair Hub</a> |
+            <a href="pages/accessories.html">Accessories</a> | 
+            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="pages/insurance-post1.html">Insurance Plans</a> | 
+            <a href="pages/repair-hub.html">Repair Hub</a> | 
             <a href="pages/gallery.html">Photo Gallery</a> |
             <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
             <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
