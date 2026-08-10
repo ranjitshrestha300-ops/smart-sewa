@@ -37,28 +37,34 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
-        /* Ticker, Buttons, and Layout Styles */
-        .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
-        .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
-        .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
-        .ticker-list { margin: 0; padding: 0; list-style: none; position: absolute; width: 100%; animation: verticalTicker 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
-        .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .ticker-list li i { color: #f59e0b; margin-right: 8px; }
-        @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
-        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
-        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
-        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
-        .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
-        .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
-        .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
-        .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
-        @media (max-width: 768px) { .media-hub-grid { grid-template-columns: 1fr; } }
-        
-        .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
-        .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
-        .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
-        #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
+        /* --- Header & Navigation Fixes --- */
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 20px;
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            white-space: nowrap; /* पाठलाई एउटै लाइनमा राख्छ */
+        }
+
+        header nav ul li a {
+            white-space: nowrap; /* पाठलाई भाँचिन (break हुन) दिँदैन */
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
         /* --- Header search container styling --- */
         .header-search-container {
@@ -68,8 +74,9 @@
             border: 1px solid #334155;
             border-radius: 20px;
             padding: 4px 12px;
-            margin: 0 15px;
-            flex-grow: 0.4;
+            margin: 0 10px;
+            flex-grow: 1;
+            max-width: 300px; /* Search bar लाई धेरै ठूलो हुन नदिन */
         }
         .header-search-container input {
             background: transparent;
@@ -87,6 +94,33 @@
             cursor: pointer;
             font-size: 14px;
         }
+
+        /* Ticker, Buttons, and Layout Styles */
+        .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
+        .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+        .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
+        .ticker-list { margin: 0; padding: 0; list-style: none; position: absolute; width: 100%; animation: verticalTicker 12s cubic-bezier(0.645, 0.045, 0.355, 1) infinite; }
+        .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .ticker-list li i { color: #f59e0b; margin-right: 8px; }
+        @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
+        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
+        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
+        .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
+        .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+        @media (max-width: 768px) { 
+            .media-hub-grid { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-wrap: wrap; }
+            header nav { width: 100%; overflow-x: auto; }
+        }
+        
+        .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
+        .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+        .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
+        #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
         /* --- Full Frame Slideshow Container styling --- */
         .full-hero-slideshow {
@@ -185,7 +219,7 @@
                 </div>
             </a>
 
-            <!-- 🔍 Header Attractive Search Bar -->
+            <!-- 🔍 Header Search Bar -->
             <form action="/search" method="GET" class="header-search-container">
                 <input type="text" placeholder="Search accessories, services..." name="q" required>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -326,7 +360,6 @@
 
     <!-- Automatic Product Slideshow & Posts Loader Script -->
     <script>
-        // १. Slideshow को लागि Products Data Array
         const featuredProducts = [
             {
                 title: "Vlog & Gaming Media Center",
@@ -383,7 +416,6 @@
 
         document.addEventListener('DOMContentLoaded', renderSlideshow);
 
-        // २. JSON फाइलबाट पोस्टहरू र टिकर तान्ने कोड
         fetch('posts.json')
             .then(response => response.json())
             .then(posts => {
