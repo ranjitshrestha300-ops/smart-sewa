@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Smart Sewa Nepal</title>
 
-
-<!-- Favicon Configuration -->
+    <!-- Favicon Configuration -->
     <link rel="apple-touch-icon" sizes="57x57" href="../icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="../icons/apple-icon-72x72.png">
@@ -16,25 +15,101 @@
     <link rel="apple-touch-icon" sizes="144x144" href="../icons/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="../icons/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
-
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="144x144" href="../icons/android-icon-144x144.png">
     <link rel="icon" type="image/png" sizes="96x96" href="../icons/android-icon-96x96.png">
-    <link rel="Normally I can help with things like this, but I don't seem to have access to that content. You can try again or ask me for something else.
+    <link rel="icon" type="image/png" sizes="72x72" href="../icons/android-icon-72x72.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="../icons/android-icon-48x48.png">
+    <link rel="icon" type="image/png" sizes="36x36" href="../icons/android-icon-36x36.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+    <link rel="manifest" href="../icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="../style.css">
+
     <style>
+        /* Header & Navigation Fixes */
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 20px;
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        header nav ul li {
+            white-space: nowrap;
+        }
+
+        header nav ul li a {
+            white-space: nowrap;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* Header Search Container Styling */
+        .header-search-container {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin: 0 10px;
+            flex-grow: 1;
+            max-width: 300px;
+        }
+        .header-search-container input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 6px;
+            width: 100%;
+            font-size: 13px;
+        }
+        .header-search-container button {
+            background: transparent;
+            border: none;
+            color: #f59e0b;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) { 
+            .nav-wrapper { flex-wrap: wrap; }
+            header nav { width: 100%; overflow-x: auto; }
+        }
+
+        /* Policy Container Styling */
         .policy-container { max-width: 800px; margin: 40px auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 40px; line-height: 1.8; color: #334155; }
         .policy-container h1 { color: #0f172a; margin-bottom: 20px; font-size: 28px; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px; }
         .policy-container h2 { color: #1e293b; margin-top: 25px; margin-bottom: 12px; font-size: 20px; }
         .policy-container p { margin-bottom: 15px; }
         .policy-container ul { margin-left: 20px; margin-bottom: 15px; }
+
+        .main-wrapper { min-height: 70vh; }
+        footer { width: 100%; display: block; clear: both; background: #0f172a; padding: 20px 0; text-align: center; margin-top: auto; }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-master-logo">
@@ -46,16 +121,23 @@
                     <div class="brand-sub-tag">Nepal Hub</div>
                 </div>
             </a>
+
+            <!-- Header Search Bar -->
+            <form action="/search" method="GET" class="header-search-container">
+                <input type="text" placeholder="Search accessories, services..." name="q" required>
+                <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+
+            <!-- Navigation Links -->
             <nav>
                 <ul>
                     <li><a href="accessories.html">Accessories</a></li>
                     <li><a href="vlog-gaming.html">Vlog & Gaming</a></li>
-                    <li><a href="insurance-post1.html">Insurance plans</a></li>
+                    <li><a href="insurance-post1.html">Insurance Plans</a></li>
                     <li><a href="repair-hub.html">Repair Hub</a></li>
                     <li><a href="gallery.html">Photo Gallery</a></li>
                 </ul>
             </nav>
-            <a href="../index.html" class="cta-nav-btn">Back to Home</a>
         </div>
     </header>
 
@@ -65,7 +147,7 @@
             <p>At Smart Sewa Nepal, accessible from ranjitshrestha1.com.np, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Smart Sewa Nepal and how we use it.</p>
             
             <h2>Google DoubleClick DART Cookie</h2>
-            <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to www.website.com and other sites on the internet.</p>
+            <p>Google is one of a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to our site and other sites on the internet.</p>
 
             <h2>Our Advertising Partners</h2>
             <p>Some of advertisers on our site may use cookies and web beacons. Our advertising partners include:</p>
@@ -81,18 +163,19 @@
         </div>
     </div>
 
-   <footer>
-    <div class="footer-nav-links">
-        <!-- ध्यान दिनुहोस्: सबैको अगाडि ../ थपिएको छ -->
-        <a href="../pages/accessories.html">Accessories</a> | 
-        <a href="../pages/vlog-gaming.html">Vlog & Gaming</a> | 
-        <a href="../pages/insurance-post1.html">Insurance Plans</a> | 
-        <a href="../pages/repair-hub.html">Repair Hub</a> | 
-        <a href="../pages/gallery.html">Photo Gallery</a> |
-        <a href="../pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-        <a href="../pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-    </div>
-    <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-</footer>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-nav-links">
+            <a href="accessories.html">Accessories</a> | 
+            <a href="vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="insurance-post1.html">Insurance Plans</a> | 
+            <a href="repair-hub.html">Repair Hub</a> | 
+            <a href="gallery.html">Photo Gallery</a> |
+            <a href="privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
