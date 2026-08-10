@@ -61,26 +61,60 @@
         .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
-        /* --- 🔍 SEARCH BAR STYLES --- */
-        .search-container { position: relative; max-width: 700px; margin: 15px auto; padding: 0 15px; z-index: 100; }
-        .search-input-wrapper { display: flex; align-items: center; background: #ffffff; border: 2px solid #f59e0b; border-radius: 30px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .search-input-wrapper i { padding-left: 15px; color: #64748b; }
-        .search-input-wrapper input { width: 100%; padding: 12px 15px; border: none; outline: none; font-size: 15px; color: #0f172a; }
-        .search-results-dropdown { position: absolute; top: 100%; left: 15px; right: 15px; background: #ffffff; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-height: 350px; overflow-y: auto; display: none; border: 1px solid #e2e8f0; margin-top: 5px; }
-        .search-result-item { display: flex; align-items: center; gap: 12px; padding: 12px 15px; border-bottom: 1px solid #f1f5f9; text-decoration: none; color: #0f172a; transition: background 0.2s; }
-        .search-result-item:hover { background: #f8fafc; }
-        .search-result-item img { width: 45px; h-height: 45px; height: 45px; object-fit: cover; border-radius: 6px; }
-        .search-result-info h5 { margin: 0; font-size: 14px; font-weight: 600; color: #0f172a; }
-        .search-result-info span { font-size: 11px; color: #f59e0b; font-weight: bold; text-transform: uppercase; }
-
-        /* --- 🖼️ HERO SLIDESHOW STYLES --- */
-        .hero-inner { display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
-        .hero-content { flex: 1; min-width: 300px; }
-        .hero-slideshow { flex: 1; min-width: 300px; max-width: 480px; position: relative; height: 300px; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 25px rgba(0,0,0,0.3); border: 3px solid #f59e0b; }
-        .slide { position: absolute; width: 100%; height: 100%; opacity: 0; transition: opacity 0.8s ease-in-out; }
-        .slide.active { opacity: 1; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; }
-        .slide-caption { position: absolute; bottom: 0; background: rgba(15, 23, 42, 0.85); color: #fff; width: 100%; padding: 10px 15px; text-align: center; font-size: 13px; font-weight: 600; }
+        /* --- NEW SLIDESHOW STYLES (Hero Frame Size) --- */
+        .hero-section {
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .hero-inner {
+            width: 100%;
+            max-width: 1200px;
+            padding: 0 20px;
+        }
+        .hero-slideshow-container {
+            position: relative;
+            width: 100%;
+            max-width: 550px; /* live frame ko size anusar */
+            height: 310px;
+            margin: 0 auto;
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        .hero-slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .hero-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .hero-slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(15, 23, 42, 0.85);
+            color: #ffffff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 14px;
+            font-weight: 600;
+            border-top: 1px solid rgba(245, 158, 11, 0.5);
+        }
+        .fade-animation {
+            animation-name: fadeEffect;
+            animation-duration: 1.2s;
+        }
+        @keyframes fadeEffect {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -123,48 +157,30 @@
         </div>
     </header>
 
-    <!-- 🔍 खोज्ने बक्स (GLOBAL SEARCH BAR) -->
-    <div class="search-container">
-        <div class="search-input-wrapper">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="site-search-input" placeholder="सामान वा लेखहरू खोज्नुहोस् (उदा: Earbuds, Insurance, Repair)..." onkeyup="handleLiveSearch()">
-        </div>
-        <div id="search-results" class="search-results-dropdown"></div>
-    </div>
-
-    <!-- 🖼️ HERO SECTION WITH SLIDESHOW -->
+    <!-- 🎯 MODIFIED HERO SECTION: TEXTS & BUTTON REMOVED, SAME SIZE SLIDESHOW ADDED -->
     <div class="hero-section">
         <div class="hero-inner">
-            <div class="hero-content">
-                <h2>WELCOME TO</h2>
-                <h1>SMART <span>SEWA NEPAL</span></h1>
-                <p>Your Integrated Premium Digital Solution for tracking elite accessories, software systems locks removal logs, and online insurance matrix booking slots.</p>
-                <a href="pages/insurance-post1.html" class="hero-action-btn">Book Your Services Now</a>
-            </div>
-
-            <!-- Product Image Slideshow -->
-            <div class="hero-slideshow">
-                <div class="slide active">
-                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Earbuds">
-                    <div class="slide-caption">Wired & Wireless Earbuds</div>
+            <div class="hero-slideshow-container">
+                <!-- Slide 1 -->
+                <div class="hero-slide fade-animation">
+                    <img src="https://lh3.googleusercontent.com/rd-gg-dl/AAQ_wbHg0kIhYMSUxCRY0sdvWD2X57Ub7F00LXSDewCQJuMnHrNNGl612ZhGJj1Ehw8fYOkHsrpOSOAPYhWJc5kDrKGe5BesF5Zcgu3MeqFABdYH9WRak6BGvscaE53UAvbzddCJHVhNXLtBQoBcehy03UJvm136FUSbTbtiWqJg9I6Px6-ursmYriPaNgo1_PeRET9sGxfaUQJ3H3BAmD58Lw4FoMB4O6t66A0uQNUKs2ErYz9YMfb2OhxSepEye-ujmKtNyj_c6WkDDiKOUBUycxlDa0TjOSmnKGrqUkWtbY8gIuJIOWJcIuLM8g1oJK_ALEAa4_UL5-3ddo83-g4DNke4VvfYPU9KrprL2abAD3YjIiQyhiJnGlDfHpT1chGUZVQUV5CszfKQ3IpUnSYRyvkLW73icB_Pz6SgBjmxODm9LkiZsmz_3b5AFLtqLmCxsXFalXpXPbGkJoh0W_znvzkf436nRgH3VdR_LsDZofg8rn4-MOV3J3PBjx86Xdm9ImDmKrpr5gYCebcbkqbaQ2KNbZ26mZsjuByyDYDdHAdGn_C09ijNdTOlVz6_Gv1Hw7MXI56lAQ4v3nXHfTylH1FClMZClLg32TqF81LYIlg4yb6f3s5iczfLl-C4vfUtVJmwy1lyQxfv9uzZwhdn5I3yKtSwux1ljWZbIuU7PlzqBqF6AWE6fHMUWjieUdHYq0h3oEVC_0BrfGIgdGX-yMG8dlNFpYvC8zkBmrl5rgItMgS_fcfXaE8MpFZAESPBfXVV3lQSybC9kLaWqxjHFMidBjGwRtquYfaV6LysAIwWhwLQ2w-yFAG4g6vseH3wekmtWmQPdKs7oWicJjALau_eM8ouYSaNACSAOhm0hQtBeT41RvXyaWHNaAzH12gc_Sya7YoK9lbK1hqwEjp1gTaWC1D3jZHLo4d5Iswa3ZzjE8NoOdnSn-jpvFVd9iSSRkPn8DQyBNs-Mw1LxkAkgtKcqZYOTmJBVG1aeZmKkLDbL-0Qgv1KgOX9N5OogEaf3hNfGy2Wd_BOzaHoOVnkHBYH2IGiszSzUTbcFaTOAPpP0nG-Nk5KMpTx093JsOJb5VJLkBGkX5efyLLA1QGewdFWXMc8t5IrPtKoI_TJqpkyMrMyhPSpI0Nq32SZHl-YAT8ARzGtypnjPxQLHbBsMudpwDDwT6dXnmlOPJzo35DlxEgxHPbxVYsePGQuaKmmVjyg9VNboGAHVQsQ1CQKUUn1kaX9lKgk12seCFO6PfsdyxEHtHDA2rsL8Srwen1hvET6Pb0p4YsVi5SSQlnTuqR8amk8nVgFuCWYEDaChN9JU7p-i8w0k1HEhvsS8lFhtbixatSAOqF356dkFDu4Z46tItWUVOlWbfWvP6K6IwVOGd_UC0EriiAOHZkc=s1024-rj" alt="Citizen Life Insurance Plans">
+                    <div class="hero-slide-caption">Citizen Life Insurance Plans</div>
                 </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1609592424083-d51e737c3852?auto=format&fit=crop&w=800&q=80" alt="Power Bank">
-                    <div class="slide-caption">22.5W Fast Power Banks</div>
+                <!-- Slide 2 -->
+                <div class="hero-slide fade-animation">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="Mobile Repair & Accessories Hub">
+                    <div class="hero-slide-caption">Mobile Repair & Accessories Hub</div>
                 </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" alt="Insurance">
-                    <div class="slide-caption">Citizen Life Insurance Plans</div>
-                </div>
-                <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&w=800&q=80" alt="Mobile Repair">
-                    <div class="slide-caption">Mobile Unlock & Repair Hub</div>
+                <!-- Slide 3 -->
+                <div class="hero-slide fade-animation">
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=800&q=80" alt="Vlog & Gaming Media Center">
+                    <div class="hero-slide-caption">Vlog & Gaming Media Center</div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- 🚀 टिकर सेक्सन -->
+    <!-- 🚀 टिकर सेक्सन (UNTOUCHED / SAME AS BEFORE) -->
     <div class="premium-vertical-ticker">
         <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
         <div class="ticker-viewport">
@@ -276,21 +292,36 @@
 
     </div>
 
-    <!-- ⚙️ SCRIPT FOR POSTS, TICKER, LIVE SEARCH & SLIDESHOW -->
+    <!-- Slideshow Auto-Play Script -->
     <script>
-        let allPostsData = [];
+        let currentSlideIndex = 0;
+        autoRunSlideshow();
 
-        // 1. JSON बाट डाटा लोड गराउने
+        function autoRunSlideshow() {
+            let slides = document.getElementsByClassName("hero-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            currentSlideIndex++;
+            if (currentSlideIndex > slides.length) { currentSlideIndex = 1; }    
+            slides[currentSlideIndex - 1].style.display = "block";  
+            setTimeout(autoRunSlideshow, 3500); // 3.5 seconds ma slide change hunerachha
+        }
+    </script>
+
+    <script>
+        // JSON फाइलबाट स्वचालित रूपमा नयाँ पोस्टहरू र टिकर दुवै तान्ने ब्याकइन्ड कोड (UNTOUCHED)
         fetch('posts.json')
             .then(response => response.json())
             .then(posts => {
-                allPostsData = posts;
-
-                // टिकर स्वचालित बनाउने
+                // --- १. टिकर स्वचालित बनाउने भाग ---
                 const tickerList = document.getElementById('main-page-ticker');
                 if (tickerList && posts.length > 0) {
-                    tickerList.innerHTML = '';
+                    tickerList.innerHTML = ''; // पुरानो लोड हुँदैछ भन्ने टेक्स्ट हटाउने
+                    
+                    // सबैभन्दा पछिल्ला ३ वटा पोस्टहरू निकाल्ने (अर्डर मिलाएर)
                     const latestUpdates = [...posts].reverse().slice(0, 3);
+                    
                     latestUpdates.forEach(post => {
                         const li = document.createElement('li');
                         li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
@@ -298,7 +329,7 @@
                     });
                 }
 
-                // ग्रिड पोस्टहरू लोड गराउने
+                // --- २. मुख्य ग्रिड पोस्टहरू लोड गराउने भाग ---
                 const grid = document.getElementById('dynamic-posts-grid');
                 if(grid) {
                     grid.innerHTML = '';
@@ -320,67 +351,6 @@
                 }
             })
             .catch(err => console.error('Error loading posts:', err));
-
-        // 2. 🔍 LIVE SEARCH FUNCTIONALITY
-        function handleLiveSearch() {
-            const query = document.getElementById('site-search-input').value.toLowerCase().trim();
-            const resultsContainer = document.getElementById('search-results');
-
-            if (query === '') {
-                resultsContainer.style.display = 'none';
-                return;
-            }
-
-            // JSON पोस्टहरू र पेजमा भएका मुख्य सेवाहरूबाट खोजी गर्ने
-            const defaultServices = [
-                { title: "Wired & Wireless Earbuds", category: "Product", link: "#accessories", image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=200&q=80" },
-                { title: "Power Banks & Fast Cables", category: "Product", link: "#accessories", image: "https://images.unsplash.com/photo-1609592424083-d51e737c3852?auto=format&fit=crop&w=200&q=80" },
-                { title: "Citizen Life Insurance Plans", category: "Insurance", link: "pages/insurance-post1.html", image: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=200&q=80" },
-                { title: "Mobile Repair & Locks Unlock", category: "Service", link: "#repair", image: "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&w=200&q=80" }
-            ];
-
-            const combinedData = [...defaultServices, ...allPostsData];
-            const filtered = combinedData.filter(item => 
-                item.title.toLowerCase().includes(query) || 
-                (item.category && item.category.toLowerCase().includes(query))
-            );
-
-            if (filtered.length > 0) {
-                resultsContainer.innerHTML = filtered.map(item => `
-                    <a href="${item.link}" class="search-result-item">
-                        <img src="${item.image || 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=200&q=80'}" alt="${item.title}">
-                        <div class="search-result-info">
-                            <span>${item.category || 'General'}</span>
-                            <h5>${item.title}</h5>
-                        </div>
-                    </a>
-                `).join('');
-                resultsContainer.style.display = 'block';
-            } else {
-                resultsContainer.innerHTML = '<div style="padding: 15px; text-align: center; color: #64748b; font-size: 14px;">केही भेटिएन (No Results Found)</div>';
-                resultsContainer.style.display = 'block';
-            }
-        }
-
-        // Search Dropdown बन्द गर्ने (बाहिर क्लिक गर्दा)
-        document.addEventListener('click', function(e) {
-            const searchContainer = document.querySelector('.search-container');
-            if (!searchContainer.contains(e.target)) {
-                document.getElementById('search-results').style.display = 'none';
-            }
-        });
-
-        // 3. 🖼️ HERO PHOTO SLIDESHOW FUNCTIONALITY
-        let slideIndex = 0;
-        function autoSlideShow() {
-            const slides = document.querySelectorAll('.hero-slideshow .slide');
-            if (slides.length === 0) return;
-            
-            slides.forEach(slide => slide.classList.remove('active'));
-            slideIndex = (slideIndex + 1) % slides.length;
-            slides[slideIndex].classList.add('active');
-        }
-        setInterval(autoSlideShow, 3500); // 3.5 सेकेन्डमा फोटो फेरिनेछ
     </script>
 
     <footer>
