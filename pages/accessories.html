@@ -296,22 +296,6 @@
 <p>Premium Electronics & Gadgets with Live Product Demos & Instant WhatsApp Order</p>
 </div>
 
-<!-- 🔍 Search Bar Section -->
-<div style="max-width: 600px; margin: -15px auto 25px auto; padding: 0 20px;">
-  <div style="position: relative; display: flex; align-items: center;">
-    <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 15px; color: #64748b; font-size: 16px;"></i>
-    <input 
-      type="text" 
-      id="searchInput" 
-      placeholder="सामानको नाम खोज्नुहोस् (Search products...)" 
-      onkeyup="filterProducts()"
-      style="width: 100%; padding: 12px 15px 12px 42px; border: 2px solid #e2e8f0; border-radius: 25px; font-size: 15px; outline: none; transition: all 0.3s;"
-      onfocus="this.style.borderColor='#f59e0b'"
-      onblur="this.style.borderColor='#e2e8f0'"
-    >
-  </div>
-</div>
-
 <!-- 🛒 प्रडक्ट ग्रिड -->
 <div class="daraz-grid" id="dynamic-product-container">
 <p style="text-align: center; color: #64748b; grid-column: 1/-1;">सामानहरू लोड हुँदैछन्...</p>
@@ -441,30 +425,24 @@ const loadedProducts = [
 }
 ];
 
-// 🚀 १. मुख्य ग्रिडमा सामान देखाउने फङ्सन (फिल्टर गरिएको वा सबै प्रडक्ट देखाउन मिल्ने)
-function renderProducts(productsToRender = loadedProducts) {
+// 🚀 १. मुख्य ग्रिडमा सामान देखाउने फङ्सन
+function renderProducts() {
     const container = document.getElementById('dynamic-product-container');
     if(!container) return;
     container.innerHTML = '';
 
-    if (productsToRender.length === 0) {
-        container.innerHTML = '<p style="text-align: center; color: #64748b; grid-column: 1/-1; padding: 30px 0;">तपाईंले खोज्नुभएको सामान फेला परेन।</p>';
-        return;
-    }
-
-    productsToRender.forEach((product) => {
-        const originalIndex = loadedProducts.findIndex(p => p.id === product.id);
+    loadedProducts.forEach((product, index) => {
         const coverImage = (product.images && product.images.length > 0) ? product.images[0] : 'https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80';
         const card = document.createElement('div');
         card.className = 'daraz-product-card';
 
         card.innerHTML = `
-            <div class="product-img-box" onclick="openDetailsModal(${originalIndex})">
+            <div class="product-img-box" onclick="openDetailsModal(${index})">
                 <img src="${coverImage}" alt="${product.name}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1546868871-7041f2a55e12?auto=format&fit=crop&w=400&q=80'">
             </div>
             <div class="product-info">
                 <div>
-                    <div class="product-title" onclick="openDetailsModal(${originalIndex})">${product.name}</div>
+                    <div class="product-title" onclick="openDetailsModal(${index})">${product.name}</div>
                     <div class="product-price-row">
                         <span class="price-current">Rs. ${product.price.toLocaleString()}</span>
                         <span class="price-original">Rs. ${product.original_price.toLocaleString()}</span>
@@ -477,19 +455,6 @@ function renderProducts(productsToRender = loadedProducts) {
         `;
         container.appendChild(card);
     });
-}
-
-// 🔍 सामान खोज्ने फङ्सन (Search Function)
-function filterProducts() {
-    const query = document.getElementById('searchInput').value.toLowerCase().trim();
-    
-    const filteredProducts = loadedProducts.filter(product => {
-        const nameMatch = product.name.toLowerCase().includes(query);
-        const featureMatch = product.features && product.features.some(f => f.toLowerCase().includes(query));
-        return nameMatch || featureMatch;
-    });
-
-    renderProducts(filteredProducts);
 }
 
 // 🔍 २. Photo को मुनि Warning message रहने Detail Modal Function
