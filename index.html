@@ -37,7 +37,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
-        /* --- Header & Navigation Fixes --- */
+        /* Header & Navigation */
         .nav-wrapper {
             display: flex;
             align-items: center;
@@ -113,18 +113,18 @@
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
         /* =========================================================
-           📸 FULL PHOTO-ONLY SLIDESHOW STYLES (हटाएका टेक्स्टहरू हटाएर)
+           📸 PURE PHOTO-ONLY SLIDESHOW (सबै टेक्स्ट हटाइएको)
            ========================================================= */
         .full-hero-slideshow {
             position: relative;
             width: 100%;
             max-width: 1200px;
-            height: 400px; /* ब्यानरको उचाइ आवश्यकता अनुसार मिलाउन सक्नुहुन्छ */
+            height: 380px; /* ब्यानरको उचाइ आवश्यकता अनुसार बदल्न सकिन्छ */
             margin: 20px auto;
             overflow: hidden;
             border-radius: 12px;
             background: #0f172a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         }
 
         .slideshow-track {
@@ -144,21 +144,22 @@
         }
 
         .slide-card-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* तस्बिर पूरै स्लाइडमा भरिनेछ */
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover; /* फोटोले पूरै फ्रेम ओगट्नेछ */
             display: block;
         }
 
+        /* Arrows */
         .slide-nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.4);
             color: #fff;
             border: none;
-            width: 42px;
-            height: 42px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             border-radius: 50%;
             z-index: 10;
@@ -166,7 +167,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
         }
 
         .slide-nav-btn:hover {
@@ -177,9 +178,10 @@
         .slide-nav-btn.prev { left: 15px; }
         .slide-nav-btn.next { right: 15px; }
 
+        /* Navigation Dots */
         .slideshow-dots {
             position: absolute;
-            bottom: 15px;
+            bottom: 12px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -209,7 +211,7 @@
             .media-hub-grid { grid-template-columns: 1fr; }
             .nav-wrapper { flex-wrap: wrap; }
             header nav { width: 100%; overflow-x: auto; }
-            .full-hero-slideshow { height: 220px; } /* मोबाइलमा ब्यानर साइज सानो बनाइएको */
+            .full-hero-slideshow { height: 200px; } /* मोबाइलका लागि उपयुक्त उचाइ */
         }
     </style>
 </head>
@@ -259,17 +261,17 @@
         </div>
     </header>
 
-    <!-- 🖼️ ONLY PHOTO/BANNER SLIDESHOW SECTION -->
+    <!-- 🖼️ ONLY PHOTO SLIDESHOW SECTION -->
     <div class="full-hero-slideshow">
         <div class="slideshow-track" id="dynamicSlideshowTrack">
-            <!-- Full Photo Banner Slides JS बाट लोड हुन्छन् -->
+            <!-- JavaScript बाट ब्यानर/फोटोहरू लोड हुनेछन् -->
         </div>
         <button class="slide-nav-btn prev" onclick="changeProductSlide(-1)">&#10094;</button>
         <button class="slide-nav-btn next" onclick="changeProductSlide(1)">&#10095;</button>
         <div class="slideshow-dots" id="slideshowDots"></div>
     </div>
 
-    <!-- 🚀 टिकर सेक्सन -->
+    <!-- 🚀 TICKER SECTION -->
     <div class="premium-vertical-ticker">
         <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
         <div class="ticker-viewport">
@@ -281,11 +283,11 @@
 
     <div class="main-wrapper">
         
-        <!-- भर्खरका नयाँ पोस्टहरू (LATEST UPDATES) SECTION -->
+        <!-- LATEST UPDATES SECTION -->
         <div style="margin-bottom: 40px;">
             <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
             <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-                <!-- JSON बाट पोस्टहरू स्वचालित रूपमा यहाँ लोड हुनेछन् -->
+                <!-- JSON बाट स्वचालित लोड हुन्छ -->
             </div>
         </div>
         
@@ -302,7 +304,7 @@
                 <div>
                     <div class="price-tag">Rs. 2,499</div>
                     <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -315,7 +317,7 @@
                 <div>
                     <div class="price-tag">Rs. 3,199</div>
                     <div class="product-action-box">
-                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20PowerBank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -326,9 +328,9 @@
             <div class="media-card">
                 <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
                 <div class="youtube-video-container">
-                    <iframe src="url?id=12" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                 </div>
-                <a href="https://ranjitshrestha1.com.np/pages/accessories.html5" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
+                <a href="https://www.youtube me" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
             
             <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
@@ -356,13 +358,13 @@
                     <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
                     <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
                 </div>
-                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
+                <a href="pages/repair-hub.html" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
             </div>
 
             <div class="interactive-panel">
                 <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
                 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
-                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Typing%20Service." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
+                <a href="mailto:ranjitshrestha300@gmail.com" class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
                     <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
                 </a>
             </div>
@@ -383,7 +385,7 @@
 
     <!-- 📸 ONLY PHOTO SLIDESHOW JAVASCRIPT -->
     <script>
-        // स्लाइडमा आउने फोटोहरू र क्लिक गर्दा जाने लिङ्कहरू
+        // स्लाइडमा देखाउने फोटो/ब्यानरहरू र लिङ्कहरू
         const featuredProducts = [
             {
                 image: "productsimages/product1.png",
@@ -415,7 +417,7 @@
             if (dotsContainer) dotsContainer.innerHTML = '';
             
             featuredProducts.forEach((prod, index) => {
-                // केवल Full photo मात्र एंकर भित्र राखिएको छ
+                // केवल Image मात्र राखिएको छ (Text Overlay हटाइयो)
                 const slideAnchor = document.createElement('a');
                 slideAnchor.href = prod.link;
                 slideAnchor.className = 'slide-card-item';
@@ -424,7 +426,7 @@
                 `;
                 track.appendChild(slideAnchor);
 
-                // Indicator Dot
+                // Dots
                 if (dotsContainer) {
                     const dot = document.createElement('div');
                     dot.className = `dot ${index === 0 ? 'active' : ''}`;
