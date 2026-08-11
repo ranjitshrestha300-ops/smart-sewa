@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Favicon Configuration -->
+    <!-- Favicon Configuration for Smart Sewa -->
     <link rel="apple-touch-icon" sizes="57x57" href="icons/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="icons/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="icons/apple-icon-72x72.png">
@@ -37,6 +37,7 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
+        /* --- Header & Navigation Fixes --- */
         .nav-wrapper {
             display: flex;
             align-items: center;
@@ -54,13 +55,18 @@
             padding: 0;
         }
 
+        header nav ul li {
+            white-space: nowrap; /* पाठलाई एउटै लाइनमा राख्छ */
+        }
+
         header nav ul li a {
-            white-space: nowrap;
+            white-space: nowrap; /* पाठलाई भाँचिन (break हुन) दिँदैन */
             display: inline-block;
             text-decoration: none;
             font-size: 14px;
         }
 
+        /* --- Header search container styling --- */
         .header-search-container {
             display: flex;
             align-items: center;
@@ -70,7 +76,7 @@
             padding: 4px 12px;
             margin: 0 10px;
             flex-grow: 1;
-            max-width: 300px;
+            max-width: 300px; /* Search bar लाई धेरै ठूलो हुन नदिन */
         }
         .header-search-container input {
             background: transparent;
@@ -89,6 +95,7 @@
             font-size: 14px;
         }
 
+        /* Ticker, Buttons, and Layout Styles */
         .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
         .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
         .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
@@ -96,15 +103,14 @@
         .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .ticker-list li i { color: #f59e0b; margin-right: 8px; }
         @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
-        
         .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
         .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
         .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
         .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
         .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
         .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
-        
         @media (max-width: 768px) { 
             .media-hub-grid { grid-template-columns: 1fr; }
             .nav-wrapper { flex-wrap: wrap; }
@@ -116,73 +122,162 @@
         .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
-        /* Slideshow Layout Fixes */
+        /* --- Daraz-Style Hero Banner & Slideshow --- */
         .full-hero-slideshow {
             position: relative;
             width: 100%;
-            height: 480px;
+            max-width: 1200px;
+            height: 380px;
+            margin: 20px auto;
             overflow: hidden;
-            background: #000;
+            border-radius: 12px;
+            background: #f5f5f5;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
         }
+
         .slideshow-track {
             display: flex;
             width: 100%;
             height: 100%;
-            transition: transform 0.6s ease-in-out;
+            transition: transform 0.5s ease-in-out;
         }
+
         .slide-card-item {
             min-width: 100%;
             height: 100%;
             position: relative;
             text-decoration: none;
-            display: block;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            overflow: hidden;
         }
+
         .slide-card-item img {
-            width: 100%;
+            width: 55%;
             height: 100%;
             object-fit: cover;
-            display: block;
-        }
-        .slide-content-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
-            color: #ffffff;
-            padding: 30px;
+            top: 0;
+            mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
+            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
         }
-        .slide-content-overlay h2 {
-            margin: 0 0 8px 0;
-            font-size: 26px;
+
+        .slide-content-overlay {
+            position: relative;
+            z-index: 2;
+            width: 50%;
+            padding: 40px;
             color: #ffffff;
         }
-        .slide-content-overlay p {
-            margin: 0;
-            color: #f59e0b;
+
+        .slide-content-overlay .badge-sale {
+            display: inline-block;
+            background: #f57224; /* Daraz Orange Accent */
+            color: #fff;
+            font-size: 12px;
             font-weight: bold;
-            font-size: 16px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
+
+        .slide-content-overlay h2 {
+            margin: 0 0 10px 0;
+            font-size: 26px;
+            font-weight: 700;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+
+        .slide-content-overlay p {
+            margin: 0 0 15px 0;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        .slide-content-overlay .price-box {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .slide-content-overlay .price-box .current-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: #f57224;
+        }
+
+        .slide-content-overlay .price-box .old-price {
+            font-size: 15px;
+            color: #94a3b8;
+            text-decoration: line-through;
+        }
+
+        .slide-content-overlay .price-box .discount-tag {
+            background: rgba(245, 114, 36, 0.2);
+            color: #f57224;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .slide-content-overlay .btn-shop-now {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #f57224;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: background 0.2s;
+        }
+
+        .slide-content-overlay .btn-shop-now:hover {
+            background: #d95d13;
+        }
+
         .slide-nav-btn {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(15, 23, 42, 0.6);
-            color: #fff;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
             border: none;
-            padding: 12px 16px;
-            font-size: 20px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
             border-radius: 50%;
             z-index: 10;
             transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
         }
+
         .slide-nav-btn:hover {
-            background: #f59e0b;
-            color: #000;
+            background: #f57224;
+            color: #fff;
         }
+
         .slide-nav-btn.prev { left: 15px; }
         .slide-nav-btn.next { right: 15px; }
+
+        @media (max-width: 768px) {
+            .full-hero-slideshow { height: 320px; }
+            .slide-card-item img { width: 100%; opacity: 0.25; mask-image: none; -webkit-mask-image: none; }
+            .slide-content-overlay { width: 100%; padding: 20px; }
+            .slide-content-overlay h2 { font-size: 20px; }
+            .slide-content-overlay .price-box .current-price { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -190,11 +285,22 @@
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
 
+    <script>
+        const CORE_CONFIG_MATRIX = {
+            whatsapp_contact_phone: "9815824328", 
+            email_address: "ranjitshrestha300@gmail.com", 
+            office_location: "Dolakha, Nepal", 
+            google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
+            youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA", 
+            facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/" 
+        };
+    </script>
+
     <header>
         <div class="nav-wrapper">
             <a href="index.html" class="brand-master-logo">
                 <div class="logo-graphic-shield">
-                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
                 </div>
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -202,6 +308,7 @@
                 </div>
             </a>
 
+            <!-- 🔍 Header Search Bar -->
             <form action="/search" method="GET" class="header-search-container">
                 <input type="text" placeholder="Search accessories, services..." name="q" required>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -219,16 +326,16 @@
         </div>
     </header>
 
-    <!-- 🖼️ Dynamic Product Slideshow Section -->
+    <!-- 🖼️ Daraz-Style Dynamic Product Slideshow Section -->
     <div class="full-hero-slideshow">
         <div class="slideshow-track" id="dynamicSlideshowTrack">
-            <!-- Products Slides Load Automatically via JS -->
+            <!-- Dynamic Product Slides Load Automatic Via JS -->
         </div>
         <button class="slide-nav-btn prev" onclick="changeProductSlide(-1)">&#10094;</button>
         <button class="slide-nav-btn next" onclick="changeProductSlide(1)">&#10095;</button>
     </div>
 
-    <!-- 🚀 Ticker Section -->
+    <!-- 🚀 टिकर सेक्सन -->
     <div class="premium-vertical-ticker">
         <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
         <div class="ticker-viewport">
@@ -240,9 +347,11 @@
 
     <div class="main-wrapper">
         
+        <!-- भर्खरका नयाँ पोस्टहरू (LATEST UPDATES) SECTION -->
         <div style="margin-bottom: 40px;">
             <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
             <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                <!-- JSON बाट पोस्टहरू स्वचालित रूपमा यहाँ लोड हुनेछन् -->
             </div>
         </div>
         
@@ -259,7 +368,7 @@
                 <div>
                     <div class="price-tag">Rs. 2,499</div>
                     <div class="product-action-box">
-                        <a href="pages/accessories.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> View Details</a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20Earbuds" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -272,7 +381,7 @@
                 <div>
                     <div class="price-tag">Rs. 3,199</div>
                     <div class="product-action-box">
-                        <a href="pages/accessories.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> View Details</a>
+                        <a href="https://wa.me/9815824328?text=I%20want%20to%20Direct%20Buy%3A%20PowerBank" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
                     </div>
                 </div>
             </div>
@@ -283,9 +392,9 @@
             <div class="media-card">
                 <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
                 <div class="youtube-video-container">
-                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                 </div>
-                <a href="https://www.youtube.com/@NepalTaxiVlog" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
+                <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA?sub_confirmation=1" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
             
             <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
@@ -313,13 +422,13 @@
                     <div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
                     <div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
                 </div>
-                <a href="https://wa.me/9779815824328" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
+                <a href="https://wa.me/9815824328?text=Need%20Smart%20Sewa%20Repair%20Support" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
             </div>
 
             <div class="interactive-panel">
                 <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
                 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
-                <a href="mailto:ranjitshrestha300@gmail.com" class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
+                <a href="mailto:ranjitshrestha300@gmail.com?subject=Online%20Typing%20Booking&body=Hello%20Smart%20Sewa%2C%20I%20want%20to%20book%20Typing%20Service." class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
                     <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
                 </a>
             </div>
@@ -338,21 +447,46 @@
 
     </div>
 
-    <!-- Enhanced Product Extractor Engine -->
+    <!-- Automatic Daraz-Style Product Slideshow & Posts Loader Script -->
     <script>
-        let featuredProducts = [];
-        let currentSlideIdx = 0;
+        const featuredProducts = [
+            {
+                title: "Wired & Wireless Earbuds",
+                subtitle: "Active Noise Cancellation | High Bass Output",
+                price: "Rs. 2,499",
+                oldPrice: "Rs. 3,499",
+                discount: "-28%",
+                badge: "Flash Sale",
+                image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=1200&q=80",
+                link: "pages/accessories.html"
+            },
+            {
+                title: "Smart Sewa Insurance Plans",
+                subtitle: "Secure Your Future with Citizen Life Insurance Matrix",
+                price: "Rs. 1,200",
+                oldPrice: "Rs. 1,500",
+                discount: "-20%",
+                badge: "Best Offer",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80",
+                link: "pages/insurance-post1.html"
+            },
+            {
+                title: "Nepal Taxi Vlog & Gaming Hub",
+                subtitle: "Stream High Quality Content & Tutorials Daily",
+                price: "FREE",
+                oldPrice: "",
+                discount: "WATCH NOW",
+                badge: "Trending",
+                image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80",
+                link: "pages/vlog-gaming.html"
+            }
+        ];
 
-        function changeProductSlide(step) {
-            const track = document.getElementById('dynamicSlideshowTrack');
-            if (!track || featuredProducts.length === 0) return;
-            currentSlideIdx = (currentSlideIdx + step + featuredProducts.length) % featuredProducts.length;
-            track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
-        }
+        let currentSlideIdx = 0;
 
         function renderSlideshow() {
             const track = document.getElementById('dynamicSlideshowTrack');
-            if (!track || featuredProducts.length === 0) return;
+            if(!track) return;
             track.innerHTML = '';
             
             featuredProducts.forEach(prod => {
@@ -360,148 +494,71 @@
                 slideAnchor.href = prod.link;
                 slideAnchor.className = 'slide-card-item';
                 slideAnchor.innerHTML = `
-                    <img src="${prod.image}" alt="${prod.title}" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80'">
                     <div class="slide-content-overlay">
+                        <span class="badge-sale">${prod.badge}</span>
                         <h2>${prod.title}</h2>
                         <p>${prod.subtitle}</p>
+                        <div class="price-box">
+                            <span class="current-price">${prod.price}</span>
+                            ${prod.oldPrice ? `<span class="old-price">${prod.oldPrice}</span>` : ''}
+                            <span class="discount-tag">${prod.discount}</span>
+                        </div>
+                        <span class="btn-shop-now"><i class="fa-solid fa-cart-shopping"></i> Buy Now</span>
                     </div>
+                    <img src="${prod.image}" alt="${prod.title}">
                 `;
                 track.appendChild(slideAnchor);
             });
 
-            if (!window.slideshowTimer) {
-                window.slideshowTimer = setInterval(() => {
-                    changeProductSlide(1);
-                }, 4000);
-            }
+            setInterval(() => {
+                changeProductSlide(1);
+            }, 4000);
         }
 
-        // 🔍 `productsimages` र `images` फोल्डरहरूबाट तथा पेजहरूबाट फोटोहरू तान्ने मुख्य फसन
-        async function autoExtractAllPhotosFromPages() {
-            const pagesToScan = [
-                { link: 'pages/accessories.html', label: 'Accessories' },
-                { link: 'pages/vlog-gaming.html', label: 'Vlog & Gaming' },
-                { link: 'pages/insurance-post1.html', label: 'Insurance' },
-                { link: 'pages/gallery.html', label: 'Photo Gallery' },
-                { link: 'pages/repair-hub.html', label: 'Repair Hub' }
-            ];
+        function changeProductSlide(step) {
+            const track = document.getElementById('dynamicSlideshowTrack');
+            if(!track) return;
+            currentSlideIdx = (currentSlideIdx + step + featuredProducts.length) % featuredProducts.length;
+            track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+        }
 
-            let extractedItems = [];
+        document.addEventListener('DOMContentLoaded', renderSlideshow);
 
-            for (let page of pagesToScan) {
-                try {
-                    let response = await fetch(page.link);
-                    if (!response.ok) continue;
-
-                    let htmlText = await response.text();
-                    let parser = new DOMParser();
-                    let doc = parser.parseFromString(htmlText, 'text/html');
-
-                    // 1. सबै img ट्यागहरू प्राप्त गर्ने
-                    let images = doc.querySelectorAll('img');
-
-                    images.forEach((img, idx) => {
-                        let imgSrc = img.getAttribute('src');
-                        if (!imgSrc) return;
-
-                        let srcLower = imgSrc.toLowerCase();
-
-                        // 🚫 Logo, QR Code, Icon, Avatar र Banner लाई हटाउने
-                        const isIgnored = srcLower.includes('logo') || 
-                                          srcLower.includes('qr') || 
-                                          srcLower.includes('icon') || 
-                                          srcLower.includes('avatar') || 
-                                          srcLower.includes('favicon');
-
-                        // ✅ `productsimages` वा `images` फोल्डर वा अन्य मुख्य फोटोहरू स्वीकृत गर्ने
-                        if (!isIgnored) {
-                            
-                            // 🛠️ Path Adjustments (सबै सम्भावित Relative Paths लाई मिलाउन)
-                            let finalPath = imgSrc;
-                            if (!finalPath.startsWith('http') && !finalPath.startsWith('/')) {
-                                // `../` वा `./` हटाउने
-                                finalPath = finalPath.replace(/^(\.\.\/|\.\/)+/, '');
-
-                                // यदि productsimages वा images फोल्डर रूटमा छ भने
-                                if (!finalPath.startsWith('productsimages/') && 
-                                    !finalPath.startsWith('images/') && 
-                                    !finalPath.startsWith('pages/')) {
-                                    
-                                    // यदि सब-पेज भित्र productsimages/ वा images/ फोल्डर छ भने
-                                    finalPath = 'pages/' + finalPath;
-                                }
-                            }
-
-                            // नजिकैको Title/Heading पत्ता लगाउने
-                            let parentCard = img.closest('.photo-style-card, .card, .product-card, article, section') || img.parentElement;
-                            let titleTag = parentCard ? parentCard.querySelector('h1, h2, h3, h4, .title') : null;
-                            let titleText = titleTag ? titleTag.textContent.trim() : `${page.label} Item #${idx + 1}`;
-
-                            extractedItems.push({
-                                title: titleText,
-                                subtitle: `${page.label} | Premium Product`,
-                                image: finalPath,
-                                link: page.link
-                            });
-                        }
+        fetch('posts.json')
+            .then(response => response.json())
+            .then(posts => {
+                const tickerList = document.getElementById('main-page-ticker');
+                if (tickerList && posts.length > 0) {
+                    tickerList.innerHTML = '';
+                    const latestUpdates = [...posts].reverse().slice(0, 3);
+                    latestUpdates.forEach(post => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
+                        tickerList.appendChild(li);
                     });
-
-                } catch (e) {
-                    console.error(`Error scanning ${page.link}:`, e);
                 }
-            }
 
-            // यदि फोटो तानिन सकियो भने स्लाइडर अपडेट गर्ने
-            if (extractedItems.length > 0) {
-                featuredProducts = extractedItems;
-            } else {
-                // Fallback Display यदि कुनै फोटो लोड हुन सकेन भने
-                featuredProducts = [
-                    { title: "Smart Sewa Hub", subtitle: "Explore Accessories & Services", image: "images/default-banner.jpg", link: "pages/accessories.html" }
-                ];
-            }
-            renderSlideshow();
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            autoExtractAllPhotosFromPages();
-
-            fetch('posts.json')
-                .then(response => response.json())
-                .then(posts => {
-                    const tickerList = document.getElementById('main-page-ticker');
-                    if (tickerList && posts.length > 0) {
-                        tickerList.innerHTML = '';
-                        const latestUpdates = [...posts].reverse().slice(0, 3);
-                        latestUpdates.forEach(post => {
-                            const li = document.createElement('li');
-                            li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
-                            tickerList.appendChild(li);
-                        });
-                    }
-
-                    const grid = document.getElementById('dynamic-posts-grid');
-                    if(grid && posts.length > 0) {
-                        grid.innerHTML = '';
-                        posts.forEach(post => {
-                            const card = document.createElement('div');
-                            card.className = 'media-card';
-                            card.style.display = 'flex';
-                            card.style.flexDirection = 'column';
-                            card.style.justifyContent = 'space-between';
-                            
-                            card.innerHTML = `
-                                <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
-                                <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
-                                <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
-                                <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">Read Full Post</a>
-                            `;
-                            grid.appendChild(card);
-                        });
-                    }
-                })
-                .catch(err => console.error('Error loading posts:', err));
-        });
+                const grid = document.getElementById('dynamic-posts-grid');
+                if(grid) {
+                    grid.innerHTML = '';
+                    posts.forEach(post => {
+                        const card = document.createElement('div');
+                        card.className = 'media-card';
+                        card.style.display = 'flex';
+                        card.style.flexDirection = 'column';
+                        card.style.justifyContent = 'space-between';
+                        
+                        card.innerHTML = `
+                            <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
+                            <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
+                            <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
+                            <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
+                        `;
+                        grid.appendChild(card);
+                    });
+                }
+            })
+            .catch(err => console.error('Error loading posts:', err));
     </script>
 
     <footer>
