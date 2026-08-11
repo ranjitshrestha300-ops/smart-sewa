@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Sewa Nepal | Premium Digital Hub & Media Center</title>
     
+    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1922041060809267" crossorigin="anonymous"></script>
+    
+    <!-- Font Awesome & CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -103,6 +106,7 @@
         .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .ticker-list li i { color: #f59e0b; margin-right: 8px; }
         @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
+        
         .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
         .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
         .btn-inquiry { background: #0284c7 !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
@@ -111,6 +115,7 @@
         .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
         .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
         .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+        
         @media (max-width: 768px) { 
             .media-hub-grid { grid-template-columns: 1fr; }
             .nav-wrapper { flex-wrap: wrap; }
@@ -122,7 +127,7 @@
         .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
-        /* --- Daraz-Style Dynamic Hero Slideshow Styles --- */
+        /* --- Dynamic Hero Slideshow Styles --- */
         .full-hero-slideshow {
             position: relative;
             width: 100%;
@@ -174,7 +179,7 @@
 
         .slide-content-overlay .badge-sale {
             display: inline-block;
-            background: #f57224; /* Daraz Orange Accent */
+            background: #f57224;
             color: #fff;
             font-size: 12px;
             font-weight: bold;
@@ -271,7 +276,6 @@
         .slide-nav-btn.prev { left: 15px; }
         .slide-nav-btn.next { right: 15px; }
 
-        /* Slide Indicators (Dots) */
         .slideshow-dots {
             position: absolute;
             bottom: 12px;
@@ -334,7 +338,7 @@
                 </div>
             </a>
 
-            <!-- 🔍 Header Search Bar -->
+            <!-- Search Bar -->
             <form action="/search" method="GET" class="header-search-container">
                 <input type="text" placeholder="Search accessories, services..." name="q" required>
                 <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -352,7 +356,7 @@
         </div>
     </header>
 
-    <!-- 🖼️ Daraz-Style Dynamic Product Slideshow Section -->
+    <!-- Product Slideshow Section -->
     <div class="full-hero-slideshow">
         <div class="slideshow-track" id="dynamicSlideshowTrack">
             <!-- Dynamic Product Slides Load Automatically via JS -->
@@ -362,7 +366,7 @@
         <div class="slideshow-dots" id="slideshowDots"></div>
     </div>
 
-    <!-- 🚀 टिकर सेक्सन -->
+    <!-- Ticker Section -->
     <div class="premium-vertical-ticker">
         <div class="ticker-badge"><i class="fa-solid fa-bolt"></i> Updates</div>
         <div class="ticker-viewport">
@@ -374,11 +378,11 @@
 
     <div class="main-wrapper">
         
-        <!-- भर्खरका नयाँ पोस्टहरू (LATEST UPDATES) SECTION -->
+        <!-- LATEST UPDATES SECTION -->
         <div style="margin-bottom: 40px;">
             <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
             <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-                <!-- JSON बाट पोस्टहरू स्वचालित रूपमा यहाँ लोड हुनेछन् -->
+                <!-- JSON बाट पोस्टहरू यहाँ लोड हुनेछन् -->
             </div>
         </div>
         
@@ -474,11 +478,21 @@
 
     </div>
 
-    <!-- Automatic Daraz-Style Product Slideshow & Posts Loader Script -->
+    <footer>
+        <div class="footer-nav-links">
+            <a href="pages/accessories.html">Accessories</a> | 
+            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="pages/insurance-post1.html">Insurance Plans</a> | 
+            <a href="pages/repair-hub.html">Repair Hub</a> | 
+            <a href="pages/gallery.html">Photo Gallery</a> |
+            <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+            <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Section -->
     <script>
-        // =========================================================
-        // 🖼️ SLIDESHOW CONFIGURATION (यहाँ नयाँ फोटो/प्रोडक्ट थप्नुहोस्)
-        // =========================================================
         const featuredProducts = [
             {
                 title: "MZ Premium Series - M209",
@@ -487,7 +501,7 @@
                 oldPrice: "Rs. 1890",
                 discount: "-26%",
                 badge: "Hot Item",
-                image: "../productsimages/product1.png", // तपाईंको M209 फोटोको Path वा Image URL
+                image: "../productsimages/product1.png",
                 link: "pages/accessories.html"
             },
             {
@@ -534,7 +548,6 @@
             if(dotsContainer) dotsContainer.innerHTML = '';
             
             featuredProducts.forEach((prod, index) => {
-                // Slide creation
                 const slideAnchor = document.createElement('a');
                 slideAnchor.href = prod.link;
                 slideAnchor.className = 'slide-card-item';
@@ -554,7 +567,6 @@
                 `;
                 track.appendChild(slideAnchor);
 
-                // Indicator Dot creation
                 if(dotsContainer) {
                     const dot = document.createElement('div');
                     dot.className = `dot ${index === 0 ? 'active' : ''}`;
@@ -571,7 +583,6 @@
             if(!track) return;
             track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
 
-            // Update Active Dot
             const dots = document.querySelectorAll('.slideshow-dots .dot');
             dots.forEach((dot, idx) => {
                 dot.classList.toggle('active', idx === currentSlideIdx);
@@ -639,22 +650,7 @@
                 }
             })
             .catch(err => console.error('Error loading posts:', err));
-    </script>
 
-    <footer>
-        <div class="footer-nav-links">
-            <a href="pages/accessories.html">Accessories</a> | 
-            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
-            <a href="pages/insurance-post1.html">Insurance Plans</a> | 
-            <a href="pages/repair-hub.html">Repair Hub</a> | 
-            <a href="pages/gallery.html">Photo Gallery</a> |
-            <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-            <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-        </div>
-        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-    </footer>
-
-    <script>
         function toggleDisqusBox() {
             var container = document.getElementById('disqus-toggle-container');
             if (container.style.display === 'block') {
@@ -675,6 +671,5 @@
             }
         }
     </script>
-
 </body>
 </html>
