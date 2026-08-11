@@ -148,7 +148,7 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(15, 23, 42, 0.9));
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
             color: #ffffff;
             padding: 30px;
         }
@@ -219,10 +219,10 @@
         </div>
     </header>
 
-    <!-- 🖼️ Auto-Extract Dynamic Slideshow Section -->
+    <!-- 🖼️ Dynamic Product Slideshow Section -->
     <div class="full-hero-slideshow">
         <div class="slideshow-track" id="dynamicSlideshowTrack">
-            <!-- Dynamic Product Slides Load Automatic Via JS -->
+            <!-- Products Slides Load Automatically via JS -->
         </div>
         <button class="slide-nav-btn prev" onclick="changeProductSlide(-1)">&#10094;</button>
         <button class="slide-nav-btn next" onclick="changeProductSlide(1)">&#10095;</button>
@@ -338,7 +338,7 @@
 
     </div>
 
-    <!-- Enhanced Automatic Photo & Product Extractor Engine -->
+    <!-- Enhanced Product Extractor Engine -->
     <script>
         let featuredProducts = [];
         let currentSlideIdx = 0;
@@ -376,7 +376,7 @@
             }
         }
 
-        // 🔍 सबै सब-पेजहरूका सम्पूर्ण फोटोहरू तानेर स्लाइडशो बनाउने फसन
+        // 🔍 `productsimages` र `images` फोल्डरहरूबाट तथा पेजहरूबाट फोटोहरू तान्ने मुख्य फसन
         async function autoExtractAllPhotosFromPages() {
             const pagesToScan = [
                 { link: 'pages/accessories.html', label: 'Accessories' },
@@ -397,24 +397,42 @@
                     let parser = new DOMParser();
                     let doc = parser.parseFromString(htmlText, 'text/html');
 
-                    // 1. सबै img ट्यागहरू खोज्ने
+                    // 1. सबै img ट्यागहरू प्राप्त गर्ने
                     let images = doc.querySelectorAll('img');
 
                     images.forEach((img, idx) => {
                         let imgSrc = img.getAttribute('src');
-                        
-                        // लोगो/आइकनहरू बाहेक मुख्य प्रोडक्ट फोटोहरू मात्र लिने
-                        if (imgSrc && !imgSrc.includes('icon') && !imgSrc.includes('logo') && !imgSrc.includes('avatar')) {
+                        if (!imgSrc) return;
+
+                        let srcLower = imgSrc.toLowerCase();
+
+                        // 🚫 Logo, QR Code, Icon, Avatar र Banner लाई हटाउने
+                        const isIgnored = srcLower.includes('logo') || 
+                                          srcLower.includes('qr') || 
+                                          srcLower.includes('icon') || 
+                                          srcLower.includes('avatar') || 
+                                          srcLower.includes('favicon');
+
+                        // ✅ `productsimages` वा `images` फोल्डर वा अन्य मुख्य फोटोहरू स्वीकृत गर्ने
+                        if (!isIgnored) {
                             
-                            // Path Correcting System
-                            if (!imgSrc.startsWith('http') && !imgSrc.startsWith('/')) {
-                                imgSrc = imgSrc.replace(/^(\.\.\/|\.\/)/, '');
-                                if (!imgSrc.startsWith('pages/')) {
-                                    imgSrc = 'pages/' + imgSrc;
+                            // 🛠️ Path Adjustments (सबै सम्भावित Relative Paths लाई मिलाउन)
+                            let finalPath = imgSrc;
+                            if (!finalPath.startsWith('http') && !finalPath.startsWith('/')) {
+                                // `../` वा `./` हटाउने
+                                finalPath = finalPath.replace(/^(\.\.\/|\.\/)+/, '');
+
+                                // यदि productsimages वा images फोल्डर रूटमा छ भने
+                                if (!finalPath.startsWith('productsimages/') && 
+                                    !finalPath.startsWith('images/') && 
+                                    !finalPath.startsWith('pages/')) {
+                                    
+                                    // यदि सब-पेज भित्र productsimages/ वा images/ फोल्डर छ भने
+                                    finalPath = 'pages/' + finalPath;
                                 }
                             }
 
-                            // नजिकैको Title वा Heading तान्ने
+                            // नजिकैको Title/Heading पत्ता लगाउने
                             let parentCard = img.closest('.photo-style-card, .card, .product-card, article, section') || img.parentElement;
                             let titleTag = parentCard ? parentCard.querySelector('h1, h2, h3, h4, .title') : null;
                             let titleText = titleTag ? titleTag.textContent.trim() : `${page.label} Item #${idx + 1}`;
@@ -422,7 +440,7 @@
                             extractedItems.push({
                                 title: titleText,
                                 subtitle: `${page.label} | Premium Product`,
-                                image: imgSrc,
+                                image: finalPath,
                                 link: page.link
                             });
                         }
@@ -433,13 +451,13 @@
                 }
             }
 
-            // यदि फोटोहरू सफलतापुर्वक तानिएमा स्लाइडर अपडेट गर्ने
+            // यदि फोटो तानिन सकियो भने स्लाइडर अपडेट गर्ने
             if (extractedItems.length > 0) {
                 featuredProducts = extractedItems;
             } else {
                 // Fallback Display यदि कुनै फोटो लोड हुन सकेन भने
                 featuredProducts = [
-                    { title: "Smart Sewa Hub", subtitle: "Explore Accessories & Services", image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80", link: "pages/accessories.html" }
+                    { title: "Smart Sewa Hub", subtitle: "Explore Accessories & Services", image: "images/default-banner.jpg", link: "pages/accessories.html" }
                 ];
             }
             renderSlideshow();
