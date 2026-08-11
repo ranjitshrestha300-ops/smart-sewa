@@ -56,11 +56,11 @@
         }
 
         header nav ul li {
-            white-space: nowrap; /* पाठलाई एउटै लाइनमा राख्छ */
+            white-space: nowrap;
         }
 
         header nav ul li a {
-            white-space: nowrap; /* पाठलाई भाँचिन (break हुन) दिँदैन */
+            white-space: nowrap;
             display: inline-block;
             text-decoration: none;
             font-size: 14px;
@@ -76,7 +76,7 @@
             padding: 4px 12px;
             margin: 0 10px;
             flex-grow: 1;
-            max-width: 300px; /* Search bar लाई धेरै ठूलो हुन नदिन */
+            max-width: 300px;
         }
         .header-search-container input {
             background: transparent;
@@ -358,9 +358,10 @@
 
     </div>
 
-    <!-- Automatic Product Slideshow & Posts Loader Script -->
+    <!-- Automatic Photo Extractor, Slideshow & Posts Loader Script -->
     <script>
-        const featuredProducts = [
+        // Fallback Product List
+        let featuredProducts = [
             {
                 title: "Vlog & Gaming Media Center",
                 subtitle: "Watch High Quality Stream & Tutorials",
@@ -383,9 +384,18 @@
 
         let currentSlideIdx = 0;
 
+        // Slide Next / Prev गराउने Function
+        function changeProductSlide(step) {
+            const track = document.getElementById('dynamicSlideshowTrack');
+            if (!track || featuredProducts.length === 0) return;
+            currentSlideIdx = (currentSlideIdx + step + featuredProducts.length) % featuredProducts.length;
+            track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+        }
+
+        // Slide render गर्ने Function
         function renderSlideshow() {
             const track = document.getElementById('dynamicSlideshowTrack');
-            if(!track) return;
+            if(!track || featuredProducts.length === 0) return;
             track.innerHTML = '';
             
             featuredProducts.forEach(prod => {
@@ -393,7 +403,7 @@
                 slideAnchor.href = prod.link;
                 slideAnchor.className = 'slide-card-item';
                 slideAnchor.innerHTML = `
-                    <img src="${prod.image}" alt="${prod.title}">
+                    <img src="${prod.image}" alt="${prod.title}" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80'">
                     <div class="slide-content-overlay">
                         <h2>${prod.title}</h2>
                         <p>${prod.subtitle}</p>
@@ -402,55 +412,107 @@
                 track.appendChild(slideAnchor);
             });
 
-            setInterval(() => {
-                changeProductSlide(1);
-            }, 4000);
+            if (!window.slideshowTimer) {
+                window.slideshowTimer = setInterval(() => {
+                    changeProductSlide(1);
+                }, 4000);
+            }
         }
 
-        function changeProductSlide(step) {
-            const track = document.getElementById('dynamicSlideshowTrack');
-            if(!track) return;
-            currentSlideIdx = (currentSlideIdx + step + featuredProducts.length) % featuredProducts.length;
-            track.style.transform = `translateX(-${currentSlideIdx * 100}%)`;
+        // 🚀 अन्य पेजहरूबाट स्वतः फोटो र शीर्षक तानेर स्लाइडशो बनाउने फसन
+        async function autoExtractSlidesFromPages() {
+            const pagesToScan = [
+                { link: 'pages/accessories.html', label: 'Accessories' },
+                { link: 'pages/vlog-gaming.html', label: 'Vlog & Gaming' },
+                { link: 'pages/insurance-post1.html', label: 'Insurance Plans' },
+                { link: 'pages/repair-hub.html', label: 'Repair Hub' },
+                { link: 'pages/gallery.html', label: 'Photo Gallery' }
+            ];
+
+            let extractedSlides = [];
+
+            for (let page of pagesToScan) {
+                try {
+                    let response = await fetch(page.link);
+                    if (!response.ok) continue;
+
+                    let htmlText = await response.text();
+                    let parser = new DOMParser();
+                    let doc = parser.parseFromString(htmlText, 'text/html');
+
+                    // पेज भित्रको पहिलो मेन इमेज खोज्ने
+                    let imgTag = doc.querySelector('.main-wrapper img, article img, .photo-style-card img, img');
+                    let titleTag = doc.querySelector('h1, h2, title');
+                    let pageTitle = titleTag ? titleTag.textContent.trim() : page.label;
+
+                    if (imgTag) {
+                        let imgSrc = imgTag.getAttribute('src');
+                        if (imgSrc) {
+                            // Path मिलाउने
+                            if (!imgSrc.startsWith('http') && !imgSrc.startsWith('/') && !imgSrc.startsWith('pages/')) {
+                                imgSrc = 'pages/' + imgSrc.replace(/^\.\//, '');
+                            }
+
+                            extractedSlides.push({
+                                title: pageTitle,
+                                subtitle: `${page.label} | Click to Explore`,
+                                image: imgSrc,
+                                link: page.link
+                            });
+                        }
+                    }
+                } catch (e) {
+                    console.log(`Failed to fetch slide from ${page.link}`, e);
+                }
+            }
+
+            if (extractedSlides.length > 0) {
+                featuredProducts = extractedSlides;
+            }
+            renderSlideshow();
         }
 
-        document.addEventListener('DOMContentLoaded', renderSlideshow);
+        // DOM Load हुँदा Auto Extractor र Posts JSON दुवै लोड गर्ने
+        document.addEventListener('DOMContentLoaded', () => {
+            autoExtractSlidesFromPages();
 
-        fetch('posts.json')
-            .then(response => response.json())
-            .then(posts => {
-                const tickerList = document.getElementById('main-page-ticker');
-                if (tickerList && posts.length > 0) {
-                    tickerList.innerHTML = '';
-                    const latestUpdates = [...posts].reverse().slice(0, 3);
-                    latestUpdates.forEach(post => {
-                        const li = document.createElement('li');
-                        li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
-                        tickerList.appendChild(li);
-                    });
-                }
+            // Posts.json बाट Ticker र Grid डाटा तान्ने
+            fetch('posts.json')
+                .then(response => response.json())
+                .then(posts => {
+                    const tickerList = document.getElementById('main-page-ticker');
+                    if (tickerList && posts.length > 0) {
+                        tickerList.innerHTML = '';
+                        const latestUpdates = [...posts].reverse().slice(0, 3);
+                        latestUpdates.forEach(post => {
+                            const li = document.createElement('li');
+                            li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
+                            tickerList.appendChild(li);
+                        });
+                    }
 
-                const grid = document.getElementById('dynamic-posts-grid');
-                if(grid) {
-                    grid.innerHTML = '';
-                    posts.forEach(post => {
-                        const card = document.createElement('div');
-                        card.className = 'media-card';
-                        card.style.display = 'flex';
-                        card.style.flexDirection = 'column';
-                        card.style.justifyContent = 'space-between';
-                        
-                        card.innerHTML = `
-                            <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
-                            <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
-                            <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
-                            <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
-                        `;
-                        grid.appendChild(card);
-                    });
-                }
-            })
-            .catch(err => console.error('Error loading posts:', err));
+                    const grid = document.getElementById('dynamic-posts-grid');
+                    if(grid && posts.length > 0) {
+                        grid.innerHTML = '';
+                        posts.forEach(post => {
+                            const card = document.createElement('div');
+                            card.className = 'media-card';
+                            card.style.display = 'flex';
+                            card.style.flexDirection = 'column';
+                            card.style.justifyContent = 'space-between';
+                            
+                            card.innerHTML = `
+                                <img src="${post.image}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
+                                <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
+                                <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
+                                <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
+                            `;
+                            grid.appendChild(card);
+                        });
+                    }
+                })
+                .catch(err => console.error('Error loading posts:', err));
+        });
     </script>
 
     <footer>
