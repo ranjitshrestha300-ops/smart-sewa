@@ -964,45 +964,58 @@ function sendOrderToWhatsApp() {
 
     
     
-  // URL को Hash (#) हेरेर Modal खोल्ने मुख्य फङ्क्सन
+ // URL को Hash (#) हेरेर Modal खोल्ने फङ्क्सन
 function openModalFromHash() {
-    // 1. URL को # पछिको भाग निकाल्ने र सफा गर्ने (उदा: "#1" बाट "1" वा "#yo-437bt" बाट "yo-437bt")
     const hash = decodeURIComponent(window.location.hash.replace('#', '')).trim().toLowerCase();
     
-    if (!hash || !window.products || window.products.length === 0) return;
+    // यदि Hash छैन भने केही नगर्ने
+    if (!hash) return;
 
-    // 2. Products Array मा Index (नम्बर) वा Name/ID अनुसार प्रडक्ट खोज्ने
+    // तपाईंको accessories.html मा प्रयोग भएको Product List/Array खोज्ने
+    const availableProducts = window.productsData || window.allProducts || (typeof products !== 'undefined' ? products : []);
+
+    if (!availableProducts || availableProducts.length === 0) return;
+
     let targetProduct = null;
 
-    // यदि Hash मा नम्बर छ भने (उदा: #1 ले पहिलो product, #2 ले दोस्रो product जनाउँछ)
+    // १. यदि Hash मा नम्बर छ भने (#1, #2 आदि)
     if (!isNaN(hash) && parseInt(hash) > 0) {
-        const productIndex = parseInt(hash) - 1; // Array Index 0 बाट सुरु हुन्छ
-        targetProduct = window.products[productIndex];
-    } else {
-        // यदि Hash मा प्रडक्टको नाम/मोडल छ भने (उदा: #yo-437bt)
-        targetProduct = window.products.find(p => {
+        const productIndex = parseInt(hash) - 1;
+        targetProduct = availableProducts[productIndex];
+    } 
+    // २. यदि Hash मा प्रडक्टको नाम वा keyword छ भने (#m209, #yoroto आदि)
+    else {
+        targetProduct = availableProducts.find(p => {
             const pName = String(p.name || '').toLowerCase();
             const pId = String(p.id || '').toLowerCase();
-            return pName.includes(hash) || (pId && pId === hash);
+            return pName.includes(hash) || pId === hash;
         });
     }
 
-    // 3. प्रडक्ट भेटियो भने Modal खोल्ने
-    if (targetProduct && typeof openDetailsModal === 'function') {
-        openDetailsModal(targetProduct);
+    // ३. प्रडक्ट भेटिएमा Modal खोल्ने
+    if (targetProduct) {
+        if (typeof openDetailsModal === 'function') {
+            openDetailsModal(targetProduct);
+        } else if (typeof openModal === 'function') {
+            openModal(targetProduct);
+        }
     }
 }
 
-// Google Sheet / API बाट Data लोड भइसक्न पर्खिने Loop
+// Data Fetch हुन समय लाग्ने हुनाले हरेक आधा सेकेन्डमा चेक गर्ने
 function checkAndTriggerModal() {
     let attempts = 0;
     const interval = setInterval(() => {
         attempts++;
-        // products Load भइसकेपछि Modal खोल्ने
-        if (window.products && window.products.length > 0) {
+        
+        const availableProducts = window.productsData || window.allProducts || (typeof products !== 'undefined' ? products : []);
+        
+        // Products लोड हुने बित्तिकै Modal खोल्ने
+        if (availableProducts && availableProducts.length > 0) {
             clearInterval(interval);
             openModalFromHash();
         }
+
         // १० सेकेन्ड पछि रोकिने
         if (attempts > 20) {
             clearInterval(interval);
@@ -1010,10 +1023,9 @@ function checkAndTriggerModal() {
     }, 500);
 }
 
-// Events Listener थप्ने
+// Events
 document.addEventListener('DOMContentLoaded', checkAndTriggerModal);
 window.addEventListener('hashchange', openModalFromHash);
-
     
 // सुरुआतमै प्रडक्टहरू लोड गर्ने
 renderProducts();
