@@ -100,7 +100,8 @@
         @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
         
         .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
-        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; }
+        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.3s ease; }
+        .btn-direct-buy:hover { background: #16a34a !important; }
         .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
         .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
         .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
@@ -113,13 +114,125 @@
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
         /* =========================================================
-           📸 PURE PHOTO-ONLY SLIDESHOW (सबै टेक्स्ट हटाइएको)
+           🛒 ENHANCED ACCESSORIES PORTAL STYLES
            ========================================================= */
+        .accessories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .accessory-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .accessory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .accessory-img-box {
+            position: relative;
+            width: 100%;
+            height: 180px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .accessory-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .accessory-card:hover .accessory-img-box img {
+            transform: scale(1.05);
+        }
+
+        .accessory-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #f59e0b;
+            color: #0f172a;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+        }
+
+        .accessory-content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .accessory-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .accessory-title i {
+            color: #f59e0b;
+        }
+
+        .accessory-desc {
+            font-size: 13.5px;
+            color: #64748b;
+            line-height: 1.5;
+            margin: 0 0 15px 0;
+        }
+
+        .accessory-price-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px dashed #e2e8f0;
+        }
+
+        .accessory-price {
+            font-size: 18px;
+            font-weight: 800;
+            color: #0f172a;
+        }
+
+        .accessory-price span {
+            font-size: 12px;
+            color: #94a3b8;
+            text-decoration: line-through;
+            margin-left: 6px;
+            font-weight: 500;
+        }
+
+        /* Pure Photo Slideshow */
         .full-hero-slideshow {
             position: relative;
             width: 100%;
             max-width: 1200px;
-            height: 380px; /* ब्यानरको उचाइ आवश्यकता अनुसार बदल्न सकिन्छ */
+            height: 380px;
             margin: 20px auto;
             overflow: hidden;
             border-radius: 12px;
@@ -146,11 +259,10 @@
         .slide-card-item img {
             width: 100% !important;
             height: 100% !important;
-            object-fit: cover; /* फोटोले पूरै फ्रेम ओगट्नेछ */
+            object-fit: cover;
             display: block;
         }
 
-        /* Arrows */
         .slide-nav-btn {
             position: absolute;
             top: 50%;
@@ -178,7 +290,6 @@
         .slide-nav-btn.prev { left: 15px; }
         .slide-nav-btn.next { right: 15px; }
 
-        /* Navigation Dots */
         .slideshow-dots {
             position: absolute;
             bottom: 12px;
@@ -211,7 +322,8 @@
             .media-hub-grid { grid-template-columns: 1fr; }
             .nav-wrapper { flex-wrap: wrap; }
             header nav { width: 100%; overflow-x: auto; }
-            .full-hero-slideshow { height: 200px; } /* मोबाइलका लागि उपयुक्त उचाइ */
+            .full-hero-slideshow { height: 200px; }
+            .accessories-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -263,9 +375,7 @@
 
     <!-- 🖼️ ONLY PHOTO SLIDESHOW SECTION -->
     <div class="full-hero-slideshow">
-        <div class="slideshow-track" id="dynamicSlideshowTrack">
-            <!-- JavaScript बाट ब्यानर/फोटोहरू लोड हुनेछन् -->
-        </div>
+        <div class="slideshow-track" id="dynamicSlideshowTrack"></div>
         <button class="slide-nav-btn prev" onclick="changeProductSlide(-1)">&#10094;</button>
         <button class="slide-nav-btn next" onclick="changeProductSlide(1)">&#10095;</button>
         <div class="slideshow-dots" id="slideshowDots"></div>
@@ -283,7 +393,7 @@
 
     <div class="main-wrapper">
         
-        <!-- 🎁 IRD PRIZE CHECKER SECTION (आन्तरिक राजस्व विभाग लक्की ड्र सेक्सन) -->
+        <!-- 🎁 IRD PRIZE CHECKER SECTION -->
         <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid #f59e0b; border-radius: 12px; padding: 25px; margin-bottom: 40px; color: #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">
             <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 15px;">
                 <div style="max-width: 650px;">
@@ -308,38 +418,55 @@
         <!-- LATEST UPDATES SECTION -->
         <div style="margin-bottom: 40px;">
             <h2 class="block-title"><i class="fa-solid fa-newspaper" style="color: #f59e0b;"></i> भर्खरका नयाँ पोस्टहरू (Latest Updates)</h2>
-            <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-                <!-- JSON बाट स्वचालित लोड हुन्छ -->
-            </div>
+            <div id="dynamic-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;"></div>
         </div>
         
         <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 40px;">
 
-        <h2 id="accessories" class="block-title">Accessories Portal</h2>
-        <div class="card-grid" style="margin-bottom: 40px;">
-            <div class="photo-style-card">
-                <div>
-                    <div class="vector-container"><i class="fa-solid fa-headphones"></i></div>
-                    <h3>Wired & Wireless Earbuds</h3>
-                    <p>High-fidelity output drivers integrated with clear active noise isolate systems.</p>
+        <!-- 🛍️ UPDATED ACCESSORIES PORTAL -->
+        <h2 id="accessories" class="block-title"><i class="fa-solid fa-store" style="color: #f59e0b;"></i> Accessories Portal</h2>
+        
+        <div class="accessories-grid">
+            <!-- Product Item 1 -->
+            <div class="accessory-card">
+                <div class="accessory-img-box">
+                    <span class="accessory-badge">In Stock</span>
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" alt="Earbuds" onerror="this.src='productsimages/product1.png'">
                 </div>
-                <div>
-                    <div class="price-tag">Rs. 2,499</div>
-                    <div class="product-action-box">
-                        <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                <div class="accessory-content">
+                    <div>
+                        <h3 class="accessory-title"><i class="fa-solid fa-headphones"></i> Wired & Wireless Earbuds</h3>
+                        <p class="accessory-desc">High-fidelity output drivers integrated with clear active noise isolate systems for ultimate sound quality.</p>
+                    </div>
+                    <div>
+                        <div class="accessory-price-row">
+                            <div class="accessory-price">Rs. 2,499 <span>Rs. 2,999</span></div>
+                        </div>
+                        <div class="product-action-box">
+                            <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="photo-style-card">
-                <div>
-                    <div class="vector-container"><i class="fa-solid fa-bolt"></i></div>
-                    <h3>Power Banks & Cables</h3>
-                    <p>Heavy duty internal storage safe matrix featuring 22.5W fast current output.</p>
+
+            <!-- Product Item 2 -->
+            <div class="accessory-card">
+                <div class="accessory-img-box">
+                    <span class="accessory-badge">Fast Charge</span>
+                    <img src="https://images.unsplash.com/photo-1609592807981-d107a6e133d5?auto=format&fit=crop&w=600&q=80" alt="Power Bank" onerror="this.src='productsimages/product2.png'">
                 </div>
-                <div>
-                    <div class="price-tag">Rs. 3,199</div>
-                    <div class="product-action-box">
-                        <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                <div class="accessory-content">
+                    <div>
+                        <h3 class="accessory-title"><i class="fa-solid fa-bolt"></i> Power Banks & Cables</h3>
+                        <p class="accessory-desc">Heavy duty internal storage safe matrix featuring 22.5W fast current output with multi-device support.</p>
+                    </div>
+                    <div>
+                        <div class="accessory-price-row">
+                            <div class="accessory-price">Rs. 3,199 <span>Rs. 3,800</span></div>
+                        </div>
+                        <div class="product-action-box">
+                            <a href="pages/accessories.html" class="btn-direct-buy" target="_blank"><i class="fa-solid fa-cart-shopping"></i> Direct Buy</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -352,7 +479,7 @@
                 <div class="youtube-video-container">
                     <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                 </div>
-                <a href="https://www.youtube me" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
+                <a href="https://www.youtube.com" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
             
             <div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
@@ -407,7 +534,6 @@
 
     <!-- 📸 ONLY PHOTO SLIDESHOW JAVASCRIPT -->
     <script>
-        // स्लाइडमा देखाउने फोटो/ब्यानरहरू र लिङ्कहरू
         const featuredProducts = [
             {
                 image: "productsimages/product1.png",
@@ -439,7 +565,6 @@
             if (dotsContainer) dotsContainer.innerHTML = '';
             
             featuredProducts.forEach((prod, index) => {
-                // केवल Image मात्र राखिएको छ (Text Overlay हटाइयो)
                 const slideAnchor = document.createElement('a');
                 slideAnchor.href = prod.link;
                 slideAnchor.className = 'slide-card-item';
@@ -448,7 +573,6 @@
                 `;
                 track.appendChild(slideAnchor);
 
-                // Dots
                 if (dotsContainer) {
                     const dot = document.createElement('div');
                     dot.className = `dot ${index === 0 ? 'active' : ''}`;
@@ -502,7 +626,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderSlideshow();
 
-            // Fetch and render JSON posts & ticker
             fetch('posts.json')
                 .then(response => response.json())
                 .then(posts => {
