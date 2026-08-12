@@ -144,9 +144,6 @@ font-size: 14px;
 .ticker-list li i { color: #f59e0b; margin-right: 8px; }
 @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
 
-.product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; width: 100%; }
-.btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 8px 12px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.3s ease; }
-.btn-direct-buy:hover { background: #16a34a !important; }
 .media-hub-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 25px; margin-bottom: 30px; }
 .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
 .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
@@ -218,8 +215,9 @@ flex-direction: column;
 justify-content: space-between;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 position: relative;
-text-decoration: none; /* Link styled as card */
+text-decoration: none;
 color: inherit;
+cursor: pointer;
 }
 
 .daraz-product-card:hover {
@@ -306,15 +304,15 @@ text-decoration: line-through;
 margin-left: 6px;
 }
 
-/* Pure Photo Slideshow with Overlay CTA - Reduced Margin & Gap */
+/* Pure Photo Slideshow with Overlay CTA - GAP REMOVED / FULL WIDTH FIT */
 .full-hero-slideshow {
 position: relative;
 width: 100%;
-max-width: 1200px;
+max-width: 100%;
 height: 380px;
-margin: 0 auto; /* Zero margin to remove extra gap */
+margin: 0 0 20px 0;
 overflow: hidden;
-border-radius: 0 0 12px 12px;
+border-radius: 0;
 background: #0f172a;
 box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
@@ -561,7 +559,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </p>
 </div>
 <div>
-<a href="https://prize.ird.gov.np/" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+<a href="https://prize.ird.gov.np/" target="_blank" rel="noopener noreferrer" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
 <i class="fa-solid fa-trophy" style="font-size: 18px;"></i> IRD नतिजा चेक गर्नुहोस्
 </a>
 </div>
@@ -601,7 +599,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (DYNAMIC & EASY TO ADD) -->
+<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (DYNAMICALLY RENDERED FROM JAVASCRIPT) -->
 <div style="margin-bottom: 40px;">
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
 <h2 class="block-title" style="margin: 0; font-size: 20px; color: #0f172a;">
@@ -610,7 +608,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 <a href="pages/accessories.html" style="color: #f59e0b; font-weight: bold; font-size: 14px; text-decoration: none;">View All Items <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
-<!-- Dynamic Products Grid Container -->
+<!-- Dynamic Container -->
 <div class="daraz-product-grid" id="productGridContainer"></div>
 </div>
 
@@ -659,7 +657,7 @@ data-adapt-container-width="true">
 <div class="interactive-panel" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
 <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
-<a href="mailto:ranjitshrestha300@gmail.com" class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
+<a href="mailto:ranjitshrestha300@gmail.com" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
 <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
 </a>
 </div>
@@ -667,96 +665,101 @@ data-adapt-container-width="true">
 
 </div>
 
-<!-- 🛍️ EASY PRODUCT MANAGEMENT & SLIDESHOW SCRIPT -->
+<!-- ⚙️ EASY PRODUCT MANAGEMENT & SLIDESHOW SCRIPT -->
 <script>
-// 📌 नयाँ प्रोडक्ट थप्न/सम्पादन गर्न तलको List मा नयाँ Object थप्नुहोस्:
+/* 🛒 1. EASILY ADD / REMOVE PRODUCTS HERE */
 const productsData = [
-  {
-    name: "M209 Vintage Portable Bluetooth Radio Speaker",
-    discount: "-17%",
-    currentPrice: "Rs. 2,499",
-    oldPrice: "Rs. 2,999",
-    rating: 4.5,
-    reviewsCount: 12,
-    image: "productsimages/product1.png",
-    link: "pages/accessories.html?product=m209"
-  },
-  {
-    name: "TWS True Wireless Stereo Noise Cancelling Earbuds",
-    discount: "-25%",
-    currentPrice: "Rs. 1,850",
-    oldPrice: "Rs. 2,450",
-    rating: 5,
-    reviewsCount: 28,
-    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
-    link: "pages/accessories.html?product=tws-earbuds"
-  },
-  {
-    name: "20000mAh Dual USB Fast Charging Power Bank",
-    discount: "-15%",
-    currentPrice: "Rs. 2,100",
-    oldPrice: "Rs. 2,500",
-    rating: 4,
-    reviewsCount: 8,
-    image: "https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80",
-    link: "pages/accessories.html?product=power-bank"
-  },
-  {
-    name: "Pro Mobile Gaming Triggers & Cooling Fan Grip",
-    discount: "-30%",
-    currentPrice: "Rs. 899",
-    oldPrice: "Rs. 1,299",
-    rating: 5,
-    reviewsCount: 45,
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
-    link: "pages/accessories.html?product=gaming-triggers"
-  }
+{
+id: "m209-speaker",
+name: "M209 Vintage Portable Bluetooth Radio Speaker",
+discount: "-17%",
+price: "Rs. 2,499",
+oldPrice: "Rs. 2,999",
+ratingCount: "(12)",
+image: "productsimages/product1.png",
+fallbackImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+targetPage: "pages/accessories.html"
+},
+{
+id: "tws-earbuds",
+name: "TWS True Wireless Stereo Noise Cancelling Earbuds",
+discount: "-25%",
+price: "Rs. 1,850",
+oldPrice: "Rs. 2,450",
+ratingCount: "(28)",
+image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+fallbackImage: "",
+targetPage: "pages/accessories.html"
+},
+{
+id: "20000mah-powerbank",
+name: "20000mAh Dual USB Fast Charging Power Bank",
+discount: "-15%",
+price: "Rs. 2,100",
+oldPrice: "Rs. 2,500",
+ratingCount: "(8)",
+image: "https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80",
+fallbackImage: "",
+targetPage: "pages/accessories.html"
+},
+{
+id: "gaming-triggers",
+name: "Pro Mobile Gaming Triggers & Cooling Fan Grip",
+discount: "-30%",
+price: "Rs. 899",
+oldPrice: "Rs. 1,299",
+ratingCount: "(45)",
+image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+fallbackImage: "",
+targetPage: "pages/accessories.html"
+}
+/* नँया प्रोडक्ट थप्न तलको फर्म्याट कपि गरेर हाल्नुहोस्:
+,{
+id: "product-unique-id",
+name: "Product Name Here",
+discount: "-10%",
+price: "Rs. 1,000",
+oldPrice: "Rs. 1,200",
+ratingCount: "(5)",
+image: "image_url_here.png",
+fallbackImage: "",
+targetPage: "pages/accessories.html"
+}
+*/
 ];
 
-function generateStarRating(rating) {
-  let stars = '';
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
+/* 🛍️ RENDER PRODUCTS TO HOMEPAGE */
+function renderProductShowcase() {
+const container = document.getElementById('productGridContainer');
+if(!container) return;
 
-  for (let i = 0; i < fullStars; i++) {
-    stars += '<i class="fa-solid fa-star"></i>';
-  }
-  if (hasHalfStar) {
-    stars += '<i class="fa-solid fa-star-half-stroke"></i>';
-  }
-  const emptyStars = 5 - Math.ceil(rating);
-  for (let i = 0; i < emptyStars; i++) {
-    stars += '<i class="fa-regular fa-star"></i>';
-  }
-  return stars;
+container.innerHTML = productsData.map(product => {
+const targetUrl = `${product.targetPage}?product=${product.id}`;
+const fallback = product.fallbackImage ? `onerror="this.src='${product.fallbackImage}'"` : '';
+
+return `
+<a href="${targetUrl}" class="daraz-product-card" title="${product.name}">
+<div class="daraz-img-box">
+${product.discount ? `<span class="daraz-discount-badge">${product.discount}</span>` : ''}
+<img src="${product.image}" alt="${product.name}" ${fallback}>
+</div>
+<div class="daraz-product-info">
+<h3 class="daraz-product-name">${product.name}</h3>
+<div class="daraz-rating">
+<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+<span>${product.ratingCount}</span>
+</div>
+<div class="daraz-price-block">
+<span class="daraz-current-price">${product.price}</span>
+${product.oldPrice ? `<span class="daraz-old-price">${product.oldPrice}</span>` : ''}
+</div>
+</div>
+</a>
+`;
+}).join('');
 }
 
-function renderProductsShowcase() {
-  const container = document.getElementById('productGridContainer');
-  if (!container) return;
-
-  container.innerHTML = productsData.map(prod => `
-    <a href="${prod.link}" class="daraz-product-card">
-      <div class="daraz-img-box">
-        ${prod.discount ? `<span class="daraz-discount-badge">${prod.discount}</span>` : ''}
-        <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80'">
-      </div>
-      <div class="daraz-product-info">
-        <h3 class="daraz-product-name">${prod.name}</h3>
-        <div class="daraz-rating">
-          ${generateStarRating(prod.rating)}
-          <span>(${prod.reviewsCount})</span>
-        </div>
-        <div class="daraz-price-block">
-          <span class="daraz-current-price">${prod.currentPrice}</span>
-          ${prod.oldPrice ? `<span class="daraz-old-price">${prod.oldPrice}</span>` : ''}
-        </div>
-      </div>
-    </a>
-  `).join('');
-}
-
-// 📸 HERO SLIDESHOW LOGIC
+/* 🖼️ SLIDESHOW CONFIGURATION */
 const featuredProducts = [
 {
 title: "M209 Vintage Portable Radio Speaker",
@@ -867,7 +870,7 @@ startAutoSlide();
 
 document.addEventListener('DOMContentLoaded', () => {
 renderSlideshow();
-renderProductsShowcase();
+renderProductShowcase();
 });
 </script>
 
