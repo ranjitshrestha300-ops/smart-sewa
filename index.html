@@ -436,30 +436,14 @@ font-size: 14px;
 
 footer {
 background: #0f172a;
-color: #94a3b8;
-padding: 30px 20px;
-text-align: center;
-margin-top: 40px;
-}
-
-.footer-info-block {
-display: flex;
-justify-content: center;
-gap: 25px;
-flex-wrap: wrap;
-margin-bottom: 15px;
-font-size: 13.5px;
 color: #cbd5e1;
+text-align: center;
+padding: 30px 20px;
+margin-top: 50px;
 }
 
-.footer-info-block span {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-}
-
-.footer-nav-links a { color: #cbd5e1; text-decoration: none; margin: 0 5px; }
-.footer-nav-links a:hover { color: #f59e0b; }
+footer a { color: #cbd5e1; text-decoration: none; margin: 0 5px; }
+footer a:hover { color: #f59e0b; }
 
 @media (max-width: 768px) {
 .media-hub-grid { grid-template-columns: 1fr; }
@@ -477,7 +461,7 @@ header nav { width: 100%; overflow-x: auto; }
 
 <!-- ⚡ Facebook SDK Container & Async Loader Script -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="ssnFacebookFeedFix"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
 
 <script>
 const CORE_CONFIG_MATRIX = {
@@ -486,7 +470,7 @@ email_address: "ranjitshrestha300@gmail.com",
 office_location: "Dolakha, Nepal",
 google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
 youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA",
-facebook_page_url: "https://www.facebook.com/smartsewanepal"
+facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/"
 };
 </script>
 
@@ -555,7 +539,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </p>
 </div>
 <div>
-<a href="https://ird.gov.np/" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+<a href="https://prize.ird.gov.np/" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
 <i class="fa-solid fa-trophy" style="font-size: 18px;"></i> IRD नतिजा चेक गर्नुहोस्
 </a>
 </div>
@@ -622,33 +606,27 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 📺 MEDIA HUB SECTION WITH WORKING FACEBOOK EMBED -->
+<!-- 📺 MEDIA HUB SECTION WITH WORKING FACEBOOK EMBED FROM FIRST CODE -->
 <h2 id="media-hub" class="block-title" style="margin-top: 30px;">Nepal Taxi Vlog & Gaming Hub</h2>
 <div class="media-hub-grid">
 <div class="media-card">
-<h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
+<h3 style="color: #0f172a; margin-top:0; margin-bottom: 12px; font-size:16px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
 <div class="youtube-video-container">
-<iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" title="Smart Sewa Nepal YouTube Channel Video" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen title="YouTube Video Feed" loading="lazy"></iframe>
 </div>
 <a href="https://www.youtube.com" class="btn-youtube-sub" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
 </div>
 
-<!-- REAL FACEBOOK FEED CARD -->
-<div class="media-card" style="display: flex; flex-direction: column; align-items: center; min-height: 480px; overflow: hidden;">
+<div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
 <h3 style="color: #0f172a; margin-top:0; margin-bottom: 12px; width: 100%; text-align: left; font-size:16px;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
-<div style="width: 100%; display: flex; justify-content: center; overflow: hidden;" id="fbFeedWrapper">
+<div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
 <div class="fb-page"
-data-href="https://www.facebook.com/facebook"
+data-href="https://www.facebook.com/394102317633122"
 data-tabs="timeline"
-data-width="380"
-data-height="450"
+data-width="500"
+data-height="500"
 data-small-header="false"
-data-adapt-container-width="true"
-data-hide-cover="false"
-data-show-facepile="true">
-<blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
-<a href="https://www.facebook.com/facebook">Smart Sewa Nepal</a>
-</blockquote>
+data-adapt-container-width="true">
 </div>
 </div>
 </div>
@@ -890,80 +868,8 @@ alert("तपाईंको समीक्षा सफलतापुर्�
 document.addEventListener('DOMContentLoaded', () => {
 renderSlideshow();
 loadLocalReviews();
-
-// Re-parse Facebook SDK after page render
-if (window.FB) {
-window.FB.XFBML.parse();
-}
-
-fetch('posts.json')
-.then(response => {
-if (!response.ok) throw new Error("JSON not found");
-return response.json();
-})
-.then(posts => {
-const tickerList = document.getElementById('main-page-ticker');
-if (tickerList && posts.length > 0) {
-tickerList.innerHTML = '';
-const latestUpdates = [...posts].reverse().slice(0, 3);
-latestUpdates.forEach(post => {
-const li = document.createElement('li');
-li.innerHTML = `<i class="fa-solid fa-circle-check"></i> <a href="${post.link}" style="color: inherit; text-decoration: none;">${post.title}</a>`;
-tickerList.appendChild(li);
 });
-}
 
-const grid = document.getElementById('dynamic-posts-grid');
-if (grid) {
-grid.innerHTML = '';
-posts.forEach(post => {
-const card = document.createElement('div');
-card.className = 'media-card';
-card.style.display = 'flex';
-card.style.flexDirection = 'column';
-card.style.justifyContent = 'space-between';
-
-card.innerHTML = `
-<img src="${post.image}" alt="${post.title}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
-<span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
-<h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
-<a href="${post.link}" class="btn-direct-buy" style="background:#0f172a !important; text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
-`;
-grid.appendChild(card);
-});
-}
-})
-.catch(err => {
-console.warn('posts.json file missing or error:', err);
-const tickerList = document.getElementById('main-page-ticker');
-if (tickerList) {
-tickerList.innerHTML = '<li><i class="fa-solid fa-bell"></i> Welcome to Smart Sewa Nepal Digital Hub!</li>';
-}
-});
-});
-</script>
-
-<!-- 👣 FOOTER WITH DIRECT CONTACT INFO -->
-<footer>
-<div class="footer-info-block">
-<span><i class="fa-solid fa-location-dot" style="color:#f59e0b;"></i> Dolakha, Nepal</span>
-<span><i class="fa-solid fa-phone" style="color:#f59e0b;"></i> +977-9815824328</span>
-<span><i class="fa-solid fa-envelope" style="color:#f59e0b;"></i> ranjitshrestha300@gmail.com</span>
-</div>
-
-<div class="footer-nav-links" style="margin-bottom: 15px;">
-<a href="pages/accessories.html">Accessories</a> |
-<a href="pages/vlog-gaming.html">Vlog & Gaming</a> |
-<a href="pages/insurance-post1.html">Insurance Plans</a> |
-<a href="pages/repair-hub.html">Repair Hub</a> |
-<a href="pages/gallery.html">Photo Gallery</a> |
-<a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-<a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-</div>
-<p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-</footer>
-
-<script>
 function toggleDisqusBox() {
 var container = document.getElementById('disqus-toggle-container');
 if (container.style.display === 'block') {
@@ -976,7 +882,7 @@ this.page.url = window.location.href;
 this.page.identifier = 'smart_sewa_home';
 };
 var d = document, s = d.createElement('script');
-s.src = 'https://ranjitshrestha1-com-np.disqus.com/embed.js';
+s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 window.disqus_loaded = true;
@@ -984,6 +890,19 @@ window.disqus_loaded = true;
 }
 }
 </script>
+
+<footer>
+<div class="footer-nav-links" style="margin-bottom: 15px;">
+<a href="pages/accessories.html">Accessories</a> |
+<a href="pages/vlog-gaming.html">Vlog & Gaming</a> |
+<a href="pages/insurance-post1.html">Insurance Plans</a> |
+<a href="pages/repair-hub.html">Repair Hub</a> |
+<a href="pages/gallery.html">Photo Gallery</a> |
+<a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+<a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
+</div>
+<p style="font-size:13px; color:#cbd5e1; margin:0;">© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
