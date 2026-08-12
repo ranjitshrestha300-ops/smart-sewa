@@ -76,11 +76,6 @@
 <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
 <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
 
-<link rel="manifest" href="icons/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="icons/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
 <style>
 /* Header & Navigation */
 .nav-wrapper {
@@ -254,6 +249,7 @@ font-size: 11px;
 font-weight: 800;
 padding: 2px 8px;
 border-radius: 4px;
+z-index: 2;
 }
 
 .daraz-product-info {
@@ -304,13 +300,13 @@ text-decoration: line-through;
 margin-left: 6px;
 }
 
-/* Pure Photo Slideshow with Overlay CTA - GAP REMOVED / FULL WIDTH FIT */
+/* Pure Photo Slideshow with Overlay CTA - REDUCED GAP & BOTTOM MARGIN */
 .full-hero-slideshow {
 position: relative;
 width: 100%;
 max-width: 100%;
 height: 380px;
-margin: 0 0 20px 0;
+margin: 0 auto 5px auto;
 overflow: hidden;
 border-radius: 0;
 background: #0f172a;
@@ -466,7 +462,7 @@ gap: 8px;
 .media-hub-grid { grid-template-columns: 1fr; }
 .nav-wrapper { flex-wrap: wrap; }
 header nav { width: 100%; overflow-x: auto; }
-.full-hero-slideshow { height: 220px; }
+.full-hero-slideshow { height: 220px; margin-bottom: 5px; }
 .slide-caption-overlay { padding: 15px; }
 .slide-caption-text h3 { font-size: 16px; }
 .slide-caption-text p { display: none; }
@@ -599,7 +595,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (DYNAMICALLY RENDERED FROM JAVASCRIPT) -->
+<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (DYNAMIC PRODUCT SHOWCASE) -->
 <div style="margin-bottom: 40px;">
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
 <h2 class="block-title" style="margin: 0; font-size: 20px; color: #0f172a;">
@@ -608,8 +604,8 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 <a href="pages/accessories.html" style="color: #f59e0b; font-weight: bold; font-size: 14px; text-decoration: none;">View All Items <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
-<!-- Dynamic Container -->
-<div class="daraz-product-grid" id="productGridContainer"></div>
+<!-- Products display container -->
+<div class="daraz-product-grid" id="productShowcaseContainer"></div>
 </div>
 
 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 40px;">
@@ -665,101 +661,103 @@ data-adapt-container-width="true">
 
 </div>
 
-<!-- ⚙️ EASY PRODUCT MANAGEMENT & SLIDESHOW SCRIPT -->
+<!-- 📦 EASY PRODUCT SHOWCASE MANAGEMENT ARRAY -->
 <script>
-/* 🛒 1. EASILY ADD / REMOVE PRODUCTS HERE */
+// 📌 नयाँ Product थप्न वा घटाउन यो तलको List (Array) मा परिवर्तन गर्नुहोस्:
 const productsData = [
 {
-id: "m209-speaker",
+id: 1,
 name: "M209 Vintage Portable Bluetooth Radio Speaker",
-discount: "-17%",
-price: "Rs. 2,499",
-oldPrice: "Rs. 2,999",
-ratingCount: "(12)",
+price: 2499,
+oldPrice: 2999,
+rating: 4.5,
+reviews: 12,
 image: "productsimages/product1.png",
 fallbackImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
-targetPage: "pages/accessories.html"
+link: "pages/accessories.html?product=1"
 },
 {
-id: "tws-earbuds",
+id: 2,
 name: "TWS True Wireless Stereo Noise Cancelling Earbuds",
-discount: "-25%",
-price: "Rs. 1,850",
-oldPrice: "Rs. 2,450",
-ratingCount: "(28)",
+price: 1850,
+oldPrice: 2450,
+rating: 5.0,
+reviews: 28,
 image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
-fallbackImage: "",
-targetPage: "pages/accessories.html"
+fallbackImage: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+link: "pages/accessories.html?product=2"
 },
 {
-id: "20000mah-powerbank",
+id: 3,
 name: "20000mAh Dual USB Fast Charging Power Bank",
-discount: "-15%",
-price: "Rs. 2,100",
-oldPrice: "Rs. 2,500",
-ratingCount: "(8)",
+price: 2100,
+oldPrice: 2500,
+rating: 4.0,
+reviews: 8,
 image: "https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80",
-fallbackImage: "",
-targetPage: "pages/accessories.html"
+fallbackImage: "https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80",
+link: "pages/accessories.html?product=3"
 },
 {
-id: "gaming-triggers",
+id: 4,
 name: "Pro Mobile Gaming Triggers & Cooling Fan Grip",
-discount: "-30%",
-price: "Rs. 899",
-oldPrice: "Rs. 1,299",
-ratingCount: "(45)",
+price: 899,
+oldPrice: 1299,
+rating: 5.0,
+reviews: 45,
 image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
-fallbackImage: "",
-targetPage: "pages/accessories.html"
+fallbackImage: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+link: "pages/accessories.html?product=4"
 }
-/* नँया प्रोडक्ट थप्न तलको फर्म्याट कपि गरेर हाल्नुहोस्:
-,{
-id: "product-unique-id",
-name: "Product Name Here",
-discount: "-10%",
-price: "Rs. 1,000",
-oldPrice: "Rs. 1,200",
-ratingCount: "(5)",
-image: "image_url_here.png",
-fallbackImage: "",
-targetPage: "pages/accessories.html"
-}
-*/
 ];
 
-/* 🛍️ RENDER PRODUCTS TO HOMEPAGE */
-function renderProductShowcase() {
-const container = document.getElementById('productGridContainer');
-if(!container) return;
+// Product Render Function with Automatic Discount Calculator
+function renderProducts() {
+const container = document.getElementById('productShowcaseContainer');
+if (!container) return;
 
 container.innerHTML = productsData.map(product => {
-const targetUrl = `${product.targetPage}?product=${product.id}`;
-const fallback = product.fallbackImage ? `onerror="this.src='${product.fallbackImage}'"` : '';
+// Automatic Discount % Calculation
+let discountBadgeHTML = '';
+if (product.oldPrice && product.oldPrice > product.price) {
+const discountPercent = Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100);
+discountBadgeHTML = `<span class="daraz-discount-badge">-${discountPercent}%</span>`;
+}
+
+// Rating Stars HTML Generator
+const fullStars = Math.floor(product.rating);
+const hasHalf = product.rating % 1 !== 0;
+let starsHTML = '';
+for (let i = 0; i < fullStars; i++) starsHTML += '<i class="fa-solid fa-star"></i>';
+if (hasHalf) starsHTML += '<i class="fa-solid fa-star-half-stroke"></i>';
+const emptyStars = 5 - Math.ceil(product.rating);
+for (let i = 0; i < emptyStars; i++) starsHTML += '<i class="fa-regular fa-star"></i>';
 
 return `
-<a href="${targetUrl}" class="daraz-product-card" title="${product.name}">
+<a href="${product.link || 'pages/accessories.html'}" class="daraz-product-card">
 <div class="daraz-img-box">
-${product.discount ? `<span class="daraz-discount-badge">${product.discount}</span>` : ''}
-<img src="${product.image}" alt="${product.name}" ${fallback}>
+${discountBadgeHTML}
+<img src="${product.image}" alt="${product.name}" onerror="this.src='${product.fallbackImage || product.image}'">
 </div>
 <div class="daraz-product-info">
 <h3 class="daraz-product-name">${product.name}</h3>
 <div class="daraz-rating">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-<span>${product.ratingCount}</span>
+${starsHTML}
+<span>(${product.reviews})</span>
 </div>
 <div class="daraz-price-block">
-<span class="daraz-current-price">${product.price}</span>
-${product.oldPrice ? `<span class="daraz-old-price">${product.oldPrice}</span>` : ''}
+<span class="daraz-current-price">Rs. ${product.price.toLocaleString()}</span>
+${product.oldPrice ? `<span class="daraz-old-price">Rs. ${product.oldPrice.toLocaleString()}</span>` : ''}
 </div>
 </div>
 </a>
 `;
 }).join('');
 }
+</script>
 
-/* 🖼️ SLIDESHOW CONFIGURATION */
+<!-- 📸 SLIDESHOW JAVASCRIPT -->
+<script>
 const featuredProducts = [
 {
 title: "M209 Vintage Portable Radio Speaker",
@@ -870,7 +868,7 @@ startAutoSlide();
 
 document.addEventListener('DOMContentLoaded', () => {
 renderSlideshow();
-renderProductShowcase();
+renderProducts();
 });
 </script>
 
