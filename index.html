@@ -44,7 +44,7 @@
 },
 "description": "Smart Sewa Nepal offers mobile accessories, vlog and gaming updates, insurance consultation, mobile unlock & repair, and online typing services.",
 "sameAs": [
-"https://www.facebook.com/share/1F2nALbbdv/",
+"https://www.facebook.com/394102317633122",
 "https://www.youtube.com"
 ]
 }
@@ -457,8 +457,24 @@ header nav { width: 100%; overflow-x: auto; }
 </head>
 <body>
 
+<!-- ⚡ Facebook SDK Container & Async Loader Script -->
 <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v17.0"></script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml      : true,
+      version    : 'v18.0'
+    });
+  };
+
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_US/sdk.js';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <script>
 const CORE_CONFIG_MATRIX = {
@@ -467,7 +483,7 @@ email_address: "ranjitshrestha300@gmail.com",
 office_location: "Dolakha, Nepal",
 google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
 youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA",
-facebook_page_url: "https://www.facebook.com/share/1F2nALbbdv/"
+facebook_page_url: "https://www.facebook.com/394102317633122"
 };
 </script>
 
@@ -536,7 +552,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </p>
 </div>
 <div>
-<a href="https://prize.ird.gov.np/" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+<a href="https://ranjitshrestha1.com.np/pages/ird-lucky-draw.html" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
 <i class="fa-solid fa-trophy" style="font-size: 18px;"></i> IRD नतिजा चेक गर्नुहोस्
 </a>
 </div>
@@ -603,7 +619,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 📺 MEDIA HUB SECTION (WITH FULL FACEBOOK FEED FROM FIRST CODE) -->
+<!-- 📺 MEDIA HUB SECTION WITH FIXED FACEBOOK EMBED -->
 <h2 id="media-hub" class="block-title" style="margin-top: 30px;">Nepal Taxi Vlog & Gaming Hub</h2>
 <div class="media-hub-grid">
 <div class="media-card">
@@ -614,17 +630,22 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 <a href="https://www.youtube.com" class="btn-youtube-sub" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
 </div>
 
-<!-- 🟦 FACEBOOK FEED FROM FIRST CODE INTEGRATED HERE -->
-<div class="media-card" style="display: flex; flex-direction: column; align-items: center;">
+<!-- FIXED FACEBOOK FEED CARD -->
+<div class="media-card" style="display: flex; flex-direction: column; align-items: center; min-height: 500px;">
 <h3 style="color: #0f172a; margin-top:0; margin-bottom: 12px; width: 100%; text-align: left; font-size:16px;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
-<div style="width: 100%; overflow: hidden; display: flex; justify-content: center;">
+<div style="width: 100%; display: flex; justify-content: center; overflow: hidden;">
 <div class="fb-page"
 data-href="https://www.facebook.com/394102317633122"
 data-tabs="timeline"
 data-width="500"
 data-height="500"
 data-small-header="false"
-data-adapt-container-width="true">
+data-adapt-container-width="true"
+data-hide-cover="false"
+data-show-facepile="true">
+<blockquote cite="https://www.facebook.com/394102317633122" class="fb-xfbml-parse-ignore">
+<a href="https://www.facebook.com/394102317633122">Smart Sewa Nepal</a>
+</blockquote>
 </div>
 </div>
 </div>
@@ -847,7 +868,7 @@ tickerList.innerHTML = '<li><i class="fa-solid fa-bell"></i> Welcome to Smart Se
 });
 </script>
 
-<!-- 👣 FOOTER WITH DIRECT CONTACT INFO (JASTAKO TESTAI) -->
+<!-- 👣 FOOTER WITH DIRECT CONTACT INFO -->
 <footer>
 <div class="footer-info-block">
 <span><i class="fa-solid fa-location-dot" style="color:#f59e0b;"></i> Dolakha, Nepal</span>
