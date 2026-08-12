@@ -1,14 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ne">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Sewa Nepal | Premium Digital Hub & Media Center</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Smart Sewa Nepal - Buy premium mobile accessories, wireless speakers, fast chargers, repair and unlock services, insurance plans and online typing services in Nepal.">
+    <meta name="keywords" content="Smart Sewa Nepal, YOROTO Speaker, Fast Charger, Mobile Repair Nepal, FRP Lock, Online Typing Service Nepal, Digital Hub Nepal">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Smart Sewa Nepal">
+
+    <!-- Open Graph / Facebook SEO -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ranjitshrestha1.com.np/index">
+    <meta property="og:title" content="Smart Sewa Nepal | Premium Digital Hub & Media Center">
+    <meta property="og:description" content="Get best offers on mobile accessories, speakers, chargers, repair hub, and digital services in Nepal.">
+    <meta property="og:image" content="https://ranjitshrestha1.com.np/productsimages/Y0-SBR04.jpg">
+
+    <!-- Schema.org JSON-LD Structured Data for Google Search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "OnlineBusiness",
+      "name": "Smart Sewa Nepal",
+      "url": "https://ranjitshrestha1.com.np/",
+      "logo": "https://ranjitshrestha1.com.np/icons/android-icon-192x192.png",
+      "description": "Premium Digital Hub & Media Center for Mobile Accessories, Repair & Unlock Services in Nepal.",
+      "telephone": "+977-9815824328",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Dolakha",
+        "addressCountry": "NP"
+      }
+    }
+    </script>
     
-    <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1922041060809267" crossorigin="anonymous"></script>
-    
-    <!-- FontAwesome & Base CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
@@ -40,30 +68,60 @@
     <meta name="theme-color" content="#ffffff">
     
     <style>
-        /* Base Reset & Layout */
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.6; }
-        .main-wrapper { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        /* Header & Navigation */
+        .nav-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 15px;
+            padding: 10px 20px;
+        }
 
-        /* Header & Navigation Styles */
-        header { background: #0f172a; color: #fff; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
-        .nav-wrapper { display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 12px 24px; max-width: 1200px; margin: 0 auto; }
-        
-        .brand-master-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
-        .logo-graphic-shield svg { width: 32px; height: 32px; fill: #f59e0b; }
-        .brand-main-title { font-size: 20px; font-weight: 800; }
-        .brand-main-title span { color: #f59e0b; }
-        .brand-sub-tag { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; }
+        header nav ul {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
 
-        header nav ul { display: flex; align-items: center; gap: 18px; list-style: none; margin: 0; padding: 0; }
-        header nav ul li a { white-space: nowrap; text-decoration: none; font-size: 14px; color: #cbd5e1; font-weight: 600; transition: color 0.2s; }
-        header nav ul li a:hover { color: #f59e0b; }
+        header nav ul li a {
+            white-space: nowrap;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-        .header-search-container { display: flex; align-items: center; background: #1e293b; border: 1px solid #334155; border-radius: 20px; padding: 4px 12px; margin: 0 10px; flex-grow: 1; max-width: 300px; }
-        .header-search-container input { background: transparent; border: none; outline: none; color: #fff; padding: 6px; width: 100%; font-size: 13px; }
-        .header-search-container button { background: transparent; border: none; color: #f59e0b; cursor: pointer; font-size: 14px; }
+        .header-search-container {
+            display: flex;
+            align-items: center;
+            background: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 20px;
+            padding: 4px 12px;
+            margin: 0 10px;
+            flex-grow: 1;
+            max-width: 300px;
+        }
+        .header-search-container input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: #fff;
+            padding: 6px;
+            width: 100%;
+            font-size: 13px;
+        }
+        .header-search-container button {
+            background: transparent;
+            border: none;
+            color: #f59e0b;
+            cursor: pointer;
+            font-size: 14px;
+        }
 
-        /* Vertical Ticker */
+        /* Layout & Ticker Styles */
         .premium-vertical-ticker { background: #0f172a; border-bottom: 2px solid #f59e0b; padding: 12px 20px; display: flex; align-items: center; overflow: hidden; height: 45px; box-sizing: border-box; }
         .ticker-badge { background: #f59e0b; color: #000; padding: 4px 12px; font-size: 12px; font-weight: 800; border-radius: 4px; text-transform: uppercase; margin-right: 15px; display: flex; align-items: center; gap: 6px; white-space: nowrap; }
         .ticker-viewport { position: relative; height: 100%; width: 100%; overflow: hidden; }
@@ -71,68 +129,170 @@
         .ticker-list li { height: 21px; line-height: 21px; color: #e2e8f0; font-size: 13.5px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
         .ticker-list li i { color: #f59e0b; margin-right: 8px; }
         @keyframes verticalTicker { 0%, 25% { transform: translateY(0); } 30%, 55% { transform: translateY(-21px); } 60%, 85% { transform: translateY(-42px); } 90%, 100% { transform: translateY(0); } }
-
-        /* Block Headings */
-        .block-title { font-size: 20px; color: #0f172a; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; border-left: 4px solid #f59e0b; padding-left: 10px; font-weight: 700; }
-
-        /* Hero Slideshow */
-        .full-hero-slideshow { position: relative; width: 100%; max-width: 1200px; height: 380px; margin: 20px auto; overflow: hidden; border-radius: 12px; background: #0f172a; box-shadow: 0 4px 15px rgba(0,0,0,0.15); }
-        .slideshow-track { display: flex; width: 100%; height: 100%; transition: transform 0.5s ease-in-out; }
-        .slide-card-item { min-width: 100%; height: 100%; position: relative; display: block; text-decoration: none; overflow: hidden; background: #f8fafc; }
-        .slide-card-item img { width: 100% !important; height: 100% !important; object-fit: contain; display: block; padding: 10px; }
-        .slide-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(transparent, rgba(15, 23, 42, 0.95)); color: #ffffff; padding: 20px 20px 35px 20px; text-align: center; }
-        .slide-caption h3 { margin: 0 0 5px 0; font-size: 18px; color: #f59e0b; }
-        .slide-caption p { margin: 0; font-size: 14px; color: #e2e8f0; }
-        .slide-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0, 0, 0, 0.5); color: #fff; border: none; width: 40px; height: 40px; cursor: pointer; border-radius: 50%; z-index: 10; transition: 0.3s; display: flex; align-items: center; justify-content: center; font-size: 18px; }
-        .slide-nav-btn:hover { background: #f59e0b; color: #000; }
-        .slide-nav-btn.prev { left: 15px; }
-        .slide-nav-btn.next { right: 15px; }
-        .slideshow-dots { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; z-index: 10; background: rgba(0,0,0,0.3); padding: 6px 12px; border-radius: 20px; }
-        .dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.6); cursor: pointer; transition: all 0.3s; }
-        .dot.active { background: #f59e0b; width: 22px; border-radius: 10px; }
-
-        /* Accessories Portal */
-        .accessories-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 25px; margin-bottom: 40px; }
-        .photo-style-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 18px; transition: transform 0.3s ease, box-shadow 0.3s ease; position: relative; }
-        .photo-style-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
-        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
-        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.3s ease; border: none; cursor: pointer; }
-        .btn-direct-buy:hover { background: #16a34a !important; }
         
-        /* Media Hub */
+        .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
+        .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.3s ease; }
+        .btn-direct-buy:hover { background: #16a34a !important; }
         .media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
         .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
         .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
         .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
-        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; transition: opacity 0.2s; }
-        .btn-youtube-sub:hover { opacity: 0.9; }
-
-        /* Interactive Panels & Repair Hub */
-        .split-container { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 30px; }
-        .interactive-panel { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
-        .repair-dashboard { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-        .repair-node { background: #f1f5f9; padding: 10px; border-radius: 6px; text-align: center; font-size: 13px; font-weight: bold; color: #334155; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .whatsapp-action-btn { background: #25d366; color: #fff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px; }
-
-        /* Discussion & Footer */
+        .btn-youtube-sub { background: #ff0000; color: #ffffff; display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px; }
+        
         .premium-discussion-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-top: 30px; text-align: center; }
         .btn-toggle-discussion { background: #0f172a; color: #ffffff; border: none; padding: 12px 24px; font-size: 14px; font-weight: bold; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
         .btn-toggle-discussion:hover { background: #f59e0b; color: #0f172a; }
         #disqus-toggle-container { display: none; margin-top: 20px; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 20px; }
 
-        footer { background: #0f172a; color: #94a3b8; text-align: center; padding: 25px 20px; margin-top: 40px; }
-        footer a { color: #cbd5e1; text-decoration: none; margin: 0 5px; font-size: 14px; }
-        footer a:hover { color: #f59e0b; }
-        footer p { margin-top: 12px; font-size: 13px; }
+        /* =========================================================
+           🛒 ENHANCED ACCESSORIES PORTAL & SLIDESHOW STYLES
+           ========================================================= */
+        .accessories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
 
-        /* Responsive Layout Improvements */
+        .photo-style-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .photo-style-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Larger & Properly Fitted Hero Slideshow */
+        .full-hero-slideshow {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            height: 500px; /* Enhanced height for bigger view */
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #0f172a;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .slideshow-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide-card-item {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            display: block;
+            text-decoration: none;
+            overflow: hidden;
+            background: #0f172a;
+        }
+
+        /* Improved Object Fit for Perfect Image Display */
+        .slide-card-item img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain; /* Full photo visible without cropping */
+            display: block;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(15, 23, 42, 0.95));
+            color: #ffffff;
+            padding: 25px 20px 40px 20px;
+            text-align: center;
+        }
+
+        .slide-caption h3 {
+            margin: 0 0 5px 0;
+            font-size: 20px;
+            color: #f59e0b;
+        }
+
+        .slide-caption p {
+            margin: 0;
+            font-size: 15px;
+            color: #e2e8f0;
+        }
+
+        .slide-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            border: none;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            border-radius: 50%;
+            z-index: 10;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .slide-nav-btn:hover {
+            background: #f59e0b;
+            color: #000;
+        }
+
+        .slide-nav-btn.prev { left: 15px; }
+        .slide-nav-btn.next { right: 15px; }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            background: rgba(0,0,0,0.4);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: #f59e0b;
+            width: 22px;
+            border-radius: 10px;
+        }
+
         @media (max-width: 768px) { 
-            .media-hub-grid, .split-container { grid-template-columns: 1fr; }
+            .media-hub-grid { grid-template-columns: 1fr; }
             .nav-wrapper { flex-wrap: wrap; }
-            header nav { width: 100%; overflow-x: auto; padding-top: 10px; }
-            .full-hero-slideshow { height: 260px; }
+            header nav { width: 100%; overflow-x: auto; }
+            .full-hero-slideshow { height: 300px; }
             .accessories-grid { grid-template-columns: 1fr; }
-            .slide-caption h3 { font-size: 14px; }
+            .slide-caption h3 { font-size: 15px; }
             .slide-caption p { font-size: 12px; }
         }
     </style>
@@ -153,7 +313,6 @@
         };
     </script>
 
-    <!-- HEADER SECTION -->
     <header>
         <div class="nav-wrapper">
             <a href="index.html" class="brand-master-logo">
@@ -241,13 +400,12 @@
             <!-- Dynamic products will render here -->
         </div>
 
-        <!-- MEDIA HUB SECTION -->
-        <h2 id="media-hub" class="block-title"><i class="fa-solid fa-video" style="color: #f59e0b;"></i> Nepal Taxi Vlog & Gaming Hub</h2>
+        <h2 id="media-hub" class="block-title">Nepal Taxi Vlog & Gaming Hub</h2>
         <div class="media-hub-grid">
             <div class="media-card">
                 <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
                 <div class="youtube-video-container">
-                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" title="YouTube Video Player" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen title="YouTube Video Feed"></iframe>
                 </div>
                 <a href="https://www.youtube.com" class="btn-youtube-sub" target="_blank"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
             </div>
@@ -267,10 +425,9 @@
             </div>
         </div>
 
-        <!-- REPAIR & TYPING HUB SECTION -->
         <div class="split-container">
             <div id="repair" class="interactive-panel">
-                <h2 style="font-size: 18px; margin-bottom: 8px;"><i class="fa-solid fa-screwdriver-wrench" style="color: #f59e0b;"></i> Repair & Unlock Hub</h2>
+                <h2>Repair & Unlock Hub</h2>
                 <p style="font-size: 13.5px; color: #64748b;">Remote flashing algorithms and structural locks removals panels.</p>
                 <div class="repair-dashboard" style="margin-top: 15px;">
                     <div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
@@ -282,7 +439,7 @@
             </div>
 
             <div class="interactive-panel">
-                <h2 style="font-size: 18px; margin-bottom: 8px;"><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
+                <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
                 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
                 <a href="mailto:ranjitshrestha300@gmail.com" class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
                     <i class="fa-solid fa-envelope"></i> Book via Email (Gmail)
@@ -290,7 +447,6 @@
             </div>
         </div>
 
-        <!-- DISQUS PUBLIC DISCUSSION SECTION -->
         <div class="premium-discussion-box">
             <h4 style="color: #64748b; font-size: 13px; margin-bottom: 8px; font-weight: 500;">HAVE QUESTIONS OR FEEDBACK?</h4>
             <button class="btn-toggle-discussion" onclick="toggleDisqusBox()">
@@ -306,7 +462,6 @@
 
     <!-- 📸 DYNAMIC ACCESSORIES & SLIDESHOW JAVASCRIPT -->
     <script>
-        // १. Accessories Data Array
         const accessoriesData = [
           {
             "id": 1,
@@ -487,7 +642,6 @@
           }
         ];
 
-        // २. Render Accessories
         function renderAccessories() {
             const container = document.getElementById('accessories-container');
             if (!container) return;
@@ -519,7 +673,7 @@
                             <span style="text-decoration:line-through; color:#94a3b8; font-size:12px; font-weight:normal;">Rs. ${item.original_price.toLocaleString()}</span>
                         </div>
                         <div class="product-action-box">
-                            <a href="https://wa.me/977${CORE_CONFIG_MATRIX.whatsapp_contact_phone}?text=I%20want%20to%20buy%20${encodeURIComponent(item.name)}" class="btn-direct-buy" target="_blank">
+                            <a href="https://wa.me/9779815824328?text=I%20want%20to%20buy%20${encodeURIComponent(item.name)}" class="btn-direct-buy" target="_blank">
                                 <i class="fa-solid fa-cart-shopping"></i> Direct Buy
                             </a>
                         </div>
@@ -529,7 +683,6 @@
             });
         }
 
-        // ३. Photo Slideshow Mechanism
         let currentSlideIdx = 0;
         let slideInterval = null;
 
@@ -547,7 +700,7 @@
                     : 'productsimages/product1.png';
 
                 const slideAnchor = document.createElement('a');
-                slideAnchor.href = `https://wa.me/977${CORE_CONFIG_MATRIX.whatsapp_contact_phone}?text=I%20want%20to%20buy%20${encodeURIComponent(prod.name)}`;
+                slideAnchor.href = `https://wa.me/9779815824328?text=I%20want%20to%20buy%20${encodeURIComponent(prod.name)}`;
                 slideAnchor.target = "_blank";
                 slideAnchor.className = 'slide-card-item';
                 slideAnchor.innerHTML = `
@@ -609,12 +762,10 @@
             startAutoSlide();
         }
 
-        // 𝟜. DOMContentLoaded Initialization
         document.addEventListener('DOMContentLoaded', () => {
             renderAccessories();
             renderSlideshow();
 
-            // Fetch Recent Posts dynamically from posts.json
             fetch('posts.json')
                 .then(response => response.json())
                 .then(posts => {
@@ -643,16 +794,30 @@
                                 <img src="${post.image}" alt="${post.title}" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80'" style="width:100%; height:160px; object-fit:cover; border-radius:6px; margin-bottom:12px;">
                                 <span style="font-size:11px; color:#f59e0b; font-weight:bold; text-transform:uppercase;">${post.category} | ${post.date}</span>
                                 <h4 style="color:#0f172a; font-size:16px; margin:8px 0 15px 0; line-height:1.4;">${post.title}</h4>
-                                <a href="${post.link}" class="btn-direct-buy" style="background: #0f172a !important; text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
+                                <a href="${post.link}" class="cta-nav-btn" style="text-align:center; text-decoration:none; display:block; padding:8px; font-size:13px;">पूरा पढ्नुहोस्</a>
                             `;
                             grid.appendChild(card);
                         });
                     }
                 })
-                .catch(err => console.log('Notice: posts.json file optional or not found yet.'));
+                .catch(err => console.error('Error loading posts:', err));
         });
+    </script>
 
-        // 𝟝. Disqus Integration
+    <footer>
+        <div class="footer-nav-links">
+            <a href="pages/accessories.html">Accessories</a> | 
+            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
+            <a href="pages/insurance-post1.html">Insurance Plans</a> | 
+            <a href="pages/repair-hub.html">Repair Hub</a> | 
+            <a href="pages/gallery.html">Photo Gallery</a> |
+            <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
+            <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
+        </div>
+        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
+    </footer>
+
+    <script>
         function toggleDisqusBox() {
             var container = document.getElementById('disqus-toggle-container');
             if (container.style.display === 'block') {
@@ -673,20 +838,6 @@
             }
         }
     </script>
-
-    <!-- FOOTER SECTION -->
-    <footer>
-        <div class="footer-nav-links">
-            <a href="pages/accessories.html">Accessories</a> | 
-            <a href="pages/vlog-gaming.html">Vlog & Gaming</a> | 
-            <a href="pages/insurance-post1.html">Insurance Plans</a> | 
-            <a href="pages/repair-hub.html">Repair Hub</a> | 
-            <a href="pages/gallery.html">Photo Gallery</a> |
-            <a href="pages/privacy-policy.html" style="font-weight: bold; color: #f59e0b;">Privacy Policy</a> |
-            <a href="pages/contact.html" style="font-weight: bold; color: #f59e0b;">Contact Us</a>
-        </div>
-        <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
-    </footer>
 
 </body>
 </html>
