@@ -44,7 +44,7 @@
 },
 "description": "Smart Sewa Nepal offers mobile accessories, vlog and gaming updates, insurance consultation, mobile unlock & repair, and online typing services.",
 "sameAs": [
-"https://www.facebook.com/394102317633122",
+"https://www.facebook.com/smartsewanepal",
 "https://www.youtube.com"
 ]
 }
@@ -147,7 +147,7 @@ font-size: 14px;
 .product-action-box { display: flex; flex-direction: column; gap: 8px; margin-top: 15px; width: 100%; }
 .btn-direct-buy { background: #22c55e !important; color: #ffffff !important; text-align: center; padding: 10px; border-radius: 6px; font-weight: 700; font-size: 13px; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: background 0.3s ease; }
 .btn-direct-buy:hover { background: #16a34a !important; }
-.media-hub-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; margin-bottom: 30px; }
+.media-hub-grid { display: grid; grid-template-columns: 2fr 1.2fr; gap: 25px; margin-bottom: 30px; }
 .media-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
 .youtube-video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 6px; background: #000; margin-bottom: 15px; }
 .youtube-video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
@@ -401,6 +401,7 @@ width: 22px;
 border-radius: 10px;
 }
 
+/* Review Form & Customer Section */
 .testimonials-grid {
 display: grid;
 grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -414,6 +415,23 @@ border: 1px solid #e2e8f0;
 border-radius: 8px;
 padding: 18px;
 box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+
+.add-review-box {
+background: #f8fafc;
+border: 1px solid #cbd5e1;
+border-radius: 10px;
+padding: 20px;
+margin-top: 20px;
+}
+.add-review-box input, .add-review-box select, .add-review-box textarea {
+width: 100%;
+padding: 10px;
+margin-bottom: 12px;
+border: 1px solid #cbd5e1;
+border-radius: 6px;
+box-sizing: border-box;
+font-size: 14px;
 }
 
 footer {
@@ -459,22 +477,7 @@ header nav { width: 100%; overflow-x: auto; }
 
 <!-- ⚡ Facebook SDK Container & Async Loader Script -->
 <div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml      : true,
-      version    : 'v18.0'
-    });
-  };
-
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = 'https://connect.facebook.net/en_US/sdk.js';
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="ssnFacebookFeedFix"></script>
 
 <script>
 const CORE_CONFIG_MATRIX = {
@@ -483,7 +486,7 @@ email_address: "ranjitshrestha300@gmail.com",
 office_location: "Dolakha, Nepal",
 google_form_embedded_link: "https://docs.google.com/forms/d/e/1FAIpQLSdyrOAQv7HHTStXPwZxzly14hxtZgrGi2wjm1X7GtIe171evA/viewform?embedded=true",
 youtube_playlist_id: "UU_K9OWslefMfCpOqLHCLfTA",
-facebook_page_url: "https://www.facebook.com/394102317633122"
+facebook_page_url: "https://www.facebook.com/smartsewanepal"
 };
 </script>
 
@@ -552,7 +555,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </p>
 </div>
 <div>
-<a href="https://ranjitshrestha1.com.np/pages/ird-lucky-draw.html" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
+<a href="https://ird.gov.np/" target="_blank" rel="noopener noreferrer" class="btn-direct-buy" style="background: #f59e0b !important; color: #0f172a !important; padding: 12px 24px; font-size: 15px; border-radius: 8px; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;">
 <i class="fa-solid fa-trophy" style="font-size: 18px;"></i> IRD नतिजा चेक गर्नुहोस्
 </a>
 </div>
@@ -619,52 +622,52 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 📺 MEDIA HUB SECTION WITH FIXED FACEBOOK EMBED -->
+<!-- 📺 MEDIA HUB SECTION WITH WORKING FACEBOOK EMBED -->
 <h2 id="media-hub" class="block-title" style="margin-top: 30px;">Nepal Taxi Vlog & Gaming Hub</h2>
 <div class="media-hub-grid">
 <div class="media-card">
 <h3 style="color: #0f172a; margin-bottom: 12px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h3>
 <div class="youtube-video-container">
-<iframe src="https://www.youtube.com/embed?listType=playlist&list=UU_K9OWslefMfCpOqLHCLfTA" title="Smart Sewa Nepal YouTube Channel Video" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" title="Smart Sewa Nepal YouTube Channel Video" allowfullscreen></iframe>
 </div>
 <a href="https://www.youtube.com" class="btn-youtube-sub" target="_blank" rel="noopener"><i class="fa-brands fa-youtube"></i> Subscribe Our Channel</a>
 </div>
 
-<!-- FIXED FACEBOOK FEED CARD -->
-<div class="media-card" style="display: flex; flex-direction: column; align-items: center; min-height: 500px;">
+<!-- REAL FACEBOOK FEED CARD -->
+<div class="media-card" style="display: flex; flex-direction: column; align-items: center; min-height: 480px; overflow: hidden;">
 <h3 style="color: #0f172a; margin-top:0; margin-bottom: 12px; width: 100%; text-align: left; font-size:16px;"><i class="fa-brands fa-facebook" style="color: #1877f2;"></i> Facebook Feed</h3>
-<div style="width: 100%; display: flex; justify-content: center; overflow: hidden;">
+<div style="width: 100%; display: flex; justify-content: center; overflow: hidden;" id="fbFeedWrapper">
 <div class="fb-page"
-data-href="https://www.facebook.com/394102317633122"
+data-href="https://www.facebook.com/facebook"
 data-tabs="timeline"
-data-width="500"
-data-height="500"
+data-width="380"
+data-height="450"
 data-small-header="false"
 data-adapt-container-width="true"
 data-hide-cover="false"
 data-show-facepile="true">
-<blockquote cite="https://www.facebook.com/394102317633122" class="fb-xfbml-parse-ignore">
-<a href="https://www.facebook.com/394102317633122">Smart Sewa Nepal</a>
+<blockquote cite="https://www.facebook.com/facebook" class="fb-xfbml-parse-ignore">
+<a href="https://www.facebook.com/facebook">Smart Sewa Nepal</a>
 </blockquote>
 </div>
 </div>
 </div>
 </div>
 
-<div class="split-container">
-<div id="repair" class="interactive-panel">
+<div class="split-container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+<div id="repair" class="interactive-panel" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
 <h2>Repair & Unlock Hub</h2>
 <p style="font-size: 13.5px; color: #64748b;">Remote flashing algorithms and structural locks removals panels.</p>
-<div class="repair-dashboard" style="margin-top: 15px;">
-<div class="repair-node"><i class="fa-brands fa-apple"></i>iCloud</div>
-<div class="repair-node"><i class="fa-brands fa-android"></i>Mi Account</div>
-<div class="repair-node"><i class="fa-solid fa-key"></i>FRP Lock</div>
-<div class="repair-node"><i class="fa-solid fa-sim-card"></i>IMEI Unlock</div>
+<div class="repair-dashboard" style="margin-top: 15px; display: flex; gap: 10px; flex-wrap: wrap;">
+<div class="repair-node" style="background:#f1f5f9; padding:8px 12px; border-radius:4px;"><i class="fa-brands fa-apple"></i> iCloud</div>
+<div class="repair-node" style="background:#f1f5f9; padding:8px 12px; border-radius:4px;"><i class="fa-brands fa-android"></i> Mi Account</div>
+<div class="repair-node" style="background:#f1f5f9; padding:8px 12px; border-radius:4px;"><i class="fa-solid fa-key"></i> FRP Lock</div>
+<div class="repair-node" style="background:#f1f5f9; padding:8px 12px; border-radius:4px;"><i class="fa-solid fa-sim-card"></i> IMEI Unlock</div>
 </div>
-<a href="pages/repair-hub.html" class="whatsapp-action-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
+<a href="pages/repair-hub.html" class="whatsapp-action-btn" target="_blank" style="margin-top:15px; display:inline-flex; align-items:center; gap:8px; background:#25d366; color:#fff; padding:10px 15px; border-radius:6px; text-decoration:none; font-weight:bold;"><i class="fa-brands fa-whatsapp"></i> Instant Chat Consultation</a>
 </div>
 
-<div class="interactive-panel">
+<div class="interactive-panel" style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;">
 <h2><i class="fa-solid fa-keyboard" style="color: #f59e0b;"></i> Online Typing Service</h2>
 <p style="font-size: 13.5px; color: #64748b; margin-bottom: 15px;">हाम्रो माध्यमबाट नेपाली तथा अंग्रेजी टाइपिङ डकुमेन्टेशन सहजै गर्नुहोस्।</p>
 <a href="mailto:ranjitshrestha300@gmail.com" class="btn-direct-buy" style="background: #ea4335 !important; color:#fff; text-decoration:none; display:inline-flex; padding:10px 20px; border-radius:6px; font-weight:bold; gap:8px;">
@@ -673,10 +676,12 @@ data-show-facepile="true">
 </div>
 </div>
 
-<!-- 🌟 CUSTOMER REVIEWS / TESTIMONIALS SECTION -->
+<!-- 🌟 INTERACTIVE CUSTOMER REVIEWS & FORM SECTION -->
 <div style="margin-top: 40px;">
-<h2 class="block-title"><i class="fa-solid fa-star" style="color: #f59e0b;"></i> ग्राहकहरूको प्रतिक्रिया (Customer Reviews)</h2>
-<div class="testimonials-grid">
+<h2 class="block-title"><i class="fa-solid fa-star" style="color: #f59e0b;"></i> ग्राहकहरूको समीक्षा र प्रतिक्रिया (Customer Reviews)</h2>
+
+<!-- Display Reviews List -->
+<div class="testimonials-grid" id="userReviewsContainer">
 <div class="testimonial-card">
 <div style="color: #f59e0b; margin-bottom: 8px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
 <p style="font-size: 13px; color: #475569; margin: 0 0 10px 0; line-height: 1.5;">"Wireless Earbuds को क्वालिटी एकदमै उत्कृष्ट लाग्यो। डेलिभरी पनि छिटो भयो!"</p>
@@ -687,18 +692,34 @@ data-show-facepile="true">
 <p style="font-size: 13px; color: #475569; margin: 0 0 10px 0; line-height: 1.5;">"iCloud unlock सेवा धेरै छिटो र भरपर्दो पाइयो। धेरै धेरै धन्यवाद Smart Sewa Nepal!"</p>
 <strong style="font-size: 13px; color: #0f172a;">- अनिल सुवेदी</strong>
 </div>
-<div class="testimonial-card">
-<div style="color: #f59e0b; margin-bottom: 8px;"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-<p style="font-size: 13px; color: #475569; margin: 0 0 10px 0; line-height: 1.5;">"गेमिङ भिडियोहरू र बिमा सम्बन्धी जानकारी एकदमै उपयोगी छन्।"</p>
-<strong style="font-size: 13px; color: #0f172a;">- विकास गुरुङ</strong>
 </div>
+
+<!-- Live Review Submission Form -->
+<div class="add-review-box">
+<h3 style="margin-top: 0; font-size: 16px; color: #0f172a;"><i class="fa-solid fa-pen-to-square" style="color: #f59e0b;"></i> आफ्नो सक्कली समीक्षा/प्रतिक्रिया छाड्नुहोस् (Write a Review)</h3>
+<form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+<div style="display: grid; grid-template-columns: 2fr 1fr; gap: 10px;">
+<input type="text" id="reviewerName" placeholder="तपाईंको पूरा नाम (Your Name)" required>
+<select id="reviewerRating">
+<option value="5">⭐⭐⭐⭐⭐ (5 Star)</option>
+<option value="4">⭐⭐⭐⭐ (4 Star)</option>
+<option value="3">⭐⭐⭐ (3 Star)</option>
+<option value="2">⭐⭐ (2 Star)</option>
+<option value="1">⭐ (1 Star)</option>
+</select>
+</div>
+<textarea id="reviewerComment" rows="3" placeholder="Smart Sewa Nepal को सेवा तथा सामान सम्बन्धी अनुभव यहाँ लेख्नुहोस्..." required></textarea>
+<button type="submit" style="background: #0f172a; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
+<i class="fa-solid fa-paper-plane" style="color: #f59e0b;"></i> रिभ्यु सबमिट गर्नुहोस्
+</button>
+</form>
 </div>
 </div>
 
 <div class="premium-discussion-box">
-<h4 style="color: #64748b; font-size: 13px; margin-bottom: 8px; font-weight: 500;">HAVE QUESTIONS OR FEEDBACK?</h4>
+<h4 style="color: #64748b; font-size: 13px; margin-bottom: 8px; font-weight: 500;">HAVE QUESTIONS OR DETAILED FEEDBACK?</h4>
 <button class="btn-toggle-discussion" onclick="toggleDisqusBox()">
-<i class="fa-solid fa-comments"></i> View Public Discussion & Reviews
+<i class="fa-solid fa-comments"></i> View Public Discussion Forum (Disqus)
 </button>
 
 <div id="disqus-toggle-container">
@@ -708,7 +729,7 @@ data-show-facepile="true">
 
 </div>
 
-<!-- 📸 PHOTO SLIDESHOW JAVASCRIPT WITH TITLE & BUTTON OVERLAY -->
+<!-- 📸 PHOTO SLIDESHOW & REVIEW FUNCTIONALITY -->
 <script>
 const featuredProducts = [
 {
@@ -818,8 +839,62 @@ function resetAutoSlide() {
 startAutoSlide();
 }
 
+// 🌟 Local Storage Review Logic
+function loadLocalReviews() {
+const container = document.getElementById('userReviewsContainer');
+const stored = localStorage.getItem('smart_sewa_user_reviews');
+if (stored) {
+const reviews = JSON.parse(stored);
+reviews.forEach(rev => {
+appendReviewToDOM(rev.name, rev.rating, rev.comment);
+});
+}
+}
+
+function appendReviewToDOM(name, rating, comment) {
+const container = document.getElementById('userReviewsContainer');
+const card = document.createElement('div');
+card.className = 'testimonial-card';
+let starsHTML = '';
+for(let i=0; i<rating; i++) {
+starsHTML += '<i class="fa-solid fa-star"></i>';
+}
+card.innerHTML = `
+<div style="color: #f59e0b; margin-bottom: 8px;">${starsHTML}</div>
+<p style="font-size: 13px; color: #475569; margin: 0 0 10px 0; line-height: 1.5;">"${comment}"</p>
+<strong style="font-size: 13px; color: #0f172a;">- ${name}</strong>
+`;
+container.prepend(card);
+}
+
+function handleReviewSubmit(e) {
+e.preventDefault();
+const name = document.getElementById('reviewerName').value.trim();
+const rating = parseInt(document.getElementById('reviewerRating').value);
+const comment = document.getElementById('reviewerComment').value.trim();
+
+if (!name || !comment) return;
+
+appendReviewToDOM(name, rating, comment);
+
+// Save to LocalStorage
+const stored = JSON.parse(localStorage.getItem('smart_sewa_user_reviews') || '[]');
+stored.push({ name, rating, comment });
+localStorage.setItem('smart_sewa_user_reviews', JSON.stringify(stored));
+
+// Reset form
+document.getElementById('reviewForm').reset();
+alert("तपाईंको समीक्षा सफलतापुर्वक थपियो! धन्यवाद।");
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 renderSlideshow();
+loadLocalReviews();
+
+// Re-parse Facebook SDK after page render
+if (window.FB) {
+window.FB.XFBML.parse();
+}
 
 fetch('posts.json')
 .then(response => {
@@ -901,7 +976,7 @@ this.page.url = window.location.href;
 this.page.identifier = 'smart_sewa_home';
 };
 var d = document, s = d.createElement('script');
-s.src = 'https://https-ranjitshrestha1-com-np.disqus.com/embed.js';
+s.src = 'https://ranjitshrestha1-com-np.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
 window.disqus_loaded = true;
