@@ -962,6 +962,28 @@ function sendOrderToWhatsApp() {
     cart = []; updateCartUI(); closeCartModal();
 }
 
+    
+   document.addEventListener('DOMContentLoaded', () => {
+    // 1. URL को Hash (#) बाट id निकाल्ने (जस्तै "#m209" बाट "m209")
+    const hash = window.location.hash.replace('#', '');
+
+    if (hash) {
+        // 2. products array मा त्यो Hash सँग मिल्ने Product खोज्ने
+        // (यदि id छ भने id बाट, नभए नामबाट खोज्छ)
+        const targetProduct = products.find(p => 
+            (p.id && p.id.toLowerCase() === hash.toLowerCase()) || 
+            (p.name && p.name.toLowerCase().includes(hash.toLowerCase()))
+        );
+
+        // 3. भेटिएको Product को Modal खोल्ने
+        if (targetProduct) {
+            // तपाईंको accessories.html मा Modal खोल्ने फङ्क्सन
+            openDetailsModal(targetProduct); 
+        }
+    }
+});
+
+    
 // सुरुआतमै प्रडक्टहरू लोड गर्ने
 renderProducts();
 </script>
