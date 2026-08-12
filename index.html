@@ -218,6 +218,8 @@ flex-direction: column;
 justify-content: space-between;
 transition: transform 0.3s ease, box-shadow 0.3s ease;
 position: relative;
+text-decoration: none; /* Link styled as card */
+color: inherit;
 }
 
 .daraz-product-card:hover {
@@ -304,15 +306,15 @@ text-decoration: line-through;
 margin-left: 6px;
 }
 
-/* Pure Photo Slideshow with Overlay CTA */
+/* Pure Photo Slideshow with Overlay CTA - Reduced Margin & Gap */
 .full-hero-slideshow {
 position: relative;
 width: 100%;
 max-width: 1200px;
 height: 380px;
-margin: 20px auto;
+margin: 0 auto; /* Zero margin to remove extra gap */
 overflow: hidden;
-border-radius: 12px;
+border-radius: 0 0 12px 12px;
 background: #0f172a;
 box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
@@ -599,7 +601,7 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (Just For You / Popular Products) -->
+<!-- 🛍️ DARAZ-STYLE PRODUCT DISPLAY SECTION (DYNAMIC & EASY TO ADD) -->
 <div style="margin-bottom: 40px;">
 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
 <h2 class="block-title" style="margin: 0; font-size: 20px; color: #0f172a;">
@@ -608,97 +610,8 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 <a href="pages/accessories.html" style="color: #f59e0b; font-weight: bold; font-size: 14px; text-decoration: none;">View All Items <i class="fa-solid fa-arrow-right"></i></a>
 </div>
 
-<div class="daraz-product-grid">
-
-<!-- Item 1 -->
-<div class="daraz-product-card">
-<div class="daraz-img-box">
-<span class="daraz-discount-badge">-17%</span>
-<img src="productsimages/product1.png" alt="M209 Vintage Speaker" onerror="this.src='https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80'">
-</div>
-<div class="daraz-product-info">
-<h3 class="daraz-product-name">M209 Vintage Portable Bluetooth Radio Speaker</h3>
-<div class="daraz-rating">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-<span>(12)</span>
-</div>
-<div class="daraz-price-block">
-<span class="daraz-current-price">Rs. 2,499</span>
-<span class="daraz-old-price">Rs. 2,999</span>
-</div>
-<div class="product-action-box">
-<a href="pages/accessories.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-</div>
-</div>
-</div>
-
-<!-- Item 2 -->
-<div class="daraz-product-card">
-<div class="daraz-img-box">
-<span class="daraz-discount-badge">-25%</span>
-<img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80" alt="Wireless Noise Cancelling Earbuds">
-</div>
-<div class="daraz-product-info">
-<h3 class="daraz-product-name">TWS True Wireless Stereo Noise Cancelling Earbuds</h3>
-<div class="daraz-rating">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-<span>(28)</span>
-</div>
-<div class="daraz-price-block">
-<span class="daraz-current-price">Rs. 1,850</span>
-<span class="daraz-old-price">Rs. 2,450</span>
-</div>
-<div class="product-action-box">
-<a href="pages/accessories.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-</div>
-</div>
-</div>
-
-<!-- Item 3 -->
-<div class="daraz-product-card">
-<div class="daraz-img-box">
-<span class="daraz-discount-badge">-15%</span>
-<img src="https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80" alt="Fast Charging Power Bank">
-</div>
-<div class="daraz-product-info">
-<h3 class="daraz-product-name">20000mAh Dual USB Fast Charging Power Bank</h3>
-<div class="daraz-rating">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
-<span>(8)</span>
-</div>
-<div class="daraz-price-block">
-<span class="daraz-current-price">Rs. 2,100</span>
-<span class="daraz-old-price">Rs. 2,500</span>
-</div>
-<div class="product-action-box">
-<a href="pages/accessories.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-</div>
-</div>
-</div>
-
-<!-- Item 4 -->
-<div class="daraz-product-card">
-<div class="daraz-img-box">
-<span class="daraz-discount-badge">-30%</span>
-<img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80" alt="Mobile Gaming Trigger Controller">
-</div>
-<div class="daraz-product-info">
-<h3 class="daraz-product-name">Pro Mobile Gaming Triggers & Cooling Fan Grip</h3>
-<div class="daraz-rating">
-<i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-<span>(45)</span>
-</div>
-<div class="daraz-price-block">
-<span class="daraz-current-price">Rs. 899</span>
-<span class="daraz-old-price">Rs. 1,299</span>
-</div>
-<div class="product-action-box">
-<a href="pages/vlog-gaming.html" class="btn-direct-buy"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-</div>
-</div>
-</div>
-
-</div>
+<!-- Dynamic Products Grid Container -->
+<div class="daraz-product-grid" id="productGridContainer"></div>
 </div>
 
 <hr style="border: 0; border-top: 1px solid #e2e8f0; margin-bottom: 40px;">
@@ -754,8 +667,96 @@ data-adapt-container-width="true">
 
 </div>
 
-<!-- 📸 SLIDESHOW JAVASCRIPT -->
+<!-- 🛍️ EASY PRODUCT MANAGEMENT & SLIDESHOW SCRIPT -->
 <script>
+// 📌 नयाँ प्रोडक्ट थप्न/सम्पादन गर्न तलको List मा नयाँ Object थप्नुहोस्:
+const productsData = [
+  {
+    name: "M209 Vintage Portable Bluetooth Radio Speaker",
+    discount: "-17%",
+    currentPrice: "Rs. 2,499",
+    oldPrice: "Rs. 2,999",
+    rating: 4.5,
+    reviewsCount: 12,
+    image: "productsimages/product1.png",
+    link: "pages/accessories.html?product=m209"
+  },
+  {
+    name: "TWS True Wireless Stereo Noise Cancelling Earbuds",
+    discount: "-25%",
+    currentPrice: "Rs. 1,850",
+    oldPrice: "Rs. 2,450",
+    rating: 5,
+    reviewsCount: 28,
+    image: "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80",
+    link: "pages/accessories.html?product=tws-earbuds"
+  },
+  {
+    name: "20000mAh Dual USB Fast Charging Power Bank",
+    discount: "-15%",
+    currentPrice: "Rs. 2,100",
+    oldPrice: "Rs. 2,500",
+    rating: 4,
+    reviewsCount: 8,
+    image: "https://images.unsplash.com/photo-1609592424074-29753c153702?auto=format&fit=crop&w=600&q=80",
+    link: "pages/accessories.html?product=power-bank"
+  },
+  {
+    name: "Pro Mobile Gaming Triggers & Cooling Fan Grip",
+    discount: "-30%",
+    currentPrice: "Rs. 899",
+    oldPrice: "Rs. 1,299",
+    rating: 5,
+    reviewsCount: 45,
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80",
+    link: "pages/accessories.html?product=gaming-triggers"
+  }
+];
+
+function generateStarRating(rating) {
+  let stars = '';
+  const fullStars = Math.floor(rating);
+  const hasHalfStar = rating % 1 !== 0;
+
+  for (let i = 0; i < fullStars; i++) {
+    stars += '<i class="fa-solid fa-star"></i>';
+  }
+  if (hasHalfStar) {
+    stars += '<i class="fa-solid fa-star-half-stroke"></i>';
+  }
+  const emptyStars = 5 - Math.ceil(rating);
+  for (let i = 0; i < emptyStars; i++) {
+    stars += '<i class="fa-regular fa-star"></i>';
+  }
+  return stars;
+}
+
+function renderProductsShowcase() {
+  const container = document.getElementById('productGridContainer');
+  if (!container) return;
+
+  container.innerHTML = productsData.map(prod => `
+    <a href="${prod.link}" class="daraz-product-card">
+      <div class="daraz-img-box">
+        ${prod.discount ? `<span class="daraz-discount-badge">${prod.discount}</span>` : ''}
+        <img src="${prod.image}" alt="${prod.name}" onerror="this.src='https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=600&q=80'">
+      </div>
+      <div class="daraz-product-info">
+        <h3 class="daraz-product-name">${prod.name}</h3>
+        <div class="daraz-rating">
+          ${generateStarRating(prod.rating)}
+          <span>(${prod.reviewsCount})</span>
+        </div>
+        <div class="daraz-price-block">
+          <span class="daraz-current-price">${prod.currentPrice}</span>
+          ${prod.oldPrice ? `<span class="daraz-old-price">${prod.oldPrice}</span>` : ''}
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+// 📸 HERO SLIDESHOW LOGIC
 const featuredProducts = [
 {
 title: "M209 Vintage Portable Radio Speaker",
@@ -866,6 +867,7 @@ startAutoSlide();
 
 document.addEventListener('DOMContentLoaded', () => {
 renderSlideshow();
+renderProductsShowcase();
 });
 </script>
 
