@@ -963,47 +963,56 @@ function sendOrderToWhatsApp() {
 }
 
     
-  // Dynamic hash checker function
-function handleHashModal() {
-    const hash = window.location.hash.replace('#', '').trim().toLowerCase();
     
-    // यदि hash छैन वा products डाटा लोड भएकै छैन भने रोक्ने
+  // URL को Hash (#) हेरेर Modal खोल्ने मुख्य फङ्क्सन
+function openModalFromHash() {
+    // 1. URL को # पछिको भाग निकाल्ने र सफा गर्ने (उदा: "#1" बाट "1" वा "#yo-437bt" बाट "yo-437bt")
+    const hash = decodeURIComponent(window.location.hash.replace('#', '')).trim().toLowerCase();
+    
     if (!hash || !window.products || window.products.length === 0) return;
 
-    // hash सँग मिल्ने Product खोज्ने
-    const targetProduct = window.products.find(p => {
-        const pId = String(p.id || '').toLowerCase();
-        const pName = String(p.name || '').toLowerCase();
-        return pId === hash || pName.includes(hash);
-    });
+    // 2. Products Array मा Index (नम्बर) वा Name/ID अनुसार प्रडक्ट खोज्ने
+    let targetProduct = null;
 
+    // यदि Hash मा नम्बर छ भने (उदा: #1 ले पहिलो product, #2 ले दोस्रो product जनाउँछ)
+    if (!isNaN(hash) && parseInt(hash) > 0) {
+        const productIndex = parseInt(hash) - 1; // Array Index 0 बाट सुरु हुन्छ
+        targetProduct = window.products[productIndex];
+    } else {
+        // यदि Hash मा प्रडक्टको नाम/मोडल छ भने (उदा: #yo-437bt)
+        targetProduct = window.products.find(p => {
+            const pName = String(p.name || '').toLowerCase();
+            const pId = String(p.id || '').toLowerCase();
+            return pName.includes(hash) || (pId && pId === hash);
+        });
+    }
+
+    // 3. प्रडक्ट भेटियो भने Modal खोल्ने
     if (targetProduct && typeof openDetailsModal === 'function') {
         openDetailsModal(targetProduct);
     }
 }
 
-// १. Products API/Sheet बाट लोड भइसक्न पर्खिने (Loop Check)
-function checkDataAndOpenModal() {
+// Google Sheet / API बाट Data लोड भइसक्न पर्खिने Loop
+function checkAndTriggerModal() {
     let attempts = 0;
     const interval = setInterval(() => {
         attempts++;
-        
-        // यदि products डेटा लोड भयो भने Modal खोल्ने र Interval रोक्ने
+        // products Load भइसकेपछि Modal खोल्ने
         if (window.products && window.products.length > 0) {
             clearInterval(interval);
-            handleHashModal();
+            openModalFromHash();
         }
-
-        // १० सेकेन्ड (२० पटक) सम्म पनि लोड नभए चेक गर्न छोड्ने
+        // १० सेकेन्ड पछि रोकिने
         if (attempts > 20) {
             clearInterval(interval);
         }
-    }, 500); // हरेक आधा सेकेन्डमा चेक गर्छ
+    }, 500);
 }
 
-// २. DOM Load हुने बित्तिकै र Hash Change हुँदा चलाउने
-document.addEventListener('DOMContentLoaded', checkDataAndOpenModal);
-window.addEventListener('hashchange', handleHashModal);
+// Events Listener थप्ने
+document.addEventListener('DOMContentLoaded', checkAndTriggerModal);
+window.addEventListener('hashchange', openModalFromHash);
 
     
 // सुरुआतमै प्रडक्टहरू लोड गर्ने
