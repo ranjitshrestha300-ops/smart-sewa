@@ -963,26 +963,32 @@ function sendOrderToWhatsApp() {
 }
 
     
-   document.addEventListener('DOMContentLoaded', () => {
-    // 1. URL को Hash (#) बाट id निकाल्ने (जस्तै "#m209" बाट "m209")
-    const hash = window.location.hash.replace('#', '');
+   d// URL को Hash (#) हेरेर Modal खोल्ने फङ्क्सन
+function checkHashAndOpenModal() {
+    const hash = window.location.hash.replace('#', '').trim().toLowerCase();
 
-    if (hash) {
-        // 2. products array मा त्यो Hash सँग मिल्ने Product खोज्ने
-        // (यदि id छ भने id बाट, नभए नामबाट खोज्छ)
-        const targetProduct = products.find(p => 
-            (p.id && p.id.toLowerCase() === hash.toLowerCase()) || 
-            (p.name && p.name.toLowerCase().includes(hash.toLowerCase()))
-        );
+    if (hash && typeof products !== 'undefined' && products.length > 0) {
+        // Hash सँग मिल्ने प्रडक्ट खोज्ने (ID, Name वा Keywords)
+        const targetProduct = products.find(p => {
+            const pId = (p.id || '').toLowerCase();
+            const pName = (p.name || '').toLowerCase();
+            return pId === hash || pName.includes(hash);
+        });
 
-        // 3. भेटिएको Product को Modal खोल्ने
-        if (targetProduct) {
-            // तपाईंको accessories.html मा Modal खोल्ने फङ्क्सन
-            openDetailsModal(targetProduct); 
+        if (targetProduct && typeof openDetailsModal === 'function') {
+            openDetailsModal(targetProduct);
         }
     }
+}
+
+// १. पेजको सबै Content र Script हरू पूर्ण रूपमा लोड भइसकेपछि चलाउने
+window.addEventListener('load', () => {
+    // 500ms को सानो Delay दिँदा products array र Modal functions तयार भइसक्छन्
+    setTimeout(checkHashAndOpenModal, 500);
 });
 
+// २. यदि युजर accessories पेजमै छ र URL Hash परिवर्तन भयो भने पनि Modal खोल्ने
+window.addEventListener('hashchange', checkHashAndOpenModal);
     
 // सुरुआतमै प्रडक्टहरू लोड गर्ने
 renderProducts();
