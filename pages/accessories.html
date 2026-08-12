@@ -963,32 +963,48 @@ function sendOrderToWhatsApp() {
 }
 
     
-   // URL को Hash (#) हेरेर Modal खोल्ने फङ्क्सन
-function checkHashAndOpenModal() {
+  // Dynamic hash checker function
+function handleHashModal() {
     const hash = window.location.hash.replace('#', '').trim().toLowerCase();
+    
+    // यदि hash छैन वा products डाटा लोड भएकै छैन भने रोक्ने
+    if (!hash || !window.products || window.products.length === 0) return;
 
-    if (hash && typeof products !== 'undefined' && products.length > 0) {
-        // Hash सँग मिल्ने प्रडक्ट खोज्ने (ID, Name वा Keywords)
-        const targetProduct = products.find(p => {
-            const pId = (p.id || '').toLowerCase();
-            const pName = (p.name || '').toLowerCase();
-            return pId === hash || pName.includes(hash);
-        });
+    // hash सँग मिल्ने Product खोज्ने
+    const targetProduct = window.products.find(p => {
+        const pId = String(p.id || '').toLowerCase();
+        const pName = String(p.name || '').toLowerCase();
+        return pId === hash || pName.includes(hash);
+    });
 
-        if (targetProduct && typeof openDetailsModal === 'function') {
-            openDetailsModal(targetProduct);
-        }
+    if (targetProduct && typeof openDetailsModal === 'function') {
+        openDetailsModal(targetProduct);
     }
 }
 
-// १. पेजको सबै Content र Script हरू पूर्ण रूपमा लोड भइसकेपछि चलाउने
-window.addEventListener('load', () => {
-    // 500ms को सानो Delay दिँदा products array र Modal functions तयार भइसक्छन्
-    setTimeout(checkHashAndOpenModal, 500);
-});
+// १. Products API/Sheet बाट लोड भइसक्न पर्खिने (Loop Check)
+function checkDataAndOpenModal() {
+    let attempts = 0;
+    const interval = setInterval(() => {
+        attempts++;
+        
+        // यदि products डेटा लोड भयो भने Modal खोल्ने र Interval रोक्ने
+        if (window.products && window.products.length > 0) {
+            clearInterval(interval);
+            handleHashModal();
+        }
 
-// २. यदि युजर accessories पेजमै छ र URL Hash परिवर्तन भयो भने पनि Modal खोल्ने
-window.addEventListener('hashchange', checkHashAndOpenModal);
+        // १० सेकेन्ड (२० पटक) सम्म पनि लोड नभए चेक गर्न छोड्ने
+        if (attempts > 20) {
+            clearInterval(interval);
+        }
+    }, 500); // हरेक आधा सेकेन्डमा चेक गर्छ
+}
+
+// २. DOM Load हुने बित्तिकै र Hash Change हुँदा चलाउने
+document.addEventListener('DOMContentLoaded', checkDataAndOpenModal);
+window.addEventListener('hashchange', handleHashModal);
+
     
 // सुरुआतमै प्रडक्टहरू लोड गर्ने
 renderProducts();
