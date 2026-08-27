@@ -18,13 +18,12 @@
 
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="144x144" href="../icons/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="72x72" href="../icons/android-icon-72x72.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../icons/android-icon-48x48.png">
     <link rel="icon" type="image/png" sizes="36x36" href="../icons/android-icon-36x36.png">
 
     <link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
 
     <link rel="manifest" href="../icons/manifest.json">
@@ -183,6 +182,25 @@
 
         .open-modal-btn:hover {
             background: #d97706;
+        }
+
+        .yt-watch-btn {
+            background: #ef4444;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 11px 14px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            transition: background 0.3s ease;
+        }
+
+        .yt-watch-btn:hover {
+            background: #dc2626;
         }
 
         /* Popup Modal Window */
@@ -353,7 +371,7 @@
             <h2 class="block-title" style="margin-top: 20px;"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> Latest Uploaded Video</h2>
             <div class="video-grid" style="margin-bottom: 30px;">
                 <div class="video-main-frame" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; background: #000; border: 1px solid #e2e8f0;">
-                    <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allowfullscreen></iframe>
+                    <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"></iframe>
                 </div>
                 <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA?sub_confirmation=1" target="_blank" class="action-btn-primary" style="display: inline-flex; align-items: center; gap: 8px; background: #ef4444; color: #fff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 15px;">
                     <i class="fa-brands fa-youtube"></i> Subscribe Our Channel
@@ -367,7 +385,7 @@
                 <!-- Bus Video 1 -->
                 <div class="bus-card" id="bussid-katar">
                     <div class="bus-video-frame">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
                         <h3 class="clickable-title" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'bussid-katar')">
@@ -379,6 +397,9 @@
                             <button class="open-modal-btn" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'bussid-katar')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
+                            <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA" target="_blank" class="yt-watch-btn">
+                                <i class="fa-brands fa-youtube"></i> Watch
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -386,7 +407,7 @@
                 <!-- Bus Video 2 -->
                 <div class="bus-card" id="express-highway">
                     <div class="bus-video-frame">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
                         <h3 class="clickable-title" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'express-highway')">
@@ -398,6 +419,9 @@
                             <button class="open-modal-btn" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'express-highway')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
+                            <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA" target="_blank" class="yt-watch-btn">
+                                <i class="fa-brands fa-youtube"></i> Watch
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -405,7 +429,7 @@
                 <!-- Bus Video 3 -->
                 <div class="bus-card" id="offroad-hill">
                     <div class="bus-video-frame">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
+                        <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
                         <h3 class="clickable-title" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'offroad-hill')">
@@ -417,6 +441,9 @@
                             <button class="open-modal-btn" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'offroad-hill')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
+                            <a href="https://www.youtube.com/channel/UC_K9OWslefMfCpOqLHCLfTA" target="_blank" class="yt-watch-btn">
+                                <i class="fa-brands fa-youtube"></i> Watch
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -497,7 +524,6 @@
 
         function openDownloadModal(title, skinUrl, modUrl, elementId) {
             currentActiveTitle = title;
-            // Generate website page URL pointing to the specific bus card element
             currentCategoryUrl = window.location.origin + window.location.pathname + '#' + elementId;
 
             document.getElementById('modalBusTitle').innerText = title;
