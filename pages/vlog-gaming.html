@@ -109,6 +109,7 @@
             overflow: hidden;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            scroll-margin-top: 80px;
         }
 
         .bus-card:hover {
@@ -254,7 +255,6 @@
         .modal-share-divider {
             margin: 20px 0 12px 0;
             border-top: 1px solid #e2e8f0;
-            position: relative;
         }
         
         .modal-share-title {
@@ -365,19 +365,18 @@
             
             <div class="bus-grid">
                 <!-- Bus Video 1 -->
-                <div class="bus-card">
+                <div class="bus-card" id="bussid-katar">
                     <div class="bus-video-frame">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
-                        <!-- Clickable Title Opens Modal -->
-                        <h3 class="clickable-title" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1')">
+                        <h3 class="clickable-title" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'bussid-katar')">
                             BUSSID: Katar Katar Song Special Ride! 🚌🔥 | TATA Bus Gameplay
                         </h3>
                         <p>High quality HD Livery Skin & Mod for BUSSID</p>
                         
                         <div class="card-actions">
-                            <button class="open-modal-btn" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1')">
+                            <button class="open-modal-btn" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/view/ewqb0kxlxfg6xx2/Picsart_25-02-01_17-23-05-077.png/file', 'https://www.mediafire.com/file/2r57aladywv0zql/araniko_v0.2_%2528with_wheelcover%2529.bussidmod/file', 'bussid-katar')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
                         </div>
@@ -385,19 +384,18 @@
                 </div>
 
                 <!-- Bus Video 2 -->
-                <div class="bus-card">
+                <div class="bus-card" id="express-highway">
                     <div class="bus-video-frame">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
-                        <!-- Clickable Title Opens Modal -->
-                        <h3 class="clickable-title" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2')">
+                        <h3 class="clickable-title" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'express-highway')">
                             Express Highway Superbus
                         </h3>
                         <p>High speed intercity bus mod with LED lighting</p>
                         
                         <div class="card-actions">
-                            <button class="open-modal-btn" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2')">
+                            <button class="open-modal-btn" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2', 'express-highway')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
                         </div>
@@ -405,19 +403,18 @@
                 </div>
 
                 <!-- Bus Video 3 -->
-                <div class="bus-card">
+                <div class="bus-card" id="offroad-hill">
                     <div class="bus-video-frame">
                         <iframe src="https://www.youtube.com/embed/videoseries?list=UU_K9OWslefMfCpOqLHCLfTA" allowfullscreen></iframe>
                     </div>
                     <div class="bus-card-content">
-                        <!-- Clickable Title Opens Modal -->
-                        <h3 class="clickable-title" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3')">
+                        <h3 class="clickable-title" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'offroad-hill')">
                             Offroad Hill Coach Bus
                         </h3>
                         <p>Nepali hilly roads special modified bus</p>
                         
                         <div class="card-actions">
-                            <button class="open-modal-btn" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3')">
+                            <button class="open-modal-btn" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3', 'offroad-hill')">
                                 <i class="fa-solid fa-download"></i> Download
                             </button>
                         </div>
@@ -496,11 +493,12 @@
     <!-- Interactive JavaScript -->
     <script>
         var currentActiveTitle = '';
-        var currentActiveVideoUrl = '';
+        var currentCategoryUrl = '';
 
-        function openDownloadModal(title, skinUrl, modUrl, videoUrl) {
+        function openDownloadModal(title, skinUrl, modUrl, elementId) {
             currentActiveTitle = title;
-            currentActiveVideoUrl = videoUrl;
+            // Generate website page URL pointing to the specific bus card element
+            currentCategoryUrl = window.location.origin + window.location.pathname + '#' + elementId;
 
             document.getElementById('modalBusTitle').innerText = title;
             document.getElementById('modalSkinLink').href = skinUrl;
@@ -520,18 +518,18 @@
 
         /* Modal Share Functions */
         function triggerModalWhatsApp() {
-            var text = encodeURIComponent(currentActiveTitle + ' - Smart Sewa Nepal: ') + encodeURIComponent(currentActiveVideoUrl);
+            var text = encodeURIComponent(currentActiveTitle + ' - Smart Sewa Nepal: ') + encodeURIComponent(currentCategoryUrl);
             window.open('https://api.whatsapp.com/send?text=' + text, '_blank');
         }
 
         function triggerModalFacebook() {
-            var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentActiveVideoUrl);
+            var shareUrl = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(currentCategoryUrl);
             window.open(shareUrl, '_blank', 'width=600,height=400');
         }
 
         function triggerModalCopyLink() {
-            navigator.clipboard.writeText(currentActiveVideoUrl).then(function() {
-                alert('लिङ्क कपी भयो: ' + currentActiveVideoUrl);
+            navigator.clipboard.writeText(currentCategoryUrl).then(function() {
+                alert('यस बस मोडको लिङ्क कपी भयो: ' + currentCategoryUrl);
             }).catch(function() {
                 alert('कपी गर्न सकिएन, कृपया लिङ्क आफैं कपी गर्नुहोस्।');
             });
