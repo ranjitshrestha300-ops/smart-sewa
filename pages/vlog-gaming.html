@@ -151,6 +151,11 @@
             margin-bottom: 15px;
         }
 
+        .card-actions {
+            display: flex;
+            gap: 8px;
+        }
+
         .open-modal-btn {
             background: #f59e0b;
             color: #ffffff;
@@ -160,7 +165,7 @@
             font-weight: bold;
             font-size: 14px;
             cursor: pointer;
-            width: 100%;
+            flex-grow: 1;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -170,6 +175,25 @@
 
         .open-modal-btn:hover {
             background: #d97706;
+        }
+
+        .share-card-btn {
+            background: #3b82f6;
+            color: #ffffff;
+            border: none;
+            padding: 11px 15px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .share-card-btn:hover {
+            background: #2563eb;
         }
 
         /* Popup Modal Window */
@@ -263,7 +287,7 @@
         <div class="nav-wrapper">
             <a href="../index.html" class="brand-master-logo">
                 <div class="logo-graphic-shield">
-                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2A10,10 0 0,1 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                    <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
                 </div>
                 <div class="brand-typography-block">
                     <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -318,10 +342,15 @@
                     <div class="bus-card-content">
                         <h3>BUSSID: Katar Katar Song Special Ride! 🚌🔥 | TATA Bus Gameplay</h3>
                         <p>High quality HD Livery Skin & Mod for BUSSID</p>
-                        <!-- MediaFire links for Bus 1 -->
-                        <button class="open-modal-btn" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/file/your-skin-link-1', 'https://www.mediafire.com/file/your-mod-link-1')">
-                            <i class="fa-solid fa-download"></i> Download Mod / Skin
-                        </button>
+                        
+                        <div class="card-actions">
+                            <button class="open-modal-btn" onclick="openDownloadModal('BUSSID: Katar Katar Song Special Ride!', 'https://www.mediafire.com/file/your-skin-link-1', 'https://www.mediafire.com/file/your-mod-link-1')">
+                                <i class="fa-solid fa-download"></i> Download
+                            </button>
+                            <button class="share-card-btn" title="Share Video" onclick="shareVideo('BUSSID: Katar Katar Song Special Ride!', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_1')">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -333,10 +362,15 @@
                     <div class="bus-card-content">
                         <h3>Express Highway Superbus</h3>
                         <p>High speed intercity bus mod with LED lighting</p>
-                        <!-- MediaFire links for Bus 2 -->
-                        <button class="open-modal-btn" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2')">
-                            <i class="fa-solid fa-download"></i> Download Mod / Skin
-                        </button>
+                        
+                        <div class="card-actions">
+                            <button class="open-modal-btn" onclick="openDownloadModal('Express Highway Superbus', 'https://www.mediafire.com/file/your-skin-link-2', 'https://www.mediafire.com/file/your-mod-link-2')">
+                                <i class="fa-solid fa-download"></i> Download
+                            </button>
+                            <button class="share-card-btn" title="Share Video" onclick="shareVideo('Express Highway Superbus', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_2')">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -348,10 +382,15 @@
                     <div class="bus-card-content">
                         <h3>Offroad Hill Coach Bus</h3>
                         <p>Nepali hilly roads special modified bus</p>
-                        <!-- MediaFire links for Bus 3 -->
-                        <button class="open-modal-btn" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3')">
-                            <i class="fa-solid fa-download"></i> Download Mod / Skin
-                        </button>
+                        
+                        <div class="card-actions">
+                            <button class="open-modal-btn" onclick="openDownloadModal('Offroad Hill Coach Bus', 'https://www.mediafire.com/file/your-skin-link-3', 'https://www.mediafire.com/file/your-mod-link-3')">
+                                <i class="fa-solid fa-download"></i> Download
+                            </button>
+                            <button class="share-card-btn" title="Share Video" onclick="shareVideo('Offroad Hill Coach Bus', 'https://www.youtube.com/watch?v=YOUR_VIDEO_ID_3')">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -383,7 +422,6 @@
             <h3 id="modalBusTitle" style="color: #0f172a; margin-bottom: 10px;">Bus Download</h3>
             <p style="font-size: 14px; color: #64748b;">तपाईंले छान्नुभएको बसको Skin वा Mod File डाउनलोड गर्नुहोस्:</p>
             <div class="modal-buttons">
-                <!-- target="_blank" ले गर्दा MediaFire को लिङ्क नयाँ ट्याबमा खुल्छ -->
                 <a id="modalSkinLink" href="#" target="_blank" rel="noopener noreferrer" class="dl-btn dl-btn-skin">
                     <i class="fa-solid fa-image"></i> Download Bus Skin (MediaFire)
                 </a>
@@ -424,6 +462,24 @@
         function closeModalOnOutsideClick(event) {
             if (event.target.id === 'downloadModal') {
                 closeDownloadModal();
+            }
+        }
+
+        function shareVideo(title, url) {
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: title + ' - Smart Sewa Nepal',
+                    url: url
+                }).catch(function(err) {
+                    console.log('Share canceled or failed:', err);
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(function() {
+                    alert('लिङ्क कपी भयो: ' + url);
+                }).catch(function() {
+                    alert('कपी गर्न सकिएन, कृपया लिङ्क आफैं कपी गर्नुहोस्।');
+                });
             }
         }
     </script>
