@@ -308,6 +308,16 @@ text-decoration: line-through;
 margin-left: 6px;
 }
 
+.showcase-tag {
+font-size: 12px;
+color: #16a34a;
+font-weight: 700;
+margin-top: 4px;
+display: flex;
+align-items: center;
+gap: 5px;
+}
+
 /* Pure Photo Slideshow with Overlay CTA */
 .full-hero-slideshow {
 position: relative;
@@ -671,8 +681,17 @@ data-adapt-container-width="true">
 
 <!-- 🛍️ EASY PRODUCT DYNAMIC SCRIPT -->
 <script>
-// EASY PRODUCT MANAGEMENT ARRAY (यहाँ नयाँ प्रडक्ट थप्न वा सम्पादन गर्न सकिन्छ)
+// EASY PRODUCT MANAGEMENT ARRAY
 const productsData = [
+  {
+    name: "Jackpot Achari Masti Sticks (Spicy • Tangy • Crunchy)",
+    image: "images/jackpot-achari-masti.jpg",
+    fallbackImage: "https://images.unsplash.com/photo-1599490659213-e2b9527bd087?auto=format&fit=crop&w=600&q=80",
+    isShowcase: true, // showcase items don't display price & discount badge
+    rating: 5,
+    reviews: 18,
+    link: "pages/jackpot-achari-masti.html"
+  },
   {
     name: "M209 Vintage Portable Bluetooth Radio Speaker",
     image: "productsimages/product1.png",
@@ -713,11 +732,11 @@ const productsData = [
     reviews: 45,
     link: "pages/accessories.html#7"
   },
-   {
+  {
     name: "नेपालमा स्वास्थ्य बिमा कसरी गर्ने? जान्नुहोस् सम्पूर्ण प्रक्रिय",
     image: "images/healthbima.png",
     fallbackImage: "",
-    currentPrice: 0, // वा उपयुक्त मूल्य
+    currentPrice: 0,
     oldPrice: 0,
     rating: 5,
     reviews: 45,
@@ -731,9 +750,6 @@ function renderProductGrid() {
   container.innerHTML = '';
 
   productsData.forEach(prod => {
-    // Automatic Discount Calculation
-    const discount = Math.round(((prod.oldPrice - prod.currentPrice) / prod.oldPrice) * 100);
-    
     // Rating Stars Generator
     let starsHtml = '';
     const fullStars = Math.floor(prod.rating);
@@ -753,27 +769,47 @@ function renderProductGrid() {
     const card = document.createElement('a');
     card.href = prod.link;
     card.className = 'daraz-product-card';
-    card.innerHTML = `
-      <div class="daraz-img-box">
-        <span class="daraz-discount-badge">-${discount}%</span>
-        <img src="${prod.image}" alt="${prod.name}" onerror="this.src='${prod.fallbackImage || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80'}'">
-      </div>
-      <div class="daraz-product-info">
-        <h3 class="daraz-product-name">${prod.name}</h3>
-        <div class="daraz-rating">
-          ${starsHtml}
-          <span>(${prod.reviews})</span>
+
+    // Showcase Product (No Price, No Discount Badge)
+    if (prod.isShowcase) {
+      card.innerHTML = `
+        <div class="daraz-img-box">
+          <img src="${prod.image}" alt="${prod.name}" onerror="this.src='${prod.fallbackImage || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80'}'">
         </div>
-        <div class="daraz-price-block">
-          <span class="daraz-current-price">Rs. ${prod.currentPrice.toLocaleString()}</span>
-          <span class="daraz-old-price">Rs. ${prod.oldPrice.toLocaleString()}</span>
+        <div class="daraz-product-info">
+          <h3 class="daraz-product-name">${prod.name}</h3>
+          <div class="daraz-rating">
+            ${starsHtml}
+            <span>(${prod.reviews})</span>
+          </div>
+          <div class="showcase-tag">
+            <i class="fa-solid fa-eye"></i> View Details & Order
+          </div>
         </div>
-      </div>
-    `;
+      `;
+    } else {
+      // Standard E-commerce Product
+      const discount = Math.round(((prod.oldPrice - prod.currentPrice) / prod.oldPrice) * 100);
+      card.innerHTML = `
+        <div class="daraz-img-box">
+          ${discount > 0 ? `<span class="daraz-discount-badge">-${discount}%</span>` : ''}
+          <img src="${prod.image}" alt="${prod.name}" onerror="this.src='${prod.fallbackImage || 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80'}'">
+        </div>
+        <div class="daraz-product-info">
+          <h3 class="daraz-product-name">${prod.name}</h3>
+          <div class="daraz-rating">
+            ${starsHtml}
+            <span>(${prod.reviews})</span>
+          </div>
+          <div class="daraz-price-block">
+            <span class="daraz-current-price">Rs. ${prod.currentPrice.toLocaleString()}</span>
+            ${prod.oldPrice > 0 ? `<span class="daraz-old-price">Rs. ${prod.oldPrice.toLocaleString()}</span>` : ''}
+          </div>
+        </div>
+      `;
+    }
     container.appendChild(card);
   });
-
-   
 }
 </script>
 
