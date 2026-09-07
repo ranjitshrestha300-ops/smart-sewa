@@ -68,7 +68,6 @@ header nav ul li a {
     font-size: 14px;
 }
 
-/* --- Header Search Container Styling --- */
 .header-search-container {
     display: flex;
     align-items: center;
@@ -102,7 +101,6 @@ header nav ul li a {
     header nav { width: 100%; overflow-x: auto; }
 }
 
-/* 🍿 Wholesale Store Banner Layout with Side Product Displays */
 .store-banner { 
   position: relative; 
   height: 280px; 
@@ -118,7 +116,6 @@ header nav ul li a {
   margin-bottom: 20px; 
 }
 
-/* 🖼️ Left & Right Side Slideshow Containers */
 .banner-side-img {
   position: absolute;
   top: 10px;
@@ -131,15 +128,9 @@ header nav ul li a {
   justify-content: center;
 }
 
-.banner-side-img.left-side {
-  left: 20px;
-}
+.banner-side-img.left-side { left: 20px; }
+.banner-side-img.right-side { right: 20px; }
 
-.banner-side-img.right-side {
-  right: 20px;
-}
-
-/* Slide Items */
 .banner-bg-slide {
   position: absolute;
   width: 100%;
@@ -149,14 +140,11 @@ header nav ul li a {
   background-position: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
-  filter: brightness(1.1) contrast(1.05); /* Slide Image Clarity Boost */
+  filter: brightness(1.1) contrast(1.05);
 }
 
-.banner-bg-slide.active {
-  opacity: 1;
-}
+.banner-bg-slide.active { opacity: 1; }
 
-/* 🟢 Lightened Gradient Overlay for Higher Slideshow Visibility/Clarity */
 .banner-overlay {
   position: absolute;
   top: 0;
@@ -167,7 +155,6 @@ header nav ul li a {
   z-index: 2;
 }
 
-/* 📝 Front Text Content */
 .banner-content {
   position: relative;
   z-index: 3;
@@ -221,7 +208,6 @@ header nav ul li a {
   border-radius: 8px;
 }
 
-/* Grid & Cards */
 .daraz-grid { 
   display: grid; 
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
@@ -246,7 +232,6 @@ header nav ul li a {
   box-shadow: 0 10px 20px rgba(0,0,0,0.12); 
 }
 
-/* 📸 Image Slider / Carousel Styles */
 .product-img-slider {
   position: relative;
   width: 100%;
@@ -303,7 +288,6 @@ header nav ul li a {
 }
 .dot.active { background: #22c55e; width: 14px; border-radius: 10px; }
 
-/* Details & Buttons */
 .product-info { padding: 15px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .product-title { 
   font-size: 15px; 
@@ -311,7 +295,9 @@ header nav ul li a {
   font-weight: 700; 
   line-height: 1.4; 
   margin-bottom: 6px; 
+  cursor: pointer;
 }
+.product-title:hover { color: #22c55e; }
 .moq-tag {
   font-size: 12px;
   color: #dc2626;
@@ -346,7 +332,6 @@ header nav ul li a {
 }
 .btn-view-order:hover { background: #16a34a; }
 
-/* 🌐 Social Sharing & Action Buttons Styling */
 .product-actions-bar {
   display: flex;
   align-items: center;
@@ -404,6 +389,109 @@ header nav ul li a {
 }
 .btn-msg-inquire:hover { background: #c7d2fe; }
 
+/* 🌟 Product Popup Detail Modal Styles */
+.product-detail-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 10005;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.product-detail-content {
+  background: #fff;
+  border-radius: 16px;
+  max-width: 650px;
+  width: 100%;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+
+.product-detail-body {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 600px) {
+  .product-detail-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.popup-img-container {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+.popup-img-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.popup-details-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popup-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.popup-description {
+  font-size: 13px;
+  color: #475569;
+  line-height: 1.5;
+  margin-bottom: 12px;
+  background: #f8fafc;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.popup-features-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.popup-features-list li {
+  font-size: 12px;
+  color: #334155;
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.popup-features-list li i {
+  color: #22c55e;
+}
+
 /* Floating Cart & Modal */
 .floating-cart-widget { 
   position: fixed; 
@@ -446,7 +534,7 @@ header nav ul li a {
   max-height: 90vh; 
   overflow-y: auto; 
 }
-.close-modal { position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #64748b; }
+.close-modal { position: absolute; top: 15px; right: 15px; font-size: 24px; cursor: pointer; color: #64748b; z-index: 10; }
 
 .cart-item-list { margin: 15px 0; border-top: 1px solid #e2e8f0; padding-top: 15px; display: flex; flex-direction: column; gap: 10px; }
 .cart-item { display: flex; justify-content: space-between; align-items: center; font-size: 14px; border-bottom: 1px dashed #e2e8f0; padding-bottom: 6px; }
@@ -475,7 +563,6 @@ header nav ul li a {
 </head>
 <body>
 
-<!-- 🌟 Original Header Section -->
 <header>
     <div class="nav-wrapper">
         <a href="../index.html" class="brand-master-logo">
@@ -488,7 +575,6 @@ header nav ul li a {
             </div>
         </a>
 
-        <!-- 🔍 Header Search Bar -->
         <form action="/search" method="GET" class="header-search-container">
             <input type="text" placeholder="Search snacks, foods, items..." name="q" required>
             <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -506,10 +592,8 @@ header nav ul li a {
     </div>
 </header>
 
-<!-- 🍿 Wholesale Store Banner with Clearer Left & Right Image Slides -->
 <div class="store-banner">
 
-  <!-- 👈 Left Side Image Slider Track -->
   <div class="banner-side-img left-side">
     <div class="banner-bg-slide left-slide active" style="background-image: url('../jackpot/jackpot1.png');"></div>
     <div class="banner-bg-slide left-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
@@ -517,7 +601,6 @@ header nav ul li a {
     <div class="banner-bg-slide left-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
   </div>
 
-  <!-- 👉 Right Side Image Slider Track -->
   <div class="banner-side-img right-side">
     <div class="banner-bg-slide right-slide active" style="background-image: url('../jackpot/pinita.png');"></div>
     <div class="banner-bg-slide right-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
@@ -525,10 +608,8 @@ header nav ul li a {
     <div class="banner-bg-slide right-slide" style="background-image: url('../jackpot/jackpot1.png');"></div>
   </div>
 
-  <!-- 🟢 Lightened Radial Gradient Overlay for High Image Clarity & Text Readability -->
   <div class="banner-overlay"></div>
 
-  <!-- 📝 Main Banner Text Content -->
   <div class="banner-content">
     <span class="wholesale-badge"><i class="fa-solid fa-store"></i> Wholesale B2B Portal</span>
     <h1>Jackpot Snacks <span>थोक अर्डर पोर्टल</span></h1>
@@ -536,7 +617,6 @@ header nav ul li a {
   </div>
 </div>
 
-<!-- 🚚 Delivery Restriction Notice -->
 <div class="notice-bar">
   <i class="fa-solid fa-truck-fast"></i> सूचना: थोक डेलिभरी सेवा हाल **भक्तपुर जिल्ला क्षेत्र (Bhaktapur Area)** भित्र मात्र उपलब्ध छ।
 </div>
@@ -549,6 +629,16 @@ header nav ul li a {
   <i class="fa-solid fa-boxes-packing" style="color: #22c55e; font-size: 20px;"></i>
   <div>Wholesale Cart: <span id="cart-total-price">Rs. 0</span></div>
   <span class="cart-count-badge" id="cart-count">0</span>
+</div>
+
+<!-- 🔍 Product Details Popup Modal -->
+<div class="product-detail-modal" id="productDetailModal">
+  <div class="product-detail-content">
+    <span class="close-modal" onclick="closeProductDetailModal()">&times;</span>
+    <div class="product-detail-body" id="productDetailContentBody">
+      <!-- Dynamic Popup Content Generated via JavaScript -->
+    </div>
+  </div>
 </div>
 
 <!-- 📋 Wholesale WhatsApp Order Modal -->
@@ -600,7 +690,6 @@ header nav ul li a {
   <img id="previewModalImg" src="" alt="Product Preview" style="max-width:90%; max-height:85vh; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5); object-fit:contain;" onclick="event.stopPropagation()">
 </div>
 
-<!-- 🌟 Original Footer Section -->
 <footer>
   <div class="footer-nav-links">
     <a href="accessories.html">Accessories</a> |
@@ -614,11 +703,9 @@ header nav ul li a {
   <p>© 2026 Smart Sewa Nepal. All Rights Reserved.</p>
 </footer>
 
-<!-- ⚙️ JavaScript Logic -->
 <script>
 let cart = [];
 
-// ⏱️ Synchronized Left & Right Banner Slideshow Logic (Every 3.5s)
 let leftIndex = 0;
 let rightIndex = 0;
 
@@ -641,10 +728,10 @@ function startBannerBgSlide() {
   }, 3500);
 }
 
-// 🍿 Multi-image Wholesale Database
+// 🍿 Wholesale Product Database
 const wholesaleProducts = [
   {
-    "id": 101,
+    "id": "achari-masti",
     "name": "Jackpot Achari Masti Sticks (1 Carton = 60 Packs)",
     "price_per_carton": 960,
     "mrp_value": 1000,
@@ -652,14 +739,21 @@ const wholesaleProducts = [
     "images": [
       "../jackpot/jackpot1.png",
       "../jackpot/pirokpuffcorn.png"
+    ],
+    "description": "Tangy, Spicy & Crunchy Achari Sticks! Har Bite Ma Achar Ko Jabarjast Maza!",
+    "features": [
+      "Authentic Achari Flavour",
+      "Crispy & Crunchy Texture",
+      "Made with Premium Ingredients",
+      "Perfect Evening Snack"
     ]
   },
   {
     "id": "kpuffcorn",
     "name": "Jackpot K-Puffcorn Cheese Flavour (1 Carton = 60 Packs)",
-    "moq": 1,
     "price_per_carton": 960,
     "mrp_value": 1000,
+    "moq": 1,
     "images": ["../jackpot/kpuffcorn.png"],
     "description": "Crunchy, Cheesy & Delicious! Har Bite Ma Cheese Ko Mazza!",
     "features": [
@@ -670,7 +764,7 @@ const wholesaleProducts = [
     ]
   },
   {
-    "id": 103,
+    "id": "puffcorn-spicy",
     "name": "Jackpot Puffcorn Hot Chilli Spicy Flavour (1 Carton = 60 Packs)",
     "price_per_carton": 960,
     "mrp_value": 1000,
@@ -687,7 +781,7 @@ const wholesaleProducts = [
     ]
   },
   {
-    "id": 104,
+    "id": "fiery-cheeseball",
     "name": "Jackpot Fiery Cheese Balls (1 Carton = 60 Packs)",
     "price_per_carton": 960,
     "mrp_value": 1000,
@@ -704,7 +798,7 @@ const wholesaleProducts = [
     ]
   },
   {
-    "id": 105,
+    "id": "pinata-chinese-chilli",
     "name": "Piñata Italian Snacks Chinese Chilli (1 Carton = 60 Packs)",
     "price_per_carton": 960,
     "mrp_value": 1000,
@@ -725,7 +819,6 @@ const wholesaleProducts = [
 
 const slideIndexes = {};
 
-// 🖼️ Lightbox Modal Functions
 function openImageModal(imgSrc) {
   const modal = document.getElementById('imagePreviewModal');
   const modalImg = document.getElementById('previewModalImg');
@@ -745,24 +838,23 @@ function renderProducts() {
   if(!container) return;
   container.innerHTML = '';
 
-  const baseUrl = window.location.href.split('#')[0];
+  const baseUrl = window.location.origin + window.location.pathname;
 
   wholesaleProducts.forEach((p, pIndex) => {
     slideIndexes[pIndex] = 0;
     
-    // 🔗 Share Anchor Link
+    // 🔗 Share URL specific to product ID
     const productShareUrl = `${baseUrl}#product-${p.id}`;
 
-    // 📸 Click on image opens full image preview modal
     let imgsHTML = p.images.map(imgSrc => 
-      `<img src="${imgSrc}" alt="${p.name}" onclick="openImageModal('${imgSrc}')" title="ठूलो तस्बिर हेर्न क्लिक गर्नुहोस्">`
+      `<img src="${imgSrc}" alt="${p.name}" onclick="openProductDetail('${p.id}')" title="प्रडक्ट विवरण हेर्न क्लिक गर्नुहोस्">`
     ).join('');
 
     let dotsHTML = p.images.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}"></span>`).join('');
 
     const card = document.createElement('div');
     card.className = 'daraz-product-card';
-    card.id = `product-${p.id}`; // 🎯 Dynamic ID for direct scroll and sharing
+    card.id = `product-${p.id}`;
     card.innerHTML = `
       <div class="product-img-slider">
         <button class="slider-btn prev" onclick="moveSlide(${pIndex}, -1)">❮</button>
@@ -773,7 +865,7 @@ function renderProducts() {
       <div class="product-info">
         <div>
           <span class="moq-tag"><i class="fa-solid fa-box"></i> Min Order: ${p.moq} Carton</span>
-          <div class="product-title">${p.name}</div>
+          <div class="product-title" onclick="openProductDetail('${p.id}')">${p.name}</div>
           <div class="product-price-row">
             <span class="price-current">Rs. ${p.price_per_carton} / कार्टुन</span>
             <span class="price-original">MRP: Rs. ${p.mrp_value}</span>
@@ -783,16 +875,15 @@ function renderProducts() {
           <i class="fa-solid fa-cart-plus"></i> कार्टुन अर्डर जोड्नुहोस्
         </button>
 
-        <!-- 💬 Message & 🌐 Social Share Bar -->
         <div class="product-actions-bar">
-          <button class="btn-msg-inquire" onclick="inquireProduct('${p.name.replace(/'/g, "\\'")}', '${p.images[0]}')">
-            <i class="fa-solid fa-comment-dots"></i> सोध्नुहोस्
+          <button class="btn-msg-inquire" onclick="openProductDetail('${p.id}')">
+            <i class="fa-solid fa-circle-info"></i> विवरण हेर्नुहोस्
           </button>
           
           <div class="social-share-group">
             <span>Share:</span>
             <button class="share-btn-mini fb" onclick="shareFB('${productShareUrl}')" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></button>
-            <button class="share-btn-mini wa" onclick="shareWA('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}', '${p.images[0]}')" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="share-btn-mini wa" onclick="shareWA('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}', '${p.images[0]}', '${p.description.replace(/'/g, "\\'")}')" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
             <button class="share-btn-mini vb" onclick="shareViber('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}')" title="Share on Viber"><i class="fa-brands fa-viber"></i></button>
             <button class="share-btn-mini copy" onclick="copyProductLink('${productShareUrl}')" title="Copy Link"><i class="fa-solid fa-link"></i></button>
           </div>
@@ -802,6 +893,69 @@ function renderProducts() {
     `;
     container.appendChild(card);
   });
+}
+
+/* 🌟 Open Product Detail Modal (Popup) */
+function openProductDetail(productId) {
+  const p = wholesaleProducts.find(item => item.id.toString() === productId.toString());
+  if (!p) return;
+
+  const modal = document.getElementById('productDetailModal');
+  const body = document.getElementById('productDetailContentBody');
+  const baseUrl = window.location.origin + window.location.pathname;
+  const productShareUrl = `${baseUrl}#product-${p.id}`;
+
+  let featuresHTML = (p.features || []).map(f => `<li><i class="fa-solid fa-check-circle"></i> ${f}</li>`).join('');
+
+  body.innerHTML = `
+    <div class="popup-img-container">
+      <img src="${p.images[0]}" alt="${p.name}" onclick="openImageModal('${p.images[0]}')" style="cursor:pointer;" title="ठूलो तस्बिर हेर्नुहोस्">
+    </div>
+    <div class="popup-details-col">
+      <div>
+        <span class="moq-tag"><i class="fa-solid fa-box"></i> Minimum Order: ${p.moq} Carton</span>
+        <div class="popup-title">${p.name}</div>
+        <div class="product-price-row">
+          <span class="price-current">Rs. ${p.price_per_carton} / कार्टुन</span>
+          <span class="price-original">MRP: Rs. ${p.mrp_value}</span>
+        </div>
+        <div class="popup-description">${p.description || 'उत्कृष्ट स्वाद र गुणस्तरको Wholesale Snack।'}</div>
+        <ul class="popup-features-list">
+          ${featuresHTML}
+        </ul>
+      </div>
+      <div>
+        <button class="btn-view-order" style="margin-bottom:12px;" onclick="addToCart('${p.name.replace(/'/g, "\\'")}', ${p.price_per_carton}); closeProductDetailModal();">
+          <i class="fa-solid fa-cart-plus"></i> कार्टुन अर्डर जोड्नुहोस्
+        </button>
+        <div style="display:flex; justify-content:space-between; align-items:center;">
+          <button class="btn-msg-inquire" onclick="inquireProduct('${p.name.replace(/'/g, "\\'")}', '${p.images[0]}')">
+            <i class="fa-solid fa-comment-dots"></i> सोध्नुहोस्
+          </button>
+          <div class="social-share-group">
+            <span>Share Product:</span>
+            <button class="share-btn-mini wa" onclick="shareWA('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}', '${p.images[0]}', '${(p.description||'').replace(/'/g, "\\'")}')" title="WhatsApp Share"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="share-btn-mini fb" onclick="shareFB('${productShareUrl}')" title="Facebook Share"><i class="fa-brands fa-facebook-f"></i></button>
+            <button class="share-btn-mini copy" onclick="copyProductLink('${productShareUrl}')" title="Copy Link"><i class="fa-solid fa-link"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
+
+  modal.style.display = 'flex';
+  
+  // URL Hash updating without refresh
+  if(history.pushState) {
+    history.pushState(null, null, `#product-${p.id}`);
+  } else {
+    location.hash = `#product-${p.id}`;
+  }
+}
+
+function closeProductDetailModal() {
+  const modal = document.getElementById('productDetailModal');
+  if (modal) modal.style.display = 'none';
 }
 
 function moveSlide(pIndex, direction) {
@@ -877,14 +1031,14 @@ function sendOrderToWhatsApp() {
   cart = []; updateCartUI(); closeCartModal();
 }
 
-/* 📲 Social Share & Inquiry Functions */
+/* 📲 Dynamic Product Share Functions */
 function shareFB(url) {
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
 }
 
-function shareWA(pName, url, imgPath) {
+function shareWA(pName, url, imgPath, desc) {
   const fullImgUrl = window.location.origin + imgPath.replace('..', '');
-  const text = `🍿 *${pName}*\n\n📸 तस्बिर हेर्नुहोस्: ${fullImgUrl}\n🔗 अर्डर गर्न लिङ्क खोल्नुहोस्: ${url}`;
+  const text = `🍿 *${pName}*\n\n📝 ${desc || ''}\n\n📸 प्रडक्ट फोटो: ${fullImgUrl}\n🔗 सिधै हेर्न र अर्डर गर्न लिङ्क खोल्नुहोस्: ${url}`;
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
 }
 
@@ -895,7 +1049,7 @@ function shareViber(pName, url) {
 
 function copyProductLink(url) {
   navigator.clipboard.writeText(url).then(() => {
-    alert("प्रडक्टको लिङ्क प्रतिलिपि (Copy) भयो!");
+    alert("विशेष प्रडक्टको लिङ्क प्रतिलिपि (Copy) भयो!");
   }).catch(err => {
     alert("लिङ्क प्रतिलिपि हुन सकेन: " + url);
   });
@@ -907,10 +1061,29 @@ function inquireProduct(pName, imgPath) {
   window.open(`https://wa.me/9860652339?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
+/* 🎯 Auto-open Product Popup & Auto-scroll from Direct Shared Link */
+function checkDirectSharedProduct() {
+  const hash = window.location.hash;
+  if (hash && hash.startsWith('#product-')) {
+    const productId = hash.replace('#product-', '');
+    const targetElement = document.getElementById(`product-${productId}`);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      setTimeout(() => {
+        openProductDetail(productId);
+      }, 500);
+    }
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
   startBannerBgSlide();
+  checkDirectSharedProduct();
 });
+
+// Window Hash Change Event Listener
+window.addEventListener('hashchange', checkDirectSharedProduct);
 </script>
 </body>
 </html>
