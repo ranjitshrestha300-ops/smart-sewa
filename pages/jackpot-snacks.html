@@ -186,6 +186,83 @@ header nav ul li a {
   box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
+/* 👨‍💼 Authorized Seller Profile Card Styles */
+.seller-profile-card {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-left: 5px solid #22c55e;
+  border-radius: 12px;
+  padding: 15px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.seller-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.seller-img-wrapper {
+  position: relative;
+}
+
+.seller-img {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #22c55e;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.seller-info h3 {
+  margin: 4px 0 2px 0;
+  font-size: 18px;
+  color: #0f172a;
+  font-weight: 800;
+}
+
+.seller-info p {
+  margin: 2px 0;
+  font-size: 13.5px;
+  color: #475569;
+}
+
+.seller-badge {
+  background: #dcfce7;
+  color: #15803d;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 12px;
+  display: inline-block;
+}
+
+.seller-contact-btn {
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.seller-contact-btn:hover {
+  background: #1eb954;
+  transform: translateY(-2px);
+}
+
 @media (max-width: 768px) {
   .store-banner { height: 240px; }
   .banner-side-img { width: 25%; opacity: 0.85; }
@@ -193,6 +270,8 @@ header nav ul li a {
   .banner-side-img.right-side { right: 5px; }
   .banner-content h1 { font-size: 20px; }
   .banner-content p { font-size: 12px; }
+  .seller-profile-card { flex-direction: column; text-align: center; }
+  .seller-profile-left { flex-direction: column; }
 }
 
 .notice-bar {
@@ -615,6 +694,24 @@ header nav ul li a {
     <h1>Jackpot Snacks <span>थोक अर्डर पोर्टल</span></h1>
     <p>खुद्रा तथा होलसेल पसलहरूका लागि सिधै फ्याक्ट्री रेटमा थोक अर्डर गर्ने ठाउँ</p>
   </div>
+</div>
+
+<!-- 👨‍💼 Authorized Seller Profile Section -->
+<div class="seller-profile-card">
+  <div class="seller-profile-left">
+    <div class="seller-img-wrapper">
+      <img src="kumar-shrestha.jpg" alt="Kumar Shrestha - Authorized Seller" class="seller-img" onclick="openImageModal(this.src)" style="cursor:pointer;">
+    </div>
+    <div class="seller-info">
+      <span class="seller-badge"><i class="fa-solid fa-circle-check"></i> Verified Wholesale Partner</span>
+      <h3>कुमार श्रेष्ठ (Kumar Shrestha)</h3>
+      <p><strong>आधिकारिक थोक विक्रेता:</strong> Jackpot Snacks & Smart Sewa Nepal</p>
+      <p><i class="fa-solid fa-location-dot" style="color:#f59e0b;"></i> भक्तपुर, नेपाल | <i class="fa-solid fa-phone" style="color:#22c55e;"></i> ९८६०६५२३३९</p>
+    </div>
+  </div>
+  <a href="https://wa.me/9860652339?text=नमस्ते%20कुमार%20जी,%20मलाई%20Jackpot%20Snacks%20थोक%20अर्डर%20सम्बन्धी%20सोधपुछ%20गर्नु%20थियो।" target="_blank" class="seller-contact-btn">
+    <i class="fa-brands fa-whatsapp"></i> सिधै सम्पर्क गर्नुहोस्
+  </a>
 </div>
 
 <div class="notice-bar">
