@@ -239,6 +239,7 @@ header nav ul li a {
   flex-direction: column; 
   justify-content: space-between; 
   transition: transform 0.2s, box-shadow 0.2s; 
+  scroll-margin-top: 80px;
 }
 .daraz-product-card:hover { 
   transform: translateY(-4px); 
@@ -264,6 +265,7 @@ header nav ul li a {
   min-width: 100%;
   height: 100%;
   object-fit: cover;
+  cursor: pointer;
 }
 .slider-btn {
   position: absolute;
@@ -592,6 +594,12 @@ header nav ul li a {
   </div>
 </div>
 
+<!-- 🖼️ Image Preview Lightbox Modal -->
+<div id="imagePreviewModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:10001; align-items:center; justify-content:center;" onclick="closeImageModal()">
+  <span onclick="closeImageModal()" style="position:absolute; top:20px; right:30px; font-size:35px; color:#fff; cursor:pointer; font-weight:bold;">&times;</span>
+  <img id="previewModalImg" src="" alt="Product Preview" style="max-width:90%; max-height:85vh; border-radius:10px; box-shadow:0 10px 30px rgba(0,0,0,0.5); object-fit:contain;" onclick="event.stopPropagation()">
+</div>
+
 <!-- 🌟 Original Footer Section -->
 <footer>
   <div class="footer-nav-links">
@@ -647,91 +655,114 @@ const wholesaleProducts = [
     ]
   },
   {
-  id: "kpuffcorn",
-  name: "Jackpot K-Puffcorn Cheese Flavour (1 Carton = 60 Packs)",
-  moq: 1,
-  price_per_carton: 960,
-  mrp_value: 1000,
-  images: ["../jackpot/kpuffcorn.png"],
-  description: "Crunchy, Cheesy & Delicious! Har Bite Ma Cheese Ko Mazza!",
-  features: [
-    "Rich Cheese Flavour",
-    "Premium Quality Ingredients",
-    "Crispy & Tasty Snack",
-    "Perfect for Sharing"
-  ]
-},
+    "id": "kpuffcorn",
+    "name": "Jackpot K-Puffcorn Cheese Flavour (1 Carton = 60 Packs)",
+    "moq": 1,
+    "price_per_carton": 960,
+    "mrp_value": 1000,
+    "images": ["../jackpot/kpuffcorn.png"],
+    "description": "Crunchy, Cheesy & Delicious! Har Bite Ma Cheese Ko Mazza!",
+    "features": [
+      "Rich Cheese Flavour",
+      "Premium Quality Ingredients",
+      "Crispy & Tasty Snack",
+      "Perfect for Sharing"
+    ]
+  },
   {
-  id: 103,
-  name: "Jackpot Puffcorn Hot Chilli Spicy Flavour (1 Carton = 60 Packs)",
-  price_per_carton: 960,
-  mrp_value: 1000,
-  moq: 1,
-  images: [
-    "../jackpot/pirokpuffcorn.png"
-  ],
-  description: "Spicy • Crunchy • Tasty! Har Bite Ma Spicy Twist! More Spice More Fun!",
-  features: [
-    "Bold Hot Chilli Flavour",
-    "Premium Quality Ingredients",
-    "Crispy & Tasty Snack",
-    "Perfect for Sharing"
-  ]
-},
- {
-  id: 104,
-  name: "Jackpot Fiery Cheese Balls (1 Carton = 60 Packs)",
-  price_per_carton: 960,
-  mrp_value: 1000,
-  moq: 1,
-  images: [
-    "../jackpot/cheeseball.png"
-  ],
-  description: "Spicy • Cheesy • Crunchy! Har Bite Ma Spicy Twist! Spicy Bites Big Smiles!",
-  features: [
-    "Intense Hot & Spicy Flavour",
-    "Rich Cheese Taste",
-    "Crispy & Tasty Snack",
-    "Perfect for Sharing"
-  ]
-},
-    {
-  id: 105,
-  name: "Piñata Italian Snacks Chinese Chilli (1 Carton = 60 Packs)",
-  price_per_carton: 960,
-  mrp_value: 1000,
-  moq: 1,
-  images: [
-    "../jackpot/pinita.png"
-  ],
-  description: "Tangy • Crunchy • Irresistible! Har Bite Ma Ketchup Ko Swad! Italian Taste with a Kick!",
-  features: [
-    "Free Tomato Ketchup Inside",
-    "Spicy Chinese Chilli Flavour",
-    "Premium Quality Ingredients",
-    "Crispy & Tasty Snack",
-    "Perfect for Sharing"
-  ]
-}
+    "id": 103,
+    "name": "Jackpot Puffcorn Hot Chilli Spicy Flavour (1 Carton = 60 Packs)",
+    "price_per_carton": 960,
+    "mrp_value": 1000,
+    "moq": 1,
+    "images": [
+      "../jackpot/pirokpuffcorn.png"
+    ],
+    "description": "Spicy • Crunchy • Tasty! Har Bite Ma Spicy Twist! More Spice More Fun!",
+    "features": [
+      "Bold Hot Chilli Flavour",
+      "Premium Quality Ingredients",
+      "Crispy & Tasty Snack",
+      "Perfect for Sharing"
+    ]
+  },
+  {
+    "id": 104,
+    "name": "Jackpot Fiery Cheese Balls (1 Carton = 60 Packs)",
+    "price_per_carton": 960,
+    "mrp_value": 1000,
+    "moq": 1,
+    "images": [
+      "../jackpot/cheeseball.png"
+    ],
+    "description": "Spicy • Cheesy • Crunchy! Har Bite Ma Spicy Twist! Spicy Bites Big Smiles!",
+    "features": [
+      "Intense Hot & Spicy Flavour",
+      "Rich Cheese Taste",
+      "Crispy & Tasty Snack",
+      "Perfect for Sharing"
+    ]
+  },
+  {
+    "id": 105,
+    "name": "Piñata Italian Snacks Chinese Chilli (1 Carton = 60 Packs)",
+    "price_per_carton": 960,
+    "mrp_value": 1000,
+    "moq": 1,
+    "images": [
+      "../jackpot/pinita.png"
+    ],
+    "description": "Tangy • Crunchy • Irresistible! Har Bite Ma Ketchup Ko Swad! Italian Taste with a Kick!",
+    "features": [
+      "Free Tomato Ketchup Inside",
+      "Spicy Chinese Chilli Flavour",
+      "Premium Quality Ingredients",
+      "Crispy & Tasty Snack",
+      "Perfect for Sharing"
+    ]
+  }
 ];
 
 const slideIndexes = {};
+
+// 🖼️ Lightbox Modal Functions
+function openImageModal(imgSrc) {
+  const modal = document.getElementById('imagePreviewModal');
+  const modalImg = document.getElementById('previewModalImg');
+  if(modal && modalImg) {
+    modalImg.src = imgSrc;
+    modal.style.display = 'flex';
+  }
+}
+
+function closeImageModal() {
+  const modal = document.getElementById('imagePreviewModal');
+  if(modal) modal.style.display = 'none';
+}
 
 function renderProducts() {
   const container = document.getElementById('jackpot-grid-container');
   if(!container) return;
   container.innerHTML = '';
 
-  const currentPageUrl = window.location.href;
+  const baseUrl = window.location.href.split('#')[0];
 
   wholesaleProducts.forEach((p, pIndex) => {
     slideIndexes[pIndex] = 0;
+    
+    // 🔗 Share Anchor Link
+    const productShareUrl = `${baseUrl}#product-${p.id}`;
 
-    let imgsHTML = p.images.map(imgSrc => `<img src="${imgSrc}" alt="${p.name}">`).join('');
+    // 📸 Click on image opens full image preview modal
+    let imgsHTML = p.images.map(imgSrc => 
+      `<img src="${imgSrc}" alt="${p.name}" onclick="openImageModal('${imgSrc}')" title="ठूलो तस्बिर हेर्न क्लिक गर्नुहोस्">`
+    ).join('');
+
     let dotsHTML = p.images.map((_, i) => `<span class="dot ${i === 0 ? 'active' : ''}"></span>`).join('');
 
     const card = document.createElement('div');
     card.className = 'daraz-product-card';
+    card.id = `product-${p.id}`; // 🎯 Dynamic ID for direct scroll and sharing
     card.innerHTML = `
       <div class="product-img-slider">
         <button class="slider-btn prev" onclick="moveSlide(${pIndex}, -1)">❮</button>
@@ -754,16 +785,16 @@ function renderProducts() {
 
         <!-- 💬 Message & 🌐 Social Share Bar -->
         <div class="product-actions-bar">
-          <button class="btn-msg-inquire" onclick="inquireProduct('${p.name.replace(/'/g, "\\'")}')">
+          <button class="btn-msg-inquire" onclick="inquireProduct('${p.name.replace(/'/g, "\\'")}', '${p.images[0]}')">
             <i class="fa-solid fa-comment-dots"></i> सोध्नुहोस्
           </button>
           
           <div class="social-share-group">
             <span>Share:</span>
-            <button class="share-btn-mini fb" onclick="shareFB('${currentPageUrl}')" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></button>
-            <button class="share-btn-mini wa" onclick="shareWA('${p.name.replace(/'/g, "\\'")}', '${currentPageUrl}')" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
-            <button class="share-btn-mini vb" onclick="shareViber('${p.name.replace(/'/g, "\\'")}', '${currentPageUrl}')" title="Share on Viber"><i class="fa-brands fa-viber"></i></button>
-            <button class="share-btn-mini copy" onclick="copyProductLink('${currentPageUrl}')" title="Copy Link"><i class="fa-solid fa-link"></i></button>
+            <button class="share-btn-mini fb" onclick="shareFB('${productShareUrl}')" title="Share on Facebook"><i class="fa-brands fa-facebook-f"></i></button>
+            <button class="share-btn-mini wa" onclick="shareWA('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}', '${p.images[0]}')" title="Share on WhatsApp"><i class="fa-brands fa-whatsapp"></i></button>
+            <button class="share-btn-mini vb" onclick="shareViber('${p.name.replace(/'/g, "\\'")}', '${productShareUrl}')" title="Share on Viber"><i class="fa-brands fa-viber"></i></button>
+            <button class="share-btn-mini copy" onclick="copyProductLink('${productShareUrl}')" title="Copy Link"><i class="fa-solid fa-link"></i></button>
           </div>
         </div>
 
@@ -851,8 +882,9 @@ function shareFB(url) {
   window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`, '_blank', 'width=600,height=400');
 }
 
-function shareWA(pName, url) {
-  const text = `Check out ${pName} on Smart Sewa Nepal: ${url}`;
+function shareWA(pName, url, imgPath) {
+  const fullImgUrl = window.location.origin + imgPath.replace('..', '');
+  const text = `🍿 *${pName}*\n\n📸 तस्बिर हेर्नुहोस्: ${fullImgUrl}\n🔗 अर्डर गर्न लिङ्क खोल्नुहोस्: ${url}`;
   window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`, '_blank');
 }
 
@@ -869,8 +901,9 @@ function copyProductLink(url) {
   });
 }
 
-function inquireProduct(pName) {
-  const msg = `नमस्ते, मलाई "${pName}" को बारेमा केही कुरा सोध्नु थियो।`;
+function inquireProduct(pName, imgPath) {
+  const fullImgUrl = window.location.origin + imgPath.replace('..', '');
+  const msg = `नमस्ते, मलाई "${pName}" को बारेमा केही कुरा सोध्नु थियो।\n📸 ${fullImgUrl}`;
   window.open(`https://wa.me/9860652339?text=${encodeURIComponent(msg)}`, '_blank');
 }
 
