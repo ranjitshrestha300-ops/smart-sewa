@@ -22,7 +22,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-icon-180x180.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../icons/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="144x144" href="../icons/android-icon-144x144.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../icons/android-icon-96x96.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="72x72" href="../icons/android-icon-72x72.png">
     <link rel="icon" type="image/png" sizes="48x48" href="../icons/android-icon-48x48.png">
     <link rel="icon" type="image/png" sizes="36x36" href="../icons/android-icon-36x36.png">
@@ -102,7 +102,7 @@ header nav ul li a {
     header nav { width: 100%; overflow-x: auto; }
 }
 
-/* 🍿 Wholesale Store Banner with Perfectly Fitted Background Images */
+/* 🍿 Wholesale Store Banner Layout with Side Product Displays */
 .store-banner { 
   position: relative; 
   height: 280px; 
@@ -113,28 +113,37 @@ header nav ul li a {
   color: white; 
   padding: 20px; 
   overflow: hidden; 
-  background-color: #0f2d18; /* फोटो नभएको भागमा मिल्ने डार्क हरियो background */
+  background-color: #062310;
   border-bottom: 4px solid #22c55e; 
   margin-bottom: 20px; 
 }
 
-/* 🖼️ Background Slider Track */
-.banner-bg-slider {
+/* 🖼️ Left & Right Side Slideshow Containers */
+.banner-side-img {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 10px;
+  bottom: 10px;
+  width: 25%;
+  max-width: 200px;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.banner-side-img.left-side {
+  left: 20px;
+}
+
+.banner-side-img.right-side {
+  right: 20px;
+}
+
+/* Slide Items */
 .banner-bg-slide {
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
-  /* 🌟 फोटो नकाटियोस् र पुरा स्पष्ट देखियोस् भन्नका लागि contain राखिएको छ */
   background-size: contain; 
   background-repeat: no-repeat;
   background-position: center;
@@ -146,14 +155,14 @@ header nav ul li a {
   opacity: 1;
 }
 
-/* 🟢 Text पछाडि अक्षरहरू प्रस्ट देखाउनका लागि सुहाउँदो Gradient Overlay */
+/* 🟢 Center Radial Gradient Overlay for High Text Contrast */
 .banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(15, 23, 42, 0.75) 0%, rgba(22, 101, 52, 0.85) 100%);
+  background: radial-gradient(circle, rgba(6, 35, 16, 0.9) 0%, rgba(6, 35, 16, 0.6) 50%, rgba(6, 35, 16, 0.85) 100%);
   z-index: 2;
 }
 
@@ -161,19 +170,19 @@ header nav ul li a {
 .banner-content {
   position: relative;
   z-index: 3;
-  max-width: 800px;
+  max-width: 650px;
 }
 
 .banner-content h1 { 
   font-size: 28px; 
   font-weight: 800; 
   margin: 10px 0 6px 0; 
-  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.9);
 }
 .banner-content h1 span { color: #facc15; }
 .banner-content p {
   font-size: 14px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.9);
   margin: 0;
 }
 
@@ -191,7 +200,10 @@ header nav ul li a {
 
 @media (max-width: 768px) {
   .store-banner { height: 240px; }
-  .banner-content h1 { font-size: 22px; }
+  .banner-side-img { width: 20%; opacity: 0.6; }
+  .banner-side-img.left-side { left: 5px; }
+  .banner-side-img.right-side { right: 5px; }
+  .banner-content h1 { font-size: 20px; }
   .banner-content p { font-size: 12px; }
 }
 
@@ -432,20 +444,29 @@ header nav ul li a {
     </div>
 </header>
 
-<!-- 🍿 Wholesale Store Banner with Perfectly Fitted Background Slide -->
+<!-- 🍿 Wholesale Store Banner with Left and Right Sliding Images -->
 <div class="store-banner">
-  <!-- 🖼️ Text पछाडि नकिटिने गरी पुरा देखिने ब्याकग्राउन्ड फोटोहरू -->
-  <div class="banner-bg-slider">
-    <div class="banner-bg-slide active" style="background-image: url('../jackpot/pinita.png');"></div>
-    <div class="banner-bg-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
-    <div class="banner-bg-slide" style="background-image: url('../jackpot/pirokpuffcorn.png');"></div>
-    <div class="banner-bg-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
+
+  <!-- 👈 Left Side Image Slider Track -->
+  <div class="banner-side-img left-side">
+    <div class="banner-bg-slide left-slide active" style="background-image: url('../jackpot/jackpot1.png');"></div>
+    <div class="banner-bg-slide left-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
+    <div class="banner-bg-slide left-slide" style="background-image: url('../jackpot/pirokpuffcorn.png');"></div>
+    <div class="banner-bg-slide left-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
   </div>
 
-  <!-- 🟢 Dark Radial Gradient Overlay for Clear Text Readability -->
+  <!-- 👉 Right Side Image Slider Track -->
+  <div class="banner-side-img right-side">
+    <div class="banner-bg-slide right-slide active" style="background-image: url('../jackpot/pinita.png');"></div>
+    <div class="banner-bg-slide right-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
+    <div class="banner-bg-slide right-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
+    <div class="banner-bg-slide right-slide" style="background-image: url('../jackpot/jackpot1.png');"></div>
+  </div>
+
+  <!-- 🟢 Center Radial Gradient Overlay for High Text Readability -->
   <div class="banner-overlay"></div>
 
-  <!-- 📝 Main Banner Text Container -->
+  <!-- 📝 Main Banner Text Content -->
   <div class="banner-content">
     <span class="wholesale-badge"><i class="fa-solid fa-store"></i> Wholesale B2B Portal</span>
     <h1>Jackpot Snacks <span>थोक अर्डर पोर्टल</span></h1>
@@ -529,16 +550,26 @@ header nav ul li a {
 <script>
 let cart = [];
 
-// ⏱️ Store Banner Background Slideshow Logic (Every 3.5 seconds)
-let bgSlideIndex = 0;
+// ⏱️ Synchronized Left & Right Banner Slideshow Logic (Every 3.5s)
+let leftIndex = 0;
+let rightIndex = 0;
+
 function startBannerBgSlide() {
-  const bgSlides = document.querySelectorAll('.banner-bg-slide');
-  if (bgSlides.length === 0) return;
+  const leftSlides = document.querySelectorAll('.left-slide');
+  const rightSlides = document.querySelectorAll('.right-slide');
 
   setInterval(() => {
-    bgSlides[bgSlideIndex].classList.remove('active');
-    bgSlideIndex = (bgSlideIndex + 1) % bgSlides.length;
-    bgSlides[bgSlideIndex].classList.add('active');
+    if (leftSlides.length > 0) {
+      leftSlides[leftIndex].classList.remove('active');
+      leftIndex = (leftIndex + 1) % leftSlides.length;
+      leftSlides[leftIndex].classList.add('active');
+    }
+
+    if (rightSlides.length > 0) {
+      rightSlides[rightIndex].classList.remove('active');
+      rightIndex = (rightIndex + 1) % rightSlides.length;
+      rightSlides[rightIndex].classList.add('active');
+    }
   }, 3500);
 }
 
