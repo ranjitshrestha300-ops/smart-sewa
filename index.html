@@ -182,16 +182,29 @@ box-shadow: 0 8px 15px rgba(0,0,0,0.08);
 border-color: #f59e0b;
 }
 
+/* Category Photo Box Styling */
 .category-icon-box {
-width: 50px;
-height: 50px;
+width: 55px;
+height: 55px;
 background: #fef3c7;
-color: #d97706;
 border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-font-size: 20px;
+overflow: hidden;
+border: 1px solid #fcd34d;
+}
+
+.category-icon-box img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+border-radius: 50%;
+transition: transform 0.3s ease;
+}
+
+.category-card:hover .category-icon-box img {
+transform: scale(1.1);
 }
 
 .category-title {
@@ -580,34 +593,46 @@ IRD लक्की ड्र / बिल पुरस्कार नतिज�
 </div>
 </div>
 
-<!-- 📦 DARAZ-STYLE CATEGORIES SECTION -->
+<!-- 📦 DARAZ-STYLE CATEGORIES SECTION (WITH PHOTOS) -->
 <div style="margin-bottom: 20px;">
 <h2 class="block-title" style="font-size: 20px; color: #0f172a; margin-bottom: 15px;">
 <i class="fa-solid fa-list-check" style="color: #f59e0b;"></i> Categories
 </h2>
 <div class="categories-grid">
 <a href="pages/accessories.html#11" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-headphones"></i></div>
+<div class="category-icon-box">
+<img src="images/earbuds.png" alt="Earbuds & Audio" onerror="this.src='https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Earbuds & Audio</div>
 </a>
 <a href="pages/accessories.html" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-plug"></i></div>
+<div class="category-icon-box">
+<img src="images/charger.png" alt="Chargers & Cables" onerror="this.src='https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Chargers & Cables</div>
 </a>
 <a href="pages/vlog-gaming.html" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-gamepad"></i></div>
+<div class="category-icon-box">
+<img src="images/gaming.png" alt="Gaming Gear" onerror="this.src='https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Gaming Gear</div>
 </a>
 <a href="pages/repair-hub.html" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-wrench"></i></div>
+<div class="category-icon-box">
+<img src="images/repair-tools.png" alt="Mobile Repair Tools" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Mobile Repair Tools</div>
 </a>
 <a href="pages/insurance-post1.html" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+<div class="category-icon-box">
+<img src="images/insurance.png" alt="Insurance Plans" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Insurance Plans</div>
 </a>
 <a href="pages/repair-hub.html" class="category-card">
-<div class="category-icon-box"><i class="fa-solid fa-mobile-screen-button"></i></div>
+<div class="category-icon-box">
+<img src="images/unlock.png" alt="Software Unlocking" onerror="this.src='https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=150&q=80'">
+</div>
 <div class="category-title">Software Unlocking</div>
 </a>
 </div>
