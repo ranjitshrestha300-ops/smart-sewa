@@ -102,17 +102,18 @@ header nav ul li a {
     header nav { width: 100%; overflow-x: auto; }
 }
 
-/* 🍿 Wholesale Store Banner with Background Image Slider */
+/* 🍿 Wholesale Store Banner with Perfectly Fitted Background Images */
 .store-banner { 
   position: relative; 
-  min-height: 360px; 
+  height: 280px; 
   display: flex; 
   align-items: center; 
   justify-content: center; 
   text-align: center; 
   color: white; 
-  padding: 40px 20px; 
+  padding: 20px; 
   overflow: hidden; 
+  background-color: #0f2d18; /* फोटो नभएको भागमा मिल्ने डार्क हरियो background */
   border-bottom: 4px solid #22c55e; 
   margin-bottom: 20px; 
 }
@@ -133,7 +134,9 @@ header nav ul li a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  /* 🌟 फोटो नकाटियोस् र पुरा स्पष्ट देखियोस् भन्नका लागि contain राखिएको छ */
+  background-size: contain; 
+  background-repeat: no-repeat;
   background-position: center;
   opacity: 0;
   transition: opacity 1.2s ease-in-out;
@@ -143,14 +146,14 @@ header nav ul li a {
   opacity: 1;
 }
 
-/* 🟢 Text पछाडि अक्षरहरू प्रस्ट देखाउनका लागि Green Gradient Overlay */
+/* 🟢 Text पछाडि अक्षरहरू प्रस्ट देखाउनका लागि सुहाउँदो Gradient Overlay */
 .banner-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(22, 101, 52, 0.85) 0%, rgba(15, 23, 42, 0.85) 100%);
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.75) 0%, rgba(22, 101, 52, 0.85) 100%);
   z-index: 2;
 }
 
@@ -162,26 +165,34 @@ header nav ul li a {
 }
 
 .banner-content h1 { 
-  font-size: 32px; 
+  font-size: 28px; 
   font-weight: 800; 
-  margin: 12px 0 8px 0; 
-  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  margin: 10px 0 6px 0; 
+  text-shadow: 0 2px 6px rgba(0,0,0,0.8);
 }
 .banner-content h1 span { color: #facc15; }
 .banner-content p {
-  font-size: 15px;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  font-size: 14px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+  margin: 0;
 }
 
 .wholesale-badge {
   background: #f59e0b;
   color: #000;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   padding: 4px 12px;
   border-radius: 12px;
   text-transform: uppercase;
   display: inline-block;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 768px) {
+  .store-banner { height: 240px; }
+  .banner-content h1 { font-size: 22px; }
+  .banner-content p { font-size: 12px; }
 }
 
 .notice-bar {
@@ -395,7 +406,7 @@ header nav ul li a {
     <div class="nav-wrapper">
         <a href="../index.html" class="brand-master-logo">
             <div class="logo-graphic-shield">
-                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 2,12A10,10 0 0,1 12,4M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,4M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
             </div>
             <div class="brand-typography-block">
                 <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -421,9 +432,9 @@ header nav ul li a {
     </div>
 </header>
 
-<!-- 🍿 Wholesale Store Banner with Background Slide -->
+<!-- 🍿 Wholesale Store Banner with Perfectly Fitted Background Slide -->
 <div class="store-banner">
-  <!-- 🖼️ Text पछाडि स्वतः स्लाइड हुने ब्याकग्राउन्ड फोटोहरू -->
+  <!-- 🖼️ Text पछाडि नकिटिने गरी पुरा देखिने ब्याकग्राउन्ड फोटोहरू -->
   <div class="banner-bg-slider">
     <div class="banner-bg-slide active" style="background-image: url('../jackpot/pinita.png');"></div>
     <div class="banner-bg-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
@@ -431,7 +442,7 @@ header nav ul li a {
     <div class="banner-bg-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
   </div>
 
-  <!-- 🟢 Green Overlay for Readability -->
+  <!-- 🟢 Dark Radial Gradient Overlay for Clear Text Readability -->
   <div class="banner-overlay"></div>
 
   <!-- 📝 Main Banner Text Container -->
@@ -728,7 +739,7 @@ function sendOrderToWhatsApp() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
-  startBannerBgSlide(); // Start background slideshow
+  startBannerBgSlide();
 });
 </script>
 </body>
