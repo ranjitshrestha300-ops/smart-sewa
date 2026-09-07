@@ -102,25 +102,86 @@ header nav ul li a {
     header nav { width: 100%; overflow-x: auto; }
 }
 
-/* Wholesale Store Banner */
+/* 🍿 Wholesale Store Banner with Background Image Slider */
 .store-banner { 
-  background: linear-gradient(135deg, #166534 0%, #14532d 100%); 
+  position: relative; 
+  min-height: 360px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-align: center; 
   color: white; 
   padding: 40px 20px; 
-  text-align: center; 
-  border-bottom: 3px solid #22c55e; 
+  overflow: hidden; 
+  border-bottom: 4px solid #22c55e; 
   margin-bottom: 20px; 
 }
-.store-banner h1 { font-size: 30px; font-weight: 800; margin-bottom: 10px; }
-.store-banner h1 span { color: #facc15; }
+
+/* 🖼️ Background Slider Track */
+.banner-bg-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.banner-bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
+}
+
+.banner-bg-slide.active {
+  opacity: 1;
+}
+
+/* 🟢 Text पछाडि अक्षरहरू प्रस्ट देखाउनका लागि Green Gradient Overlay */
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(22, 101, 52, 0.85) 0%, rgba(15, 23, 42, 0.85) 100%);
+  z-index: 2;
+}
+
+/* 📝 Front Text Content */
+.banner-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+}
+
+.banner-content h1 { 
+  font-size: 32px; 
+  font-weight: 800; 
+  margin: 12px 0 8px 0; 
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+.banner-content h1 span { color: #facc15; }
+.banner-content p {
+  font-size: 15px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
 .wholesale-badge {
   background: #f59e0b;
   color: #000;
   font-size: 12px;
   font-weight: 800;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 12px;
   text-transform: uppercase;
+  display: inline-block;
 }
 
 .notice-bar {
@@ -334,7 +395,7 @@ header nav ul li a {
     <div class="nav-wrapper">
         <a href="../index.html" class="brand-master-logo">
             <div class="logo-graphic-shield">
-                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,4M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
+                <svg viewBox="0 0 24 24"><path d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 2,12A10,10 0 0,1 12,4M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6M12,8A4,4 0 0,0 8,12A4,4 0 0,0 12,16A4,4 0 0,0 16,12A4,4 0 0,0 12,8Z"/></svg>
             </div>
             <div class="brand-typography-block">
                 <div class="brand-main-title">Smart<span>Sewa</span></div>
@@ -360,11 +421,25 @@ header nav ul li a {
     </div>
 </header>
 
-<!-- 🍿 Wholesale Banner -->
+<!-- 🍿 Wholesale Store Banner with Background Slide -->
 <div class="store-banner">
-  <span class="wholesale-badge"><i class="fa-solid fa-store"></i> Wholesale B2B Portal</span>
-  <h1>Jackpot Snacks <span>थोक अर्डर पोर्टल</span></h1>
-  <p>खुद्रा तथा होलसेल पसलहरूका लागि सिधै फ्याक्ट्री रेटमा थोक अर्डर गर्ने ठाउँ</p>
+  <!-- 🖼️ Text पछाडि स्वतः स्लाइड हुने ब्याकग्राउन्ड फोटोहरू -->
+  <div class="banner-bg-slider">
+    <div class="banner-bg-slide active" style="background-image: url('../jackpot/pinita.png');"></div>
+    <div class="banner-bg-slide" style="background-image: url('../jackpot/cheeseball.png');"></div>
+    <div class="banner-bg-slide" style="background-image: url('../jackpot/pirokpuffcorn.png');"></div>
+    <div class="banner-bg-slide" style="background-image: url('../jackpot/kpuffcorn.png');"></div>
+  </div>
+
+  <!-- 🟢 Green Overlay for Readability -->
+  <div class="banner-overlay"></div>
+
+  <!-- 📝 Main Banner Text Container -->
+  <div class="banner-content">
+    <span class="wholesale-badge"><i class="fa-solid fa-store"></i> Wholesale B2B Portal</span>
+    <h1>Jackpot Snacks <span>थोक अर्डर पोर्टल</span></h1>
+    <p>खुद्रा तथा होलसेल पसलहरूका लागि सिधै फ्याक्ट्री रेटमा थोक अर्डर गर्ने ठाउँ</p>
+  </div>
 </div>
 
 <!-- 🚚 Delivery Restriction Notice -->
@@ -443,6 +518,19 @@ header nav ul li a {
 <script>
 let cart = [];
 
+// ⏱️ Store Banner Background Slideshow Logic (Every 3.5 seconds)
+let bgSlideIndex = 0;
+function startBannerBgSlide() {
+  const bgSlides = document.querySelectorAll('.banner-bg-slide');
+  if (bgSlides.length === 0) return;
+
+  setInterval(() => {
+    bgSlides[bgSlideIndex].classList.remove('active');
+    bgSlideIndex = (bgSlideIndex + 1) % bgSlides.length;
+    bgSlides[bgSlideIndex].classList.add('active');
+  }, 3500);
+}
+
 // 🍿 Multi-image Wholesale Database
 const wholesaleProducts = [
   {
@@ -460,9 +548,9 @@ const wholesaleProducts = [
   id: "kpuffcorn",
   name: "Jackpot K-Puffcorn Cheese Flavour (1 Carton = 60 Packs)",
   moq: 1,
-  price_per_carton: 960, // तपाईंको वास्तविक कार्टुन मूल्य यहाँ राख्नुहोस्
-  mrp_value: 1000,        // वास्तविक MRP मूल्य यहाँ राख्नुहोस्
-  images: ["../jackpot/kpuffcorn.png"], // तपाईंको इमेज पाथ वा URL
+  price_per_carton: 960,
+  mrp_value: 1000,
+  images: ["../jackpot/kpuffcorn.png"],
   description: "Crunchy, Cheesy & Delicious! Har Bite Ma Cheese Ko Mazza!",
   features: [
     "Rich Cheese Flavour",
@@ -472,13 +560,13 @@ const wholesaleProducts = [
   ]
 },
   {
-  id: 103, // तपाईंको अघिल्लो id अनुसार मिलाउनुहोस्
+  id: 103,
   name: "Jackpot Puffcorn Hot Chilli Spicy Flavour (1 Carton = 60 Packs)",
-  price_per_carton: 960, // वास्तविक कार्टुन मूल्य राख्नुहोस्
-  mrp_value: 1000,        // वास्तविक MRP मूल्य राख्नुहोस्
+  price_per_carton: 960,
+  mrp_value: 1000,
   moq: 1,
   images: [
-    "../jackpot/pirokpuffcorn.png"  // तपाईंको इमेज पाथ वा URL
+    "../jackpot/pirokpuffcorn.png"
   ],
   description: "Spicy • Crunchy • Tasty! Har Bite Ma Spicy Twist! More Spice More Fun!",
   features: [
@@ -491,11 +579,11 @@ const wholesaleProducts = [
  {
   id: 104,
   name: "Jackpot Fiery Cheese Balls (1 Carton = 60 Packs)",
-  price_per_carton: 960, // वास्तविक कार्टुन मूल्य राख्नुहोस्
-  mrp_value: 1000,        // वास्तविक MRP मूल्य राख्नुहोस्
+  price_per_carton: 960,
+  mrp_value: 1000,
   moq: 1,
   images: [
-    "../jackpot/cheeseball.png"     // तपाईंको इमेज पाथ वा URL
+    "../jackpot/cheeseball.png"
   ],
   description: "Spicy • Cheesy • Crunchy! Har Bite Ma Spicy Twist! Spicy Bites Big Smiles!",
   features: [
@@ -509,10 +597,10 @@ const wholesaleProducts = [
   id: 105,
   name: "Piñata Italian Snacks Chinese Chilli (1 Carton = 60 Packs)",
   price_per_carton: 960,
-  mrp_value: 1000, // आवश्यकता अनुसार MRP मूल्य मिलाउनुहोस्
+  mrp_value: 1000,
   moq: 1,
   images: [
-    "../jackpot/pinita.png" // तपाईंको इमेज पाथ अनुसार मिलाउनुहोस्
+    "../jackpot/pinita.png"
   ],
   description: "Tangy • Crunchy • Irresistible! Har Bite Ma Ketchup Ko Swad! Italian Taste with a Kick!",
   features: [
@@ -638,7 +726,10 @@ function sendOrderToWhatsApp() {
   cart = []; updateCartUI(); closeCartModal();
 }
 
-document.addEventListener('DOMContentLoaded', renderProducts);
+document.addEventListener('DOMContentLoaded', () => {
+  renderProducts();
+  startBannerBgSlide(); // Start background slideshow
+});
 </script>
 </body>
 </html>
